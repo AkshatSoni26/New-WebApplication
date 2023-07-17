@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { createContext, useContext, useEffect, useState } from 'react';
-import { OTP_SENDER, user_data, user_data_provider } from '../../../Constants/Apis';
 import { useNavigate } from 'react-router-dom';
-import { country_code } from '../../../Constants/Constants'
+import { country_code, testingNumber } from '../../../Constants/Constants'
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../State';
+import { BACKEND_URLS, FRONTEND_URLS } from '../../Links/Config';
 // import { context_api } from '../../App';
 
 
@@ -13,13 +13,15 @@ function PhoneNumber() {
 
 console.log('11111111111111111111')
 
-  const [phoneNumber, setPhoneNumber] = useState('9414189611');
+  const [phoneNumber, setPhoneNumber] = useState(testingNumber);
   const [Nonce, setNonce] = useState('')
   const [Otp, setOtp] = useState('')
   const [OtpSend ,setOtpSend] = useState(false)
 
   const dispatch = useDispatch()
   const {AccessKey} = bindActionCreators(actionCreators, dispatch)
+
+  const {OTP_SENDER,     USER_DATA_PROVIDER,     USER_DATA} = BACKEND_URLS
 
   const navigate = useNavigate()
 
@@ -76,7 +78,7 @@ console.log('11111111111111111111')
 
   function UserDataProvider(nonce) {
 
-    axios.post(user_data_provider,
+    axios.post(    USER_DATA_PROVIDER,
       {
         country_code: country_code,
         phone_number: phoneNumber,
@@ -110,7 +112,7 @@ console.log('11111111111111111111')
 
     localStorage.setItem('Access Key', access)
 
-    axios.post(user_data,
+    axios.post(    USER_DATA,
 
       { "switch_target_subcourse_id": 0, "switch_phase_id": 0, },
       {
@@ -123,7 +125,7 @@ console.log('11111111111111111111')
       (response) => {
         localStorage.setItem('userData', JSON.stringify(response.data.data))
         // localStorage.setItem('Access', JSON.stringify(access))
-        navigate('/home')
+        navigate(FRONTEND_URLS.Home)
       }
     ).catch(
       (error) => {

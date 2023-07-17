@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { slogen } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
-import axios from 'axios';
-import { subject_data_Api } from '../../../Constants/Apis';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { BACKEND_URLS } from '../../Links/Config';
 
 
 const SubjectCaural = () => {

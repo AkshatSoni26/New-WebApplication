@@ -1,5 +1,7 @@
 export const country_code = 91
 
+export const testingNumber = '9414189611'
+
 export const slogen = 'Let\'s start your prepration here.'
 
 export const facultiePortionLine = 'Know Your Faculty'

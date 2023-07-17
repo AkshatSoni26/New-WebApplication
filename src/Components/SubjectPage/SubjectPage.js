@@ -8,9 +8,9 @@ import SubjectContent from './Suject Content/Subject_Content';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
-import { subject_data_Api } from '../../Constants/Apis';
 import ErrorPages from '../ErrorPages/ErrorPages';
 import axios from 'axios';
+import { BACKEND_URLS } from '../Links/Config';
 
 const SubjectPage = () => {
 
@@ -21,10 +21,12 @@ const SubjectPage = () => {
 
     console.log('location under the SubjectPage',typeof Number((location.pathname).slice(1,)))
 
+    const { SUBJECT_DATA_API } = BACKEND_URLS
+
     useEffect(
         () => {
             console.log('under the uneEffect')
-            axios.post(subject_data_Api,
+            axios.post(  SUBJECT_DATA_API,
                 {
                     "node_id": Number((location.pathname).slice(1,))
                 }, {

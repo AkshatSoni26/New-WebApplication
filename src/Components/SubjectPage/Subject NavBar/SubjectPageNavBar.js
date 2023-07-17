@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { FRONTEND_URLS } from '../../Links/Config';
+
 
 const SubjectPageNavBar = ({ subjectId }) => {
 
@@ -31,7 +33,7 @@ const SubjectPageNavBar = ({ subjectId }) => {
       <div className='SubjectPageNavBar'>
         <Navbar expand="lg" >
           <Container fluid>
-            <Navbar.Brand href="/home">  {<AiOutlineArrowLeft />} {subjectName}  </Navbar.Brand>
+            <Navbar.Brand href={FRONTEND_URLS.HOME_ROUTE}>  {<AiOutlineArrowLeft />} {subjectName}  </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav

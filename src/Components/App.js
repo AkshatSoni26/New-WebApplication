@@ -5,6 +5,8 @@ import Home from './HomePage/Home';
 import SubjectPage from './SubjectPage/SubjectPage';
 import ChapterPage from './Chapter Page/ChapterPage';
 
+import { FRONTEND_URLS } from './Links/Config'
+
 
 function App() {
 
@@ -12,19 +14,22 @@ function App() {
 
     const navigate = useNavigate()
 
+    const { LOGIN_ROUTE, HOME_ROUTE } = FRONTEND_URLS
+    
     useEffect(
         () => {
             if (!accessKey){
-                navigate('/')
+                navigate(LOGIN_ROUTE)
             }
         },[accessKey]
     )
 
+
     return (
         <div>
             <Routes>
-                <Route path='/' element={<LoginPage />} />
-                <Route path='/home' element={<Home />} />
+                <Route path= {LOGIN_ROUTE} element={<LoginPage />} />
+                <Route path= {HOME_ROUTE} element={<Home />} />
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter' element={<ChapterPage />} />
             </Routes>
