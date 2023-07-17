@@ -1,0 +1,488 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #F8F8F8;
+}
+
+
+/* LoginPage */
+
+.LoginPage {
+  display: flex;
+}
+
+/* .LeftSide{
+
+} */
+
+
+/* PhoneNumber */
+.PhoneNumber {
+  margin-top: 100%;
+  margin-left: 40%;
+}
+
+
+/* RightSlider */
+
+.RightSide {
+  position: relative;
+  margin-left: 40%;
+}
+
+img {
+  width: 150px;
+  height: 400px;
+}
+
+h3,
+p {
+  color: black;
+}
+
+/* NavBar */
+.NavBar {
+  width: 80vw;
+}
+
+/* sideBar */
+
+.SideBar {
+  background-color: #FFF;
+  width: 20vw;
+
+
+  /* padding-left: 100px; */
+}
+
+.SubjectSideBar {
+  width: 29vw;
+}
+
+.SideBarItem {
+  margin: 15%;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.menuBar {
+  display: flex;
+  width: 100%;
+
+}
+
+.Logo_Image {
+  width: 100%;
+  margin-bottom: 10%;
+  padding-top: 7%;
+  padding-left: 3%;
+  background-color: #FFF;
+  /* margin: 10% */
+}
+
+
+.SubjectPageNavBar {
+  margin-left: 1%;
+  background-color: #FFF;
+}
+
+
+.companyLogo {
+  padding: 5%;
+  width: 12.5vw;
+  height: 8.5vh;
+  background-color: #FFF;
+}
+
+
+/* SideMenu */
+.side_Menu {
+  width: 100%;
+}
+
+
+.homeSide {
+  display: block;
+  width: 14vw;
+  /* height: 1vh; */
+  background-color: #FFF;
+}
+
+.tableData {
+  display: flex;
+  width: 100%;
+  align-items: start;
+}
+
+
+/* Home */
+.home {
+  display: flex;
+  /* width: 100%;
+  overflow-y: hidden; */
+}
+
+.menuBarcontent {
+  padding-left: 12px;
+}
+
+.userData,
+.SubjectCaural,
+.FacultiCaursol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* NavBar  */
+#navbarScrollingDropdown {
+  color: #333A47;
+  top: 40px;
+  left: 60px
+}
+
+/* Caursal */
+.FacultiImg,
+.subjectImages {
+  height: 200px;
+  width: 200px;
+  border-radius: 5%;
+}
+
+/* SubjectCaursal */
+.SubjectNames {
+  display: flex;
+}
+
+/* .subjectImages{
+
+
+} */
+
+/* Faculti carusals */
+/* .facultiimages{
+
+} */
+
+/* SubjectCaursal */
+.subject {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0px;
+  margin: 0px 0px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Subject Side Bar */
+.bookLogo {
+  margin-top: 17px;
+  margin-left: 39px;
+  padding: 3.75px 2.4999990463256836px 3.75px 2.499969482421875px
+}
+
+.logo_and_index {
+  display: flex;
+}
+
+.index {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
+}
+
+.table {
+  color: #0D1015;
+  display: block;
+  /* margin-top: 5px; */
+  padding-left: 19px;
+  margin-top: 10%;
+  margin-left: 25px;
+  font-size: 16px;
+  line-height: 44px;
+  width: 18.4vw;
+  height: 83vh;
+  overflow-y: scroll;
+}
+
+.tableContent {
+  width: 100%;
+}
+
+.Subject_Content {
+  overflow-x: hidden;
+  margin-left: 1vw;
+  overflow-y: scroll;
+  width: auto;
+  height: 89vh;
+  margin-top: 1%;
+  background-color: #FFF;
+
+}
+
+.subjectPageClass {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Subject Content */
+.chapeterImage {
+  width: 208px;
+  height: 108px;
+  border-radius: 10px;
+}
+
+.SubjectContanier {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.LectureName {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  width: 200px;
+  word-wrap: break-word;
+}
+
+
+/* Chapter Header */
+.chapterHeader {
+  display: flex;
+  position: relative;
+  left: 2%;
+  /* width: 100%; */
+}
+
+.chapterName {
+  color: #0D1015;
+  font-size: 18px;
+  width: 100%;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.lecturesLength {
+  color: #333A47;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+
+.ChapterContent {
+  position: relative;
+  /* left: 5%; */
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+}
+
+.rightArrow {
+  margin-top: 1.2%;
+}
+
+/* .Progress{
+ 
+} */
+
+
+.ProgressPart {
+  display: flex;
+  width: 90%
+}
+
+
+.ChapLec {
+  margin-left: 2%;
+}
+
+
+
+
+.tableHome {
+  padding-left: 2.5vw;
+  font-size: 16px;
+  line-height: 44px;
+  width: 100%;
+  height: 86vh;
+  background-color: #FFF;
+}
+
+.HomeNavBar {
+  background-color: #fff;
+  margin-left: 1%;
+
+}
+
+.HomeMainContent {
+  background-color: #FFF;
+  margin-left: 1%;
+  margin-top: 1%;
+  overflow-y: scroll;
+  height: 87vh;
+}
+
+.HomePageSubject {
+  margin-left: 7vw;
+}
+
+
+
+.startingPhrase {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333A47;
+}
+
+.userName {
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
+}
+
+
+.FacultiCarsal {
+  margin-left: 6vw;
+}
+
+.subjectdataTable {
+  display: inline;
+  justify-content: left;
+  width: 100%;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.chapterHeaderButton {
+  display: flex;
+  width: 100%;
+}
+
+.ChapterPageSideBar {
+  width: 30vw;
+  background-color: #fff;
+
+}
+
+.accodionHeader {
+  color: #0D1015;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.accordionBody {
+  max-height: 48vh;
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.accordianDiv {
+  display: flex;
+}
+
+
+.accordianImage {
+  height: 90%;
+  flex: 1;
+  border-radius: 5%;
+}
+
+
+.accordianContent {
+  flex: 1;
+  padding-left: 5%;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
+}
+
+.ChaptrSide {
+  margin-top: 3vh;
+  background-color: #fff;
+  width: 30vw;
+  height: 86vh;
+}
+
+.ChapterNav {
+  background-color: #FFF;
+  padding-bottom: 1%;
+}
+
+.ChapterCon {
+  background-color: #FFF;
+  width: 70vw;
+  margin-top: 3vh;
+  margin-left: 1vw;
+}
+
+.contentSep {
+  display: flex;
+}
+
+.pdf {
+  width: 10%;
+}
+
+/* .collectionAccordion {} */
+
+.ChapterMainImage {
+
+  width: 60vw;
+  height: 433.0384521484375px;
+  top: 125px;
+  left: 498px;
+  border-radius: 8px
+}
+
+.ChapterContent{
+  margin: 4%;
+  margin-left: 7%;
+}
+
+.chapterContDat{
+  margin-top: 2%;
+}

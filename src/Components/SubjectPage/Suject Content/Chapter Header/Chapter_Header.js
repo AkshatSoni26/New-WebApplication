@@ -1,0 +1,62 @@
+import React from "react";
+import "../../../../CSS/App.css";
+import { BsChevronRight } from 'react-icons/bs'
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import {actionCreators} from '../../../../State/index'
+
+const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaDa }) => {
+
+  const dispatch = useDispatch()
+
+  const { LearnData } = bindActionCreators(actionCreators, dispatch)
+
+  const navigate = useNavigate()
+
+  function ChapterNavigator() {
+    navigate(`/${subjectId}/${chapterId}`, { state: [Number(subjectId), chapterId] })
+    LearnData(intialChaDa)
+  }
+
+  return (
+    <div>
+      <div className="chapterHeader">
+        <button onClick={() => { ChapterNavigator() }} className='subject  chapterHeaderButton'>
+          <div className="ProgressPart">
+            <div className="Progress">
+              <svg
+                width="52"
+                height="52"
+                viewBox="0 0 52 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="26"
+                  cy="26"
+                  r="24"
+                  stroke="#E6E7E9"
+                  strokeWidth="3"
+                />
+              </svg>
+            </div>
+
+            <div className="ChapLec">
+              <div className="chapterName">{display_name}</div>
+              <div className="lecturesLength">Lectures: {lecLen}</div>
+            </div>
+          </div>
+
+
+          <div className="rightArrow">
+            <BsChevronRight size={24} />
+          </div>
+
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Chapter_Header;
