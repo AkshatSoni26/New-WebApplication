@@ -1,11 +1,23 @@
+//-------------------------- Login Data ------------------------------ // 
+
 export const country_code = 91
 
 export const testingNumber = '9414189611'
+
+
+//-------------------------- Home Data ------------------------------ // 
 
 export const slogen = 'Let\'s start your prepration here.'
 
 export const facultiePortionLine = 'Know Your Faculty'
 
+
+//-------------------------- Home Data ------------------------------ // 
+export const chapterTable = ['Learn', 'Practise', 'Test', 'Revise']
+
+
+
+//-------------------------- Misc ------------------------------ // 
 
 export const DefaultThumbnails = {
     'video' : 'https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png',

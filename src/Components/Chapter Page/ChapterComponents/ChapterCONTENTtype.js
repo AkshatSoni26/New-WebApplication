@@ -2,10 +2,9 @@ import React from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 // only sending content_info
-const   ChapterCONTENTtype = ({ content_data }) => {
+const   ChapterContentType = ({ content_data }) => {
 
-    console.log('content_data', content_data)
-
+    console.log('1111111111111111111111111111')
     return (
         <div>
 
@@ -70,4 +69,4 @@ const   ChapterCONTENTtype = ({ content_data }) => {
     );
 };
 
-export default ChapterCONTENTtype;
+export default ChapterContentType;

@@ -3,19 +3,9 @@ import { useSelector } from 'react-redux';
 
 const ChapterContentPortion = ( { chapterContent } ) => {
 
-    // const learn = useSelector(state => state.learn)
+    console.log('111111111111111')
 
     const [contentData, setContentData ] = useState(chapterContent.learn[0].content_data.content_info)
-
-    // console.log('learn data under the chapter content portion', learn)
-
-    // useEffect(
-    //     () => {
-
-    //         setContentData(chapterContent.learn[2].content_data.content_info)
-    //     },[]
-    // )
-
 
     return (
         <div className='ChapterContent'>

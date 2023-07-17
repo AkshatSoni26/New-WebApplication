@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import ChapterCONTENTtype from '../ChapterComponents/ChapterCONTENTtype';
-import ChapterCOLLECTIONtype from '../ChapterComponents/ChapterCOLLECTIONtype';
+import ChapterContentType from '../ChapterComponents/ChapterContentType';
+import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
+import { chapterTable } from '../../../Constants/Constants';
 
 const ChapterPageSideBar = ({ chapterContent }) => {
 
-    console.log("chapterContent", chapterContent)
-
-    const data = chapterContent
-
-    const ChapterDataKeys = Object.keys(data)
-    const ChapterDataValues = Object.values(data)
-
+    console.log("1111111111111111111111111")
 
     return (
         <div className='ChapterPageSideBar'>
             {
-                ChapterDataKeys.map(
+                chapterTable.map(
                     (ChData, index) => {
                         return (
                             <div key={index} >
@@ -24,21 +19,20 @@ const ChapterPageSideBar = ({ chapterContent }) => {
                                 {
                                     <Accordion>
                                         <Accordion.Item eventKey={index}>
-                                            <Accordion.Header > <div className='accodionHeader'> {ChData.charAt(0).toUpperCase() + ChData.slice(1)} </div> </Accordion.Header>
+                                            <Accordion.Header > <div className='accodionHeader'> {chapterTable[index]} </div> </Accordion.Header>
                                             <Accordion.Body className='accordionBody'>
 
                                                 {
-                                                    (ChapterDataValues[index]).map(
+                                                    (chapterContent[chapterTable[index].toLowerCase()]).map(
                                                         (value, i) => {
                                                             return (
-                                                                <>
-                                                                    {console.log('value', value)}
+                                                                <div key={i}>
 
-                                                                    {(value.node_type == "CONTENT") && (value.content_data) && < ChapterCONTENTtype content_data={value.content_data} />}
+                                                                    {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
 
-                                                                    {(((value.content_data).length) > 1) && < ChapterCOLLECTIONtype content_data={value.content_data} />}
+                                                                    {(((value.content_data).length) > 0) && < ChapterCollectionType content_data={value.content_data} />}
 
-                                                                </>
+                                                                </div>
                                                             )
                                                         }
                                                     )

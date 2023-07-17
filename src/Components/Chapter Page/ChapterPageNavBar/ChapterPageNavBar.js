@@ -8,9 +8,9 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 
 
 
-const ChapterPageNavBar = ({ chapterName, chapterPageId }) => {
+const ChapterPageNavBar = ({ chapterName, subjectPageId }) => {
 
-  console.log("chapterName", chapterName)
+  console.log("ChapterPageNavBar")
   
   return (
     (!chapterName) ?
@@ -19,7 +19,7 @@ const ChapterPageNavBar = ({ chapterName, chapterPageId }) => {
       <div className='SubjectPageNavBar'>
       <Navbar expand="lg" >
         <Container fluid>
-          <Navbar.Brand href={`/${chapterPageId[0]}`}> {<AiOutlineArrowLeft />} {chapterName}</Navbar.Brand>
+          <Navbar.Brand href={`/${subjectPageId}`}> {<AiOutlineArrowLeft />} {chapterName}</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

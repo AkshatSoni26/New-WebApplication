@@ -1,19 +1,18 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-import ChapterSHEETContent from './ChapterSHEETContent';
-import ChapterCONTENTtype from './ChapterCONTENTtype';
+import ChapterContentType from './ChapterContentType';
 import '../../../CSS/App.css'
+import ChapterSheetType from './ChapterSheetType';
 
-const ChapterCOLLECTIONtype = ({ content_data }) => {
-    console.log('content_data under the ChapterCOLLECTIONtype', content_data)
+const ChapterCollectionType = ({ content_data }) => {
+    console.log('1111111111111111111111111111',)
     return (
         <div>
             {
                 content_data.map(
                     (data, index) => {
-                        { console.log('under the data', data) }
                         return (
-                            <Accordion className='collectionAccordion'>
+                            <Accordion key={index} className='collectionAccordion'>
                                 <Accordion.Item eventKey={index}>
                                     <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
                                     <Accordion.Body className='accordionBody'>
@@ -21,14 +20,12 @@ const ChapterCOLLECTIONtype = ({ content_data }) => {
                                         {
                                             (data.node_type == "COLLECTION") && (data.sheet_content) &&
                                             <>
-                                                {console.log('under the collection fragment', data.sheet_content)}
-
-                                                <ChapterSHEETContent content_data={data.sheet_content} />
+                                                <ChapterSheetType content_data={data.sheet_content} />
                                             </>
                                         }
 
                                         {
-                                        (data.node_type == "CONTENT") && (data.content_data) && < ChapterCONTENTtype content_data={data.content_data} />
+                                            (data.node_type == "CONTENT") && (data.content_data) && < ChapterContentType content_data={data.content_data} />
                                         }
 
 
@@ -45,4 +42,4 @@ const ChapterCOLLECTIONtype = ({ content_data }) => {
     );
 };
 
-export default ChapterCOLLECTIONtype;
+export default ChapterCollectionType;
