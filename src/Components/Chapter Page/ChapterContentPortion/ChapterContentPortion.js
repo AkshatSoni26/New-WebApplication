@@ -4,7 +4,13 @@ const ChapterContentPortion = ({ chapterContent }) => {
 
     console.log('ChapterContentPortion', chapterContent)
 
-    const [contentData, setContentData] = useState(chapterContent.learn[0].content_data.content_info)
+    const [contentData, setContentData] = useState( 
+        chapterContent.learn[0]
+        ?
+         chapterContent.learn[0].content_data.content_info
+        :
+        ''
+        )
 
     return (
         <div className='ChapterContent'>

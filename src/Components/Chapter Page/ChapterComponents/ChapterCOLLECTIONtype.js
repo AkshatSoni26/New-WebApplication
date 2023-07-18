@@ -5,21 +5,21 @@ import '../../../CSS/App.css'
 import ChapterSheetType from './ChapterSheetType';
 
 const ChapterCollectionType = ({ content_data }) => {
-    console.log('ChapterCollectionType',)
+    console.log('ChapterCollectionType',content_data)
     return (
         <div>
             {
                 content_data.map(
                     (data, index) => {
                         return (
-                            <>
+                            <div key={index}>
                                 {
                                     (data.node_type == "CONTENT") && (data.content_data) && < ChapterContentType content_data={data.content_data} />
                                 }
 
                                 {
                                     (data.node_type == "COLLECTION") && <Accordion key={index} className='collectionAccordion'>
-                                        <Accordion.Item eventKey={index}>
+                                        <Accordion.Item  eventKey={index}>
                                             <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
                                             <Accordion.Body className='accordionBody'>
 
@@ -35,7 +35,7 @@ const ChapterCollectionType = ({ content_data }) => {
                                         </Accordion.Item>
                                     </Accordion>
                                 }
-                            </>
+                            </div>
                         )
                     }
                 )

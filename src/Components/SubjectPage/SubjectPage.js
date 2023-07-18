@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SubjectPageNavBar from './Subject NavBar/SubjectPageNavBar';
 import SubjectSideBar from './Subject SideBar/SubjectSideBar';
@@ -9,6 +9,11 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import { subjectPageData } from '../Functions/Services';
 import { FRONTEND_URLS } from '../Links/Config';
+import ChapterCollectionType from '../Chapter Page/ChapterComponents/ChapterCollectionType';
+import ChapterPage from '../Chapter Page/ChapterPage';
+import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
+import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
+import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
 
 const SubjectPage = () => {
 
@@ -19,7 +24,7 @@ const SubjectPage = () => {
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
-
+    const [SubData, setSubjData] = useState()
 
     const accessKey = localStorage.getItem('Access Key')
     const userData = JSON.parse(localStorage.getItem('userData'))
@@ -28,7 +33,7 @@ const SubjectPage = () => {
     useEffect(
         () => {
 
-            subjectPageData(SubjectData, subjectId)
+            subjectPageData(SubjectData, subjectId, setSubjData)
 
             if (!accessKey) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
@@ -38,31 +43,61 @@ const SubjectPage = () => {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-        }, [accessKey, userData, subjectId]
+        }, []
     )
 
-
-
-
     return (
-
-        (!userData)
+        (!SubData)
             ?
-            <>error </>
+            <>Loading...</>
             :
-            <div className=' subjectPageClass'>
-                <div className='SideBar'>
-                    <SubjectSideBar />
-                </div>
+            <>
+                {console.log('SData', SubData)}
 
-                <div className='NavBar'>
-                    {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
+                {
+                    (SubData?.node_type == "COLLECTION") &&
 
-                    <div className='Subject_Content'>
-                        {(subjectId) && <SubjectContent subjectId={subjectId} />}
+                    <div>
+
+                        <div className='ChapterNav'>
+                            <ChapterPageNavBar chapterName={SubData.display_name} subjectPageId={''} />
+                        </div>
+
+                        <div className='contentSep'>
+
+                            <div className='ChaptrSide'>
+                                {(SubData?.content) && <ChapterPageSideBar chapterContent={SubData.content} />}
+                            </div>
+
+                            <div className='ChapterCon'>
+                                {(SubData?.content) && <ChapterContentPortion chapterContent={SubData.content} />}
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
-            </div>
+
+
+                }
+
+
+                {
+                    (SubData.length > 0) &&
+                    <div className=' subjectPageClass'>
+                        <div className='SideBar'>
+                            <SubjectSideBar />
+                        </div>
+
+                        <div className='NavBar'>
+                            {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
+
+                            <div className='Subject_Content'>
+                                {(subjectId) && <SubjectContent subjectId={subjectId} />}
+                            </div>
+                        </div>
+                    </div>
+                }
+            </>
     );
 };
 

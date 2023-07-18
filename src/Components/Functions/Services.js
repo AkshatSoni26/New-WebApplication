@@ -197,7 +197,7 @@ export function ChapterNavigator(subjectId, chapterId, intialChaDa, navigate, Le
 
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
-export function subjectPageData(SubjectData, subjectId) {
+export function subjectPageData(SubjectData, subjectId, setSubjData) {
 
     axios.post(BACKEND_URLS.SUBJECT_DATA_API,
         {
@@ -213,6 +213,7 @@ export function subjectPageData(SubjectData, subjectId) {
             console.log('subject response', response.data.data.node_content_tree)
             localStorage.setItem('data', JSON.stringify(response.data.data.node_content_tree))
             SubjectData(response.data.data.node_content_tree)
+            setSubjData(response.data.data.node_content_tree)
         }
     ).catch(
         (error) => {
