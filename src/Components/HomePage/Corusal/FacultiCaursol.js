@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import '../../../CSS/App.css'
 import { facultiePortionLine } from '../../../Constants/Constants';
-import { Faculti_Responsive } from '../../Functions/Services';
+import { responsive } from '../../Functions/Services';
 
 
 const FacultiCaursol = () => {
@@ -22,14 +22,13 @@ const FacultiCaursol = () => {
                     <div className="chapterName ChapLec">{facultiePortionLine}</div>
 
                     <Carousel className='FacultiCarsal'
-                        responsive={Faculti_Responsive}
+                        responsive={responsive(3)}
                         autoPlay={false}
                         swipeable={true}
                         draggable={true}
                         showDots={false}
                         infinite={false}
                         partialVisible={false}
-                    // dotListclassName="custom-dot-list-style"
                     >
                         {
                             FacultieData.map(

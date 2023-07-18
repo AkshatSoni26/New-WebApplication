@@ -3,23 +3,26 @@ import axios from 'axios';
 import { country_code } from '../../Constants/Constants';
 
 //----------------------------- faculti responsive data  ---------------------------------- //
-export const Faculti_Responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 1 // optional, default to 1.
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 768 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
-    },
-    mobile: {
-        breakpoint: { max: 767, min: 464 },
-        items: 2,
-        slidesToSlide: 1 // optional, default to 1.
-    }
+export const responsive = (a) => {
+    return {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: a,
+            slidesToSlide: 1 // optional, defaults to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 3,
+            slidesToSlide: 3 // optional, defaults to 1.
+        },
+        mobile: {
+            breakpoint: { max: 767, min: 464 },
+            items: 2,
+            slidesToSlide: 1 // optional, defaults to 1.
+        }
+    };
 };
+
 
 //----------------------------- Login page caursal images  ---------------------------------- //
 export const IMG = [
@@ -61,27 +64,27 @@ export function currCourse(course) {
 export function OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect) {
 
     axios.post(
-      BACKEND_URLS.OTP_SENDER, {
-      country_code: country_code,
-      phone_number: phoneNumber,
+        BACKEND_URLS.OTP_SENDER, {
+        country_code: country_code,
+        phone_number: phoneNumber,
     }
     ).then(
-      (response) => {
-        if (response.data.message === 'OTP Sent Successfully') {
-          const nonce = response.data.data.nonce
-          console.log("under the phone NUmbe", response.data.message)
-          setOtpSend(true)
-          setNonce(nonce)
+        (response) => {
+            if (response.data.message === 'OTP Sent Successfully') {
+                const nonce = response.data.data.nonce
+                console.log("under the phone NUmbe", response.data.message)
+                setOtpSend(true)
+                setNonce(nonce)
+            }
         }
-      }
     ).catch(
-      (error) => {
-        console.log(error.message)
-        setErro(true)
-        redirect(`/${error.message}`)
-      }
+        (error) => {
+            console.log(error.message)
+            setErro(true)
+            redirect(`/${error.message}`)
+        }
     )
-  }
+}
 
 
 //-------------------------------------------------------------------------------------//
@@ -183,11 +186,37 @@ export function UserData(access, navigate) {
 //-------------------------------------- Chapter scroll -----------------------------------------------//
 export function ChapterScroll(id) {
     const element = document.getElementById(id);
-    element.scrollIntoView({ behavior: "smooth"});
+    element.scrollIntoView({ behavior: "smooth" });
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
 export function ChapterNavigator(subjectId, chapterId, intialChaDa, navigate, LearnData) {
     navigate(`/${subjectId}/${chapterId}`, { state: [Number(subjectId), chapterId] })
     LearnData(intialChaDa)
-  }
+}
+
+
+//-------------------------------------- Chapter navigator -----------------------------------------------//
+export function subjectPageData(SubjectData, subjectId) {
+
+    axios.post(BACKEND_URLS.SUBJECT_DATA_API,
+        {
+            "node_id": Number(subjectId)
+        }, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('Access Key')
+        }
+    }
+    ).then(
+        (response) => {
+            console.log('subject response', response.data.data.node_content_tree)
+            localStorage.setItem('data', JSON.stringify(response.data.data.node_content_tree))
+            SubjectData(response.data.data.node_content_tree)
+        }
+    ).catch(
+        (error) => {
+            console.log('error response', error.response);
+        }
+    )
+}

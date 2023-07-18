@@ -43,7 +43,6 @@ export const companyLogo = logo
 
 
 
-
 //-------------------------- Misc ------------------------------ // 
 
 export const DefaultThumbnails = {

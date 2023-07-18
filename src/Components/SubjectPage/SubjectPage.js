@@ -1,67 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {  useParams } from 'react-router-dom';
 import SubjectPageNavBar from './Subject NavBar/SubjectPageNavBar';
-import SideBar from '../HomePage/SiderBar/SideBar';
 import SubjectSideBar from './Subject SideBar/SubjectSideBar';
 import '../../CSS/App.css'
 import SubjectContent from './Suject Content/Subject_Content';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
-import ErrorPages from '../ErrorPages/ErrorPages';
-import axios from 'axios';
-import { BACKEND_URLS } from '../Links/Config';
+import { subjectPageData } from '../Functions/Services';
 
 const SubjectPage = () => {
 
+    console.log("SubjectPage")
+
+    const subjectId = useParams().subject
+    
     const dispatch = useDispatch()
-    const {SubjectData} = bindActionCreators(actionCreators, dispatch)
-
-    const location = useLocation()
-
-    console.log('location under the SubjectPage',typeof Number((location.pathname).slice(1,)))
-
-    const { SUBJECT_DATA_API } = BACKEND_URLS
-
+    const { SubjectData } = bindActionCreators(actionCreators, dispatch)
+    
     useEffect(
         () => {
-            console.log('under the uneEffect')
-            axios.post(  SUBJECT_DATA_APIr ,
-                {
-                    "node_id": Number((location.pathname).slice(1,))
-                }, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + localStorage.getItem('Access Key')
-                }
-            }
-            ).then(
-                (response) => {
-                    console.log('subject response', response.data.data.node_content_tree)
-                    localStorage.setItem('data', JSON.stringify(response.data.data.node_content_tree))
-                    SubjectData(response.data.data.node_content_tree)
-                }
-            ).catch(
-                (error) => {
-                    console.log('error response', error.response);
-                }
-            );
-        },[]
+            subjectPageData(SubjectData, subjectId)
+        }, []
     )
-
 
     return (
 
         <div className=' subjectPageClass'>
             <div className='SideBar'>
-                <SubjectSideBar  />
+                <SubjectSideBar />
             </div>
 
             <div className='NavBar'>
-                <SubjectPageNavBar subjectId={location.pathname.slice(1,)} />
+                <SubjectPageNavBar subjectId={subjectId} />
 
                 <div className='Subject_Content'>
-                    <SubjectContent subjectId={location.pathname.slice(1,)}/>
+                    <SubjectContent subjectId={subjectId} />
                 </div>
 
             </div>
