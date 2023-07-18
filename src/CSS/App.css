@@ -82,6 +82,7 @@ p {
 
 .Logo_Image {
   width: 100%;
+  align-self: center;
   margin-bottom: 10%;
   padding-top: 7%;
   padding-left: 3%;
@@ -98,8 +99,8 @@ p {
 
 .companyLogo {
   padding: 5%;
-  width: 12.5vw;
-  height: 8.5vh;
+  width: 100%;
+  height: auto;
   background-color: #FFF;
 }
 
@@ -121,6 +122,10 @@ p {
   display: flex;
   width: 100%;
   align-items: start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -194,6 +199,8 @@ p {
 
 .logo_and_index {
   display: flex;
+  height: auto;
+  width: auto;
 }
 
 .index {
@@ -223,6 +230,11 @@ p {
 
 .tableContent {
   width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .Subject_Content {

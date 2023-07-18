@@ -11,12 +11,12 @@ export const responsive = (a) => {
             slidesToSlide: 1 // optional, defaults to 1.
         },
         tablet: {
-            breakpoint: { max: 1024, min: 768 },
+            breakpoint: { max: 1220 , min: 768 },
             items: 3,
-            slidesToSlide: 3 // optional, defaults to 1.
+            slidesToSlide: 1 // optional, defaults to 1.
         },
         mobile: {
-            breakpoint: { max: 767, min: 464 },
+            breakpoint: { max: 930, min: 464 },
             items: 2,
             slidesToSlide: 1 // optional, defaults to 1.
         }

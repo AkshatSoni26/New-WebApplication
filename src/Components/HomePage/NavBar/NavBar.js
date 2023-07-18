@@ -20,16 +20,9 @@ function NavBar() {
             :
             <div className='HomeNavBar'>
                 <Navbar expand="lg" >
-                    <Container fluid>
+                    <Container >
                         <Navbar.Brand >
 
-                            <Navbar.Toggle aria-controls="navbarScroll" />
-                            <Navbar.Collapse id="navbarScroll">
-                                <Nav
-                                    className="me-auto my-2 my-lg-0"
-                                    style={{ maxHeight: '100px' }}
-                                    navbarScroll
-                                >
                                     <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
                                         {
                                             courses.map(
@@ -44,8 +37,7 @@ function NavBar() {
                                             )
                                         }
                                     </NavDropdown>
-                                </Nav>
-                            </Navbar.Collapse>
+
                         </Navbar.Brand>
                         <Form className="d-flex">
                             <Form.Control

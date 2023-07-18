@@ -37,9 +37,8 @@ const ChapterContentType = ({ content_data }) => {
                         </div>
                     }
 
-                    {content_data?.content_type == "QUIZ" && content_data?.content_info.display_name &&
-
-                        // content_data?.content_type?.content_info &&
+                    {
+                        content_data?.content_type == "QUIZ" && content_data?.content_info.display_name &&
 
                         <div> <img className='accordianImage'
                             src={
@@ -50,6 +49,7 @@ const ChapterContentType = ({ content_data }) => {
                                     DefaultThumbnails.quiz
                             } />
                         </div>
+                        
                     }
 
 

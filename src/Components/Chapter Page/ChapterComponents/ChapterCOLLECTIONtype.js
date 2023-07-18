@@ -12,26 +12,30 @@ const ChapterCollectionType = ({ content_data }) => {
                 content_data.map(
                     (data, index) => {
                         return (
-                            <Accordion key={index} className='collectionAccordion'>
-                                <Accordion.Item eventKey={index}>
-                                    <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
-                                    <Accordion.Body className='accordionBody'>
+                            <>
+                                {
+                                    (data.node_type == "CONTENT") && (data.content_data) && < ChapterContentType content_data={data.content_data} />
+                                }
 
-                                        {
-                                            (data.node_type == "COLLECTION") && (data.sheet_content) &&
-                                            <>
-                                                <ChapterSheetType content_data={data.sheet_content} />
-                                            </>
-                                        }
+                                {
+                                    (data.node_type == "COLLECTION") && <Accordion key={index} className='collectionAccordion'>
+                                        <Accordion.Item eventKey={index}>
+                                            <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
+                                            <Accordion.Body className='accordionBody'>
 
-                                        {
-                                            (data.node_type == "CONTENT") && (data.content_data) && < ChapterContentType content_data={data.content_data} />
-                                        }
+                                                {
+                                                    (data.sheet_content) &&
+                                                    <>
+                                                        <ChapterSheetType content_data={data.sheet_content} />
+                                                    </>
+                                                }
 
 
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
+                                }
+                            </>
                         )
                     }
                 )
