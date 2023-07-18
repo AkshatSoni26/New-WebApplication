@@ -9,11 +9,11 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import { subjectPageData } from '../Functions/Services';
 import { FRONTEND_URLS } from '../Links/Config';
-import ChapterCollectionType from '../Chapter Page/ChapterComponents/ChapterCollectionType';
-import ChapterPage from '../Chapter Page/ChapterPage';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
 import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
+
+
 
 const SubjectPage = () => {
 
@@ -34,6 +34,19 @@ const SubjectPage = () => {
         () => {
 
             subjectPageData(SubjectData, subjectId, setSubjData)
+            const subjectData = JSON.parse( localStorage.getItem('userData') ).subjects
+
+            let isChapter = false
+            for (let i = 0; i < subjectData.length; i++) {
+                if (subjectData[i].node_id == subjectId) {
+                    // setChapterdata(data[i])
+                    isChapter = true
+                    break;
+                }
+            }
+            if (isChapter == false){
+                 navigate('/PageNotFound')
+            }
 
             if (!accessKey) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)

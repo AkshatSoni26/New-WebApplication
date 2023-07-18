@@ -24,11 +24,16 @@ const ChapterPage = () => {
                 navigate(-1)
             }
             else {
+                let isChapter = false
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].node_id == chapter) {
                         setChapterdata(data[i])
+                        isChapter = true
                         break;
                     }
+                }
+                if (isChapter == false){
+                     navigate('/PageNotFound')
                 }
             }
 

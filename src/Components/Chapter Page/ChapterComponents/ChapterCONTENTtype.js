@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 // only sending content_info
 const ChapterContentType = ({ content_data }) => {
 
     console.log('ChapterContentType')
+
+    const [vOTP, setVOTP] = useState()
+
     return (
         <div>
 

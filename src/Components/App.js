@@ -7,6 +7,7 @@ import ChapterPage from './Chapter Page/ChapterPage';
 
 import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';
+import ErrorPages from './ErrorPages/ErrorPages';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
                 <Route path='/:errorName' element={<GeneralPageError />} />
 
+                <Route path='/PageNotFound' element={<ErrorPages />} />
 
 
 

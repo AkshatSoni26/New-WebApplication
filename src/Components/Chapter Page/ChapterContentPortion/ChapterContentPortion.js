@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import VideoPlayer from '../../Video player/VideoPLayer';
 
 const ChapterContentPortion = ({ chapterContent }) => {
 
@@ -14,11 +15,12 @@ const ChapterContentPortion = ({ chapterContent }) => {
 
     return (
         <div className='ChapterContent'>
-            <div >
+            {/* <div >
                 <img className='ChapterMainImage' src={contentData.thumbnail} />
             </div>
 
-            <div className='chapterContDat'> {contentData.name} </div>
+            <div className='chapterContDat'> {contentData.name} </div> */}
+            <VideoPlayer />
         </div>
     );
 };

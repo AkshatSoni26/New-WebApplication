@@ -221,3 +221,22 @@ export function subjectPageData(SubjectData, subjectId, setSubjData) {
         }
     )
 }
+
+//-------------------------------------- vIDEO OTP INFO -----------------------------------------------//
+function VideoFun(video_id) {
+    axios.post(
+        BACKEND_URLS.VIDEO_OTP,
+        {
+            "video_id": video_id,
+            "video_download": false
+        }
+    ).then(
+        (response) => {
+            console.log('under the Video fun response',response)
+        }
+    ).catch(
+        (error) => {
+            console.log('under the Video fun error',error)
+        }
+    )
+}
