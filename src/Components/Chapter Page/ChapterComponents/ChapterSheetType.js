@@ -3,7 +3,7 @@ import ChapterContentType from './ChapterContentType';
 
 const ChapterSheetType = ({ content_data }) => {
 
-    console.log('1111111111111111111111111111')
+    console.log('ChapterSheetType')
 
     return (
         <div>

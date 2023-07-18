@@ -19,9 +19,9 @@ body {
   display: flex;
 }
 
-/* .LeftSide{
-
-} */
+.LeftSide{
+  flex: 1;
+}
 
 
 /* PhoneNumber */
@@ -34,8 +34,9 @@ body {
 /* RightSlider */
 
 .RightSide {
-  position: relative;
-  margin-left: 40%;
+  /* position: relative; */
+  flex: 1;
+  /* margin-left: 40%; */
 }
 
 img {
@@ -414,7 +415,7 @@ p {
 
 
 .accordianImage {
-  /* height: 90%; */
+  height: 90%;
   flex: 1;
   border-radius: 5%;
 }

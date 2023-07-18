@@ -10,11 +10,11 @@ function LoginPage() {
 
     return (
         <div className='LoginPage'>
-            <div className='LeftSide'>
+            <div className='RightSide'>
                 <RightSlider />
             </div>
 
-            <div className='RightSide'>
+            <div className='LeftSide'>
                 <PhoneNumber />
             </div>
         </div>

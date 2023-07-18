@@ -6,7 +6,7 @@ import { chapterTable } from '../../../Constants/Constants';
 
 const ChapterPageSideBar = ({ chapterContent }) => {
 
-    console.log("1111111111111111111111111")
+    console.log("ChapterPageSideBar")
 
     return (
         <div className='ChapterPageSideBar'>

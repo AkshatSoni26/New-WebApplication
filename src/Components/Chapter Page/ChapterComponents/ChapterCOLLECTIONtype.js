@@ -5,7 +5,7 @@ import '../../../CSS/App.css'
 import ChapterSheetType from './ChapterSheetType';
 
 const ChapterCollectionType = ({ content_data }) => {
-    console.log('1111111111111111111111111111',)
+    console.log('ChapterCollectionType',)
     return (
         <div>
             {

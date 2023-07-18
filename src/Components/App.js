@@ -6,6 +6,7 @@ import SubjectPage from './SubjectPage/SubjectPage';
 import ChapterPage from './Chapter Page/ChapterPage';
 
 import { FRONTEND_URLS } from './Links/Config'
+import GeneralPageError from './ErrorPages/GeneralPageError';
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
                 <Route path= {HOME_ROUTE} element={<Home />} />
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter' element={<ChapterPage />} />
+
+                <Route path='/:errorName' element={<GeneralPageError />} />
+
             </Routes>
         </div>
     )

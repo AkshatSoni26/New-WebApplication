@@ -5,9 +5,9 @@ import ChapterPageSideBar from './ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from './ChapterContentPortion/ChapterContentPortion';
 
 const ChapterPage = () => {
-    
+
     console.log('ChapterPage')
-    
+
     const { subject, chapter } = useParams()
     const [chapterdata, setChapterdata] = useState({})
 
@@ -43,17 +43,17 @@ const ChapterPage = () => {
             <div>
 
                 <div className='ChapterNav'>
-                    {(chapterdata?.display_name) && <ChapterPageNavBar chapterName={chapterdata.display_name} subjectPageId={subject} />}
+                    <ChapterPageNavBar chapterName={chapterdata.display_name} subjectPageId={subject} />
                 </div>
 
                 <div className='contentSep'>
 
                     <div className='ChaptrSide'>
-                        {(chapterdata.content) && <ChapterPageSideBar chapterContent={chapterdata.content} />}
+                    { (chapterdata?.content) &&  <ChapterPageSideBar chapterContent={chapterdata.content} /> }
                     </div>
 
                     <div className='ChapterCon'>
-                        {(chapterdata.content) && <ChapterContentPortion chapterContent={chapterdata.content} />}
+                     { (chapterdata?.content) && <ChapterContentPortion chapterContent={chapterdata.content} /> }
                     </div>
 
                 </div>

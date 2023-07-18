@@ -2,15 +2,14 @@ import React from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 // only sending content_info
-const   ChapterContentType = ({ content_data }) => {
+const ChapterContentType = ({ content_data }) => {
 
-    console.log('1111111111111111111111111111')
+    console.log('ChapterContentType')
     return (
         <div>
 
             <button className='subject' >
                 <div className='accordianDiv'>
-
 
                     {content_data?.content_type == "VIDEO" &&
 
@@ -25,10 +24,7 @@ const   ChapterContentType = ({ content_data }) => {
                         </div>
                     }
 
-
-                    {content_data?.content_type == "PDF" && content_data?.content_info &&  content_data?.content_info?.original_file_url &&
-
-                        // content_data?.content_type?.content_info &&
+                    {content_data?.content_type == "PDF" && content_data?.content_info && content_data?.content_info?.original_file_url &&
 
                         <div> <img className='accordianImage '
                             src={
@@ -41,7 +37,7 @@ const   ChapterContentType = ({ content_data }) => {
                         </div>
                     }
 
-                    {content_data?.content_type == "QUIZ" && content_data?.content_info.display_name  &&
+                    {content_data?.content_type == "QUIZ" && content_data?.content_info.display_name &&
 
                         // content_data?.content_type?.content_info &&
 

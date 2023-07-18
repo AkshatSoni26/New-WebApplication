@@ -9,47 +9,48 @@ import { BiMessageAltCheck } from 'react-icons/bi'
 
 const SideBar = () => {
 
-    const data = JSON.parse(localStorage.getItem('userData'))
-    console.log('sideBar', typeof data)
+  console.log('SideBar')
 
-    const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['Courses', <GoBook />], ['Mentorship', <PiStudentBold />], ['Doubut Solve', <BiMessageAltCheck />], ["Help and Support", <FiHelpCircle />]]
+  const data = JSON.parse(localStorage.getItem('userData'))
 
-    return (
+  const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['Courses', <GoBook />], ['Mentorship', <PiStudentBold />], ['Doubut Solve', <BiMessageAltCheck />], ["Help and Support", <FiHelpCircle />]]
 
-        (!data) ?
-            <>Loading...</>
-            :
-            <div className='homeSide'>
-                <div className='Logo_Image'>
-                    <img className='companyLogo' src={logo} />
-                </div>
+  return (
 
-                <div className='tableHome float-left'>
+    (!data) ?
+      <>Loading...</>
+      :
+      <div className='homeSide'>
+        <div className='Logo_Image'>
+          <img className='companyLogo' src={logo} />
+        </div>
 
-                    {
-                        SideBarItem.map((item, index) => {
-                            return (
-                              <React.Fragment key={index}>
-                                <button className='subject'>
-                                  <div className=''>
-                                    <div className='tableData'>
-                                      <div className='menuBarcontentSvgs'>
-                                        {item[1]}
-                                      </div>
-                                      <div className='menuBarcontent'>
-                                        {item[0]}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </button>
-                                <br />
-                              </React.Fragment>
-                            );
-                          })                          
-                    }
-                </div>
-            </div>
-    );
+        <div className='tableHome float-left'>
+
+          {
+            SideBarItem.map((item, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <button className='subject'>
+                    <div className=''>
+                      <div className='tableData'>
+                        <div className='menuBarcontentSvgs'>
+                          {item[1]}
+                        </div>
+                        <div className='menuBarcontent'>
+                          {item[0]}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <br />
+                </React.Fragment>
+              );
+            })
+          }
+        </div>
+      </div>
+  );
 };
 
 export default SideBar;

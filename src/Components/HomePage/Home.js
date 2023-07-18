@@ -9,7 +9,7 @@ import SubjectCaural from './Corusal/SubjectCaural';
 
 const Home = () => {
 
-    console.log('11111111111111111')
+    console.log('Home')
     // console.log('under the home userData', localStorage.getItem('userData'))
 
     return (
