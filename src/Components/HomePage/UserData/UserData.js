@@ -1,16 +1,15 @@
 import React from 'react';
-import { slogen } from '../../../Constants/Constants';
+import { full_name } from '../../../Constants/Constants';
+
 
 const UserData = () => {
 
-    const { full_name } = JSON.parse(localStorage.getItem('userData')).user
-
-    console.log(full_name)
+    console.log('UserData')
 
     return (
-        (!full_name) ?
-            <>Loading...</>
-            :
+        // (!full_name) ?
+        //     <>Loading...</>
+        //     :
             <div className='ChapLec'>
                 <div className='userName'> Hi {full_name} 👋 </div>
             </div>

@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { slogen } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
 import { useNavigate } from 'react-router-dom';
-import { BACKEND_URLS } from '../../Links/Config';
 
 
 const SubjectCaural = () => {
 
-console.log('1111111111111111111')
+    console.log('SubjectCaural')
     const navigate = useNavigate()
     const SubjectData = JSON.parse(localStorage.getItem('userData')).subjects
 

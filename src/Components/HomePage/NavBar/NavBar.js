@@ -4,18 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { currCourse } from '../../Functions/Services';
 
 
 function NavBar() {
 
     const courses = JSON.parse(localStorage.getItem('userData')).enrollments
     console.log('courses', courses)
-
-    function currCourse(course) {
-        if (course.is_current === true) {
-            return course
-        }
-    }
 
     const current_course = courses.find(currCourse).course_name
 

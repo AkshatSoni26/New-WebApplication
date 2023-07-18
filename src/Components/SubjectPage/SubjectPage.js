@@ -26,7 +26,7 @@ const SubjectPage = () => {
     useEffect(
         () => {
             console.log('under the uneEffect')
-            axios.post(  SUBJECT_DATA_API,
+            axios.post(  SUBJECT_DATA_APIr ,
                 {
                     "node_id": Number((location.pathname).slice(1,))
                 }, {

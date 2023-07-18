@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import {actionCreators} from '../../../../State/index'
+import { ChapterNavigator } from "../../../Functions/Services";
 
 const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaDa }) => {
 
@@ -14,15 +15,10 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaD
 
   const navigate = useNavigate()
 
-  function ChapterNavigator() {
-    navigate(`/${subjectId}/${chapterId}`, { state: [Number(subjectId), chapterId] })
-    LearnData(intialChaDa)
-  }
-
   return (
     <div>
       <div className="chapterHeader">
-        <button onClick={() => { ChapterNavigator() }} className='subject  chapterHeaderButton'>
+        <button onClick={() => { ChapterNavigator(subjectId, chapterId, intialChaDa, navigate, LearnData) }} className='subject  chapterHeaderButton'>
           <div className="ProgressPart">
             <div className="Progress">
               <svg

@@ -6,13 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { FRONTEND_URLS } from '../../Links/Config';
+import { subjectData } from '../../../Constants/Constants';
 
 
 const SubjectPageNavBar = ({ subjectId }) => {
 
   const [subjectName, setSubjectName] = useState('')
 
-  const subjectData = JSON.parse(localStorage.getItem('userData')).subjects
 
   useEffect(
     () => {

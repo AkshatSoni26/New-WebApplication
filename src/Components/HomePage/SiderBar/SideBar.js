@@ -1,10 +1,6 @@
 import React from 'react';
-import logo from '../../../Images/logo.png'
 import '../../../CSS/App.css'
-import { FiHelpCircle, FiHome, FiUser } from "react-icons/fi";
-import { PiStudentBold } from 'react-icons/pi'
-import { GoBook } from 'react-icons/go'
-import { BiMessageAltCheck } from 'react-icons/bi'
+import { SideBarItem, companyLogo } from '../../../Constants/Constants';
 
 
 const SideBar = () => {
@@ -13,8 +9,6 @@ const SideBar = () => {
 
   const data = JSON.parse(localStorage.getItem('userData'))
 
-  const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['Courses', <GoBook />], ['Mentorship', <PiStudentBold />], ['Doubut Solve', <BiMessageAltCheck />], ["Help and Support", <FiHelpCircle />]]
-
   return (
 
     (!data) ?
@@ -22,7 +16,7 @@ const SideBar = () => {
       :
       <div className='homeSide'>
         <div className='Logo_Image'>
-          <img className='companyLogo' src={logo} />
+          <img className='companyLogo' src={companyLogo} />
         </div>
 
         <div className='tableHome float-left'>

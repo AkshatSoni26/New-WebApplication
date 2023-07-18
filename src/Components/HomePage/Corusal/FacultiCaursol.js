@@ -3,33 +3,14 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import '../../../CSS/App.css'
 import { facultiePortionLine } from '../../../Constants/Constants';
-
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 1 // optional, default to 1.
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 768 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
-    },
-    mobile: {
-        breakpoint: { max: 767, min: 464 },
-        items: 2,
-        slidesToSlide: 1 // optional, default to 1.
-    }
-};
+import { Faculti_Responsive } from '../../Functions/Services';
 
 
 const FacultiCaursol = () => {
 
-    console.log('111111111111111111111')
+    console.log('FacultiCaursol')
 
     const FacultieData = JSON.parse(localStorage.getItem('userData')).faculties
-
-    // console.log("FacultieData", FacultieData)
 
     return (
         (!FacultieData) ?
@@ -41,14 +22,14 @@ const FacultiCaursol = () => {
                     <div className="chapterName ChapLec">{facultiePortionLine}</div>
 
                     <Carousel className='FacultiCarsal'
-                        responsive={responsive}
+                        responsive={Faculti_Responsive}
                         autoPlay={false}
                         swipeable={true}
                         draggable={true}
                         showDots={false}
                         infinite={false}
                         partialVisible={false}
-                        // dotListclassName="custom-dot-list-style"
+                    // dotListclassName="custom-dot-list-style"
                     >
                         {
                             FacultieData.map(

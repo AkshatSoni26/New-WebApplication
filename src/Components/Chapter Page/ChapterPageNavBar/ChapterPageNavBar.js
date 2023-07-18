@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
-import { useEffect, useState, useSyncExternalStore } from 'react';
-
 
 
 const ChapterPageNavBar = ({ chapterName, subjectPageId }) => {

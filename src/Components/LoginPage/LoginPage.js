@@ -6,7 +6,7 @@ import RightSlider from './rightSlider';
 
 function LoginPage() {
 
-    console.log('11111111111111111111')
+    console.log('LoginPage')
 
     return (
         <div className='LoginPage'>

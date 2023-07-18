@@ -3,17 +3,13 @@ import '../../../CSS/App.css'
 import { useSelector } from 'react-redux';
 import { OverlayTrigger } from 'react-bootstrap';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { ChapterScroll } from '../../Functions/Services';
 
 const SubjectSideBar = () => {
-
+  
+  console.log('SubjectSideBar')
     const content = useSelector(state => state.content)
 
-    console.log('content under the subject side bar', content)
-
-    function ChapterScroll(id) {
-        const element = document.getElementById(id);
-        element.scrollIntoView({ behavior: "smooth"});
-    }
 
     return (
         <div className='SubjectSideBar'>

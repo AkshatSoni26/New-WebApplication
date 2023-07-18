@@ -5,56 +5,57 @@ import '../../CSS/App.css'
 import UserData from './UserData/UserData';
 import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
+import { full_name } from '../../Constants/Constants';
 
 
 const Home = () => {
 
     console.log('Home')
-    // console.log('under the home userData', localStorage.getItem('userData'))
 
     return (
-        <section className='mainHome'>
-            <div className='home'>
+        // (full_name == null )
+        //     ?
+        //     <>Loading...</>
+        //     :
+            <section className='mainHome'>
+                <div className='home'>
 
-                <section>
-                    <div className='SideBar'>
-                        <SideBar />
-                    </div>
-                </section>
+                    <section>
+                        <div className='SideBar'>
+                            <SideBar />
+                        </div>
+                    </section>
 
-                <div className='NavBar'>
+                    <div className='NavBar'>
 
-                    <NavBar />
+                        <NavBar />
 
-                    <div className='HomeMainContent '>
+                        <div className='HomeMainContent '>
 
-                        <section >
+                            <section >
+                                <div className='userData'>
+                                    <UserData />
+                                </div>
+                            </section>
 
-                            <div className='userData'>
-                                <UserData />
-                            </div>
-                        </section>
+                            <section >
+                                <div className='SubjectCaural'>
+                                    <SubjectCaural />
+                                </div>
+                            </section>
 
-                        <section >
+                            <section >
+                                <div className='FacultiCaursol'>
+                                    <FacultiCaursol />
+                                </div>
+                            </section>
 
-                            <div className='SubjectCaural'>
-                                <SubjectCaural />
-                            </div>
-                        </section>
-
-                        <section >
-
-                            <div className='FacultiCaursol'>
-                                <FacultiCaursol />
-                            </div>
-                        </section>
+                        </div>
 
                     </div>
 
                 </div>
-
-            </div>
-        </section>
+            </section>
     );
 };
 
