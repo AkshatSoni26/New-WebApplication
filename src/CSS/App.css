@@ -449,7 +449,7 @@ p {
   margin-top: 3vh;
   background-color: #fff;
   width: 30vw;
-  height: 86vh;
+  height: 100vh;
 }
 
 .ChapterNav {
@@ -462,6 +462,7 @@ p {
   width: 70vw;
   margin-top: 3vh;
   margin-left: 1vw;
+  overflow-y: hidden;
 }
 
 .contentSep {

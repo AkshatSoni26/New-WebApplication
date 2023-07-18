@@ -12,30 +12,40 @@ import GeneralPageError from './ErrorPages/GeneralPageError';
 function App() {
 
     const accessKey = localStorage.getItem('Access Key')
-    
+
+    // const [erro , setError]
 
     const navigate = useNavigate()
 
     const { LOGIN_ROUTE, HOME_ROUTE } = FRONTEND_URLS
-    
+
+    const userData = JSON.parse(localStorage.getItem('userData'))
+
     useEffect(
         () => {
-            if (!accessKey){
-                navigate(LOGIN_ROUTE)
+
+            if (!accessKey && !userData) {
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
-        },[accessKey]
+
+        }, [accessKey]
     )
 
 
     return (
         <div>
             <Routes>
-                <Route path= {LOGIN_ROUTE} element={<LoginPage />} />
-                <Route path= {HOME_ROUTE} element={<Home />} />
+
+                <Route path={LOGIN_ROUTE} element={<LoginPage />} />
+
+                <Route path={HOME_ROUTE} element={<Home />} />
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter' element={<ChapterPage />} />
 
                 <Route path='/:errorName' element={<GeneralPageError />} />
+
+
+
 
             </Routes>
         </div>

@@ -9,6 +9,6 @@ export const BACKEND_URLS = {
 }
 
 export const FRONTEND_URLS = {
-    LOGIN_ROUTE: '/',
-    HOME_ROUTE:'/home',
+    LOGIN_ROUTE: '/login',
+    HOME_ROUTE:'/',
 }

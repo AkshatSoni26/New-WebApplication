@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
 import { testingNumber } from '../../../Constants/Constants'
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../State';
 import { OTPSender, verifiOTP } from '../../Functions/Services';
+import { FRONTEND_URLS } from '../../Links/Config';
 
 
 function PhoneNumber() {
@@ -21,8 +22,20 @@ function PhoneNumber() {
 
   const [erro, setErro] = useState(false)
 
-
   const navigate = useNavigate()
+
+  useEffect(
+    () => {
+      const access = localStorage.getItem('Access Key')
+      const userData = localStorage.getItem('userData')
+      console.log('under the phone number', userData)
+
+      if (access && userData) {
+        navigate(FRONTEND_URLS.HOME_ROUTE)
+      }
+
+    },[]
+  )
 
 
   return (
@@ -35,7 +48,7 @@ function PhoneNumber() {
 
         <input type="text" placeholder="Enter Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         <br></br>
-        <button className='btn btn-primary' type="submit" onClick={ () => OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect) }>
+        <button className='btn btn-primary' type="submit" onClick={() => OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect)}>
           Submit
         </button>
 
@@ -51,10 +64,7 @@ function PhoneNumber() {
         </button>
 
       </div>
-    // :
-    // <div>
-    //   error
-    // </div>
+
 
   );
 }

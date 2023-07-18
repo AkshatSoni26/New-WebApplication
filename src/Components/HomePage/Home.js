@@ -6,17 +6,36 @@ import UserData from './UserData/UserData';
 import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
 import { full_name } from '../../Constants/Constants';
+import { useNavigate } from 'react-router-dom';
+import { FRONTEND_URLS } from '../Links/Config';
 
 
 const Home = () => {
 
     console.log('Home')
+    const navigate = useNavigate()
+
+    const accessKey = localStorage.getItem('Access Key')
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    
+    useEffect(
+        () => {
+            if (!accessKey){
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+            
+            if (!userData){ 
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
+        }, [accessKey, userData]
+    )
 
     return (
-        // (full_name == null )
-        //     ?
-        //     <>Loading...</>
-        //     :
+        (!userData)
+            ?
+            <>Erro</>
+            :
             <section className='mainHome'>
                 <div className='home'>
 
