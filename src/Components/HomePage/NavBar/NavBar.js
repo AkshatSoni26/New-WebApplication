@@ -18,7 +18,7 @@ function NavBar() {
         (!courses) ?
             <>Loading....</>
             :
-            <div className='HomeNavBar'> 
+            <div className='HomeNavBar'>
                 <Navbar expand="lg" >
                     <Container fluid>
                         <Navbar.Brand >

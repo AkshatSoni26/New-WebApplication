@@ -16,7 +16,6 @@ export const testingNumber = '9414189611'
 //------------------------- user Data ---------------------------------//
 export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(localStorage.getItem('userData')).user) : ''
 
-export let subjectData = JSON.parse(localStorage.getItem('userData')).subjects
  
 
 //-------------------------- Home page subject portion line------------------------------ // 
