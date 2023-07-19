@@ -20,7 +20,7 @@ const SubjectPage = () => {
     console.log("SubjectPage")
 
     const subjectId = useParams().subject
-    console.log('subjectId', subjectId)
+    // console.log('subjectId', subjectId)
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
@@ -34,18 +34,17 @@ const SubjectPage = () => {
         () => {
 
             subjectPageData(SubjectData, subjectId, setSubjData)
-            const subjectData = JSON.parse( localStorage.getItem('userData') ).subjects
+            const subjectData = JSON.parse(localStorage.getItem('userData')).subjects
 
             let isChapter = false
             for (let i = 0; i < subjectData.length; i++) {
                 if (subjectData[i].node_id == subjectId) {
-                    // setChapterdata(data[i])
                     isChapter = true
                     break;
                 }
             }
-            if (isChapter == false){
-                 navigate('/PageNotFound')
+            if (isChapter == false) {
+                navigate('/PageNotFound')
             }
 
             if (!accessKey) {
@@ -65,8 +64,6 @@ const SubjectPage = () => {
             <>Loading...</>
             :
             <>
-                {console.log('SData', SubData)}
-
                 {
                     (SubData?.node_type == "COLLECTION") &&
 
@@ -89,8 +86,6 @@ const SubjectPage = () => {
                         </div>
 
                     </div>
-
-
                 }
 
 

@@ -1,41 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import ChapterPageNavBar from './ChapterPageNavBar/ChapterPageNavBar';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ChapterPageSideBar from './ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from './ChapterContentPortion/ChapterContentPortion';
 import { FRONTEND_URLS } from '../Links/Config';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../State';
+
 
 const ChapterPage = () => {
 
     console.log('ChapterPage')
 
-    const { subject, chapter, video_id } = useParams()
+    const { chapter } = useParams()
 
-    const [chapterdata, setChapterdata] = useState({})
+    const [loading, setLoading] = useState(true)
+
+    const dispatch = useDispatch()
+    const { LearnData } = bindActionCreators(actionCreators, dispatch)
 
     const navigate = useNavigate()
 
-    console.log(subject, chapter)
-
+    console.log('11111111111111111111111111111111111111111111111111')
     useEffect(
         () => {
-
             const data = JSON.parse(localStorage.getItem('data'))
 
-            const accessKey = localStorage.getItem('Access Key')
             const userData = JSON.parse(localStorage.getItem('userData'))
 
             if (!userData && !data ) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
-            
-            // else if (!accessKey && !userData) {
-            //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            // }
-
-            // else if (!accessKey ) {
-            //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            // }
 
              else if (!data) {
                 navigate(-1)
@@ -45,7 +41,8 @@ const ChapterPage = () => {
                 let isChapter = false
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].node_id == chapter) {
-                        setChapterdata(data[i])
+                        LearnData(data[i])
+                        setLoading(false)
                         isChapter = true
                         break;
                     }
@@ -59,24 +56,21 @@ const ChapterPage = () => {
     )
 
     return (
-        (!chapterdata)
-            ?
-            <>Loading...</>
-            :
+
             <div>
 
                 <div className='ChapterNav'>
-                    <ChapterPageNavBar chapterName={chapterdata.display_name} subjectPageId={subject} />
+                    <ChapterPageNavBar  />
                 </div>
 
                 <div className='contentSep'>
 
                     <div className='ChaptrSide'>
-                    { (chapterdata?.content) &&  <ChapterPageSideBar chapterContent={chapterdata.content} /> }
+                     <ChapterPageSideBar /> 
                     </div>
 
                     <div className='ChapterCon'>
-                     { (chapterdata?.content) && <ChapterContentPortion chapterContent={chapterdata.content} /> }
+                      <ChapterContentPortion /> 
                     </div>
 
                 </div>

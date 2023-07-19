@@ -4,21 +4,27 @@ import { BsChevronRight } from 'react-icons/bs'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import {actionCreators} from '../../../../State/index'
+import { actionCreators } from '../../../../State/index'
 import { ChapterNavigator } from "../../../Functions/Services";
 
-const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaDa, init_video_id }) => {
-
+const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video_id }) => {
+  
   const dispatch = useDispatch()
+  const { re_video_id } = bindActionCreators(actionCreators, dispatch)
 
-  const { LearnData } = bindActionCreators(actionCreators, dispatch)
 
   const navigate = useNavigate()
 
   return (
     <div>
       <div className="chapterHeader">
-        <button onClick={() => { ChapterNavigator(subjectId, chapterId, navigate, init_video_id) }} className='subject  chapterHeaderButton'>
+        <button onClick={
+          () => {
+            ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
+            re_video_id( init_video_id)
+          }
+        }
+          className='subject  chapterHeaderButton'>
           <div className="ProgressPart">
             <div className="Progress">
               <svg

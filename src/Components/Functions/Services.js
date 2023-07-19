@@ -192,8 +192,7 @@ export function ChapterScroll(id) {
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
 export function ChapterNavigator(subjectId, chapterId,  navigate, init_video_id) {
-    navigate(`/${subjectId}/${chapterId}/${init_video_id}`, { state: [Number(subjectId), chapterId] })
-    // LearnData(intialChaDa)
+    navigate(`/${subjectId}/${chapterId}/${init_video_id}`)
 }
 
 

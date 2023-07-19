@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
-import ChapterPageVideoButton from '../Chapter Page Buttons/ChapterPageVideoButtons';
+import React from 'react';
 import ChapterPagePDFButton from '../Chapter Page Buttons/ChapterPagePDFButton';
 import ChapterPageQuizButton from '../Chapter Page Buttons/ChapterPageQuizButton';
 import ChapterPageButtonText from '../Chapter Page Buttons/ChapterPageButtonText';
-import { VideoFun } from '../../Functions/Services';
-import { useNavigate, useParams } from 'react-router-dom';
 import OneVideoButton from '../Chapter Page Buttons/OneVideoButton';
 
 
 // only sending content_info
 const ChapterContentType = ({ content_data }) => {
 
-    console.log('ChapterContentType')
+    console.log('ChapterContentType1111111111')
 
         return (
         <div>

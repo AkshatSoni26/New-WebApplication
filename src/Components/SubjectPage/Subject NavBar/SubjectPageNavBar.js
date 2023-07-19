@@ -25,7 +25,7 @@ const SubjectPageNavBar = ({ subjectId }) => {
         <>Loading...</>
       ) : (
         <div className='SubjectPageNavBar'>
-          <CommonNavBar url={FRONTEND_URLS.HOME_ROUTE} name={subjectName} />
+          <CommonNavBar name={subjectName} />
         </div>
       )}
     </>

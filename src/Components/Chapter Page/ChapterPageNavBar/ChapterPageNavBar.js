@@ -1,18 +1,19 @@
+import { memo } from 'react';
 import CommonNavBar from '../../CommonNavBar';
+import { useSelector } from 'react-redux';
 
 
-const ChapterPageNavBar = ({ chapterName, subjectPageId }) => {
+const ChapterPageNavBar = ( ) => {
 
-  console.log("ChapterPageNavBar")
+  console.log("ChapterPageNavBar1111111111")
+
+  const learn = useSelector(state => state.learn)
 
   return (
-    (!chapterName) ?
-      <>Loading...</>
-      :
       <div className='SubjectPageNavBar'>
-        <CommonNavBar url={`/${subjectPageId}`} name={chapterName} />
+        <CommonNavBar name={learn.display_name} />
       </div>
   );
 };
 
-export default ChapterPageNavBar;
+export default memo(ChapterPageNavBar);

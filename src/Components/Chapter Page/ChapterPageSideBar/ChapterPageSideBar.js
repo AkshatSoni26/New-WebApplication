@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import ChapterContentType from '../ChapterComponents/ChapterContentType';
 import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
 import { chapterTable } from '../../../Constants/Constants';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const ChapterPageSideBar = ({ chapterContent }) => {
+const ChapterPageSideBar = () => {
 
-    console.log("ChapterPageSideBar")
+    
+    const learn = useSelector(state => state.learn)
+    console.log("ChapterPageSideBar11111111111")
 
-    // const parms = useParams()
-    // console.log('under the chapter Page side bar portion', parms)
+    const chapterContent = learn.content
 
+    console.log('ChapterPageNavBar',learn)
+
+    
 
     return (
+        (learn?.content) &&  
+
         <div className='ChapterPageSideBar'>
             {
                 chapterTable.map(
@@ -57,6 +63,6 @@ const ChapterPageSideBar = ({ chapterContent }) => {
     );
 };
 
-export default ChapterPageSideBar;
+export default  memo(ChapterPageSideBar);
 
 

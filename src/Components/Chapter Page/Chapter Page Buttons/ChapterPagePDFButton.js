@@ -2,6 +2,9 @@ import React from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 const ChapterPagePDFButton = ( {content_info} ) => {
+
+    console.log('ChapterPagePDFButton')
+
     return (
         <div> <img className='accordianImage '
             src={

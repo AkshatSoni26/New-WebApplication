@@ -2,6 +2,9 @@ import React from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 const ChapterPageQuizButton = ({ content_info }) => {
+
+    console.log('ChapterPageQuizButton')
+    
     return (
         <div> <img className='accordianImage'
             src={

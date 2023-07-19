@@ -31,3 +31,15 @@ export const LearnData = (content) => {
         )
     }
 }
+
+
+export const re_video_id = (content) => {
+    return (dispatch) => {
+        dispatch(
+            {
+                type: 'id',
+                payload: content
+            }
+        )
+    }
+}
