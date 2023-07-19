@@ -1,68 +1,62 @@
 import React, { useState } from 'react';
-import { DefaultThumbnails } from '../../../Constants/Constants';
+import ChapterPageVideoButton from '../Chapter Page Buttons/ChapterPageVideoButtons';
+import ChapterPagePDFButton from '../Chapter Page Buttons/ChapterPagePDFButton';
+import ChapterPageQuizButton from '../Chapter Page Buttons/ChapterPageQuizButton';
+import ChapterPageButtonText from '../Chapter Page Buttons/ChapterPageButtonText';
+import { VideoFun } from '../../Functions/Services';
+import { useNavigate, useParams } from 'react-router-dom';
+import OneVideoButton from '../Chapter Page Buttons/OneVideoButton';
+
 
 // only sending content_info
 const ChapterContentType = ({ content_data }) => {
 
     console.log('ChapterContentType')
 
-    const [vOTP, setVOTP] = useState()
-
-    return (
+        return (
         <div>
 
-            <button className='subject' >
-                <div className='accordianDiv'>
+            {
+                content_data?.content_type == "VIDEO" &&
+                content_data?.content_info?.video_id  &&
 
-                    {content_data?.content_type == "VIDEO" &&
+                <OneVideoButton content_info={content_data.content_info}/>
 
-                        <div> <img className='accordianImage'
-                            src={
-                                (content_data?.content_info?.thumbnail)
-                                    ?
-                                    content_data.content_info.thumbnail
-                                    :
-                                    DefaultThumbnails.video
-                            } />
-                        </div>
-                    }
-
-                    {content_data?.content_type == "PDF" && content_data?.content_info && content_data?.content_info?.original_file_url &&
-
-                        <div> <img className='accordianImage '
-                            src={
-                                (content_data?.content_info?.thumbnail)
-                                    ?
-                                    content_data.content_info.thumbnail
-                                    :
-                                    DefaultThumbnails.pdf
-                            } />
-                        </div>
-                    }
-
-                    {
-                        content_data?.content_type == "QUIZ" && content_data?.content_info.display_name &&
-
-                        <div> <img className='accordianImage'
-                            src={
-                                (content_data?.content_info?.thumbnail)
-                                    ?
-                                    content_data.content_info.thumbnail
-                                    :
-                                    DefaultThumbnails.quiz
-                            } />
-                        </div>
-                        
-                    }
+            }
 
 
-                    {
-                        (content_data.content_info.name) && <div className='accordianContent'>
-                            {content_data.content_info.name}</div>
-                    }
+            {
+                content_data?.content_type == "PDF" &&
+                content_data?.content_info &&
+                content_data?.content_info?.original_file_url &&
 
-                </div>
-            </button>
+                <button className='subject' >
+                    <div className='accordianDiv'>
+
+                        <ChapterPagePDFButton content_info={content_data.content_info} />
+                        <ChapterPageButtonText content_info={content_data.content_info} />
+
+                    </div>
+                </button>
+            }
+
+
+            {
+                content_data?.content_type == "QUIZ" &&
+                content_data?.content_info.display_name &&
+
+                <button className='subject' >
+                    <div className='accordianDiv'>
+
+                        <ChapterPageQuizButton content_info={content_data.content_info} />
+                        <ChapterPageButtonText content_info={content_data.content_info} />
+
+                    </div>
+                </button>
+            }
+
+
+
 
         </div>
     );

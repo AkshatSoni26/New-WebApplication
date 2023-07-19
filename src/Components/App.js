@@ -12,22 +12,30 @@ import ErrorPages from './ErrorPages/ErrorPages';
 
 function App() {
 
-    const accessKey = localStorage.getItem('Access Key')
-
-    // const [erro , setError]
-
+    
     const navigate = useNavigate()
-
+    
     const { LOGIN_ROUTE, HOME_ROUTE } = FRONTEND_URLS
-
+    
+    const accessKey = localStorage.getItem('Access Key')
     const userData = JSON.parse(localStorage.getItem('userData'))
+    const data = JSON.parse(localStorage.getItem('data'))
 
     useEffect(
         () => {
 
-            if (!accessKey && !userData) {
+            if (!accessKey && !userData && !data ) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
+            
+            else if (!accessKey && !userData) {
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
+            else if (!accessKey ) {
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
 
         }, [accessKey]
     )
@@ -41,7 +49,7 @@ function App() {
 
                 <Route path={HOME_ROUTE} element={<Home />} />
                 <Route path='/:subject' element={<SubjectPage />} />
-                <Route path='/:subject/:chapter' element={<ChapterPage />} />
+                <Route path='/:subject/:chapter/:video_id' element={<ChapterPage />} />
 
                 <Route path='/:errorName' element={<GeneralPageError />} />
 

@@ -7,7 +7,7 @@ import { bindActionCreators } from "redux";
 import {actionCreators} from '../../../../State/index'
 import { ChapterNavigator } from "../../../Functions/Services";
 
-const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaDa }) => {
+const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaDa, init_video_id }) => {
 
   const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, intialChaD
   return (
     <div>
       <div className="chapterHeader">
-        <button onClick={() => { ChapterNavigator(subjectId, chapterId, intialChaDa, navigate, LearnData) }} className='subject  chapterHeaderButton'>
+        <button onClick={() => { ChapterNavigator(subjectId, chapterId, navigate, init_video_id) }} className='subject  chapterHeaderButton'>
           <div className="ProgressPart">
             <div className="Progress">
               <svg

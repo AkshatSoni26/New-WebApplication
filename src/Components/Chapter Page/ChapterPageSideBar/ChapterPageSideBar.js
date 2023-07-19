@@ -3,10 +3,15 @@ import Accordion from 'react-bootstrap/Accordion';
 import ChapterContentType from '../ChapterComponents/ChapterContentType';
 import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
 import { chapterTable } from '../../../Constants/Constants';
+import { useParams } from 'react-router-dom';
 
 const ChapterPageSideBar = ({ chapterContent }) => {
 
     console.log("ChapterPageSideBar")
+
+    // const parms = useParams()
+    // console.log('under the chapter Page side bar portion', parms)
+
 
     return (
         <div className='ChapterPageSideBar'>

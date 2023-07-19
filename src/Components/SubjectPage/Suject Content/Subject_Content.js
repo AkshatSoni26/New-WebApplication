@@ -21,7 +21,13 @@ const SubjectContent = ({ subjectId }) => {
                             ((data.content.learn).length > 0) ?
                                 <section id={`${data.node_id}`} key={index} className='ChapterContent'>
 
-                                    <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info} subjectId={subjectId} chapterId={data.node_id} display_name={data.display_name} lecLen={(data.content.learn).length} />
+                                    <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info} 
+
+                                    subjectId={subjectId} chapterId={data.node_id} init_video_id={data.content.learn[0].content_data.content_info.video_id}
+                                    
+                                    display_name={data.display_name} 
+
+                                    lecLen={(data.content.learn).length} />
 
                                     <div className='container SubjectContanier'>
 

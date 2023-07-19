@@ -1,6 +1,7 @@
 import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
 import axios from 'axios';
 import { country_code } from '../../Constants/Constants';
+import { useNavigate } from 'react-router-dom';
 
 //----------------------------- faculti responsive data  ---------------------------------- //
 export const responsive = (a) => {
@@ -190,9 +191,9 @@ export function ChapterScroll(id) {
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
-export function ChapterNavigator(subjectId, chapterId, intialChaDa, navigate, LearnData) {
-    navigate(`/${subjectId}/${chapterId}`, { state: [Number(subjectId), chapterId] })
-    LearnData(intialChaDa)
+export function ChapterNavigator(subjectId, chapterId,  navigate, init_video_id) {
+    navigate(`/${subjectId}/${chapterId}/${init_video_id}`, { state: [Number(subjectId), chapterId] })
+    // LearnData(intialChaDa)
 }
 
 
@@ -223,16 +224,23 @@ export function subjectPageData(SubjectData, subjectId, setSubjData) {
 }
 
 //-------------------------------------- vIDEO OTP INFO -----------------------------------------------//
-function VideoFun(video_id) {
+export function VideoFun(video_id, setVideoInfo) {
+
+    console.log('under the vido fun ')
     axios.post(
         BACKEND_URLS.VIDEO_OTP,
         {
             "video_id": video_id,
             "video_download": false
-        }
+        },
+        {headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('Access Key')
+        }}
     ).then(
         (response) => {
-            console.log('under the Video fun response',response)
+            console.log('under the Video fun response',response.data.data.video_otp)
+            setVideoInfo(response.data.data.video_otp)
         }
     ).catch(
         (error) => {
