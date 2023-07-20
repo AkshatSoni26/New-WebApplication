@@ -17,21 +17,21 @@ const SubjectContent = ({ subjectId }) => {
     const navigate = useNavigate()
     const [urlPar, setUrlPar] = useState([])
 
+    const currentUrl = window.location.href;
     useEffect(
         () => {
-            const currentUrl = window.location.href;
             const urlSegments = currentUrl.split('/');
 
             setUrlPar(
-                [urlSegments[urlSegments.length - 1]]
+                [urlSegments[urlSegments.length - 2]]
             )
 
-        }, []
+        }, [currentUrl]
     )
 
 
     function test(j) {
-        console.log(j)
+        console.log(j, urlPar)
     }
 
 
@@ -75,11 +75,9 @@ const SubjectContent = ({ subjectId }) => {
                                                                 <button className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            // test(`/${urlPar[0]}/${ chapterId }/${chapter.content_data.content_info.video_id}`)
-
+                                                                            // test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
                                                                             ChapterNavigator(urlPar[0], chapterId, navigate, chapter.content_data.content_info.video_id )
 
-                                                                            // navigate(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
                                                                         }
                                                                     }
 

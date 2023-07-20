@@ -2,17 +2,13 @@ import React from "react";
 import "../../../../CSS/App.css";
 import { BsChevronRight } from 'react-icons/bs'
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from '../../../../State/index'
 import { ChapterNavigator } from "../../../Functions/Services";
 
+
+
 const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video_id }) => {
+
   
-  // const dispatch = useDispatch()
-  // const { re_video_id } = bindActionCreators(actionCreators, dispatch)
-
-
   const navigate = useNavigate()
 
   return (

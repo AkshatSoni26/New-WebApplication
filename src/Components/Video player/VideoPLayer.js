@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { VideoFun } from "../Functions/Services";
+import { ChapterScroll, VideoFun } from "../Functions/Services";
 import { useSelector } from "react-redux";
 // import "./styles.css";
 
@@ -8,26 +8,29 @@ export default function VideoPlayer() {
   console.log("VideoPlayer")
 
   const [vidInfo, setVideoInfo] = useState()
-  
+
   const currentUrl = window.location.href;
+
+  // Extract the segments from the URL
+  const urlSegments = currentUrl.split('/');
+  const urlLastSegment = urlSegments[urlSegments.length - 1]
   useEffect(
     () => {
 
       // console.log('currentUrl under the one video button', currentUrl)
 
-      // Extract the segments from the URL
-      const urlSegments = currentUrl.split('/');
-      const urlLastSegment = urlSegments[urlSegments.length - 1]
-
       VideoFun(urlLastSegment, setVideoInfo)
-      
-    }, [currentUrl]
+
+
+    }, [urlLastSegment]
   )
 
   return (
     vidInfo?.otp
       ?
       <div className="App">
+
+        {urlLastSegment && ChapterScroll(urlLastSegment)}
 
         <iframe
           src=

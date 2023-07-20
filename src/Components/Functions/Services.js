@@ -1,7 +1,8 @@
+import React from 'react';
 import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
 import axios from 'axios';
 import { country_code } from '../../Constants/Constants';
-import { useNavigate } from 'react-router-dom';
+
 
 //----------------------------- faculti responsive data  ---------------------------------- //
 export const responsive = (a) => {
@@ -251,34 +252,6 @@ export function VideoFun(video_id, setVideoInfo) {
 }
 
 
-
-// //-------------------------------------- Course Switcher -----------------------------------------------//
-
-// let myGlobalVariable = {
-//     subcourse_id: 0,
-//     phase_id: 0,
-//   };
-
-//   export const getGlobalVariable = () => myGlobalVariable;
-
-//   export const setGlobalVariable = (newValue) => {
-//     myGlobalVariable = newValue;
-//   };
-
-
-
-
-//   export function CourseSwitcher( navigate ,phase_id, subcourse_id) {
-//     setGlobalVariable({
-//       subcourse_id: subcourse_id,
-//       phase_id: phase_id,
-//     });
-
-//     navigate("/");
-//     window.location.reload();
-//   }
-
-
 //-------------------------------------- test function -----------------------------------------------//
 export function CourseSwitcher( phase_id, subcourses_id, navigate ) {
     console.log('under the test function', phase_id, subcourses_id )
@@ -307,3 +280,25 @@ export function CourseSwitcher( phase_id, subcourses_id, navigate ) {
     )
 
 }
+
+
+
+//-------------------------------------- toHoursAndMinutes -----------------------------------------------//
+export function toHoursAndMinutes(totalSeconds) {
+
+    const totalMinutes = Math.floor(totalSeconds / 60);
+  
+    let seconds = totalSeconds % 60;
+    let hours = Math.floor(totalMinutes / 60);
+    let minutes = totalMinutes % 60;
+
+    if (seconds < 10){
+        seconds = '0'+ String(seconds)
+    }
+    if(minutes< 10) {
+        minutes = '0' + String(minutes)
+    }
+
+    return { h: hours, m: minutes, s: seconds };
+    // setTime(time)
+  }

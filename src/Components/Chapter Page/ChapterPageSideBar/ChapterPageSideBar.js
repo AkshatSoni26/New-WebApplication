@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import ChapterContentType from '../ChapterComponents/ChapterContentType';
 import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
@@ -12,9 +12,13 @@ const ChapterPageSideBar = () => {
     const learn = useSelector(state => state.learn)
     const chapterContent = learn.content
 
-    console.log('ChapterPageNavBar',learn)
+    // console.log('ChapterPageNavBar',learn)
 
-    
+    const [activeKey, setActiveKey ] = useState(0)
+
+    const handleAccordionChange = (key) => {
+        setActiveKey(key === activeKey ? null : key);
+      };
 
     return (
         (learn?.content) &&  
@@ -27,8 +31,8 @@ const ChapterPageSideBar = () => {
                             <div key={index} >
 
                                 {
-                                    <Accordion>
-                                        <Accordion.Item eventKey={index}>
+                                    <Accordion activeKey={activeKey} onSelect={handleAccordionChange} >
+                                        <Accordion.Item eventKey={index} >
                                             <Accordion.Header > <div className='accodionHeader'> {chapterTable[index]} </div> </Accordion.Header>
                                             <Accordion.Body className='accordionBody'>
 

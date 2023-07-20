@@ -19,7 +19,7 @@ body {
   display: flex;
 }
 
-.LeftSide{
+.LeftSide {
   flex: 1;
 }
 
@@ -421,35 +421,18 @@ p {
   flex: 1;
 }
 
-.accordianDiv {
-  display: flex;
-}
 
 
-.accordianImage {
-  height: 90%;
-  flex: 1;
-  border-radius: 5%;
-}
 
 
-.accordianContent {
-  flex: 1;
-  padding-left: 5%;
 
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #0D1015;
-}
+
 
 .ChaptrSide {
   margin-top: 3vh;
   background-color: #fff;
   width: 30vw;
-  height: 100vh;
+  height: 86.5vh;
 }
 
 .ChapterNav {
@@ -484,11 +467,78 @@ p {
   border-radius: 8px
 }
 
-.ChapterContent{
+.ChapterContent {
   position: relative;
   padding: 5%;
 }
 
-.chapterContDat{
+.chapterContDat {
   margin-top: 2%;
+}
+
+
+.accordianDiv {
+  display: flex;
+}
+
+
+.accordianContent {
+  flex: 1;
+  padding-left: 5%;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
+}
+
+
+.VidThum {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+
+.accordianImage {
+  position: relative;
+  height: 15vh;
+  width: auto;
+  flex: 1;
+  border-radius: 5%;
+}
+
+
+.videotimeUpdiv{
+position: absolute;
+/* align-self: flex-end; */
+margin-top: 42%;
+margin-left: 68%;
+
+}
+
+
+.videoTime {
+  position: relative;
+  color: #FFF;
+  background-color: rgba(13, 16, 21, 0.66);
+  padding-left: .5vw;
+  padding-right: .5vw;
+  padding-top: .005vh;
+  padding-bottom: .05vh;
+  z-index: 1;
+  border-radius: 5vh;
+  /* margin-top: 120%; */
+ 
+  /* margin: 1vh; */
+  /* padding: 10%; */
+  /* align-self: self-end; */
+  /* align-self:flex-end; */
+  /* width: 34px;
+  height: 20px;
+  top: 540px;
+  left: 182px; */
+  
 }

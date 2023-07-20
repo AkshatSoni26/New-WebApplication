@@ -4,6 +4,7 @@ import ChapterPageVideoButton from './ChapterPageVideoButtons';
 import ChapterPageButtonText from './ChapterPageButtonText';
 
 
+
 const OneVideoButton = ({ content_info }) => {
 
     console.log('OneVideoButton')
@@ -28,9 +29,12 @@ const OneVideoButton = ({ content_info }) => {
 
     return (
         <button className='subject' onClick={
-            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/${content_info.video_id}`) }
+            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/${content_info.video_id}`)
+        }
             }>
-            <div className='accordianDiv'>
+            <div 
+            id={`${content_info.video_id}`} 
+            className='accordianDiv'>
 
                 <ChapterPageVideoButton content_info={content_info} />
                 <ChapterPageButtonText content_info={content_info} />
