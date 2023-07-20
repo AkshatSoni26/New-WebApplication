@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Accordion } from 'react-bootstrap';
 import ChapterContentType from './ChapterContentType';
 import '../../../CSS/App.css'
@@ -48,4 +48,4 @@ const ChapterCollectionType = ({ content_data }) => {
     );
 };
 
-export default ChapterCollectionType;
+export default memo(ChapterCollectionType);

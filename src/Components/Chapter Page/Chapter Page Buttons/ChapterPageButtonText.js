@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const ChapterPageButtonText = ( {content_info} ) => {
 
@@ -11,4 +11,4 @@ const ChapterPageButtonText = ( {content_info} ) => {
     );
 };
 
-export default ChapterPageButtonText;
+export default memo(ChapterPageButtonText);

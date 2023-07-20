@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ChapterContentType from './ChapterContentType';
 
 const ChapterSheetType = ({ content_data }) => {
@@ -24,4 +24,4 @@ const ChapterSheetType = ({ content_data }) => {
     );
 };
 
-export default ChapterSheetType;
+export default memo(ChapterSheetType);

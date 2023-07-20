@@ -9,8 +9,8 @@ import { ChapterNavigator } from "../../../Functions/Services";
 
 const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video_id }) => {
   
-  const dispatch = useDispatch()
-  const { re_video_id } = bindActionCreators(actionCreators, dispatch)
+  // const dispatch = useDispatch()
+  // const { re_video_id } = bindActionCreators(actionCreators, dispatch)
 
 
   const navigate = useNavigate()
@@ -21,7 +21,7 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
         <button onClick={
           () => {
             ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
-            re_video_id( init_video_id)
+            // re_video_id( init_video_id)
           }
         }
           className='subject  chapterHeaderButton'>

@@ -7,10 +7,9 @@ import { useSelector } from 'react-redux';
 
 const ChapterPageSideBar = () => {
 
+    console.log("ChapterPageSideBar11111111111")
     
     const learn = useSelector(state => state.learn)
-    console.log("ChapterPageSideBar11111111111")
-
     const chapterContent = learn.content
 
     console.log('ChapterPageNavBar',learn)

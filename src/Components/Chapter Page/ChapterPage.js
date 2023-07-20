@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import ChapterPageNavBar from './ChapterPageNavBar/ChapterPageNavBar';
 import { useNavigate, useParams } from 'react-router-dom';
 import ChapterPageSideBar from './ChapterPageSideBar/ChapterPageSideBar';
@@ -22,7 +22,7 @@ const ChapterPage = () => {
 
     const navigate = useNavigate()
 
-    console.log('11111111111111111111111111111111111111111111111111')
+    console.log('chapter', chapter)
     useEffect(
         () => {
             const data = JSON.parse(localStorage.getItem('data'))
@@ -41,6 +41,8 @@ const ChapterPage = () => {
                 let isChapter = false
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].node_id == chapter) {
+
+                        console.log('data[i].node_id',data[i].node_id)
                         LearnData(data[i])
                         setLoading(false)
                         isChapter = true
@@ -79,4 +81,4 @@ const ChapterPage = () => {
     );
 };
 
-export default ChapterPage;
+export default memo(ChapterPage);

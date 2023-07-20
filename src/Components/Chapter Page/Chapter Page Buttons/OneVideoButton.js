@@ -1,40 +1,42 @@
-import React, { memo, useDebugValue } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { memo, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ChapterPageVideoButton from './ChapterPageVideoButtons';
 import ChapterPageButtonText from './ChapterPageButtonText';
-import { ChapterNavigator, VideoFun } from '../../Functions/Services';
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../../State';
 
-const OneVideoButton = ( {content_info} ) => {
 
-    const {subject, chapter} = useParams()
+const OneVideoButton = ({ content_info }) => {
+
+    console.log('OneVideoButton')
+
     const navigate = useNavigate()
 
-    const dispatch = useDispatch()
-    const { re_video_id } = bindActionCreators(actionCreators, dispatch)
+    const [urlPar, setUrlPar] = useState([])
+
+    useEffect(
+        () => {
+            const currentUrl = window.location.href;
+            const urlSegments = currentUrl.split('/');
+
+            setUrlPar(
+                [urlSegments[urlSegments.length - 3], urlSegments[urlSegments.length - 2]]
+            )
+
+        }, []
+    )
 
 
-    console.log('under the chapter content type portion button ', subject, chapter)
 
     return (
-        <button className='subject' onClick={() =>
-            {
-                ChapterNavigator(subject, chapter,  navigate, content_info.video_id)
-                // re_video_id( content_info.video_id )
-            }
-            
-        }
-        // VideoFun( navigate,subject, chapter, content_info.video_id)} 
-        >
-        <div className='accordianDiv'>
+        <button className='subject' onClick={
+            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/${content_info.video_id}`) }
+            }>
+            <div className='accordianDiv'>
 
-            <ChapterPageVideoButton content_info={content_info} />
-            <ChapterPageButtonText content_info={content_info} />
+                <ChapterPageVideoButton content_info={content_info} />
+                <ChapterPageButtonText content_info={content_info} />
 
-        </div>
-    </button>
+            </div>
+        </button>
     );
 };
 

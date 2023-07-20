@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 
 const ChapterPageVideoButton = ({content_info}) => {
@@ -20,4 +20,4 @@ const ChapterPageVideoButton = ({content_info}) => {
     );
 };
 
-export default ChapterPageVideoButton;
+export default memo(ChapterPageVideoButton);

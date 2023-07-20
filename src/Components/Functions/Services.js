@@ -12,7 +12,7 @@ export const responsive = (a) => {
             slidesToSlide: 1 // optional, defaults to 1.
         },
         tablet: {
-            breakpoint: { max: 1220 , min: 768 },
+            breakpoint: { max: 1220, min: 768 },
             items: 3,
             slidesToSlide: 1 // optional, defaults to 1.
         },
@@ -191,7 +191,7 @@ export function ChapterScroll(id) {
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
-export function ChapterNavigator(subjectId, chapterId,  navigate, init_video_id) {
+export function ChapterNavigator(subjectId, chapterId, navigate, init_video_id) {
     navigate(`/${subjectId}/${chapterId}/${init_video_id}`)
 }
 
@@ -225,25 +225,85 @@ export function subjectPageData(SubjectData, subjectId, setSubjData) {
 //-------------------------------------- vIDEO OTP INFO -----------------------------------------------//
 export function VideoFun(video_id, setVideoInfo) {
 
-    console.log('under the vido fun ')
+    // console.log('under the vido fun ')
     axios.post(
         BACKEND_URLS.VIDEO_OTP,
         {
             "video_id": video_id,
             "video_download": false
         },
-        {headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('Access Key')
-        }}
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('Access Key')
+            }
+        }
     ).then(
         (response) => {
-            console.log('under the Video fun response',response.data.data.video_otp)
+            // console.log('under the Video fun response',response.data.data.video_otp)
             setVideoInfo(response.data.data.video_otp)
         }
     ).catch(
         (error) => {
-            console.log('under the Video fun error',error)
+            console.log('under the Video fun error', error)
         }
     )
+}
+
+
+
+// //-------------------------------------- Course Switcher -----------------------------------------------//
+
+// let myGlobalVariable = {
+//     subcourse_id: 0,
+//     phase_id: 0,
+//   };
+
+//   export const getGlobalVariable = () => myGlobalVariable;
+
+//   export const setGlobalVariable = (newValue) => {
+//     myGlobalVariable = newValue;
+//   };
+
+
+
+
+//   export function CourseSwitcher( navigate ,phase_id, subcourse_id) {
+//     setGlobalVariable({
+//       subcourse_id: subcourse_id,
+//       phase_id: phase_id,
+//     });
+
+//     navigate("/");
+//     window.location.reload();
+//   }
+
+
+//-------------------------------------- test function -----------------------------------------------//
+export function CourseSwitcher( phase_id, subcourses_id, navigate ) {
+    console.log('under the test function', phase_id, subcourses_id )
+
+    const access = localStorage.getItem('Access Key')
+
+    axios.post(BACKEND_URLS.USER_DATA,
+
+        { "switch_target_subcourse_id": subcourses_id, "switch_phase_id": phase_id, },
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + access
+            }
+        }
+    ).then(
+        (response) => {
+            localStorage.setItem('userData', JSON.stringify(response.data.data))
+            navigate(FRONTEND_URLS.HOME_ROUTE)
+        }
+    ).catch(
+        (error) => {
+            console.log('under the userdata error', error)
+            navigate(`/${error.message}`)
+        }
+    )
+
 }

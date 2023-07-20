@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Navbar } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -39,4 +39,4 @@ const CommonNavBar = ({  name }) => {
   );
 };
 
-export default CommonNavBar;
+export default memo(CommonNavBar);

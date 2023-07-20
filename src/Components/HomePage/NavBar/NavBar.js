@@ -4,7 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { currCourse } from '../../Functions/Services';
+import {  CourseSwitcher, currCourse } from '../../Functions/Services';
+import { useNavigate } from 'react-router-dom';
 
 
 function NavBar() {
@@ -13,6 +14,7 @@ function NavBar() {
     console.log('courses', courses)
 
     const current_course = courses.find(currCourse).course_name
+    const navigate = useNavigate()
 
     return (
         (!courses) ?
@@ -29,7 +31,14 @@ function NavBar() {
                                                 (course, index) => {
                                                     return (
                                                         !course.is_current ?
-                                                            <NavDropdown.Item key={index}>{course.course_name}</NavDropdown.Item >
+                                                            <NavDropdown.Item 
+                                                            onClick={() => CourseSwitcher(course.phase_id, course.subcourses[0].id, navigate)} 
+
+                                                            key={index}> 
+
+                                                            {course.course_name} 
+
+                                                            </NavDropdown.Item >
                                                             :
                                                             null
                                                     )

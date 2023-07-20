@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ChapterPagePDFButton from '../Chapter Page Buttons/ChapterPagePDFButton';
 import ChapterPageQuizButton from '../Chapter Page Buttons/ChapterPageQuizButton';
 import ChapterPageButtonText from '../Chapter Page Buttons/ChapterPageButtonText';
@@ -10,15 +10,13 @@ const ChapterContentType = ({ content_data }) => {
 
     console.log('ChapterContentType1111111111')
 
-        return (
+    return (
         <div>
 
             {
                 content_data?.content_type == "VIDEO" &&
-                content_data?.content_info?.video_id  &&
-
-                <OneVideoButton content_info={content_data.content_info}/>
-
+                content_data?.content_info?.video_id &&
+                <OneVideoButton content_info={content_data.content_info} />
             }
 
 
@@ -59,4 +57,4 @@ const ChapterContentType = ({ content_data }) => {
     );
 };
 
-export default ChapterContentType;
+export default memo(ChapterContentType);

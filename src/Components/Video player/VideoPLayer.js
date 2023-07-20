@@ -5,20 +5,23 @@ import { useSelector } from "react-redux";
 // import "./styles.css";
 
 export default function VideoPlayer() {
-
-  const { video_id } = useParams()
-
-  console.log('under the video player ', video_id)
-
-  const revideo_id = useSelector( state => state.re_video_id)
-  console.log('VideoPlayer', revideo_id)
+  console.log("VideoPlayer")
 
   const [vidInfo, setVideoInfo] = useState()
-
+  
+  const currentUrl = window.location.href;
   useEffect(
     () => {
-      VideoFun(video_id, setVideoInfo)
-    }, [video_id]
+
+      // console.log('currentUrl under the one video button', currentUrl)
+
+      // Extract the segments from the URL
+      const urlSegments = currentUrl.split('/');
+      const urlLastSegment = urlSegments[urlSegments.length - 1]
+
+      VideoFun(urlLastSegment, setVideoInfo)
+      
+    }, [currentUrl]
   )
 
   return (
