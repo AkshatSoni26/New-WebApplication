@@ -19,12 +19,16 @@ function App() {
     
     const accessKey = localStorage.getItem('Access Key')
     const userData = JSON.parse(localStorage.getItem('userData'))
-    const data = JSON.parse(localStorage.getItem('data'))
+    const data = localStorage.getItem('data')
 
     useEffect(
         () => {
 
-            if (!accessKey && !userData && !data ) {
+            if (data == undefined){
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
+            if (!accessKey && !userData && !JSON.parse(data) ) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
             

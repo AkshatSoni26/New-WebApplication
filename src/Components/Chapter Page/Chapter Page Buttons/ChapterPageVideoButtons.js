@@ -2,6 +2,11 @@ import React, { memo, useEffect, useState } from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
 import { toHoursAndMinutes } from '../../Functions/Services';
+import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
+import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
+// import playButton from ''
+
+
 
 const ChapterPageVideoButton = ({ content_info }) => {
 
@@ -10,32 +15,12 @@ const ChapterPageVideoButton = ({ content_info }) => {
     // const [time, setTime] = useState(toHoursAndMinutes(content_info.duration))
 
     // let time = toHoursAndMinutes(content_info.duration)
-    const [time, setTime] = useState()
-    // const [timeFor, setTimeFor] = useState()
-
-    const timeCal = toHoursAndMinutes(content_info.duration)
-
-    useEffect(
-        () => {
-            console.log('ChapterPageVideoButton', timeCal.h)
-
-            if (timeCal.h > 0) {
-                setTime(`${timeCal.h}:${timeCal.m}:${timeCal.s}`)
-            }
-            else if (timeCal.m == 0) {
-                setTime(`00:${timeCal.s}`)
-            }
-
-        }, [timeCal]
-    )
+ 
 
 
 
     return (
-        (!timeCal)
-            ?
-            <>Loading...</>
-            :
+
             <div className='VidThum'>
 
                 <img className='accordianImage'
@@ -48,24 +33,9 @@ const ChapterPageVideoButton = ({ content_info }) => {
                     }
                 />
 
-                <div>
-                    
-                </div>
+                <ThumbanailButton />
 
-                <div className=' videotimeUpdiv'>
-
-                    {
-                        (timeCal.h >0)
-                        ?
-                        <div className=' videoTime '>
-                            {`${timeCal.h}:${timeCal.m}:${timeCal.s}`}
-                        </div>
-                        :
-                        <div className=' videoTime '>
-                        {`${timeCal.m}:${timeCal.s}`}
-                    </div>
-                    }
-                </div>
+                <ThumbnailDur duration={content_info.duration} />
 
             </div>
 

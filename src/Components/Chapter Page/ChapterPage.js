@@ -29,7 +29,11 @@ const ChapterPage = () => {
 
             const userData = JSON.parse(localStorage.getItem('userData'))
 
-            if (!userData && !data ) {
+            // if (data == undefined){
+            //     navigate(`/${chapter}`)
+            // }
+
+             if (!userData && !data ) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
@@ -50,7 +54,7 @@ const ChapterPage = () => {
                     }
                 }
                 if (isChapter == false){
-                     navigate('/PageNotFound')
+                     navigate(`/${chapter}`)
                 }
             }
 

@@ -262,8 +262,8 @@ p {
 }
 
 .SubjectContanier {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top:5vh;
+  /* margin-bottom: 1vh; */
 }
 
 .LectureName {
@@ -282,7 +282,7 @@ p {
 .chapterHeader {
   display: flex;
   position: relative;
-  left: 2%;
+  left: 0%;
   /* width: 100%; */
 }
 
@@ -469,7 +469,7 @@ p {
 
 .ChapterContent {
   position: relative;
-  padding: 5%;
+  padding: 3%;
 }
 
 .chapterContDat {
@@ -510,12 +510,24 @@ p {
   border-radius: 5%;
 }
 
+.playbuttondiv {
+  /* position: relative; */
+}
 
-.videotimeUpdiv{
-position: absolute;
-/* align-self: flex-end; */
-margin-top: 42%;
-margin-left: 68%;
+.playbutton {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  z-index: 1000;
+  margin-left: -60%;
+  margin-top: 20%;
+}
+
+.videotimeUpdiv {
+  position: absolute;
+  /* align-self: flex-end; */
+  margin-top: 42%;
+  margin-left: 68%;
 
 }
 
@@ -530,15 +542,16 @@ margin-left: 68%;
   padding-bottom: .05vh;
   z-index: 1;
   border-radius: 5vh;
-  /* margin-top: 120%; */
- 
-  /* margin: 1vh; */
-  /* padding: 10%; */
-  /* align-self: self-end; */
-  /* align-self:flex-end; */
-  /* width: 34px;
-  height: 20px;
-  top: 540px;
-  left: 182px; */
-  
+
 }
+
+
+/* .image-container{
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+} 
+*/
+
+ /* .image-container:hover   {
+  opacity: 0.5;
+} */

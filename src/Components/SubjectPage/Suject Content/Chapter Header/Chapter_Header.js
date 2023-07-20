@@ -20,7 +20,7 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
             // re_video_id( init_video_id)
           }
         }
-          className='subject  chapterHeaderButton'>
+          className='subject chapterHeaderButton'>
           <div className="ProgressPart">
             <div className="Progress">
               <svg

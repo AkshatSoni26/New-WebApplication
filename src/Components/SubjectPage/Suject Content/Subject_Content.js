@@ -6,6 +6,8 @@ import '../../../CSS/App.css'
 import { ChapterNavigator, responsive } from '../../Functions/Services';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
+import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
+import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
 
 
 
@@ -15,7 +17,7 @@ const SubjectContent = ({ subjectId }) => {
 
     const content = useSelector(state => state.content)
     const navigate = useNavigate()
-    const [urlPar, setUrlPar] = useState([])
+    const [urlPar, setUrlPar] = useState()
 
     const currentUrl = window.location.href;
     useEffect(
@@ -23,7 +25,7 @@ const SubjectContent = ({ subjectId }) => {
             const urlSegments = currentUrl.split('/');
 
             setUrlPar(
-                [urlSegments[urlSegments.length - 2]]
+                urlSegments[urlSegments.length - 1]
             )
 
         }, [currentUrl]
@@ -75,20 +77,29 @@ const SubjectContent = ({ subjectId }) => {
                                                                 <button className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            // test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
-                                                                            ChapterNavigator(urlPar[0], chapterId, navigate, chapter.content_data.content_info.video_id )
-
-                                                                        }
+                                                                            test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
+                                                                            
+                                                                            ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
+                                                                             }
                                                                     }
 
                                                                 >
-                                                                    <img className='chapeterImage'
-                                                                        src={
-                                                                            chapter?.content_data?.content_info?.thumbnail ?
-                                                                                chapter.content_data.content_info.thumbnail
-                                                                                :
-                                                                                DefaultThumbnails.video
-                                                                        } />
+                                                                    <div className='VidThum '> 
+                                                                        <img className='accordianImage'
+                                                                            src={
+                                                                                chapter?.content_data?.content_info?.thumbnail ?
+                                                                                    chapter.content_data.content_info.thumbnail
+                                                                                    :
+                                                                                    DefaultThumbnails.video
+                                                                            } />
+
+                                                                        <ThumbanailButton />
+                                                                        <ThumbnailDur
+                                                                            duration={chapter?.content_data?.content_info?.duration}
+                                                                        />
+
+                                                                    </div>
+
                                                                 </button>
                                                                 <div className='LectureName'> {chapter.display_name} </div>
                                                             </div>

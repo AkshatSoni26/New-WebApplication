@@ -9,12 +9,17 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const CommonNavBar = ({  name }) => {
+const CommonNavBar = ({  name, id }) => {
 
   const navigate = useNavigate()
 
   function PreviousPage() {
-    navigate(-1)
+    if (id) {
+      navigate(`/${id}`)
+    }
+    else{
+      navigate(`/`)
+    }
   }
 
   return (

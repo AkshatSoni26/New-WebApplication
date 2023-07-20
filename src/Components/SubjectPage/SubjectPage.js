@@ -44,7 +44,7 @@ const SubjectPage = () => {
                 }
             }
             if (isChapter == false) {
-                navigate('/PageNotFound')
+                navigate(`/${subjectId}`)
             }
 
             if (!accessKey) {
