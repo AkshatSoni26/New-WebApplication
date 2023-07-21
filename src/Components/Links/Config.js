@@ -12,4 +12,5 @@ export const BACKEND_URLS = {
 export const FRONTEND_URLS = {
     LOGIN_ROUTE: '/login',
     HOME_ROUTE:'/',
+    REGISTER_ROUTE:'/Register'
 }

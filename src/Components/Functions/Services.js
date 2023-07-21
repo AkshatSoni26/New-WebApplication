@@ -141,7 +141,16 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
     ).then(
         (response) => {
             const access = response.data.data.tokens.access
-            UserData(access, navigate)
+
+            const is_course_assigned = response.data.data.is_course_assigned
+
+            if (is_course_assigned == true){
+                UserData(access, navigate)
+            }
+            else{
+                navigate(FRONTEND_URLS.REGISTER_ROUTE   )
+            }
+            
         }
     ).catch(
         (error) => {

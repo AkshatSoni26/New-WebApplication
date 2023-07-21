@@ -13,16 +13,17 @@ const OneVideoButton = ({ content_info }) => {
 
     const [urlPar, setUrlPar] = useState([])
 
+    const currentUrl = window.location.href;
+
     useEffect(
         () => {
-            const currentUrl = window.location.href;
             const urlSegments = currentUrl.split('/');
 
             setUrlPar(
                 [urlSegments[urlSegments.length - 3], urlSegments[urlSegments.length - 2]]
             )
 
-        }, []
+        }, [currentUrl]
     )
 
 
@@ -36,7 +37,7 @@ const OneVideoButton = ({ content_info }) => {
             id={`${content_info.video_id}`} 
             className='accordianDiv'>
 
-                <ChapterPageVideoButton content_info={content_info} />
+                <ChapterPageVideoButton content_info={content_info} currentUrl={currentUrl} />
                 <ChapterPageButtonText content_info={content_info} />
 
             </div>

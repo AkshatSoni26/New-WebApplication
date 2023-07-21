@@ -1,25 +1,38 @@
 import React, { memo, useEffect, useState } from 'react';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
-import { toHoursAndMinutes } from '../../Functions/Services';
 import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
 import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
-// import playButton from ''
+import Register from '../../Register/Register';
 
 
 
-const ChapterPageVideoButton = ({ content_info }) => {
+const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
 
     console.log('ChapterPageVideoButton')
 
-    // const [time, setTime] = useState(toHoursAndMinutes(content_info.duration))
+    const [urlPar, setUrlPar] = useState()
 
-    // let time = toHoursAndMinutes(content_info.duration)
- 
+    
+    
+    useEffect(
+        () => {
+            console.log('ChapterPageVideoButton useEffect')
+            const urlSegments = currentUrl.split('/');
 
+            setUrlPar(
+                urlSegments[urlSegments.length - 1]
+            )
+
+        }, [currentUrl]
+    )
 
 
     return (
+
+        (currentUrl)
+
+            ?
 
             <div className='VidThum'>
 
@@ -31,13 +44,27 @@ const ChapterPageVideoButton = ({ content_info }) => {
                             :
                             DefaultThumbnails.video
                     }
+                    alt=''
                 />
 
-                <ThumbanailButton />
+                {
+                    (
+                        urlPar === content_info.video_id
+                    )
+                        ?
+
+                        <Register />
+                        :
+                        <ThumbanailButton />
+                }
 
                 <ThumbnailDur duration={content_info.duration} />
 
             </div>
+
+            :
+
+            <>Loading...</>
 
     );
 };
