@@ -8,7 +8,6 @@ import ChapterPage from './Chapter Page/ChapterPage';
 import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';
 import ErrorPages from './ErrorPages/ErrorPages';
-import Register from './Register/Register';
 
 
 
@@ -65,7 +64,7 @@ function App() {
 
                 <Route path='/PageNotFound' element={<ErrorPages />} />
 
-                <Route path={REGISTER_ROUTE} element={<Register />} />
+                {/* <Route path={REGISTER_ROUTE} element={<Register />} /> */}
 
             </Routes>
         </div>

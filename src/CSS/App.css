@@ -500,6 +500,7 @@ p {
   flex: 1;
   position: relative;
   display: flex;
+  margin-top: 10%;
 }
 
 
@@ -509,7 +510,30 @@ p {
   width: auto;
   flex: 1;
   border-radius: 5%;
+  /* opacity: 0; */
 }
+.layer{
+  position: relative;
+
+}
+
+.accordianImage2{
+  background-color: rgba(13, 16, 21, 0.66);
+  position: absolute;
+  /* top: 50px;
+  left: 50px; */
+  /* Set z-index property to place this element on top of the first layer */
+  z-index: 1;
+  /* Set other styling properties for the second layer */
+  width: 173px;
+  height: 100px;
+  border-radius: 5%;
+
+ 
+}
+
+
+
 
 .playbuttondiv {
   /* position: relative; */
@@ -560,8 +584,15 @@ p {
 
 .lottie{
   /* position: relative; */
-  z-index: 10000000;
-  background-color: rgba(13, 16, 21, 0.66);
+  z-index: 1;
+  /* background-color: rgba(13, 16, 21, 0.66); */
   /* padding:20% ; */
   padding-top: 100;
+}
+
+
+.LottieBackgroundColour{
+  /* position: absolute; */
+  /* background-color: rgba(13, 16, 21, 0.66); */
+  width: 20%;
 }
