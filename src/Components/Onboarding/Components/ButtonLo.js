@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai'
-
+import '../../../CSS/Register.css'
 
 const ButtonLo = ( {setIsName, inputRef} )  => {
 

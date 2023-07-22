@@ -2,13 +2,12 @@ import React, { memo } from 'react';
 
 import Lottie from "lottie-react";
 
-import animationData from '../lottie utils/playing image.json';
-
+import animationData from '../lottie utils/playing image.json'
 import '../../CSS/App.css'
 
+
+
 const LottieImage = () => {
-
-
     return (
         <>
             <div className='accordianImage2'></div>

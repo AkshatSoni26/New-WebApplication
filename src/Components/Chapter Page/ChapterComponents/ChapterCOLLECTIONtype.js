@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Accordion } from 'react-bootstrap';
-import ChapterContentType from './ChapterContentType';
+import ChapterContentType from './ChapterCONTENTtype';
 import '../../../CSS/App.css'
 import ChapterSheetType from './ChapterSheetType';
 

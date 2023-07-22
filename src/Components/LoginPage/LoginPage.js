@@ -2,7 +2,6 @@ import React from 'react';
 import '../../CSS/App.css'
 import PhoneNumber from './Phonenumber/PhoneNumber';
 import RightSlider from './rightSlider';
-import Register from '../Onboarding/Register';
 
 
 function LoginPage() {
@@ -17,7 +16,6 @@ function LoginPage() {
 
             <div className='LeftSide'>
                 <PhoneNumber />
-                {/* <Register /> */}
             </div>
         </div>
     );

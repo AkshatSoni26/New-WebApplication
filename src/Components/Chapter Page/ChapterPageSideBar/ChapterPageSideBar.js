@@ -1,9 +1,9 @@
 import React, { memo, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import ChapterContentType from '../ChapterComponents/ChapterContentType';
-import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
 import { chapterTable } from '../../../Constants/Constants';
 import { useSelector } from 'react-redux';
+import ChapterContentType from '../ChapterComponents/ChapterCONTENTtype';
+import ChapterCOLLECTIONType from '../ChapterComponents/ChapterCOLLECTIONType';
 
 const ChapterPageSideBar = () => {
 
@@ -44,7 +44,7 @@ const ChapterPageSideBar = () => {
 
                                                                     {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
 
-                                                                    {(((value.content_data).length) > 0) && < ChapterCollectionType content_data={value.content_data} />}
+                                                                    {(((value.content_data).length) > 0) && <ChapterCOLLECTIONType content_data={value.content_data} />}
 
                                                                 </div>
                                                             )

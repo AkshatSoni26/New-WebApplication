@@ -1,11 +1,12 @@
 import React from 'react';
-import pensil from '../../../Images/pencil_19 1.png'
+import '../../../CSS/Register.css'
 
 
-const Imag = () => {
+
+const Imag = ( {imag} ) => {
     return (
         <div className='OnborImg'>
-            <img className='OnborImage' src={pensil} />
+            <img className='OnborImage' src={imag} />
         </div>
     );
 };

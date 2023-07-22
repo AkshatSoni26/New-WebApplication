@@ -106,7 +106,6 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber) {
             if (response.data.message === 'OTP Verified Successfully') {
                 const nonce = response.data.data.nonce
                 UserDataProvider(nonce, navigate, phoneNumber)
-
                 console.log('under the response otp verified successfully.')
             }
         }
@@ -311,3 +310,32 @@ export function toHoursAndMinutes(totalSeconds) {
     return { h: hours, m: minutes, s: seconds };
     // setTime(time)
   }
+
+
+//-------------------------------------------------------------------------------------//
+
+export function ColorContainer(CLASSES, Colors, BorderColors){
+
+    return CLASSES.map(
+        (className, index) => {
+        const color = Colors[index];
+        const borderColor = BorderColors[index];
+      
+        // Set the CSS variables dynamically for each class element
+        document.documentElement.style.setProperty('--main-color', color);
+        document.documentElement.style.setProperty('--main-border-color', borderColor);
+      
+        return (
+            <>
+            {/* <button className='subject'> */}
+          <div key={index} className='col colorBox col-md-4 d-flex justify-content-center' style={{ backgroundColor: color, borderColor: borderColor }}>
+            {className}           
+          </div>
+          {/* </button> */}
+          { ((index+1)%2 == 0) ?  <div class="w-100"></div> : null }
+          </>
+        );
+      }
+      );
+
+}

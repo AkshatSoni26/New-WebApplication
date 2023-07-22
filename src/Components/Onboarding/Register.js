@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import '../../CSS/App.css'
-
-import '../../CSS/App.css'
+import '../../CSS/Register.css'
 import Name from './Name';
 import RightSlider from '../LoginPage/rightSlider';
-import OnboardingAttemptYear from './OnboardingAttemptYear';
+import AttemptYear from './AttemptYear';
+import Exam from './Exam';
+import CourseSettingup from './CourseSettingup';
+
 
 
 const Register = () => {
@@ -22,7 +23,13 @@ const Register = () => {
 
                 { (!isName) && <Name setIsName={setIsName}/> }
 
-                { (isName) && <OnboardingAttemptYear isName={isName}/> } 
+                { (isName) && <AttemptYear isName={isName}/> } 
+
+                {/* { (isName) && <Exam isName={isName}/> }  */}
+
+                {/* { (isName) && <CourseSettingup isName={isName}/> }  */}
+
+
 
             </div>
 

@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import OnBordText from './Components/OnBordText';
 import InputField from './Components/InputField';
 import ButtonLo from './Components/ButtonLo';
+import '../../CSS/Register.css'
+
+
 
 const Name = ({ setIsName }) => {
 
@@ -25,8 +28,7 @@ const Name = ({ setIsName }) => {
                 <div className="row">
                     <div className='mainPage mb-3'>
 
-                        <OnBordText />
-
+                        <OnBordText isName='Hi 👋'/>
 
                         <InputField inputRef={inputRef}  />
 

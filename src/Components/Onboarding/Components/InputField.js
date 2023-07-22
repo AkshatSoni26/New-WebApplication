@@ -1,4 +1,7 @@
 import React from 'react';
+import '../../../CSS/Register.css'
+
+
 
 const InputField = ( {inputRef} ) => {
     return (

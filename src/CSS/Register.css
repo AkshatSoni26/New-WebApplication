@@ -21,6 +21,9 @@ body {
 
 .LeftSide {
   flex: 1;
+  margin-left: 10%;
+  margin-top: 1%;
+  overflow: hidden;
 }
 
 
@@ -31,13 +34,7 @@ body {
 }
 
 
-/* RightSlider */
 
-.RightSide {
-  /* position: relative; */
-  flex: 1;
-  /* margin-left: 40%; */
-}
 
 img {
   width: 150px;
@@ -133,7 +130,7 @@ p {
 .home {
   display: flex;
   /* width: 100%; */
-  overflow-y: hidden; 
+  overflow-y: hidden;
 }
 
 .menuBarcontent {
@@ -178,17 +175,7 @@ p {
 
 } */
 
-/* SubjectCaursal */
-.subject {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0px;
-  margin: 0px 0px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
+
 
 /* Subject Side Bar */
 .bookLogo {
@@ -262,7 +249,7 @@ p {
 }
 
 .SubjectContanier {
-  margin-top:5vh;
+  margin-top: 5vh;
   /* margin-bottom: 1vh; */
 }
 
@@ -512,12 +499,13 @@ p {
   border-radius: 5%;
   /* opacity: 0; */
 }
-.layer{
+
+.layer {
   position: relative;
 
 }
 
-.accordianImage2{
+.accordianImage2 {
   background-color: rgba(13, 16, 21, 0.66);
   position: absolute;
   /* top: 50px;
@@ -529,7 +517,7 @@ p {
   height: 100px;
   border-radius: 5%;
 
- 
+
 }
 
 
@@ -577,12 +565,12 @@ p {
 } 
 */
 
- /* .image-container:hover   {
+/* .image-container:hover   {
   opacity: 0.5;
 } */
 
 
-.lottie{
+.lottie {
   /* position: relative; */
   z-index: 1;
   /* background-color: rgba(13, 16, 21, 0.66); */
@@ -591,8 +579,289 @@ p {
 }
 
 
-.LottieBackgroundColour{
+.LottieBackgroundColour {
   /* position: absolute; */
   /* background-color: rgba(13, 16, 21, 0.66); */
   width: 20%;
+}
+
+
+.start {
+  color: rgba(13, 16, 21, 1);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+.startline {
+  color: rgba(51, 58, 71, 1);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.nameQue {
+  color: rgba(51, 58, 71, 1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 2%;
+
+}
+
+.nameAskingSection {
+  margin-top: 4%;
+  width: 320px;
+  height: 94px;
+  top: 133px;
+  left: 20px;
+  border-radius: 8px
+}
+
+.textonly {
+  margin-top: 5%;
+}
+
+.input_border {
+  border: 2px solid #5F46E3;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.focused_input {
+  border: 2px solid #5F46E3;
+  border-radius: 8px;
+  padding: 2%;
+  width: 100%;
+  /* margin-left: 10%; */
+}
+
+.buttonBAckground {
+  background-color: #5F46E3;
+  justify-content: end;
+  width: 100%;
+}
+
+.buttonclass {
+  align-items: flex-end;
+  padding: 10%;
+  padding-left: 0%;
+  margin-top: 50%;
+  margin-left: 5%;
+  align-items: center;
+}
+
+.RightSide {
+  display: none;
+}
+
+.mainPage {
+  /* justify-content: flex-start; */
+  padding: 10%;
+  padding-left: 0%;
+}
+
+.OnborImg {
+  margin-top: 7%;
+  margin-bottom: 7%;
+  /* width: auto; */
+  /* height: 30%; */
+}
+
+.OnborImage {
+  height: 100%;
+  /* width: auto; */
+}
+
+
+:root {
+  --main-color: #ff0000;
+  /* Replace with your desired color value */
+  --main-border-color: #ffff;
+
+}
+
+.colorBox {
+  background-color: var(--main-color);
+  border-color: #FFB023;
+  border-style: solid;
+  border-width: 1px;
+
+  aspect-ratio: 150/64;
+
+  padding-top: 5%;
+  margin: 3%;
+  flex: 1;
+  border-radius: 8px;
+
+
+  color: #0D1015;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+
+
+  /* height: 5vh; */
+  overflow-y: hidden;
+}
+
+
+.colorBoxBig {
+  display: flex;
+  overflow-y: hidden;
+}
+
+
+.currOptionchoice {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+
+  /* SubjectCaursal */
+  .subject {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0px;
+    margin: 0px 0px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  
+
+@media (min-width: 376px) {
+
+
+  .mainPage {
+    padding: 0%;
+    margin-top: 5%;
+    margin-left: 30%;
+    overflow-y: hidden;
+  }
+
+  .rocket_image{
+    /* aspect-ratio: 297/56; */
+    /* height: aspect-ratio*0.2vh; */
+    position: relative;
+    height: 50px;
+    /* width: 150px; */
+    /* margin-left: 10%; */
+    padding-top: 10vh;
+    
+    /* margin-top: -25%;
+    margin-left: -20%; */
+    /* overflow: hidden; */
+    /* overflow-y: hidden; */
+  }
+
+  .rocket_image svg{
+    height: 50%;
+  }
+
+  .buttonclass {
+    margin-left: 22%;
+    margin-right: 10%;
+    margin-top: 40%;
+    padding: 0%;
+  }
+
+  .buttonBAckground {
+    background-color: #5F46E3;
+    width: 70%;
+  }
+
+  /* RightSlider */
+
+  .RightSide {
+    flex: 1;
+    display: inline;
+  }
+
+  .OnborMainPage {
+    overflow-y: hiddens;
+    margin-left: 20%;
+    margin-top: 0%;
+    /* margin-bottom: 20%; */
+    /* margin-left: 0%; */
+    /* margin-right: 10%; */
+    padding-right: 10%;
+    /* height: 100vh; */
+    /* overflow-y: hidden; */
+  }
+
+
+  .colorBoxBig {
+    overflow: hidden;
+  }
+
+  .targetLottie{
+    position: relative;
+    /* height: 40%; */
+    height: 50vh;
+  }
+
+  .targetLottie svg{
+    margin-top: -13%;
+    margin-left: -10%;
+  }
+
+  .PencilLottie{
+    position: relative;
+    height: 37vh;
+  }
+
+  
+  .PencilLottie svg{
+    margin-top: -17%;
+  }
+
+
+}
+
+
+
+
+
+.rocket_image{
+  aspect-ratio: 297/56;
+  /* height: aspect-ratio*0.2vh; */
+  margin-top: -34%;
+  margin-left: -20%;
+  /* overflow: hidden; */
+  /* overflow-y: hidden; */
+}
+
+
+.settingHeader {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
+}
+
+.settingheaderUnderline{
+font-size: 16px;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: #0D1015;
 }

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import ChapterContentType from './ChapterContentType';
+import ChapterContentType from './ChapterCONTENTtype';
 
 const ChapterSheetType = ({ content_data }) => {
 

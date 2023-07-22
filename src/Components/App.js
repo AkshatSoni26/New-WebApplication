@@ -8,7 +8,7 @@ import ChapterPage from './Chapter Page/ChapterPage';
 import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';
 import ErrorPages from './ErrorPages/ErrorPages';
-import Register from './Onboarding/Register';
+import Register from './Onboarding/Register'
 
 
 
