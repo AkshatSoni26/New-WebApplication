@@ -65,7 +65,7 @@ function App() {
 
                 <Route path='/PageNotFound' element={<ErrorPages />} />
 
-                {/* <Route path={REGISTER_ROUTE} element={<Register />} /> */}
+                <Route path={REGISTER_ROUTE} element={<Register />} />
 
             </Routes>
         </div>

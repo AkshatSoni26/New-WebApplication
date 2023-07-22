@@ -11,7 +11,10 @@ import CourseSettingup from './CourseSettingup';
 const Register = () => {
 
     console.log('Register')
+
     const [ isName, setIsName] = useState()
+    const [AttemptYearList, setAttemptYearList]  = useState()
+    const [ExamId, setExamId] = useState()
 
 
     return (
@@ -23,11 +26,12 @@ const Register = () => {
 
                 { (!isName) && <Name setIsName={setIsName}/> }
 
-                { (isName) && <AttemptYear isName={isName}/> } 
+                { (isName) && (!AttemptYearList) && <AttemptYear isName={isName} 
+                setAttemptYearList={setAttemptYearList}/> }      {/* from this it gives the list of offeres */}
 
-                {/* { (isName) && <Exam isName={isName}/> }  */}
+                { (AttemptYearList) && (!ExamId) && <Exam isName={isName} targets={AttemptYearList} setExamId={setExamId}/> }      {/* It gives the id */}
 
-                {/* { (isName) && <CourseSettingup isName={isName}/> }  */}
+                { (ExamId) && <CourseSettingup id={ExamId}/> } 
 
 
 

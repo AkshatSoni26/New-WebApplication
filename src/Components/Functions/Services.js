@@ -1,7 +1,9 @@
 import React from 'react';
 import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
 import axios from 'axios';
-import { country_code } from '../../Constants/Constants';
+import { BorderColors, Colors, country_code } from '../../Constants/Constants';
+import ColorButton from '../Onboarding/Components/ColorButton';
+import ColorButton2 from '../Onboarding/Components/ColorButton2';
 
 
 //----------------------------- faculti responsive data  ---------------------------------- //
@@ -106,6 +108,11 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber) {
             if (response.data.message === 'OTP Verified Successfully') {
                 const nonce = response.data.data.nonce
                 UserDataProvider(nonce, navigate, phoneNumber)
+
+                // if(){
+
+                // }
+
                 console.log('under the response otp verified successfully.')
             }
         }
@@ -143,23 +150,32 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
             const is_course_assigned = response.data.data.is_course_assigned
 
-            if (is_course_assigned == true){
+            // localStorage.setItem('Access Key', access)
+
+            if (is_course_assigned == true) {
+                Register(access, navigate)
+
+            }
+            else {
                 UserData(access, navigate)
             }
-            else{
-                navigate(FRONTEND_URLS.REGISTER_ROUTE   )
-            }
-            
+
         }
     ).catch(
         (error) => {
             console.log('under the user data function error', error)
             navigate(`/${error.message}`)
-
         }
     )
 }
 
+
+
+//-------------------------------------------------------------------------------------//
+export function Register(access, navigate) {
+
+    navigate(FRONTEND_URLS.REGISTER_ROUTE, { state: access })
+}
 
 //-------------------------------------------------------------------------------------//
 
@@ -261,8 +277,8 @@ export function VideoFun(video_id, setVideoInfo) {
 
 
 //-------------------------------------- test function -----------------------------------------------//
-export function CourseSwitcher( phase_id, subcourses_id, navigate ) {
-    console.log('under the test function', phase_id, subcourses_id )
+export function CourseSwitcher(phase_id, subcourses_id, navigate) {
+    console.log('under the test function', phase_id, subcourses_id)
 
     const access = localStorage.getItem('Access Key')
 
@@ -295,47 +311,66 @@ export function CourseSwitcher( phase_id, subcourses_id, navigate ) {
 export function toHoursAndMinutes(totalSeconds) {
 
     const totalMinutes = Math.floor(totalSeconds / 60);
-  
+
     let seconds = totalSeconds % 60;
     let hours = Math.floor(totalMinutes / 60);
     let minutes = totalMinutes % 60;
 
-    if (seconds < 10){
-        seconds = '0'+ String(seconds)
+    if (seconds < 10) {
+        seconds = '0' + String(seconds)
     }
-    if(minutes< 10) {
+    if (minutes < 10) {
         minutes = '0' + String(minutes)
     }
 
     return { h: hours, m: minutes, s: seconds };
     // setTime(time)
-  }
+}
 
 
 //-------------------------------------------------------------------------------------//
 
-export function ColorContainer(CLASSES, Colors, BorderColors){
-
-    return CLASSES.map(
-        (className, index) => {
-        const color = Colors[index];
-        const borderColor = BorderColors[index];
-      
-        // Set the CSS variables dynamically for each class element
-        document.documentElement.style.setProperty('--main-color', color);
-        document.documentElement.style.setProperty('--main-border-color', borderColor);
-      
-        return (
-            <>
-            {/* <button className='subject'> */}
-          <div key={index} className='col colorBox col-md-4 d-flex justify-content-center' style={{ backgroundColor: color, borderColor: borderColor }}>
-            {className}           
-          </div>
-          {/* </button> */}
-          { ((index+1)%2 == 0) ?  <div class="w-100"></div> : null }
-          </>
-        );
-      }
+export function ColorContainer(isName,CLASSES, setAttemptYearList) {
+    const buttons = CLASSES.map((className, index) => {
+      const color = Colors[index];
+      const borderColor = BorderColors[index];
+  
+      return <ColorButton setAttemptYearList={setAttemptYearList} key={index} isName={isName} className={className.class_name} targets={className.targets} color={color} borderColor={borderColor} />;
+    
+    });
+  
+    const rows = [];
+    for (let i = 0; i < buttons.length; i += 2) {
+      rows.push(
+        <div className="d-flex justify-content-center" key={i}>
+          {buttons[i]}
+          {buttons[i + 1]}
+        </div>
       );
+    }
+  
+    return <>{rows}</>;
+  }
 
-}
+
+  export function ColorContainerNew( CLASSES, setExamId) {
+
+    const buttons = CLASSES.map((className, index) => {
+      const color = Colors[index];
+      const borderColor = BorderColors[index];
+  
+      return <ColorButton2 setExamId={setExamId} key={index} className={className.target_name } tag_line={className.tag_line} id={className.target_course_id}  color={color} borderColor={borderColor} />;
+    });
+  
+    const rows = [];
+    for (let i = 0; i < buttons.length; i += 2) {
+      rows.push(
+        <div className="d-flex justify-content-center" key={i}>
+          {buttons[i]}
+          {buttons[i + 1]}
+        </div>
+      );
+    }
+  
+    return <>{rows}</>;
+  }

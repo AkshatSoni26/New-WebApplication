@@ -3,6 +3,8 @@ import OnBordText from './Components/OnBordText';
 import InputField from './Components/InputField';
 import ButtonLo from './Components/ButtonLo';
 import '../../CSS/Register.css'
+import axios from 'axios';
+import { BACKEND_URLS } from '../Links/Config';
 
 
 
@@ -12,12 +14,16 @@ const Name = ({ setIsName }) => {
 
     // const [isFocused, setIsFocused] = useState(true);
 
+
+
     useEffect(
         () => {
             inputRef.current.focus();
             inputRef.current.classList.add('focused_input');
         }, []
     )
+
+ 
 
  
 

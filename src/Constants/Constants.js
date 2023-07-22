@@ -41,6 +41,12 @@ export const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['
 export const companyLogo = logo
 
 
+//-------------------------- Colors ------------------------------ // 
+
+
+export const Colors = ['#FFF3DC', '#E5F8FF', '#ECE9FF', '#FFEAF4', '#FFE8DC', '#E1F9E3']
+export const BorderColors = ['#FFB023', '#3090E8', '#5F46E3', '#C91E5C', '#D65E25', '#008444']
+
 
 //-------------------------- Misc ------------------------------ // 
 
@@ -49,7 +55,5 @@ export const DefaultThumbnails = {
     'pdf' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/640px-PDF_file_icon.svg.png',
     'quiz' : 'https://www.shutterstock.com/shutterstock/photos/1506580442/display_1500/stock-vector-quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-design-1506580442.jpg'
 }
-
-
 
 

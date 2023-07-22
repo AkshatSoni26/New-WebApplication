@@ -743,6 +743,12 @@ p {
     outline: inherit;
   }
 
+
+.colorBoxButton{
+  display: flex;
+  flex: 1;
+}
+
   
 
 @media (min-width: 376px) {
@@ -781,7 +787,7 @@ p {
     padding: 0%;
   }
 
-  .buttonBAckground {
+  .buttonBAckground, .buttonBAckground:hover {
     background-color: #5F46E3;
     width: 70%;
   }
