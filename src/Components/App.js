@@ -53,9 +53,9 @@ function App() {
 
                 <Route path={LOGIN_ROUTE} element={<LoginPage />} />
 
-                {/* <Route path={HOME_ROUTE} element={<Home />} /> */}
+                <Route path={HOME_ROUTE} element={<Home />} />
 
-                <Route path={HOME_ROUTE} element={<Register />} />
+                {/* <Route path={HOME_ROUTE} element={<Register />} /> */}
 
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter/:video_id' element={<ChapterPage />} />
