@@ -20,20 +20,13 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
 
     const [Buttons, setButtons] = useState()
 
-    const [attemptButClick, setAttemptButClick] = useState(false)
-
-    const CLASSES = []               // ['8th', '9th', '10th', '11th', '12th', '12th pass']
-
-    // const classElements  = ColorContainer( CLASSES, Colors, BorderColors)
-
-    const str = 'Hi,'+' '+isName+' '+"👋"
+    const str = 'Hi,' + ' ' + isName + ' ' + "👋"
     const access = localStorage.getItem("Access Key")
 
 
     useEffect(
-         () => 
-        {
-             axios.get(
+        () => {
+            axios.get(
                 BACKEND_URLS.GET_ALL_TARGETS,
                 {
                     headers: {
@@ -44,54 +37,61 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
             ).then(
                 (resp) => {
                     console.log('resp', resp)
-                    console.log("resp.data.classes",resp.data.data.classes)
-                    
+                    console.log("resp.data.classes", resp.data.data.classes)
+
                     const target = resp.data.data.classes
-                    
-                    
+
+
                     setTargetData(resp.data.data.classes)
 
-                    setButtons(ColorContainer( isName,target, setAttemptYearList ))
+                    setButtons(ColorContainer(isName, target, setAttemptYearList))
                 }
             ).catch(
                 (err) => {
                     console.log(err)
                 }
             )
-        },[]
+        }, []
     )
 
 
-return (
+    return (
 
-     (Buttons)
-    ?
-    <div className='OnborMainPage'>
+        (Buttons)
+            ?
+            <div className='OnborMainPage'>
 
-        <OnBordText isName={str} />
+                <OnBordText isName={str} />
 
-        <div className='PencilLottie'>
+                <div className='PencilLottie'>
 
-        <LottieImgComp animationData={animationData} />
-        </div>
+                    <LottieImgComp animationData={animationData} />
+                </div>
 
-        <OptionChooseText mess='I am studying in class' />
+                <OptionChooseText mess='I am studying in class' />
 
-        <div className='colorBoxBig'>
+                <div className='colorBoxBig'>
 
-            <div className='container' >
-                <div className='row' >
-
-                    {Buttons}
-
+                    {/* <div className='container' >
+                <div className='row' > */}
+                    <div className='buttonClass'>
+                        {/* {
+                            Buttons.map(
+                                (button, index) => {
+                                    return button
+                                }
+                            )
+                        } */}
+                        {Buttons}
+                    </div>
                 </div>
             </div>
-        </div>
+            // </div>
 
-    </div>
-    : 
-    <>Loading...</>
-);
+            // </div>
+            :
+            <>Loading...</>
+    );
 };
 
 export default AttemptYear;

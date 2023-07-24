@@ -21,7 +21,7 @@ body {
 
 .LeftSide {
   flex: 1;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   margin-top: 1%;
   overflow: hidden;
 }
@@ -693,10 +693,14 @@ p {
   border-color: #FFB023;
   border-style: solid;
   border-width: 1px;
+  padding-top: 10%;
 
+  /* padding-bottom: 20%; */
   aspect-ratio: 150/64;
 
-  padding-top: 5%;
+  /* padding-top: 5%; */
+  align-items: center;
+  justify-content: center;
   margin: 3%;
   flex: 1;
   border-radius: 8px;
@@ -717,7 +721,7 @@ p {
 
 
 .colorBoxBig {
-  display: flex;
+  /* display: flex; */
   overflow-y: hidden;
 }
 
@@ -745,8 +749,15 @@ p {
 
 
 .colorBoxButton{
+  width: 50%;
+  height: auto;
+  /* display: flex; */
+  /* flex: 1; */
+}
+
+.buttonClass{
   display: flex;
-  flex: 1;
+  flex-wrap: wrap;
 }
 
   
@@ -759,25 +770,20 @@ p {
     margin-top: 5%;
     margin-left: 30%;
     overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .rocket_image{
-    /* aspect-ratio: 297/56; */
-    /* height: aspect-ratio*0.2vh; */
-    position: relative;
-    height: 50px;
-    /* width: 150px; */
-    /* margin-left: 10%; */
-    padding-top: 10vh;
-    
-    /* margin-top: -25%;
-    margin-left: -20%; */
-    /* overflow: hidden; */
-    /* overflow-y: hidden; */
+   overflow: hidden;
+  }
+
+  .rocket_image2{ 
+    height: 80vh;
+    margin-right: 30%;
   }
 
   .rocket_image svg{
-    height: 50%;
+    /* height: 50%; */
   }
 
   .buttonclass {
@@ -844,14 +850,15 @@ p {
 
 
 
-.rocket_image{
-  aspect-ratio: 297/56;
+/* .rocket_image{
+  /* aspect-ratio: 297/56; */
   /* height: aspect-ratio*0.2vh; */
-  margin-top: -34%;
-  margin-left: -20%;
+  /* margin-top: -34%;
+  margin-left: -20%; */
   /* overflow: hidden; */
   /* overflow-y: hidden; */
-}
+
+
 
 
 .settingHeader {

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { BACKEND_URLS } from '../../Links/Config';
 import { useLocation } from 'react-router-dom';
 
-const ButtonLo = ({ setIsName, inputRef }) => {
+const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
     const location = useLocation() 
 
@@ -15,7 +15,9 @@ const ButtonLo = ({ setIsName, inputRef }) => {
 
 
 
-    function test() {
+    function NameTaker() {
+
+        // set the name to the  server
         console.log('inputRef', inputRef.current.value)
 
         const user_input = inputRef.current.value
@@ -76,7 +78,7 @@ const ButtonLo = ({ setIsName, inputRef }) => {
         <div className=" buttonclass col text-center">
 
             <button
-                onClick={test}
+                onClick={NameTaker}
                 className='btn buttonBAckground ' type="submit"
             >
 

@@ -3,18 +3,11 @@ import OnBordText from './Components/OnBordText';
 import InputField from './Components/InputField';
 import ButtonLo from './Components/ButtonLo';
 import '../../CSS/Register.css'
-import axios from 'axios';
-import { BACKEND_URLS } from '../Links/Config';
-
 
 
 const Name = ({ setIsName }) => {
 
     const inputRef = useRef(null);
-
-    // const [isFocused, setIsFocused] = useState(true);
-
-
 
     useEffect(
         () => {
@@ -23,10 +16,6 @@ const Name = ({ setIsName }) => {
         }, []
     )
 
- 
-
- 
-
     return (
         <div>
 
@@ -34,15 +23,15 @@ const Name = ({ setIsName }) => {
                 <div className="row">
                     <div className='mainPage mb-3'>
 
-                        <OnBordText isName='Hi 👋'/>
+                        <OnBordText isName='Hi 👋' startLine='Let’s customize your eSaral journey'/>
 
-                        <InputField inputRef={inputRef}  />
+                        <InputField inputRef={inputRef} Que='What’s your name?' variable={'name'}/>
 
                     </div>
 
                     <br></br>
 
-                    <ButtonLo setIsName={setIsName} inputRef={inputRef}/>
+                    <ButtonLo setIsName={setIsName} inputRef={inputRef} />
 
                 </div>
             </div>

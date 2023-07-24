@@ -5,38 +5,43 @@ import '../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../Links/Config';
 import { PiCrownSimple } from 'react-icons/pi';
+import { useNavigate } from 'react-router-dom';
+import { UserData } from '../Functions/Services';
 
 
 
 const   CourseSettingup = ({id}) => {
-    console.log('CourseSettingup')
+    console.log('CourseSettingup', id)
+    const navigate = useNavigate()
 
     const access = localStorage.getItem("Access Key")
 
     useEffect(
         () =>{
-           axios.post(
-            BACKEND_URLS.NEW_ENROLLMENTS,
-            {
-                body: {
+            axios.post(
+                BACKEND_URLS.NEW_ENROLLMENTS,
+                {
                     'target_course_id': id,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + access
+                    }
+                },
+            ).then(
+                (resp) => { 
+                    console.log('CourseSettingup resp', resp);
+
+                    UserData(access, navigate)
                 }
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + access
+            ).catch(
+                (err) => { 
+                    console.log("CourseSettingup err", err);
                 }
-            },
-           ).then(
-            (resp) => { 
-                console.log('CourseSettingup resp', resp)
-            }
-           ).catch(
-            (err) => { 
-                console.log("CourseSettingup err",err)
-            }
-           )
+            );
+            
+
         },[]
     )
     return (
@@ -52,7 +57,10 @@ const   CourseSettingup = ({id}) => {
 
             
             <div className='rocket_image'>
+                <div className='rocket_image2'>
+
             <LottieImgComp animationData={animationData} />
+                </div>
             </div>
         </>
     );

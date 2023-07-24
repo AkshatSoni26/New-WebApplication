@@ -20,7 +20,11 @@ body {
 }
 
 .LeftSide {
-  flex: 1;
+  /* flex: 1; */
+}
+
+.mainPage, .LeftSide{
+  margin-left: 0%;
 }
 
 
@@ -36,7 +40,8 @@ body {
 .RightSide {
   /* position: relative; */
   flex: 1;
-  /* margin-left: 40%; */
+  margin-top: 2%;
+  margin-left: 5%;
 }
 
 img {
@@ -581,6 +586,10 @@ p {
   opacity: 0.5;
 } */
 
+.carousel-indicators{
+  display: none;
+}
+
 
 .lottie{
   /* position: relative; */
@@ -595,4 +604,25 @@ p {
   /* position: absolute; */
   /* background-color: rgba(13, 16, 21, 0.66); */
   width: 20%;
+}
+
+.buttonBAckground, .buttonBAckground:hover {
+  background-color: #5F46E3;
+  width: 70%;
+}
+
+
+.CarousalCaption{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.CarousalText {
+  text-align: center;
+  word-wrap: break-word;
+  width: 70%;
 }

@@ -3,11 +3,11 @@ import '../../../CSS/Register.css'
 
 
 
-const OnBordText = ({isName}) => {
+const OnBordText = ({isName, startLine}) => {
     return (
         <div className='textonly'>
             <div className='start'>{ isName }</div>
-            <div className='startline'>Let’s customize your eSaral journey</div>
+            <div className='startline'>{startLine}</div>
         </div>
     );
 };
