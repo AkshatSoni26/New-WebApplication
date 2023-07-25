@@ -17,14 +17,19 @@ const Home = () => {
 
     const accessKey = localStorage.getItem('Access Key')
     const userData = JSON.parse(localStorage.getItem('userData'))
-    
+
     useEffect(
         () => {
-            if (!accessKey){
+
+            if (!accessKey) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
-            
-            if (!userData){ 
+
+            if (accessKey == null) {
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
+             if (!userData) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 

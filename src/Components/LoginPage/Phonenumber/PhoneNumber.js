@@ -20,14 +20,11 @@ function PhoneNumber() {
 
   const [phoneNumber, setPhoneNumber] = useState(testingNumber);
   const [Nonce, setNonce] = useState('')
-  const [Otp, setOtp] = useState('')
   const [OtpSend, setOtpSend] = useState(false)
+  const [otpVerifi, setOtpVerifi] = useState(false)
 
   const PhoneRef = useRef(null)
   const OtpRef = useRef(null)
-
-  const dispatch = useDispatch()
-  const { AccessKey } = bindActionCreators(actionCreators, dispatch)
 
   const [erro, setErro] = useState(false)
 
@@ -37,6 +34,7 @@ function PhoneNumber() {
     () => {
       const access = localStorage.getItem('Access Key')
       const userData = localStorage.getItem('userData')
+
 
       if (access && userData) {
         navigate(FRONTEND_URLS.HOME_ROUTE)
@@ -49,8 +47,8 @@ function PhoneNumber() {
   return (
 
     (!OtpSend)
-
       ?
+      (
       <>
         <div className="container">
           <div className="row">
@@ -60,8 +58,8 @@ function PhoneNumber() {
               // startLine='Let’s customize your eSaral journey'
               />
 
-              <InputField inputRef={PhoneRef} Que='Enter your Phone Number' phoneNumber={phoneNumber}
-                variable={'Phone Number'} />
+              <InputField inputRef={PhoneRef} Que='Enter your Phone Number' variable={'Phone Number'} />
+
 
               {console.log('phone number InputField', PhoneRef)}
 
@@ -74,7 +72,11 @@ function PhoneNumber() {
             <div className=" buttonclass col text-center">
 
               <button className='btn buttonBAckground' type="submit"
-                onClick={() => OTPSender(PhoneRef.current.value, setOtpSend, setNonce, setErro, redirect)}
+                onClick={() => {
+                  OTPSender(PhoneRef.current.value, setOtpSend, setNonce, setErro, redirect)
+                  setPhoneNumber(PhoneRef.current.value)
+                  console.log("OTPSender", PhoneRef.current.value)
+                }}
               >
                 <div style={{ color: '#fff' }}>
                   Continue <AiOutlineArrowRight color='#fff' />
@@ -86,37 +88,40 @@ function PhoneNumber() {
           </div>
         </div>
       </>
+      )
       :
 
+      (
       <>
-        <div className="container">
+            <div className="container">
           <div className="row">
             <div className='mainPage mb-3'>
 
-              <InputField inputRef={OtpRef} Que='Enter your OTP' phoneNumber={Otp}
-                variable={'OTP'} />
+            <InputField inputRef={OtpRef} Que='Enter your OTP' variable={'OTP'} />
 
-              <div id='mess'></div>
+            <div id='mess'></div>
 
             </div>
-
             <br></br>
-
-            <div className=" buttonclass col text-center">
-
-              <button className='btn buttonBAckground' type="submit"
-                onClick={() => verifiOTP(Nonce, OtpRef.current.value, navigate, phoneNumber)}
+            <div className=" buttonclass col text-center">  
+              <button
+                className='btn buttonBAckground'
+                type="submit"
+                onClick={() => {
+                  verifiOTP(Nonce, OtpRef.current.value, navigate, phoneNumber, setOtpVerifi);
+                  // console.log(  phoneNumber)
+                }}
               >
                 <div style={{ color: '#fff' }}>
                   Continue <AiOutlineArrowRight color='#fff' />
                 </div>
               </button>
-
             </div>
-
           </div>
         </div>
       </>
+      )
+
 
   );
 }

@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../CSS/Register.css'
 import Name from './Name';
 import RightSlider from '../LoginPage/rightSlider';
 import AttemptYear from './AttemptYear';
 import Exam from './Exam';
 import CourseSettingup from './CourseSettingup';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
 
     console.log('Register')
+    
 
-    const [ isName, setIsName] = useState()
+    const [ isName , setIsName] = useState("")
     const [AttemptYearList, setAttemptYearList]  = useState()
     const [ExamId, setExamId] = useState()
+    const navigate = useNavigate()
+
+
+    useEffect( 
+        () => {
+            if (localStorage.getItem("Access Key") && localStorage.getItem("userData") ){
+                navigate('/')
+            }
+
+        },[]
+    )
 
 
     return (
@@ -32,8 +44,6 @@ const Register = () => {
                 { (AttemptYearList) && (!ExamId) && <Exam isName={isName} targets={AttemptYearList} setExamId={setExamId}/> }      {/* It gives the id */}
 
                 { (ExamId) && <CourseSettingup id={ExamId}/> } 
-
-
 
             </div>
 

@@ -7,7 +7,7 @@ const LottieImgComp = ({ animationData }) => {
 
     return (
         <>
-            <Lottie animationData={animationData} loop={true} />
+            <Lottie animationData={animationData} loop={false} />
         </>
     );
 };

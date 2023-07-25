@@ -32,7 +32,7 @@ const   CourseSettingup = ({id}) => {
             ).then(
                 (resp) => { 
                     console.log('CourseSettingup resp', resp);
-
+                    localStorage.removeItem('reg')
                     UserData(access, navigate)
                 }
             ).catch(

@@ -338,7 +338,7 @@ p {
   margin-top: 1%;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 90vh;
+  height: 89vh;
 }
 
 .HomePageSubject {
@@ -693,7 +693,11 @@ p {
   border-color: #FFB023;
   border-style: solid;
   border-width: 1px;
-  padding-top: 10%;
+  /* padding-top: 10%; */
+
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
 
   /* padding-bottom: 20%; */
   aspect-ratio: 150/64;
@@ -704,6 +708,8 @@ p {
   margin: 3%;
   flex: 1;
   border-radius: 8px;
+
+  height: auto;
 
 
   color: #0D1015;
@@ -749,10 +755,13 @@ p {
 
 
 .colorBoxButton{
-  width: 50%;
+  width: 40%;
   height: auto;
-  /* display: flex; */
-  /* flex: 1; */
+  margin: 2%;
+  margin-left: -1%;
+  margin-right: 4%;
+  /* display: flex; 
+  flex: 1; */
 }
 
 .buttonClass{
@@ -795,7 +804,7 @@ p {
 
   .buttonBAckground, .buttonBAckground:hover {
     background-color: #5F46E3;
-    width: 70%;
+    width: 76.5%;
   }
 
   /* RightSlider */
@@ -818,7 +827,7 @@ p {
   }
 
 
-  .colorBoxBig {
+  Big {
     overflow: hidden;
   }
 
@@ -836,6 +845,8 @@ p {
   .PencilLottie{
     position: relative;
     height: 37vh;
+    width: 80%;
+    /* height: 60%; */
   }
 
   

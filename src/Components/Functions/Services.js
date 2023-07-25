@@ -1,7 +1,7 @@
 import React from "react";
 import { BACKEND_URLS, FRONTEND_URLS } from "../Links/Config";
 import axios from "axios";
-import { BorderColors, Colors, country_code } from "../../Constants/Constants";
+import { BorderColors, Colors, alert_circle, country_code } from "../../Constants/Constants";
 import ColorButton from "../Onboarding/Components/ColorButton";
 import ColorButton2 from "../Onboarding/Components/ColorButton2";
 
@@ -81,7 +81,7 @@ export function OTPSender(
           mess.innerHTML = "";
 
           const nonce = response.data.data.nonce;
-          console.log("under the phone NUmbe", response.data.message);
+          console.log("under the phone Number", response.data.message);
           setOtpSend(true);
           setNonce(nonce);
         }
@@ -89,18 +89,21 @@ export function OTPSender(
       .catch((error) => {
         console.log(error.message);
         setErro(true);
-        redirect(`/${error.message}`);
+        // redirect(`/${error.message}`)
       });
   } else {
     const mess = document.getElementById("mess");
-    mess.innerHTML = "Your Phone Number is wrong";
+    mess.innerHTML = alert_circle + ' ' + `Please enter a valid number first`;
     mess.style.color = "red";
   }
 }
 
 //-------------------------------------------------------------------------------------//
-export function verifiOTP(nonce, otp, navigate, phoneNumber) {
-  console.log("under the verifi otp", otp);
+export function verifiOTP(nonce, otp, navigate, phoneNumber, setOtpVerifi) {
+
+  // (Nonce, OtpRef.current.value, navigate, PhoneRef.current.value)
+  
+  console.log("under the verifi otp", phoneNumber, otp, nonce);
 
   const format = /[0-9]/;
 
@@ -113,11 +116,20 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber) {
         otp: otp,
       })
       .then((response) => {
-        if (response.data.message === "OTP Verified Successfully") {
+        console.log("response", response.data.message)
+        if (response.data.message === "Incorrect OTP" ){
+
+          const mess = document.getElementById("mess");
+          mess.innerHTML = alert_circle + ' ' + "Incorrect OTP";
+          mess.style.color = "red";   
+        } 
+        else if (response.data.message === "OTP Verified Successfully") {
           const nonce = response.data.data.nonce;
           UserDataProvider(nonce, navigate, phoneNumber);
+          setOtpVerifi(true)
           console.log("under the response otp verified successfully.");
         }
+        
       })
       .catch((error) => {
         console.log("under the verifiOTP", error);
@@ -130,6 +142,9 @@ else {
     mess.style.color = "red";
   }
 }
+
+
+
 
 //-------------------------------------------------------------------------------------//
 export function UserDataProvider(nonce, navigate, phoneNumber) {
@@ -152,14 +167,17 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
       const access = response.data.data.tokens.access;
 
       const is_course_assigned = response.data.data.is_course_assigned;
+      const first_name = response.data.data.first_name
 
       console.log("is_course_assigned", is_course_assigned);
 
       // localStorage.setItem('Access Key', access)
 
       if (is_course_assigned == true) {
-        Register(access, navigate);
-      } else {
+        Register(access, navigate,first_name);
+        localStorage.setItem('reg', 'register')
+      } 
+      else {
         UserData(access, navigate);
       }
     })
@@ -170,7 +188,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 }
 
 //-------------------------------------------------------------------------------------//
-export function Register(access, navigate) {
+export function Register(access, navigate, ) {
   navigate(FRONTEND_URLS.REGISTER_ROUTE, { state: access });
 }
 
@@ -343,17 +361,6 @@ export function ColorContainer(isName, CLASSES, setAttemptYearList) {
 
   return buttons;
 
-  // const rows = [];
-  // for (let i = 0; i < buttons.length; i += 2) {
-  //   rows.push(
-  //     <div className="d-flex flex-row bd-highlight mb-3" key={i}>
-  //       {buttons[i]}
-  //       {buttons[i + 1]}
-  //     </div>
-  //   );
-  // }
-
-  // return <>{rows}</>;
 }
 
 export function ColorContainerNew(CLASSES, setExamId) {
@@ -365,6 +372,7 @@ export function ColorContainerNew(CLASSES, setExamId) {
       <ColorButton2
         setExamId={setExamId}
         key={index}
+        thumbnail={className.thumbnail}
         className={className.target_name}
         tag_line={className.tag_line}
         id={className.target_course_id}
@@ -376,75 +384,5 @@ export function ColorContainerNew(CLASSES, setExamId) {
 
   return buttons;
 
-  // const rows = [];
-  // for (let i = 0; i < buttons.length; i += 2) {
-  //   rows.push(
-  //     <div className="d-flex justify-content-center" key={i}>
-  //       {buttons[i]}
-  //       {buttons[i + 1]}
-  //     </div>
-  //   );
-  // }
-
-  // return <>{rows}</>;
 }
 
-//-------------------------------------------------------------------------------------//
-
-//  export function NameTaker( inputRef, setIsName, location) {
-
-//     // set the name to the  server
-//     console.log('inputRef', inputRef.current.value)
-
-//     const access = localStorage.getItem('Access Key')
-//     const user_input = inputRef.current.value
-
-//     const format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
-//     console.log('localStorage.getItem(Access Key)',access)
-
-//     const Headers = {
-//         'Authorization': 'Bearer ' + access,
-//        'Content-Type': 'application/json'
-//    }
-
-//    const Body =  {
-//     'full_name': user_input,
-// }
-
-//     if (user_input.length > 0) {
-
-//         if (format.test(user_input)) {
-
-//             const mess = document.getElementById('message')
-//             mess.innerHTML = 'Please remove special Characters.'
-
-//         }
-//         else{
-//             setIsName(inputRef.current.value)
-
-//             axios.post(
-//                 BACKEND_URLS.SET_NAME,
-//                 Body, // Request body should be the second parameter
-//                 {
-//                     headers: {
-//                         'Content-Type': 'application/json',
-//                         'Authorization': 'Bearer ' + location.state
-//                     }
-//                 }
-//             ).then(
-//                 (resp) => {
-//                     console.log('Your response is here', resp);
-//                 }
-//             ).catch(
-//                 (err) => {
-//                     console.log('error', err);
-//                 }
-//             );
-
-//         }
-//     }
-//     else {
-//         const mess = document.getElementById('message')
-//         mess.innerHTML = 'first enter the name'
-//     }
-// }
