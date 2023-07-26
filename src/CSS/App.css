@@ -654,3 +654,7 @@ p {
   height: 70vh;
   overflow-y: scroll;
 } */
+
+.rpv-core__inner-page, .rpv-core__viewer {
+background-color: #F8F8F8 ;
+}
