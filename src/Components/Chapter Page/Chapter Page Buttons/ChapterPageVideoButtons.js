@@ -4,6 +4,7 @@ import '../../../CSS/App.css'
 import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
 import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
 import LottieImage from '../../LottieImage/LottieImage';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 
@@ -70,7 +71,7 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
 
             :
 
-            <>Loading...</>
+            <SpinnerFun />
 
     );
 };

@@ -9,6 +9,7 @@ import '../../CSS/Register.css'
 import { BorderColors, Colors } from '../../Constants/Constants';
 import axios from 'axios';
 import { BACKEND_URLS } from '../Links/Config';
+import SpinnerFun from '../SpinnerFun/SpinnerFun';
 
 
 
@@ -90,7 +91,7 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
 
             // </div>
             :
-            <>Loading...</>
+            <SpinnerFun />
     );
 };
 

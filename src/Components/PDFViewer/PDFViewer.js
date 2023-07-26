@@ -8,6 +8,7 @@ import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
 import ToolBarlayout from './ToolBarlayout';
+import SpinnerFun from '../SpinnerFun/SpinnerFun';
 
 
 
@@ -102,7 +103,7 @@ const PDFViewer = () => {
                 </Worker>
             </div>
             :
-            <>Loading...</>
+            <SpinnerFun />
     );
 };
 

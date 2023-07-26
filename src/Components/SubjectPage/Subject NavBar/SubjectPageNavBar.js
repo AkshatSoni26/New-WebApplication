@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FRONTEND_URLS } from '../../Links/Config';
 import CommonNavBar from '../../CommonNavBar';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 const SubjectPageNavBar = ({ subjectId }) => {
   const [subjectName, setSubjectName] = useState('');
@@ -26,7 +27,7 @@ const SubjectPageNavBar = ({ subjectId }) => {
   return (
     <>
       {!subjectName ? (
-        <>Loading...</>
+        <SpinnerFun />
       ) : (
         <div className='SubjectPageNavBar'>
           <CommonNavBar name={subjectName}  />

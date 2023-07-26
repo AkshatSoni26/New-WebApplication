@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { slogen } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
 import { useNavigate } from 'react-router-dom';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 const SubjectCaural = () => {
@@ -18,7 +19,7 @@ const SubjectCaural = () => {
     return (
         (!SubjectData)
             ?
-            <>Loading...</>
+            <SpinnerFun />
             :
             <div>
                 <div className="startingPhrase ChapLec">{slogen}</div>

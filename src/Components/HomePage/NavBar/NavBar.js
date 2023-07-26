@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {  CourseSwitcher, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 function NavBar() {
@@ -18,7 +19,7 @@ function NavBar() {
 
     return (
         (!courses) ?
-            <>Loading....</>
+            <SpinnerFun />
             :
             <div className='HomeNavBar'>
                 <Navbar expand="lg" >

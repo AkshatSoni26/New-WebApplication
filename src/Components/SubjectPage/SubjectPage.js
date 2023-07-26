@@ -12,6 +12,7 @@ import { FRONTEND_URLS } from '../Links/Config';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
 import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
+import SpinnerFun from '../SpinnerFun/SpinnerFun';
 
 
 
@@ -61,7 +62,7 @@ const SubjectPage = () => {
     return (
         (!SubData)
             ?
-            <>Loading...</>
+            <SpinnerFun />
             :
             <>
                 {

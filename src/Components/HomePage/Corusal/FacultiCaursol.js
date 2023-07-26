@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import '../../../CSS/App.css'
 import { facultiePortionLine } from '../../../Constants/Constants';
 import { responsive } from '../../Functions/Services';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 const FacultiCaursol = () => {
@@ -14,7 +15,7 @@ const FacultiCaursol = () => {
 
     return (
         (!FacultieData) ?
-            <>Loading...</>
+            <SpinnerFun />
             :
             <div className='container '>
 

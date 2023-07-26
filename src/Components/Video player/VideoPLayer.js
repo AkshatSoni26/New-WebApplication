@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ChapterScroll, VideoFun } from "../Functions/Services";
 import { useSelector } from "react-redux";
 import PDFViewer from "../PDFViewer/PDFViewer";
+import SpinnerFun from "../SpinnerFun/SpinnerFun";
 
 // import "./styles.css";
 
@@ -74,6 +75,6 @@ export default function VideoPlayer() {
         </div>
         :
 
-        <>Loading...</>
+        <SpinnerFun />
   );
 }

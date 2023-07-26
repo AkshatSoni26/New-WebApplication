@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../CSS/App.css'
 import { SideBarItem, companyLogo } from '../../../Constants/Constants';
+import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 const SideBar = () => {
@@ -12,7 +13,7 @@ const SideBar = () => {
   return (
 
     (!data) ?
-      <>Loading...</>
+      <SpinnerFun />
       :
       <div className='homeSide'>
         <div className='Logo_Image'>

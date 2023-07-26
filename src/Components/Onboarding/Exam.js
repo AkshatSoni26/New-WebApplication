@@ -7,6 +7,7 @@ import animationData from '../lottie utils/target.json'
 import LottieImgComp from './Components/LottieImgComp';
 import '../../CSS/Register.css'
 import { BorderColors, Colors } from '../../Constants/Constants';
+import SpinnerFun from '../SpinnerFun/SpinnerFun';
 
 
 
@@ -54,7 +55,7 @@ const Exam = ({ isName, targets, setExamId }) => {
 
             </div>
             :
-            <>Loading...</>
+            <SpinnerFun />
     );
 };
 
