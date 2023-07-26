@@ -33,7 +33,7 @@ const SubjectPage = () => {
     useEffect(
         () => {
 
-            subjectPageData(SubjectData, subjectId, setSubjData)
+            subjectPageData(SubjectData, subjectId, setSubjData, navigate)
             const subjectData = JSON.parse(localStorage.getItem('userData')).subjects
 
             let isChapter = false

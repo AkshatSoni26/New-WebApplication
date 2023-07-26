@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import ChapterContentType from './ChapterCONTENTtype';
 import '../../../CSS/App.css'
@@ -7,6 +7,13 @@ import ChapterSheetType from './ChapterSheetType';
 const ChapterCollectionType = ({ content_data }) => {
 
     console.log('ChapterCollectionType')
+
+
+        const [activeKey, setActiveKey ] = useState()
+
+    const handleAccordionChange = (key) => {
+        setActiveKey(key === activeKey ? null : key);
+      };
     
     return (
         <div>
@@ -20,7 +27,7 @@ const ChapterCollectionType = ({ content_data }) => {
                                 }
 
                                 {
-                                    (data.node_type == "COLLECTION") && <Accordion key={index} className='collectionAccordion'>
+                                    (data.node_type == "COLLECTION") && <Accordion activeKey={activeKey} onSelect={handleAccordionChange} >
                                         <Accordion.Item  eventKey={index}>
                                             <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
                                             <Accordion.Body className='accordionBody'>

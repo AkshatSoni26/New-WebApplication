@@ -404,7 +404,7 @@ p {
 }
 
 .accordionBody {
-  max-height: 48vh;
+  max-height: 46vh;
   overflow-y: scroll;
   flex: 1;
 }
@@ -458,6 +458,8 @@ p {
 .ChapterContent {
   position: relative;
   padding: 3%;
+  height: 80vh;
+  /* overflow-y: scroll; */
 }
 
 .chapterContDat {
@@ -480,6 +482,8 @@ p {
   letter-spacing: 0em;
   text-align: left;
   color: #0D1015;
+
+  margin-top: 10%;
 }
 
 
@@ -498,6 +502,7 @@ p {
   flex: 1;
   border-radius: 5%;
   /* opacity: 0; */
+  /* margin-top: 10%; */
 }
 
 .layer {
@@ -513,11 +518,10 @@ p {
   /* Set z-index property to place this element on top of the first layer */
   z-index: 1;
   /* Set other styling properties for the second layer */
-  width: 173px;
+  width: 175px;
   height: 100px;
   border-radius: 5%;
-
-
+  /* margin-top: 10%; */
 }
 
 

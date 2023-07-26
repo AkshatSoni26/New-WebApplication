@@ -473,7 +473,7 @@ p {
   border-radius: 8px
 }
 
-.ChapterContent {
+.ChapterContent, .SubjectContent {
   position: relative;
   padding: 3%;
 }
@@ -638,3 +638,19 @@ p {
   width: 30%;
   height: auto;
 }
+
+
+/* .rpv-core__viewer{
+  height: 70vh;
+  overflow-y: scroll;
+} */
+
+/* .rpv-core__inner-pages{
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.rpv-core__inner-container{
+  height: 70vh;
+  overflow-y: scroll;
+} */

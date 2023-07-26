@@ -58,8 +58,6 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
                     )
                         ?
                         <>
-                            
-
                             <LottieImage />
                         </>
                         :

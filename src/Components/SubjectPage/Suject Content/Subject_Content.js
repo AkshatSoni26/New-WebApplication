@@ -48,7 +48,7 @@ const SubjectContent = ({ subjectId }) => {
 
                         return (
                             ((data.content.learn).length > 0) ?
-                                <section id={`${data.node_id}`} key={index} className='ChapterContent'>
+                                <section id={`${data.node_id}`} key={index} className='SubjectContent'>
 
                                     <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
 

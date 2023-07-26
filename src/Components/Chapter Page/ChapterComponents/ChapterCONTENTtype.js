@@ -3,6 +3,7 @@ import ChapterPagePDFButton from '../Chapter Page Buttons/ChapterPagePDFButton';
 import ChapterPageQuizButton from '../Chapter Page Buttons/ChapterPageQuizButton';
 import ChapterPageButtonText from '../Chapter Page Buttons/ChapterPageButtonText';
 import OneVideoButton from '../Chapter Page Buttons/OneVideoButton';
+import PdfButton from '../Chapter Page Buttons/PdfButton';
 
 
 // only sending content_info
@@ -28,8 +29,9 @@ const ChapterContentType = ({ content_data }) => {
                 <button className='subject' >
                     <div className='accordianDiv'>
 
-                        <ChapterPagePDFButton content_info={content_data.content_info} />
-                        <ChapterPageButtonText content_info={content_data.content_info} />
+                        <PdfButton content_info={content_data.content_info} />
+                        {/* <ChapterPagePDFButton content_info={content_data.content_info} />
+                        <ChapterPageButtonText content_info={content_data.content_info} /> */}
 
                     </div>
                 </button>

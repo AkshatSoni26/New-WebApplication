@@ -138,7 +138,7 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber, setOtpVerifi) {
   }
 else {
     const mess = document.getElementById("mess");
-    mess.innerHTML = "Your OTP is wrong";
+    mess.innerHTML = alert_circle + ' ' + "Incorrect OTP";
     mess.style.color = "red";
   }
 }
@@ -173,7 +173,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       // localStorage.setItem('Access Key', access)
 
-      if (is_course_assigned == true) {
+      if (is_course_assigned == false) {
         Register(access, navigate,first_name);
         localStorage.setItem('reg', 'register')
       } 
@@ -224,7 +224,7 @@ export function UserData(access, navigate) {
 //-------------------------------------- Chapter scroll -----------------------------------------------//
 export function ChapterScroll(id) {
   const element = document.getElementById(id);
-  element.scrollIntoView({ behavior: "smooth" });
+  element && element.scrollIntoView({ behavior: "smooth" })
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
@@ -238,7 +238,7 @@ export function ChapterNavigator(
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
-export function subjectPageData(SubjectData, subjectId, setSubjData) {
+export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
   axios
     .post(
       BACKEND_URLS.SUBJECT_DATA_API,
@@ -261,7 +261,9 @@ export function subjectPageData(SubjectData, subjectId, setSubjData) {
       SubjectData(response.data.data.node_content_tree);
       setSubjData(response.data.data.node_content_tree);
     })
-    .catch((error) => {
+    .catch((error) => { 
+      localStorage.clear()
+      navigate(FRONTEND_URLS.LOGIN_ROUTE)
       console.log("error response", error.response);
     });
 }

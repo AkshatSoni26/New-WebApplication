@@ -29,10 +29,6 @@ const ChapterPage = () => {
 
             const userData = JSON.parse(localStorage.getItem('userData'))
 
-            // if (data == undefined){
-            //     navigate(`/${chapter}`)
-            // }
-
              if (!userData && !data ) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
