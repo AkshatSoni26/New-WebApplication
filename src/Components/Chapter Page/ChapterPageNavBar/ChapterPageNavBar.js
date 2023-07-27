@@ -8,15 +8,9 @@ const ChapterPageNavBar = ( ) => {
   console.log("ChapterPageNavBar")
 
   const learn = useSelector(state => state.learn)
-  console.log('ChapterPageNavBar',learn)
 
   const currentUrl = window.location.href;
-
-// Extract the segments from the URL
-const urlSegments = currentUrl.split('/');
-
-console.log('urlSegments',urlSegments)
-
+  const urlSegments = currentUrl.split('/');
 
   return (
       <div className='SubjectPageNavBar'>

@@ -19,9 +19,10 @@ body {
   display: flex;
 }
 
-.LeftSide {
-  /* flex: 1; */
-}
+ /* .LeftSide {
+  flex: 1; 
+} */
+
 
 .mainPage, .LeftSide{
   margin-left: 0%;

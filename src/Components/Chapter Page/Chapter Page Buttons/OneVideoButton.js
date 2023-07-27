@@ -30,12 +30,13 @@ const OneVideoButton = ({ content_info }) => {
 
     return (
         <button className='subject' onClick={
-            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/${content_info.video_id}`)
-        }
-            }>
-            <div 
-            id={`${content_info.video_id}`} 
-            className='accordianDiv'>
+            () => {
+                navigate(`/${urlPar[0]}/${urlPar[1]}/${content_info.video_id}`)
+            }
+        }>
+            <div
+                id={`${content_info.video_id}`}
+                className='accordianDiv'>
 
                 <ChapterPageVideoButton content_info={content_info} currentUrl={currentUrl} />
                 <ChapterPageButtonText content_info={content_info} />

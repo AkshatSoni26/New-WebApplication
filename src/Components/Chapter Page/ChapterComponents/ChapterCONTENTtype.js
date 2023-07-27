@@ -11,52 +11,31 @@ const ChapterContentType = ({ content_data }) => {
 
     console.log('ChapterContentType1111111111')
 
+    const getContent = (content_data) => {
+        if (content_data?.content_type === "VIDEO" && content_data?.content_info?.video_id) {
+            return <OneVideoButton content_info={content_data.content_info} />
+        }
+        if (content_data?.content_type === "PDF" && content_data?.content_info && content_data?.content_info?.original_file_url) {
+            return <button className='subject' >
+                <div className='accordianDiv'>
+                    <PdfButton content_info={content_data.content_info} />
+                </div>
+            </button>
+        }
+        if (content_data?.content_type === "QUIZ" && content_data?.content_info.display_name) {
+            return <button className='subject' >
+                <div className='accordianDiv'>
+                    <ChapterPageQuizButton content_info={content_data.content_info} />
+                    <ChapterPageButtonText content_info={content_data.content_info} />
+                </div>
+            </button>
+        }
+    }
+
     return (
         <div>
-
-            {
-                content_data?.content_type == "VIDEO" &&
-                content_data?.content_info?.video_id &&
-                <OneVideoButton content_info={content_data.content_info} />
-            }
-
-
-            {
-                content_data?.content_type == "PDF" &&
-                content_data?.content_info &&
-                content_data?.content_info?.original_file_url &&
-
-                <button className='subject' >
-                    <div className='accordianDiv'>
-
-                        <PdfButton content_info={content_data.content_info} />
-                        {/* <ChapterPagePDFButton content_info={content_data.content_info} />
-                        <ChapterPageButtonText content_info={content_data.content_info} /> */}
-
-                    </div>
-                </button>
-            }
-
-
-            {
-                content_data?.content_type == "QUIZ" &&
-                content_data?.content_info.display_name &&
-
-                <button className='subject' >
-                    <div className='accordianDiv'>
-
-                        <ChapterPageQuizButton content_info={content_data.content_info} />
-                        <ChapterPageButtonText content_info={content_data.content_info} />
-
-                    </div>
-                </button>
-            }
-
-
-
-
+            {getContent(content_data)}
         </div>
     );
 };
-
 export default memo(ChapterContentType);

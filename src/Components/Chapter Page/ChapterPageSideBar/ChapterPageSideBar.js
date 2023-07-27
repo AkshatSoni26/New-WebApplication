@@ -12,8 +12,6 @@ const ChapterPageSideBar = () => {
     const learn = useSelector(state => state.learn)
     const chapterContent = learn.content
 
-    // console.log('ChapterPageNavBar',learn)
-
     const [activeKey, setActiveKey ] = useState(0)
 
     const handleAccordionChange = (key) => {

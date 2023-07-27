@@ -4,7 +4,7 @@ const ChapterPageButtonText = ( {content_info} ) => {
 
     console.log('ChapterPageButtonText')
     return (
-        (content_info.name) &&
+        (content_info && content_info.name) &&
         <div className='accordianContent'>
             {content_info.name}
         </div>

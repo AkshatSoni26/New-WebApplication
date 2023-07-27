@@ -7,13 +7,12 @@ const ChapterSheetType = ({ content_data }) => {
 
     return (
         <div>
-
             {
                 content_data.map(
                     (data, index) => {
                         return (
                             <div key={index}>
-                                {(data.node_type == "CONTENT") && (data.content_data) && < ChapterContentType content_data={data.content_data} />}
+                                {(data?.node_type == "CONTENT") && (data?.content_data) && < ChapterContentType content_data={data.content_data} />}
                             </div>
                         )
                     }

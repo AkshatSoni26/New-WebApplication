@@ -7,9 +7,8 @@ import ChapterSheetType from './ChapterSheetType';
 const ChapterCollectionType = ({ content_data }) => {
 
     console.log('ChapterCollectionType')
-
-
-        const [activeKey, setActiveKey ] = useState()
+    
+    const [activeKey, setActiveKey ] = useState()
 
     const handleAccordionChange = (key) => {
         setActiveKey(key === activeKey ? null : key);
@@ -31,15 +30,12 @@ const ChapterCollectionType = ({ content_data }) => {
                                         <Accordion.Item  eventKey={index}>
                                             <Accordion.Header > <div > {data.display_name} </div> </Accordion.Header>
                                             <Accordion.Body className='accordionBody'>
-
                                                 {
                                                     (data.sheet_content) &&
                                                     <>
                                                         <ChapterSheetType content_data={data.sheet_content} />
                                                     </>
                                                 }
-
-
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
