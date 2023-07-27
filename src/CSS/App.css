@@ -37,11 +37,21 @@ body {
 
 /* RightSlider */
 
+.carouselItems{
+width:75%;
+/* height: 70vh;*/
+}
+
+
+/* .carousalImage{
+  margin-left: 20%;
+} */
+
 .RightSide {
   /* position: relative; */
   flex: 1;
   margin-top: 2%;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 
 img {
@@ -163,8 +173,8 @@ p {
 /* Caursal */
 .FacultiImg,
 .subjectImages {
-  height: 200px;
-  width: 200px;
+  height: 25vh;
+  width: 14vw;
   border-radius: 5%;
 }
 
@@ -277,9 +287,9 @@ p {
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-
   width: 200px;
   word-wrap: break-word;
+  margin-left: 5%;
 }
 
 
@@ -360,7 +370,7 @@ p {
 }
 
 .HomePageSubject {
-  margin-left: 7vw;
+  margin-left: 6vw;
 }
 
 
@@ -658,3 +668,17 @@ p {
 .rpv-core__inner-page, .rpv-core__viewer {
 background-color: #F8F8F8 ;
 }
+
+.Spinner{
+  display: flex;
+  /* margin-top: 40%; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+/* .teacherName {
+  margin-left: -35%
+} */

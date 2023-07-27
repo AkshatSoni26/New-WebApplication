@@ -38,10 +38,10 @@ const FacultiCaursol = () => {
 
                                         <button disabled className='facultiimages subject' key={index}>
                                             <img className='FacultiImg' src={data.thumbnail} />
-                                            <em><strong>
-                                                <div className='teacherName'>{data.name}</div></strong>
-                                            </em>
-                                            <div className='LectureName'>{data.designation}</div>
+                                            <div className='LectureName'>
+                                                <div  >  <b > {data.name}  </b></div>
+                                                <div >{data.designation[0] + data.designation.slice(1,).toLowerCase()}</div>
+                                            </div>
                                         </button>
                                     )
                                 }

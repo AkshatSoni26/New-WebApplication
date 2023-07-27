@@ -1,11 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import '../../CSS/App.css'
 import { IMG } from '../Functions/Services';
+import { interval } from '../../Constants/Constants';
 
-// import {
-//     MDBCarousel,
-//     MDBCarouselItem,
-//   } from 'mdb-react-ui-kit';
 
 function RightSlider() {
 
@@ -13,15 +10,15 @@ function RightSlider() {
 
     return (
         <div className='RightSide'>
-            <Carousel>
+            <Carousel controls={false}>
 
                 {
                     IMG.map(
                         (data, index) => {
                             return (
-                                <Carousel.Item key={index} className='carouselItems'>
+                                <Carousel.Item interval={interval} key={index} className='carouselItems'>
                                     <img
-                                        className="d-block w-100"
+                                        className="d-block w-100 carousalImage"
                                         src={data.url}
                                     />
                                     {/* <Carousel.Caption> */}

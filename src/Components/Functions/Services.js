@@ -173,7 +173,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       // localStorage.setItem('Access Key', access)
 
-      if (is_course_assigned == false) {
+      if (is_course_assigned == true) {
         Register(access, navigate,first_name);
         localStorage.setItem('reg', 'register')
       } 

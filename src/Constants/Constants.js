@@ -13,6 +13,12 @@ export const country_code = 91
 
 export const testingNumber = '9414189611'
 
+
+//-------------------------carusal login interval time ---------------------------------//
+
+export const interval = 1500
+
+
 //------------------------- user Data ---------------------------------//
 export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(localStorage.getItem('userData')).user) : ''
 

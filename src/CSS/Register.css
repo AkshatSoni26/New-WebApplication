@@ -152,13 +152,13 @@ p {
   left: 60px
 }
 
-/* Caursal */
+/* Caursal
 .FacultiImg,
 .subjectImages {
-  height: 200px;
+  height: 180px;
   width: 200px;
   border-radius: 5%;
-}
+} */
 
 /* SubjectCaursal */
 .SubjectNames {
@@ -253,7 +253,7 @@ p {
   /* margin-bottom: 1vh; */
 }
 
-.LectureName {
+/* .LectureName {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -262,7 +262,7 @@ p {
 
   width: 200px;
   word-wrap: break-word;
-}
+} */
 
 
 /* Chapter Header */
@@ -341,9 +341,9 @@ p {
   height: 89vh;
 }
 
-.HomePageSubject {
+/* .HomePageSubject {
   margin-left: 7vw;
-}
+} */
 
 
 
@@ -698,35 +698,28 @@ p {
   border-style: solid;
   border-width: 1px;
   /* padding-top: 10%; */
-
   display: flex;
-  flex-wrap: wrap;
-  /* align-items: center; */
-
+  flex-wrap: nowrap;
+  align-items: center;
   /* padding-bottom: 20%; */
   aspect-ratio: 150/64;
-
   /* padding-top: 5%; */
   align-items: center;
   justify-content: center;
   margin: 3%;
-  flex: 1;
+  flex: 1 1;
   border-radius: 8px;
-
   height: auto;
-
-
   color: #0D1015;
-
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
   letter-spacing: 0em;
   text-align: center;
-
-
   /* height: 5vh; */
   overflow-y: hidden;
+  flex-direction: column;
+  align-content: center;
 }
 
 
@@ -759,7 +752,7 @@ p {
 
 
 .colorBoxButton{
-  width: 40%;
+  width: 45%;
   height: auto;
   margin: 2%;
   margin-left: -1%;
@@ -770,6 +763,7 @@ p {
 
 .buttonClass{
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
