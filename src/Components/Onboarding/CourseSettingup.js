@@ -14,7 +14,7 @@ const   CourseSettingup = ({id}) => {
     console.log('CourseSettingup', id)
     const navigate = useNavigate()
 
-    const access = localStorage.getItem("Access Key")
+    const access = window.atob(localStorage.getItem("Access Key"))
 
     useEffect(
         () =>{

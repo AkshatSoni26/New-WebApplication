@@ -13,45 +13,63 @@ const ChapterPage = () => {
 
     console.log('ChapterPage')
 
-    const { chapter } = useParams()
+    const chapter = window.atob(useParams().chapter)
 
     const [loading, setLoading] = useState(true)
 
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
 
+    const access = localStorage.getItem('Access Key')
+
     const navigate = useNavigate()
 
-    console.log('chapter', chapter)
     useEffect(
         () => {
-            const data = JSON.parse(localStorage.getItem('data'))
 
-            const userData = JSON.parse(localStorage.getItem('userData'))
+            var data = null
+            var userData = null
 
-             if (!userData && !data ) {
+            try {
+                data = JSON.parse(window.atob(localStorage.getItem('data')))
+            }
+            catch (error) {
+                console.log('err', error)
+                navigate(-1)
+            }
+
+            try {
+                userData = JSON.parse(window.atob(localStorage.getItem('userData')))
+            }
+            catch (error) {
+                console.log('err', error)
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-             else if (!data) {
-                navigate(-1)
-            }
-            
-            else {
+
+            if (data) {
+                console.log(data)
+
                 let isChapter = false
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].node_id == chapter) {
 
-                        console.log('data[i].node_id',data[i].node_id)
+                        console.log('data[i].node_id', data[i].node_id)
+
                         LearnData(data[i])
                         setLoading(false)
                         isChapter = true
                         break;
                     }
                 }
-                if (isChapter == false){
-                     navigate(`/${chapter}`)
+
+                if (isChapter == false) {
+                    navigate(`/${window.btoa(chapter)}`)
                 }
+
+                // if (access){
+                //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
+                // }
             }
 
         }, []
@@ -59,25 +77,25 @@ const ChapterPage = () => {
 
     return (
 
-            <div>
+        <div>
 
-                <div className='ChapterNav'>
-                    <ChapterPageNavBar  />
+            <div className='ChapterNav'>
+                <ChapterPageNavBar />
+            </div>
+
+            <div className='contentSep'>
+
+                <div className='ChaptrSide'>
+                    <ChapterPageSideBar />
                 </div>
 
-                <div className='contentSep'>
-
-                    <div className='ChaptrSide'>
-                     <ChapterPageSideBar /> 
-                    </div>
-
-                    <div className='ChapterCon'>
-                      <ChapterContentPortion /> 
-                    </div>
-
+                <div className='ChapterCon'>
+                    <ChapterContentPortion />
                 </div>
 
             </div>
+
+        </div>
     );
 };
 

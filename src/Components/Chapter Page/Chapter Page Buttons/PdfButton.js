@@ -31,7 +31,7 @@ const OneVideoButton = ({ content_info }) => {
 
     return (
         <button className='subject' onClick={
-            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/PDF`, {state: content_info})
+            () => { navigate(`/${urlPar[0]}/${urlPar[1]}/${window.btoa('PDF')}`, {state: content_info})
         }
             }>
             <div 

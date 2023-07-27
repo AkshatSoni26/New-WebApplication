@@ -19,29 +19,24 @@ function App() {
     
     const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE } = FRONTEND_URLS
     
-    const accessKey = localStorage.getItem('Access Key')
-    const userData = JSON.parse(localStorage.getItem('userData'))
-    const data = localStorage.getItem('data')
+    const accessKey = window.atob(localStorage.getItem('Access Key'))
+    const userData = window.atob(localStorage.getItem('userData'))
+    const data = window.atob(localStorage.getItem('data'))
+
+    // console.log(userData)
 
     useEffect(
         () => {
 
-            if (data == undefined || data == null){
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
-
-            if (!accessKey && !userData && !JSON.parse(data) ) {
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            if (!accessKey || accessKey == null || accessKey == undefined) {
+                localStorage.clear()
+               navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
             
-            else if (!accessKey && !userData) {
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
-
-            else if (!accessKey || accessKey == null) {
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
-
+            else if ( !userData || userData == null || userData == undefined || userData == 'ée') {
+                localStorage.clear()
+               navigate(FRONTEND_URLS.LOGIN_ROUTE)
+           }
 
         }, [accessKey]
     )

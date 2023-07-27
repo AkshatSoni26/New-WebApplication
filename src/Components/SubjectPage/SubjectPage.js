@@ -20,41 +20,55 @@ const SubjectPage = () => {
 
     console.log("SubjectPage")
 
-    const subjectId = useParams().subject
+    console.log('subjectId', useParams())
+    const {subject} =  useParams()
+
+    const subjectId = window.atob( subject )
     // console.log('subjectId', subjectId)
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
     const [SubData, setSubjData] = useState()
 
-    const accessKey = localStorage.getItem('Access Key')
-    const userData = JSON.parse(localStorage.getItem('userData'))
+    const accessKey = window.atob(localStorage.getItem('Access Key'))
+    const userData = window.atob(localStorage.getItem('userData'))
     const navigate = useNavigate()
 
     useEffect(
         () => {
 
             subjectPageData(SubjectData, subjectId, setSubjData, navigate)
-            const subjectData = JSON.parse(localStorage.getItem('userData')).subjects
+            
+            var subjectData = null
+            try{
 
-            let isChapter = false
-            for (let i = 0; i < subjectData.length; i++) {
-                if (subjectData[i].node_id == subjectId) {
-                    isChapter = true
-                    break;
+                var subjectData = JSON.parse(userData).subjects
+
+                let isChapter = false
+                for (let i = 0; i < subjectData.length; i++) {
+                    if (subjectData[i].node_id == subjectId) {
+                        isChapter = true
+                        break;
+                    }
                 }
+                if (isChapter == false) {
+                    navigate(`/${subjectId}`)
+                }
+                
             }
-            if (isChapter == false) {
-                navigate(`/${subjectId}`)
-            }
-
-            if (!accessKey) {
+            catch (err) {
+                console.log('err', err)
+                localStorage.clear()
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-            if (!userData) {
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
+
+
+            !accessKey && navigate(FRONTEND_URLS.LOGIN_ROUTE)
+
+            // if (!userData) {
+                
+            // }
 
         }, []
     )
@@ -91,7 +105,7 @@ const SubjectPage = () => {
 
 
                 {
-                    (SubData.length > 0) &&
+                    (SubData.length > 1) &&
                     <div className=' subjectPageClass'>
                         <div className='SideBar'>
                             <SubjectSideBar />

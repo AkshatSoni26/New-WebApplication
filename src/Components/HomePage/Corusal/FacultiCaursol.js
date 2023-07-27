@@ -11,7 +11,7 @@ const FacultiCaursol = () => {
 
     console.log('FacultiCaursol')
 
-    const FacultieData = JSON.parse(localStorage.getItem('userData')).faculties
+    const FacultieData = JSON.parse(window.atob(localStorage.getItem('userData'))).faculties
 
     return (
         (!FacultieData) ?

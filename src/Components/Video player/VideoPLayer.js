@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ChapterScroll, VideoFun } from "../Functions/Services";
 import { useSelector } from "react-redux";
 import PDFViewer from "../PDFViewer/PDFViewer";
@@ -10,12 +10,14 @@ import SpinnerFun from "../SpinnerFun/SpinnerFun";
 export default function VideoPlayer() {
   console.log("VideoPlayer")
 
+  const navigate = useNavigate()
+
   const [vidInfo, setVideoInfo] = useState()
   const currentUrl = window.location.href;
 
   // Extract the segments from the URL
   const urlSegments = currentUrl.split('/');
-  const urlLastSegment = urlSegments[urlSegments.length - 1]
+  const urlLastSegment = window.atob(urlSegments[urlSegments.length - 1])
   useEffect(
     () => {
 
@@ -23,7 +25,7 @@ export default function VideoPlayer() {
         console.log('under the videoPlayer')
       }
       else {
-        VideoFun(urlLastSegment, setVideoInfo)
+        VideoFun(urlLastSegment, setVideoInfo, navigate)
       }
 
 

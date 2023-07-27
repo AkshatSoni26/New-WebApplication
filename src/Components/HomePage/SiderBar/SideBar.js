@@ -8,7 +8,7 @@ const SideBar = () => {
 
   console.log('SideBar')
 
-  const data = JSON.parse(localStorage.getItem('userData'))
+  const data = window.atob(localStorage.getItem('userData'))
 
   return (
 

@@ -11,7 +11,7 @@ function LoginPage() {
     console.log('LoginPage')
 
     const reg = localStorage.getItem('reg')
-    const access = localStorage.getItem('Access Key')
+    const access = window.atob(localStorage.getItem('Access Key'))
     const navigate = useNavigate()
 
     useEffect(
@@ -20,7 +20,10 @@ function LoginPage() {
             {
                 navigate(FRONTEND_URLS.REGISTER_ROUTE, { state: access })
             }
-        }
+            if (access){
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+        },[]
     )
 
 

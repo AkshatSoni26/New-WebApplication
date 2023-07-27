@@ -173,9 +173,9 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       // localStorage.setItem('Access Key', access)
 
-      if (is_course_assigned == true) {
+      if (is_course_assigned == false) {
         Register(access, navigate,first_name);
-        localStorage.setItem('reg', 'register')
+        localStorage.setItem('reg', window.btoa('register'))
       } 
       else {
         UserData(access, navigate);
@@ -197,7 +197,7 @@ export function Register(access, navigate, ) {
 export function UserData(access, navigate) {
   const { USER_DATA } = BACKEND_URLS;
 
-  localStorage.setItem("Access Key", access);
+  localStorage.setItem("Access Key", window.btoa(access));
 
   axios
     .post(
@@ -212,7 +212,7 @@ export function UserData(access, navigate) {
       }
     )
     .then((response) => {
-      localStorage.setItem("userData", JSON.stringify(response.data.data));
+      localStorage.setItem("userData", window.btoa(JSON.stringify(response.data.data)));
       navigate(FRONTEND_URLS.HOME_ROUTE);
     })
     .catch((error) => {
@@ -234,7 +234,8 @@ export function ChapterNavigator(
   navigate,
   init_video_id
 ) {
-  navigate(`/${subjectId}/${chapterId}/${init_video_id}`);
+  // console.log(`/${window.btoa(subjectId)}/${window.btoa(chapterId)}/${window.btoa(init_video_id)}`)
+  navigate(`/${window.btoa(subjectId)}/${window.btoa(chapterId)}/${window.btoa(init_video_id)}`);
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
@@ -248,7 +249,7 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("Access Key"),
+          Authorization: "Bearer " + window.atob(localStorage.getItem("Access Key")),
         },
       }
     )
@@ -256,7 +257,7 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
       console.log("subject response", response.data.data.node_content_tree);
       localStorage.setItem(
         "data",
-        JSON.stringify(response.data.data.node_content_tree)
+        window.btoa(JSON.stringify(response.data.data.node_content_tree))
       );
       SubjectData(response.data.data.node_content_tree);
       setSubjData(response.data.data.node_content_tree);
@@ -269,7 +270,7 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
 }
 
 //-------------------------------------- vIDEO OTP INFO -----------------------------------------------//
-export function VideoFun(video_id, setVideoInfo) {
+export function VideoFun(video_id, setVideoInfo, navigate) {
   // console.log('under the vido fun ')
   axios
     .post(
@@ -281,7 +282,7 @@ export function VideoFun(video_id, setVideoInfo) {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("Access Key"),
+          Authorization: "Bearer " + window.atob(localStorage.getItem("Access Key")),
         },
       }
     )
@@ -291,6 +292,8 @@ export function VideoFun(video_id, setVideoInfo) {
     })
     .catch((error) => {
       console.log("under the Video fun error", error);
+      // localStorage.clear()
+      navigate(FRONTEND_URLS.LOGIN_ROUTE)
     });
 }
 
@@ -298,7 +301,7 @@ export function VideoFun(video_id, setVideoInfo) {
 export function CourseSwitcher(phase_id, subcourses_id, navigate) {
   console.log("under the test function", phase_id, subcourses_id);
 
-  const access = localStorage.getItem("Access Key");
+  const access = window.atob(localStorage.getItem("Access Key"));
 
   axios
     .post(
@@ -313,7 +316,7 @@ export function CourseSwitcher(phase_id, subcourses_id, navigate) {
       }
     )
     .then((response) => {
-      localStorage.setItem("userData", JSON.stringify(response.data.data));
+      localStorage.setItem("userData", window.btoa(JSON.stringify(response.data.data)));
       navigate(FRONTEND_URLS.HOME_ROUTE);
     })
     .catch((error) => {

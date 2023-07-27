@@ -9,7 +9,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
     const location = useLocation() 
 
-    const access = localStorage.setItem('Access Key', location.state)
+    const access = localStorage.setItem('Access Key', window.btoa(location.state))
 
     console.log("ButtonLo",location)
 

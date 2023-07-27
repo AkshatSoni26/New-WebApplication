@@ -32,9 +32,9 @@ const SubjectContent = ({ subjectId }) => {
     )
 
 
-    function test(j) {
-        console.log(j, urlPar)
-    }
+    // function test(j) {
+    //     console.log(j, urlPar)
+    // }
 
 
     return (
@@ -77,7 +77,7 @@ const SubjectContent = ({ subjectId }) => {
                                                                 <button className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
+                                                                            // test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
                                                                             
                                                                             ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
                                                                              }

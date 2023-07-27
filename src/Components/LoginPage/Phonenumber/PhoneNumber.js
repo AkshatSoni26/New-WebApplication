@@ -29,18 +29,18 @@ function PhoneNumber() {
   const [erro, setErro] = useState(false)
 
   const navigate = useNavigate()
+  const access = window.atob(localStorage.getItem('Access Key'))
+  const userData = window.atob(localStorage.getItem('userData'))
 
   useEffect(
     () => {
-      const access = localStorage.getItem('Access Key')
-      const userData = localStorage.getItem('userData')
+      
+      access && userData && navigate(FRONTEND_URLS.HOME_ROUTE)
+      // if (access && userData) {
+      //   navigate(FRONTEND_URLS.HOME_ROUTE)
+      // }
 
-
-      if (access && userData) {
-        navigate(FRONTEND_URLS.HOME_ROUTE)
-      }
-
-    }, []
+    }, [access, userData]
   )
 
 

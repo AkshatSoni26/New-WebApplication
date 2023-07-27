@@ -16,24 +16,25 @@ const Home = () => {
     const navigate = useNavigate()
 
     const accessKey = localStorage.getItem('Access Key')
-    const userData = JSON.parse(localStorage.getItem('userData'))
+    const userData = localStorage.getItem('userData')
 
     useEffect(
         () => {
 
-            if (!accessKey) {
+            if (!accessKey ) {
+                localStorage.clear()
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-            if (accessKey == null) {
+            // if  {
+            //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            // }
+
+             if (!userData || userData == null || userData == undefined) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-             if (!userData) {
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
-
-        }, [accessKey, userData]
+        }, []
     )
 
     return (
@@ -52,7 +53,7 @@ const Home = () => {
 
                     <div className='NavBar'>
 
-                        <NavBar />
+                    <NavBar /> 
 
                         <div className='HomeMainContent '>
 
@@ -64,13 +65,13 @@ const Home = () => {
 
                             <section >
                                 <div className='SubjectCaural'>
-                                    <SubjectCaural />
+                         <SubjectCaural /> 
                                 </div>
                             </section>
 
                             <section >
                                 <div className='FacultiCaursol'>
-                                    <FacultiCaursol />
+                               <FacultiCaursol /> 
                                 </div>
                             </section>
 

@@ -20,7 +20,7 @@ export const interval = 1500
 
 
 //------------------------- user Data ---------------------------------//
-export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(localStorage.getItem('userData')).user) : ''
+export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(window.atob(localStorage.getItem('userData'))).user) : ''
 
  
 

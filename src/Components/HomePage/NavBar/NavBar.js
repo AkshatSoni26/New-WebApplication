@@ -7,11 +7,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {  CourseSwitcher, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+import { memo } from 'react';
 
 
 function NavBar() {
 
-    const courses = JSON.parse(localStorage.getItem('userData')).enrollments
+    const courses = JSON.parse(window.atob(localStorage.getItem('userData'))).enrollments
     console.log('courses', courses)
 
     const current_course = courses.find(currCourse).course_name
@@ -64,4 +65,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default memo(NavBar);

@@ -13,8 +13,7 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
 
   useEffect(() => {
     const urlSegments = currentUrl.split("/");
-
-    setUrlPar(urlSegments[urlSegments.length - 1]);
+    setUrlPar(window.atob(urlSegments[urlSegments.length - 1]));
   }, [currentUrl]);
 
   return currentUrl ? (

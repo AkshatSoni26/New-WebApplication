@@ -9,11 +9,11 @@ const SubjectCaural = () => {
 
     console.log('SubjectCaural')
     const navigate = useNavigate()
-    const SubjectData = JSON.parse(localStorage.getItem('userData')).subjects
+    const SubjectData = JSON.parse(window.atob(localStorage.getItem('userData'))).subjects
 
 
     function SubjectPage(node_id) {
-        navigate(`/${node_id}`)
+        navigate(`/${window.btoa(node_id)}`)
     }
 
     return (

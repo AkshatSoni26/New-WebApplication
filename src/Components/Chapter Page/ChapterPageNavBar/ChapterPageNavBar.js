@@ -9,6 +9,8 @@ const ChapterPageNavBar = ( ) => {
 
   const learn = useSelector(state => state.learn)
 
+  console.log('learn', learn)
+
   const currentUrl = window.location.href;
   const urlSegments = currentUrl.split('/');
 
