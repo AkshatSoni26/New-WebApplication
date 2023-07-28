@@ -10,9 +10,10 @@ const ChapterPageSideBar = () => {
     console.log("ChapterPageSideBar11111111111")
     
     const learn = useSelector(state => state.learn)
-    const chapterContent = learn
+    const chapterContent = learn.content
 
-    console.log("chapterContent", chapterContent)
+
+    console.log('ChapterPageNavBar',learn)
 
     const [activeKey, setActiveKey ] = useState(0)
 
@@ -21,8 +22,9 @@ const ChapterPageSideBar = () => {
       };
 
     return (
-        // (learn) &&  
+        (chapterContent) &&  
 
+        <div className='ChaptrSide'>
         <div className='ChapterPageSideBar'>
             {
                 chapterTable.map(
@@ -37,7 +39,7 @@ const ChapterPageSideBar = () => {
                                             <Accordion.Body className='accordionBody'>
 
                                                 {
-                                                    (chapterContent[chapterTable[index].toLowerCase()]).map(
+                                                 (chapterContent[chapterTable[index].toLowerCase()]) && (chapterContent[chapterTable[index].toLowerCase()]).map(
                                                         (value, i) => {
                                                             return (
                                                                 <div key={i}>
@@ -63,9 +65,9 @@ const ChapterPageSideBar = () => {
                 )
             }
         </ div>
+        </div>
+
     );
 };
 
 export default  memo(ChapterPageSideBar);
-
-

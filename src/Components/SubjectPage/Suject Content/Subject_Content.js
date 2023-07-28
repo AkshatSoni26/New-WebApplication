@@ -38,6 +38,7 @@ const SubjectContent = ({ subjectId }) => {
 
 
     return (
+        <div className='Subject_Content'>
         <div >
             <br></br>
             {
@@ -121,6 +122,7 @@ const SubjectContent = ({ subjectId }) => {
                     }
                 )
             }
+        </div>
         </div>
     );
 };

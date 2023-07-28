@@ -255,10 +255,7 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
     )
     .then((response) => {
       console.log("subject response", response.data.data.node_content_tree);
-      localStorage.setItem(
-        "data",
-        window.btoa(JSON.stringify(response.data.data.node_content_tree))
-      );
+      localStorage.setItem('data', window.btoa(JSON.stringify(response.data.data.node_content_tree)));
       SubjectData(response.data.data.node_content_tree);
       setSubjData(response.data.data.node_content_tree);
     })
@@ -368,6 +365,9 @@ export function ColorContainer(isName, CLASSES, setAttemptYearList) {
 
 }
 
+
+//-------------------------------------------------------------------------------------//
+
 export function ColorContainerNew(CLASSES, setExamId) {
   const buttons = CLASSES.map((className, index) => {
     const color = Colors[index];
@@ -392,3 +392,9 @@ export function ColorContainerNew(CLASSES, setExamId) {
 }
 
 
+//-------------------------------------------------------------------------------------//
+
+export function SearchWinNav(navigate) {
+  // setIsSearch(true)
+  navigate(FRONTEND_URLS.SEARCH_ROUTE)
+}

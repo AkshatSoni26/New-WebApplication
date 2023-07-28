@@ -10,6 +10,7 @@ a:active {
 body {
   font-family: 'Lato', sans-serif;
   background-color: #F8F8F8;
+  /* background-color: #0D1015; */
 }
 
 
@@ -440,23 +441,16 @@ p {
 }
 
 .accordionBody {
-  max-height: 48vh;
+  max-height: 43vh;
   overflow-y: scroll;
   flex: 1;
 }
-
-
-
-
-
-
-
 
 .ChaptrSide {
   margin-top: 3vh;
   background-color: #fff;
   width: 30vw;
-  height: 86.5vh;
+  height: 84vh;
 }
 
 .ChapterNav {
@@ -466,10 +460,12 @@ p {
 
 .ChapterCon {
   background-color: #FFF;
-  width: 70vw;
+  width: 69vw;
+  height: 84vh;
   margin-top: 3vh;
   margin-left: 1vw;
   overflow-y: hidden;
+
 }
 
 .contentSep {
@@ -659,21 +655,6 @@ p {
 }
 
 
-/* .rpv-core__viewer{
-  height: 70vh;
-  overflow-y: scroll;
-} */
-
-/* .rpv-core__inner-pages{
-  height: 70vh;
-  overflow-y: scroll;
-}
-
-.rpv-core__inner-container{
-  height: 70vh;
-  overflow-y: scroll;
-} */
-
 .rpv-core__inner-page, .rpv-core__viewer {
 background-color: #F8F8F8 ;
 }
@@ -688,6 +669,24 @@ background-color: #F8F8F8 ;
   align-content: center;
 }
 
-/* .teacherName {
-  margin-left: -35%
-} */
+.searchBar{
+  background-color: #FFF;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+.searchButton{
+  background-color: black;
+    color: white;
+    border-radius: 12%;
+}
+
+div .ratio{
+  position: relative;
+  margin-top: 1%;
+  width: 90%;
+  margin-left: 5%;
+}

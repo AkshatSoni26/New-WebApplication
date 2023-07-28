@@ -7,11 +7,6 @@ a:active {
 }
 
 
-body {
-  font-family: 'Lato', sans-serif;
-  background-color: #F8F8F8;
-}
-
 
 /* LoginPage */
 
@@ -402,12 +397,12 @@ p {
   letter-spacing: 0em;
   text-align: left;
 }
-
+/* 
 .accordionBody {
   max-height: 46vh;
   overflow-y: scroll;
   flex: 1;
-}
+} */
 
 
 
@@ -416,25 +411,25 @@ p {
 
 
 
-.ChaptrSide {
+/* .ChaptrSide {
   margin-top: 3vh;
   background-color: #fff;
   width: 30vw;
-  height: 86.5vh;
-}
+  height: 86.5vh; */
+/* } */
 
 .ChapterNav {
   background-color: #FFF;
   padding-bottom: 1%;
 }
 
-.ChapterCon {
+/* .ChapterCon {
   background-color: #FFF;
   width: 70vw;
   margin-top: 3vh;
   margin-left: 1vw;
   overflow-y: hidden;
-}
+} */
 
 .contentSep {
   display: flex;

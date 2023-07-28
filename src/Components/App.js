@@ -60,7 +60,9 @@ function App() {
 
                 <Route path={REGISTER_ROUTE} element={<Register />} />
 
-                <Route path={`${SEARCH_ROUTE}/:searchiItem`} element={<Search />} />
+                <Route path={`${SEARCH_ROUTE}`} element={<Search />} />
+                <Route path={`${SEARCH_ROUTE}/:Search_id`} element={<Search />} />
+
 
 
             </Routes>

@@ -7,6 +7,7 @@ import { FRONTEND_URLS } from '../Links/Config';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
+import ChapterMainCom from './ChapterMainCom';
 
 
 const ChapterPage = () => {
@@ -14,12 +15,9 @@ const ChapterPage = () => {
     console.log('ChapterPage')
 
     const chapter = window.atob(useParams().chapter)
-
     const [loading, setLoading] = useState(true)
-
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
-
     const access = localStorage.getItem('Access Key')
 
     const navigate = useNavigate()
@@ -31,6 +29,14 @@ const ChapterPage = () => {
             var userData = null
 
             try {
+                userData = JSON.parse(window.atob(localStorage.getItem('userData')))
+            }
+            catch (error) {
+                console.log('err', error)
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+
+            try {
                 data = JSON.parse(window.atob(localStorage.getItem('data')))
             }
             catch (error) {
@@ -38,13 +44,6 @@ const ChapterPage = () => {
                 navigate(-1)
             }
 
-            try {
-                userData = JSON.parse(window.atob(localStorage.getItem('userData')))
-            }
-            catch (error) {
-                console.log('err', error)
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
 
 
             if (data) {
@@ -56,7 +55,8 @@ const ChapterPage = () => {
 
                         console.log('data[i].node_id', data[i].node_id)
 
-                        LearnData(data[i].content)
+                        LearnData({ 'content': data[i].content, 'display_name': data[i].display_name })
+                        console.log('data[i]', { 'content': data[i].content, 'display_name': data[i].display_name })
                         setLoading(false)
                         isChapter = true
                         break;
@@ -79,21 +79,9 @@ const ChapterPage = () => {
 
         <div>
 
-            <div className='ChapterNav'>
-                <ChapterPageNavBar />
-            </div>
+            <ChapterPageNavBar />
 
-            <div className='contentSep'>
-
-                <div className='ChaptrSide'>
-                    <ChapterPageSideBar />
-                </div>
-
-                <div className='ChapterCon'>
-                    <ChapterContentPortion />
-                </div>
-
-            </div>
+            <ChapterMainCom />
 
         </div>
     );

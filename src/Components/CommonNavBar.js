@@ -8,6 +8,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi'
 import { FRONTEND_URLS } from './Links/Config';
+import { SearchWinNav } from './Functions/Services';
 
 
 
@@ -15,7 +16,7 @@ const CommonNavBar = ({ name, id }) => {
 
   const navigate = useNavigate()
   const [isSearch, setIsSearch] = useState(false)
-  // const inputRef = useRef(null); // Create a reference for the input element
+  const inputRef = useRef(null); // Create a reference for the input element
 
   function PreviousPage() {
     if (id) {
@@ -26,11 +27,7 @@ const CommonNavBar = ({ name, id }) => {
     }
   }
 
-  function tri() {
-    setIsSearch(true)
-    navigate(FRONTEND_URLS.SEARCH_ROUTE)
-
-  }
+ 
 
   // useEffect(() => {
   //   if (isSearch) {
@@ -39,27 +36,32 @@ const CommonNavBar = ({ name, id }) => {
   // }, [isSearch]);
 
   return (
+    <div className='ChapterNav'>
+    <div className='SubjectPageNavBar'style={{marginLeft:"0%"}}>
     <Navbar expand="lg" >
 
       <Container fluid>
-        {/* {(!isSearch) ?
-          <> */}
+        {/* {
+        (!isSearch) ? */}
+          <>
             <button className='subject' onClick={PreviousPage}>
               <Navbar.Brand >  {<AiOutlineArrowLeft />} {name}  </Navbar.Brand>
             </button>
 
-            <button className='d-flex subject' onClick={() => { tri() }}>
+            <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}>
               <FiSearch size={30} color='black' />
             </button>
-          {/* </>
-          // : */}
-          {/* <div >
-            <input  className='commonNavBarInput' />
-          </div> */}
-        {/* // } */}
+          </>
+          {/* //  :
+          // <div >
+          //   <input  className='commonNavBarInput' />
+          // </div> */}
+         {/* }  */}
       </Container>
 
     </Navbar>
+    </div>
+    </div>
   );
 };
 

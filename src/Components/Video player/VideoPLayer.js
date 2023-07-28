@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import PDFViewer from "../PDFViewer/PDFViewer";
 import SpinnerFun from "../SpinnerFun/SpinnerFun";
 import { MDBContainer, MDBIframe } from "mdbreact";
+import { FRONTEND_URLS } from "../Links/Config";
 
 // import "./styles.css";
 
@@ -18,7 +19,17 @@ export default function VideoPlayer() {
 
   // Extract the segments from the URL
   const urlSegments = currentUrl.split('/');
-  const urlLastSegment = window.atob(urlSegments[urlSegments.length - 1])
+  var urlLastSegment = null
+  
+  try{
+     urlLastSegment = window.atob(urlSegments[urlSegments.length - 1])
+  }
+
+  catch(err) {
+    console.log('err',err)
+    navigate(FRONTEND_URLS.LOGIN_ROUTE)
+  }
+
   useEffect(
     () => {
 
@@ -52,7 +63,7 @@ export default function VideoPlayer() {
       :
       vidInfo?.otp
         ?
-        <div className="ratio ratio-16x9">
+        <div className="ratio ratio-16x9" >
           {urlLastSegment && ChapterScroll(urlLastSegment)}
 
           <iframe

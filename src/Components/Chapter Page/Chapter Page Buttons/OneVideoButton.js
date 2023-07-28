@@ -4,7 +4,6 @@ import ChapterPageVideoButton from './ChapterPageVideoButtons';
 import ChapterPageButtonText from './ChapterPageButtonText';
 
 
-
 const OneVideoButton = ({ content_info }) => {
 
     console.log('OneVideoButton')
@@ -12,16 +11,26 @@ const OneVideoButton = ({ content_info }) => {
     const navigate = useNavigate()
 
     const [urlPar, setUrlPar] = useState([])
-
     const currentUrl = window.location.href;
 
     useEffect(
         () => {
-            const urlSegments = currentUrl.split('/');
+            const urlSegments = currentUrl.split('/').slice(3,);
+            console.log('urlSegments', urlSegments)
 
-            setUrlPar(
-                [urlSegments[urlSegments.length - 3], urlSegments[urlSegments.length - 2]]
-            )
+            var a = ''
+            var n = 0
+
+            while (n < (urlSegments.length - 1)) {
+                if (a == '') {
+                    a = urlSegments[n]
+                }
+                else {
+                    a = a + '/' + urlSegments[n]
+                }
+                n++
+            }
+            setUrlPar(a)
 
         }, [currentUrl]
     )
@@ -31,7 +40,7 @@ const OneVideoButton = ({ content_info }) => {
     return (
         <button className='subject' onClick={
             () => {
-                navigate(`/${urlPar[0]}/${urlPar[1]}/${window.btoa(content_info.video_id)}`)
+                navigate(`/${urlPar}/${window.btoa(content_info.video_id)}`)
             }
         }>
             <div

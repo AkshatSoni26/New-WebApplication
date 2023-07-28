@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {  CourseSwitcher, currCourse } from '../../Functions/Services';
+import {  CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
@@ -53,10 +53,15 @@ function NavBar() {
                                     </NavDropdown>
 
                         </Navbar.Brand>
-                        <Form className="d-flex">
+                        {/* <Form className="d-flex"> */}
                             {/* <button> */}
 
-                        <FiSearch size={30} color='black' />
+                            <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}
+                            >
+              <FiSearch size={30} color='black' />
+            </button>
+
+                        {/* <FiSearch size={30} color='black' /> */}
 
                             {/* </button> */}
                         {/*     <Form.Control
@@ -66,7 +71,7 @@ function NavBar() {
                                 aria-label="Search"
                             />
                             <Button variant="outline-success">Search</Button> */}
-                        </Form>
+                        {/* </Form> */}
                     </Container>
                 </Navbar>
             </div>

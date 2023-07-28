@@ -8,10 +8,10 @@ const ChapterContentPortion = () => {
 
     return (
         // <div className='ChapterContent'>
-            
+        <div className='ChapterCon'>
             <VideoPlayer />
             
-        // </div>
+         </div>
     );
 };
 

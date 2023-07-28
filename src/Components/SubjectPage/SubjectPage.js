@@ -114,9 +114,7 @@ const SubjectPage = () => {
                         <div className='NavBar'>
                             {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
 
-                            <div className='Subject_Content'>
-                                {(subjectId) && <SubjectContent subjectId={subjectId} />}
-                            </div>
+                            {(subjectId) && <SubjectContent subjectId={subjectId} />}
                         </div>
                     </div>
                 }

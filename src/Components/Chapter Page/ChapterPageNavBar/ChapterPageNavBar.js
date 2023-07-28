@@ -9,15 +9,13 @@ const ChapterPageNavBar = ( ) => {
 
   const learn = useSelector(state => state.learn)
 
-  console.log('learn', learn)
+  console.log('learnChapterPageNavBar', learn)
 
   const currentUrl = window.location.href;
   const urlSegments = currentUrl.split('/');
 
   return (
-      <div className='SubjectPageNavBar'style={{marginLeft:"0%"}}>
         <CommonNavBar name={learn.display_name} id={urlSegments[urlSegments.length-3]} />
-      </div>
   );
 };
 
