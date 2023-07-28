@@ -56,7 +56,7 @@ const ChapterPage = () => {
 
                         console.log('data[i].node_id', data[i].node_id)
 
-                        LearnData(data[i])
+                        LearnData(data[i].content)
                         setLoading(false)
                         isChapter = true
                         break;

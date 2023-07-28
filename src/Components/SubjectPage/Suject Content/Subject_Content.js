@@ -66,7 +66,7 @@ const SubjectContent = ({ subjectId }) => {
                                         <Carousel
                                             responsive={responsive(4)}
                                             autoPlay={false}
-                                            arrows={false}
+                                            arrows={true}
                                             swipeable={false}
                                             draggable={false}
                                             showDots={false}

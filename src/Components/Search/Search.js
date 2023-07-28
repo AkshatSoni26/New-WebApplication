@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { BACKEND_URLS } from '../Links/Config';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../State';
+import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 
 const Search = () => {
 
@@ -8,11 +12,8 @@ const Search = () => {
 
     const [data, setData] = useState()
 
-    // useEffect(
-    //     () => {
-          
-    //     }, [inputRef]
-    // )
+    const dispatch = useDispatch()
+    const { LearnData } = bindActionCreators(actionCreators, dispatch)
 
     function trial() {
         console.log(inputRef)
@@ -34,6 +35,7 @@ const Search = () => {
                 (response) => {
                     console.log(response.data.data.search_results)
                     setData(response.data.data.search_results)
+                    LearnData(response.data.data.search_results)
                 }
             ).catch(
                 (err) => {
@@ -54,7 +56,7 @@ return (
         <button onClick={trial}>search</button>
 
         <div>
-          {data &&  JSON.stringify(data) }
+          {/* {data &&  <ChapterPageSideBar /> } */}
         </div>
 
     </div>

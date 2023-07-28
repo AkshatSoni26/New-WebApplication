@@ -110,6 +110,8 @@ p {
 .SubjectPageNavBar {
   margin-left: 1%;
   background-color: #FFF;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 
@@ -235,13 +237,17 @@ p {
   display: block;
   /* margin-top: 5px; */
   padding-left: 19px;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 25px;
   font-size: 16px;
   line-height: 44px;
   width: 18.4vw;
   height: 83vh;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .tableContent {
@@ -278,8 +284,9 @@ p {
 }
 
 .SubjectContanier {
-  margin-top:5vh;
+  /* margin-top:5vh; */
   /* margin-bottom: 1vh; */
+  margin-left: 5vw;
 }
 
 .LectureName {
@@ -288,9 +295,9 @@ p {
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  width: 200px;
+  width: 180px;
   word-wrap: break-word;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 
 
@@ -487,6 +494,7 @@ p {
 .ChapterContent, .SubjectContent {
   position: relative;
   padding: 3%;
+  padding-bottom: 0%;
 }
 
 .chapterContDat {

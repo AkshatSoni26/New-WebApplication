@@ -10,7 +10,9 @@ const ChapterPageSideBar = () => {
     console.log("ChapterPageSideBar11111111111")
     
     const learn = useSelector(state => state.learn)
-    const chapterContent = learn.content
+    const chapterContent = learn
+
+    console.log("chapterContent", chapterContent)
 
     const [activeKey, setActiveKey ] = useState(0)
 
@@ -19,7 +21,7 @@ const ChapterPageSideBar = () => {
       };
 
     return (
-        (learn?.content) &&  
+        // (learn) &&  
 
         <div className='ChapterPageSideBar'>
             {
