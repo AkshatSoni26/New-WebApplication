@@ -12,6 +12,7 @@ function LoginPage() {
 
     const reg = localStorage.getItem('reg')
     const access = window.atob(localStorage.getItem('Access Key'))
+    const userData = localStorage.getItem('userData')
     const navigate = useNavigate()
 
     useEffect(
@@ -22,6 +23,9 @@ function LoginPage() {
             }
             if (access){
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+            if (access && userData){
+                navigate(FRONTEND_URLS.HOME_ROUTE)
             }
         },[]
     )

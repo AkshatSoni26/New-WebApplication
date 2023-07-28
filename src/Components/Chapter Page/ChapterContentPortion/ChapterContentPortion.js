@@ -7,11 +7,11 @@ const ChapterContentPortion = () => {
     console.log('ChapterContentPortion')
 
     return (
-        <div className='ChapterContent'>
+        // <div className='ChapterContent'>
             
             <VideoPlayer />
             
-        </div>
+        // </div>
     );
 };
 

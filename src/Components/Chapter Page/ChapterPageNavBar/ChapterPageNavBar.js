@@ -15,7 +15,7 @@ const ChapterPageNavBar = ( ) => {
   const urlSegments = currentUrl.split('/');
 
   return (
-      <div className='SubjectPageNavBar'>
+      <div className='SubjectPageNavBar'style={{marginLeft:"0%"}}>
         <CommonNavBar name={learn.display_name} id={urlSegments[urlSegments.length-3]} />
       </div>
   );

@@ -4,6 +4,7 @@ import { ChapterScroll, VideoFun } from "../Functions/Services";
 import { useSelector } from "react-redux";
 import PDFViewer from "../PDFViewer/PDFViewer";
 import SpinnerFun from "../SpinnerFun/SpinnerFun";
+import { MDBContainer, MDBIframe } from "mdbreact";
 
 // import "./styles.css";
 
@@ -46,31 +47,20 @@ export default function VideoPlayer() {
 
     (urlLastSegment == 'PDF') ?
 
-    <PDFViewer />
+      <PDFViewer />
       // <>Loading......</>
       :
       vidInfo?.otp
         ?
-        <div className="App">
-
+        <div className="ratio ratio-16x9">
           {urlLastSegment && ChapterScroll(urlLastSegment)}
 
           <iframe
             src=
             {`https://player.vdocipher.com/v2/?otp=${vidInfo.otp}&playbackInfo=${vidInfo.playbackInfo}&primaryColor=#4245ef`}
-            frameBorder="0"
-            // style={{
-            //   width: '65vw',
-            //   height: '76vh', // This will adjust the height based on the width
-            //   // overflow:'auto'
-            // }}
-            width={840}
-            height={472}
-            allow="autoplay; encrypted-media; picture-in-picture full"
-            // autoPlay
 
+            allow=" encrypted-media"
             allowFullScreen
-            autoPlay
           ></iframe>
 
 

@@ -9,6 +9,7 @@ import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';
 import ErrorPages from './ErrorPages/ErrorPages';
 import Register from './Onboarding/Register'
+import Search from './Search/Search';
 
 
 
@@ -17,11 +18,10 @@ function App() {
     
     const navigate = useNavigate()
     
-    const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE } = FRONTEND_URLS
+    const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE, SEARCH_ROUTE } = FRONTEND_URLS
     
     const accessKey = window.atob(localStorage.getItem('Access Key'))
     const userData = window.atob(localStorage.getItem('userData'))
-    const data = window.atob(localStorage.getItem('data'))
 
     // console.log(userData)
 
@@ -29,12 +29,12 @@ function App() {
         () => {
 
             if (!accessKey || accessKey == null || accessKey == undefined) {
-                localStorage.clear()
+                // localStorage.clear()
                navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
             
             else if ( !userData || userData == null || userData == undefined || userData == 'ée') {
-                localStorage.clear()
+                // localStorage.clear()
                navigate(FRONTEND_URLS.LOGIN_ROUTE)
            }
 
@@ -59,6 +59,9 @@ function App() {
                 <Route path='/PageNotFound' element={<ErrorPages />} />
 
                 <Route path={REGISTER_ROUTE} element={<Register />} />
+
+                <Route path={SEARCH_ROUTE} element={<Search />} />
+
 
             </Routes>
         </div>

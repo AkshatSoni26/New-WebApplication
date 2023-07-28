@@ -48,6 +48,7 @@ const SubjectContent = ({ subjectId }) => {
 
                         return (
                             ((data.content.learn).length > 0) ?
+                            <>
                                 <section id={`${data.node_id}`} key={index} className='SubjectContent'>
 
                                     <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
@@ -58,13 +59,16 @@ const SubjectContent = ({ subjectId }) => {
 
                                         lecLen={(data.content.learn).length} />
 
-                                    <div className='container SubjectContanier'>
+                                    
+                                </section>
+                                <div className='SubjectContanier'>
 
                                         <Carousel
                                             responsive={responsive(4)}
                                             autoPlay={false}
-                                            swipeable={true}
-                                            draggable={true}
+                                            arrows={false}
+                                            swipeable={false}
+                                            draggable={false}
                                             showDots={false}
                                             infinite={false}
                                             partialVisible={true}
@@ -110,7 +114,7 @@ const SubjectContent = ({ subjectId }) => {
                                         </Carousel>
 
                                     </div>
-                                </section>
+                                </>
                                 :
                                 null
                         )

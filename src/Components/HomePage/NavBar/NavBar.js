@@ -8,6 +8,9 @@ import {  CourseSwitcher, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
+import {FiSearch} from 'react-icons/fi'
+
+
 
 
 function NavBar() {
@@ -51,13 +54,18 @@ function NavBar() {
 
                         </Navbar.Brand>
                         <Form className="d-flex">
-                            <Form.Control
+                            {/* <button> */}
+
+                        <FiSearch size={30} color='black' />
+
+                            {/* </button> */}
+                        {/*     <Form.Control
                                 type="search"
                                 placeholder="Search"
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button variant="outline-success">Search</Button> */}
                         </Form>
                     </Container>
                 </Navbar>

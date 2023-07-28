@@ -14,10 +14,10 @@ const LottieImage = () => {
 
             <div className='LottieBackgroundColour'>
 
-                <div className='playbuttondiv'>
+                <div className='playbuttondiv'> 
                     <div className='playbutton lottie'>
                         <Lottie animationData={animationData} loop={true} />
-                    </div>
+                    </div> 
                 </div>
 
             </div>

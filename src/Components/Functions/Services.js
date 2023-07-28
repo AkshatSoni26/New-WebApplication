@@ -263,7 +263,7 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
       setSubjData(response.data.data.node_content_tree);
     })
     .catch((error) => { 
-      localStorage.clear()
+      // localStorage.clear()
       navigate(FRONTEND_URLS.LOGIN_ROUTE)
       console.log("error response", error.response);
     });

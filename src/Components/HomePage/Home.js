@@ -22,7 +22,7 @@ const Home = () => {
         () => {
 
             if (!accessKey ) {
-                localStorage.clear()
+                // localStorage.clear()
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 

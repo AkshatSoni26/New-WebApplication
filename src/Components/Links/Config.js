@@ -10,11 +10,13 @@ export const BACKEND_URLS = {
     VIDEO_OTP: `${FIXed}/v2/contents/get-video-otp`,
     SET_NAME:`${FIXed}/v2/users/update-profile`,
     GET_ALL_TARGETS:`${FIXed}/v1/users/targets`,
-    NEW_ENROLLMENTS:`${FIXed}/v2/users/enroll`
+    NEW_ENROLLMENTS:`${FIXed}/v2/users/enroll`,
+    SEARCH_API :`${FIXed}/v2/contents/search`
 }
 
 export const FRONTEND_URLS = {
     LOGIN_ROUTE: '/login',
     HOME_ROUTE:'/',
-    REGISTER_ROUTE:'/Register'
+    REGISTER_ROUTE:'/Register',
+    SEARCH_ROUTE:'/search'
 }

@@ -58,7 +58,7 @@ const SubjectPage = () => {
             }
             catch (err) {
                 console.log('err', err)
-                localStorage.clear()
+                // localStorage.clear()
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 

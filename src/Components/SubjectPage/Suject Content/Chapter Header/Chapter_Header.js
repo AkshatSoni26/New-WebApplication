@@ -22,23 +22,7 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
         }
           className='subject chapterHeaderButton'>
           <div className="ProgressPart">
-            <div className="Progress">
-              <svg
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="26"
-                  cy="26"
-                  r="24"
-                  stroke="#E6E7E9"
-                  strokeWidth="3"
-                />
-              </svg>
-            </div>
+           
 
             <div className="ChapLec">
               <div className="chapterName">{display_name}</div>
