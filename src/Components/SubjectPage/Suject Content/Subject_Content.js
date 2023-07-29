@@ -32,11 +32,6 @@ const SubjectContent = ({ subjectId }) => {
     )
 
 
-    // function test(j) {
-    //     console.log(j, urlPar)
-    // }
-
-
     return (
         <div className='Subject_Content'>
         <div >
@@ -85,6 +80,7 @@ const SubjectContent = ({ subjectId }) => {
                                                                             // test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
                                                                             
                                                                             ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
+                                                                            
                                                                              }
                                                                     }
 

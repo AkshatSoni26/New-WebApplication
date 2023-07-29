@@ -265,10 +265,9 @@ p {
   margin-left: 1vw;
   overflow-y: scroll;
   width: auto;
-  height: 89vh;
+  height: 80vh;
   margin-top: 1%;
   background-color: #FFF;
-
 }
 
 .subjectPageClass {
@@ -343,12 +342,12 @@ p {
 
 .ProgressPart {
   display: flex;
-  width: 90%
+  /* width: 90% */
 }
 
 
 .ChapLec {
-  margin-left: 2%;
+  /* margin-left: 2%; */
 }
 
 
@@ -423,6 +422,8 @@ p {
 .chapterHeaderButton {
   display: flex;
   width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .ChapterPageSideBar {
@@ -689,4 +690,13 @@ div .ratio{
   margin-top: 1%;
   width: 90%;
   margin-left: 5%;
+}
+
+div .react-multi-carousel-list {
+  display: flex;
+  align-items: center;
+  /* overflow: hidden; */
+  position: relative;
+  width: 70vw;
+  overflow-x: scroll;
 }

@@ -219,7 +219,7 @@ p {
 
 }
 
-.Subject_Content {
+/* .Subject_Content {
   overflow-x: hidden;
   margin-left: 1vw;
   overflow-y: scroll;
@@ -228,7 +228,7 @@ p {
   margin-top: 1%;
   background-color: #FFF;
 
-}
+} */
 
 .subjectPageClass {
   display: flex;
@@ -299,15 +299,15 @@ p {
 } */
 
 
-.ProgressPart {
+/* .ProgressPart {
   display: flex;
   width: 90%
-}
+} */
 
 
-.ChapLec {
+/* .ChapLec {
   margin-left: 2%;
-}
+} */
 
 
 
@@ -378,10 +378,10 @@ p {
   text-align: left;
 }
 
-.chapterHeaderButton {
+/* .chapterHeaderButton {
   display: flex;
   width: 100%;
-}
+} */
 
 .ChapterPageSideBar {
   width: 30vw;
