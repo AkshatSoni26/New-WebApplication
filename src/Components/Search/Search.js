@@ -16,9 +16,9 @@ const Search = () => {
     const location = useLocation()
     const backLink = location.state
 
-    const link = useSelector(state => state.link)
+  
 
-    console.log('link', link)
+    // console.log('link', link)
 
 
 
@@ -35,50 +35,46 @@ const Search = () => {
     useEffect(() => {
         // Focus the input element on component mount
         // console.log("change")
-        for (let i = 0; i<chapterTable.length; i++){
+        for (let i = 0; i < chapterTable.length; i++) {
         }
     }, [linkTest]);
 
 
     return (
         <>
-            <SearchNavBar setData={setData} setErr={setErr} setSearhed={setSearhed}/>
+            <SearchNavBar setData={setData} setErr={setErr} setSearhed={setSearhed} />
             <>
 
 
                 {
                     (!searhed) ?
 
-                    <>
-                        <div className='SearchResult'>
-                            <div className='NoResultImg'>
-                                <img src={SearchImg} />
+                    <div className='SearchBack'>
+                            <div className='SearchResult'>
+                                <div className='NoResultImg'>
+                                    <img src={SearchImg} />
+                                </div>
+                                <div className='NoResultText'>{SearchText}</div>
                             </div>
-                            <div className='NoResultText'>{SearchText}</div>
                         </div>
-                        </>
 
-                    :
-
-                    (data) && (!err)
-                        ?
-                        <>
-                        <ChapterMainCom />
-                        {console.log('Search Err data', data["learn"].length)}
-                        </>
                         :
-                        <>
 
-                        <div className='SearchResult'>
-                            <div className='NoResultImg'>
-                                <img src={NoResultImg} />
+                        (data) && (!err)
+                            ?
+                            <>
+                                <ChapterMainCom />
+                                {console.log('Search Err data', data["learn"].length)}
+                            </>
+                            :
+                            <div className='SearchBack'>
+                                <div className='SearchResult'>
+                                    <div className='NoResultImg'>
+                                        <img src={NoResultImg} />
+                                    </div>
+                                    <div className='NoResultText'>{NoResult}</div>
+                                </div>
                             </div>
-                            <div className='NoResultText'>{NoResult}</div>
-                        </div>
-                        </>
-
-
-
                 }
 
 
