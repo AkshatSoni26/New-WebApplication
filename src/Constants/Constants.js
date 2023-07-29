@@ -20,7 +20,7 @@ export const interval = 1500
 
 
 //------------------------- user Data ---------------------------------//
-export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(window.atob(localStorage.getItem('userData'))).user) : ''
+export let { full_name } = (localStorage.getItem('userData')) ? (JSON.parse(localStorage.getItem('userData')).user) : ''
 
  
 
@@ -66,3 +66,9 @@ export const DefaultThumbnails = {
 
 //-------------------------- Misc ------------------------------ // 
 export const alert_circle = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>'
+
+
+//----------------------------------------------------------------- // 
+export const NoResult = 'Content for this section is not ready at the moment. Please check later.'
+export const SearchText = 'Search for concepts, videos, sheets, notes, etc'
+export const SearchPlacholder = 'Search here'

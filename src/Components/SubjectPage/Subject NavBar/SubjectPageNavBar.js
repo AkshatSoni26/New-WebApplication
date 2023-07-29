@@ -7,7 +7,7 @@ const SubjectPageNavBar = ({ subjectId }) => {
   const [subjectName, setSubjectName] = useState('');
   const [id, setId] = useState()
 
-  const subjectData = JSON.parse(window.atob(localStorage.getItem('userData')))?.subjects;
+  const subjectData = JSON.parse(localStorage.getItem('userData'))?.subjects;
 
   console.log('SubjectPageNavBar',subjectId)
 

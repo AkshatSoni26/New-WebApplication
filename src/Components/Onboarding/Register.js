@@ -21,7 +21,7 @@ const Register = () => {
 
     useEffect( 
         () => {
-            if (window.atob(localStorage.getItem("Access Key")) && localStorage.getItem("userData") ){
+            if (localStorage.getItem("Access Key") && localStorage.getItem("userData") ){
                 navigate('/')
             }
 

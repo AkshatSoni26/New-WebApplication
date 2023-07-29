@@ -29,8 +29,8 @@ function PhoneNumber() {
   const [erro, setErro] = useState(false)
 
   const navigate = useNavigate()
-  const access = window.atob(localStorage.getItem('Access Key'))
-  const userData = window.atob(localStorage.getItem('userData'))
+  const access = localStorage.getItem('Access Key')
+  const userData = localStorage.getItem('userData')
 
   useEffect(
     () => {

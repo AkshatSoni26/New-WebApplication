@@ -11,7 +11,7 @@ function LoginPage() {
     console.log('LoginPage')
 
     const reg = localStorage.getItem('reg')
-    const access = window.atob(localStorage.getItem('Access Key'))
+    const access = localStorage.getItem('Access Key')
     const userData = localStorage.getItem('userData')
     const navigate = useNavigate()
 

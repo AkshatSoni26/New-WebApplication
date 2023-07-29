@@ -9,6 +9,9 @@ import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi'
 import { FRONTEND_URLS } from './Links/Config';
 import { SearchWinNav } from './Functions/Services';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../State';
 
 
 
@@ -17,6 +20,9 @@ const CommonNavBar = ({ name, id }) => {
   const navigate = useNavigate()
   const [isSearch, setIsSearch] = useState(false)
   const inputRef = useRef(null); // Create a reference for the input element
+
+  const dispatch = useDispatch()
+  const { LinkTrial } = bindActionCreators(actionCreators, dispatch)
 
   function PreviousPage() {
     if (id) {
@@ -27,7 +33,8 @@ const CommonNavBar = ({ name, id }) => {
     }
   }
 
- 
+ const backLink = (window.location.href).split("http://localhost:3000")[1]
+ LinkTrial(backLink)
 
   // useEffect(() => {
   //   if (isSearch) {
@@ -48,7 +55,10 @@ const CommonNavBar = ({ name, id }) => {
               <Navbar.Brand >  {<AiOutlineArrowLeft />} {name}  </Navbar.Brand>
             </button>
 
-            <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}>
+            <button className='d-flex subject' onClick={() => { 
+              // console.log('test', )
+              SearchWinNav(navigate, backLink) 
+              }}>
               <FiSearch size={30} color='black' />
             </button>
           </>

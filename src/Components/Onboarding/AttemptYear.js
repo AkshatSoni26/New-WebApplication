@@ -22,7 +22,7 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
     const [Buttons, setButtons] = useState()
 
     const str = 'Hi,' + ' ' + isName + ' ' + "👋"
-    const access = window.atob(localStorage.getItem("Access Key"))
+    const access = localStorage.getItem("Access Key")
 
 
     useEffect(

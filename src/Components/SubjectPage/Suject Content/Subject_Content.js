@@ -31,6 +31,10 @@ const SubjectContent = ({ subjectId }) => {
         }, [currentUrl]
     )
 
+    function test(a) {
+        console.log('test', a)
+
+    }
 
     return (
         <div className='Subject_Content'>
@@ -62,7 +66,7 @@ const SubjectContent = ({ subjectId }) => {
                                         <Carousel
                                             responsive={responsive(4)}
                                             autoPlay={false}
-                                            arrows={true}
+                                            arrows={false}
                                             swipeable={false}
                                             draggable={false}
                                             showDots={false}
@@ -77,8 +81,8 @@ const SubjectContent = ({ subjectId }) => {
                                                                 <button className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            // test(`/${urlPar[0]}/${ chapter.node_id }/${chapter.content_data.content_info.video_id}`)
-                                                                            
+                                                                            // test(`/${urlPar}/${ data.node_id }/${'learn'}/${chapter.content_data.node_id}`)
+                                                                            // console.log('chapter.content_data',data)
                                                                             ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
                                                                             
                                                                              }

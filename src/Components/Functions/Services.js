@@ -4,6 +4,7 @@ import axios from "axios";
 import { BorderColors, Colors, alert_circle, country_code } from "../../Constants/Constants";
 import ColorButton from "../Onboarding/Components/ColorButton";
 import ColorButton2 from "../Onboarding/Components/ColorButton2";
+import { redirect } from "react-router-dom";
 
 //----------------------------- faculti responsive data  ---------------------------------- //
 export const responsive = (a) => {
@@ -175,7 +176,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       if (is_course_assigned == false) {
         Register(access, navigate,first_name);
-        localStorage.setItem('reg', window.btoa('register'))
+        localStorage.setItem('reg', 'register')
       } 
       else {
         UserData(access, navigate);
@@ -197,7 +198,7 @@ export function Register(access, navigate, ) {
 export function UserData(access, navigate) {
   const { USER_DATA } = BACKEND_URLS;
 
-  localStorage.setItem("Access Key", window.btoa(access));
+  localStorage.setItem("Access Key", access);
 
   axios
     .post(
@@ -212,7 +213,7 @@ export function UserData(access, navigate) {
       }
     )
     .then((response) => {
-      localStorage.setItem("userData", window.btoa(JSON.stringify(response.data.data)));
+      localStorage.setItem("userData", JSON.stringify(response.data.data));
       navigate(FRONTEND_URLS.HOME_ROUTE);
     })
     .catch((error) => {
@@ -234,8 +235,7 @@ export function ChapterNavigator(
   navigate,
   init_video_id
 ) {
-  // console.log(`/${window.btoa(subjectId)}/${window.btoa(chapterId)}/${window.btoa(init_video_id)}`)
-  navigate(`/${window.btoa(subjectId)}/${window.btoa(chapterId)}/${window.btoa(init_video_id)}`);
+  navigate(`/${subjectId}/${chapterId}/${init_video_id}`);
 }
 
 //-------------------------------------- Chapter navigator -----------------------------------------------//
@@ -249,13 +249,13 @@ export function subjectPageData(SubjectData, subjectId, setSubjData, navigate) {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.atob(localStorage.getItem("Access Key")),
+          Authorization: "Bearer " + localStorage.getItem("Access Key"),
         },
       }
     )
     .then((response) => {
       console.log("subject response", response.data.data.node_content_tree);
-      localStorage.setItem('data', window.btoa(JSON.stringify(response.data.data.node_content_tree)));
+      localStorage.setItem('data', JSON.stringify(response.data.data.node_content_tree));
       SubjectData(response.data.data.node_content_tree);
       setSubjData(response.data.data.node_content_tree);
     })
@@ -279,7 +279,7 @@ export function VideoFun(video_id, setVideoInfo, navigate) {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.atob(localStorage.getItem("Access Key")),
+          Authorization: "Bearer " + localStorage.getItem("Access Key"),
         },
       }
     )
@@ -298,7 +298,7 @@ export function VideoFun(video_id, setVideoInfo, navigate) {
 export function CourseSwitcher(phase_id, subcourses_id, navigate) {
   console.log("under the test function", phase_id, subcourses_id);
 
-  const access = window.atob(localStorage.getItem("Access Key"));
+  const access = localStorage.getItem("Access Key");
 
   axios
     .post(
@@ -313,7 +313,7 @@ export function CourseSwitcher(phase_id, subcourses_id, navigate) {
       }
     )
     .then((response) => {
-      localStorage.setItem("userData", window.btoa(JSON.stringify(response.data.data)));
+      localStorage.setItem("userData", JSON.stringify(response.data.data));
       navigate(FRONTEND_URLS.HOME_ROUTE);
     })
     .catch((error) => {
@@ -394,16 +394,16 @@ export function ColorContainerNew(CLASSES, setExamId) {
 
 //-------------------------------------------------------------------------------------//
 
-export function SearchWinNav(navigate) {
+export function SearchWinNav(navigate, backLink='/') {
   // setIsSearch(true)
-  navigate(FRONTEND_URLS.SEARCH_ROUTE)
+  navigate(FRONTEND_URLS.SEARCH_ROUTE, {state:backLink})
 }
 
 
-export function SearchButton(inputRef, setData, navigate, LearnData) {
+export function SearchButton(inputRef, setData, setErr, navigate, LearnData, setSearhed) {
   console.log(inputRef)
 
-  const access = window.atob(localStorage.getItem('Access Key'))
+  const access = localStorage.getItem('Access Key')
 
   if (access) {
 
@@ -418,15 +418,23 @@ export function SearchButton(inputRef, setData, navigate, LearnData) {
           }
       ).then(
           (response) => {
+            setSearhed(true)
               console.log(response.data.data.search_results)
-              setData(response.data.data.search_results)
               LearnData({ 'content': response.data.data.search_results })
               let data = response.data.data.search_results
-              navigate(`${FRONTEND_URLS.SEARCH_ROUTE}/${window.btoa(data.learn[0].content_data.content_info.video_id)}`)
+              setData(response.data.data.search_results)
+              console.log('search_results', data)
+              setErr(false)
+              // redirect('http://localhost:3000/search/abc/abc')
+              // console.log('redirect',redirect(`${FRONTEND_URLS.SEARCH_ROUTE}/${inputRef.current.value}/${data.learn[0].content_data.content_info.video_id}`))
+              navigate(`${FRONTEND_URLS.SEARCH_ROUTE}/${inputRef.current.value}/${data.learn[0].content_data.content_info.video_id}`)
           }
       ).catch(
           (err) => {
-              console.log('err', err)
+            setSearhed(true)
+              console.log('search_results err', err)
+              setErr(true)
+              navigate(`${FRONTEND_URLS.SEARCH_ROUTE}`)
           }
       )
   }

@@ -23,15 +23,15 @@ const SubjectPage = () => {
     console.log('subjectId', useParams())
     const {subject} =  useParams()
 
-    const subjectId = window.atob( subject )
+    const subjectId = subject 
     // console.log('subjectId', subjectId)
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
     const [SubData, setSubjData] = useState()
 
-    const accessKey = window.atob(localStorage.getItem('Access Key'))
-    const userData = window.atob(localStorage.getItem('userData'))
+    const accessKey = localStorage.getItem('Access Key')
+    const userData = localStorage.getItem('userData')
     const navigate = useNavigate()
 
     useEffect(

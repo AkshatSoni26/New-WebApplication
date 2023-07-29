@@ -20,8 +20,8 @@ function App() {
     
     const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE, SEARCH_ROUTE } = FRONTEND_URLS
     
-    const accessKey = window.atob(localStorage.getItem('Access Key'))
-    const userData = window.atob(localStorage.getItem('userData'))
+    const accessKey = localStorage.getItem('Access Key')
+    const userData = localStorage.getItem('userData')
 
     // console.log(userData)
 
@@ -54,8 +54,6 @@ function App() {
                 <Route path='/:subject/:chapter/:video_id' element={<ChapterPage />} />
                 {/* <Route path='/:subject/:chapter/:ContentType/:video_id' element={<ChapterPage />} /> */}
 
-
-
                 <Route path='/:errorName' element={<GeneralPageError />} />
 
                 <Route path='/PageNotFound' element={<ErrorPages />} />
@@ -63,9 +61,7 @@ function App() {
                 <Route path={REGISTER_ROUTE} element={<Register />} />
 
                 <Route path={`${SEARCH_ROUTE}`} element={<Search />} />
-                <Route path={`${SEARCH_ROUTE}/:Search_id`} element={<Search />} />
-
-
+                <Route path={`${SEARCH_ROUTE}/:search_string/:Search_id`} element={<Search />} />
 
             </Routes>
         </div>

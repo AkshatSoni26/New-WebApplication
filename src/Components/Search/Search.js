@@ -1,50 +1,92 @@
-import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../State';
-import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
-import VideoPlayer from '../Video player/VideoPLayer';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import ChapterMainCom from '../Chapter Page/ChapterMainCom';
-import { Container, Navbar } from 'react-bootstrap';
-import { SearchButton } from '../Functions/Services';
+
+import NoResultImg from '../../Images/no-results.png'
+import { NoResult, SearchText, chapterTable } from '../../Constants/Constants';
+import SearchImg from '../../Images/Search.png';
+import SearchNavBar from './SearchNavBar.js/SearchNavBar';
+
+
 
 const Search = () => {
 
-    const inputRef = useRef()
+    const location = useLocation()
+    const backLink = location.state
+
+    const link = useSelector(state => state.link)
+
+    console.log('link', link)
+
+
+
     const [data, setData] = useState()
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const { LearnData } = bindActionCreators(actionCreators, dispatch)
+    const [err, setErr] = useState(false)
+    const [searhed, setSearhed] = useState(false)
+
+
+    const test = window.location.href
+
+    // console.log('test', test)
+    const linkTest = window.location.href
+
+    useEffect(() => {
+        // Focus the input element on component mount
+        // console.log("change")
+        for (let i = 0; i<chapterTable.length; i++){
+        }
+    }, [linkTest]);
+
 
     return (
         <>
-            <div className='ChapterNav'>
-                <div className='SubjectPageNavBar'>
-                    <Navbar expand="lg" >
-                        <Container fluid>
-                            <div className='searchBar'>
-                                <div>
-                                    <input ref={inputRef} />
-                                </div>
+            <SearchNavBar setData={setData} setErr={setErr} setSearhed={setSearhed}/>
+            <>
 
-                                <button className='searchButton' onClick={() => {
-                                    SearchButton(inputRef, setData, navigate, LearnData)
-                                }}>search</button>
 
+                {
+                    (!searhed) ?
+
+                    <>
+                        <div className='SearchResult'>
+                            <div className='NoResultImg'>
+                                <img src={SearchImg} />
                             </div>
+                            <div className='NoResultText'>{SearchText}</div>
+                        </div>
+                        </>
 
-                        </Container>
+                    :
 
-                    </Navbar>
-                </div>
-            </div>
+                    (data) && (!err)
+                        ?
+                        <>
+                        <ChapterMainCom />
+                        {console.log('Search Err data', data["learn"].length)}
+                        </>
+                        :
+                        <>
 
-            <div>
-                {data && <ChapterMainCom />}
-            </div>
+                        <div className='SearchResult'>
+                            <div className='NoResultImg'>
+                                <img src={NoResultImg} />
+                            </div>
+                            <div className='NoResultText'>{NoResult}</div>
+                        </div>
+                        </>
+
+
+
+                }
+
+
+
+
+
+
+            </>
         </>
     );
 };

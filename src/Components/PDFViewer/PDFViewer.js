@@ -35,14 +35,14 @@ const PDFViewer = () => {
                 setPdfPassword(location.state.pdf_password)
             }
             else {
-                const data = JSON.parse(window.atob(localStorage.getItem('data')))
-                console.log('data', window.atob(urlLastSecSegment))
+                const data = JSON.parse(localStorage.getItem('data'))
+                console.log('data', urlLastSecSegment)
 
                 for (let i = 0; i < data.length; i++) {
 
-                    if (data[i].node_id == window.atob(urlLastSecSegment)) {
+                    if (data[i].node_id == urlLastSecSegment) {
                         console.log('PDFViewer', data[i].content.learn[0].content_data.content_info.video_id)
-                        const FirstVideo = window.btoa(data[i].content.learn[0].content_data.content_info.video_id)
+                        const FirstVideo = data[i].content.learn[0].content_data.content_info.video_id
                         navigate(`/${urlLastThirSegment}/${urlLastSecSegment}/${FirstVideo}`)
                         break;
                     }

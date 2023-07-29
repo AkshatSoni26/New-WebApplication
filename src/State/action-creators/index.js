@@ -43,3 +43,15 @@ export const re_video_id = (content) => {
         )
     }
 }
+
+
+export const LinkTrial = (content) => {
+    return (dispatch) => {
+        dispatch(
+            {
+                type: 'link',
+                payload: content
+            }
+        )
+    }
+}

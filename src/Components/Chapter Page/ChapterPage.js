@@ -14,7 +14,7 @@ const ChapterPage = () => {
 
     console.log('ChapterPage')
 
-    const chapter = window.atob(useParams().chapter)
+    const chapter = useParams().chapter
     const [loading, setLoading] = useState(true)
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
@@ -29,7 +29,7 @@ const ChapterPage = () => {
             var userData = null
 
             try {
-                userData = JSON.parse(window.atob(localStorage.getItem('userData')))
+                userData = JSON.parse(localStorage.getItem('userData'))
             }
             catch (error) {
                 console.log('err', error)
@@ -37,7 +37,7 @@ const ChapterPage = () => {
             }
 
             try {
-                data = JSON.parse(window.atob(localStorage.getItem('data')))
+                data = JSON.parse(localStorage.getItem('data'))
             }
             catch (error) {
                 console.log('err', error)
@@ -64,7 +64,7 @@ const ChapterPage = () => {
                 }
 
                 if (isChapter == false) {
-                    navigate(`/${window.btoa(chapter)}`)
+                    navigate(`/${chapter}`)
                 }
             }
 

@@ -4,22 +4,25 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {  CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
+import { CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
-import {FiSearch} from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 
 
 
 
 function NavBar() {
 
-    const courses = JSON.parse(window.atob(localStorage.getItem('userData'))).enrollments
+    const courses = JSON.parse(localStorage.getItem('userData')).enrollments
     console.log('courses', courses)
 
     const current_course = courses.find(currCourse).course_name
     const navigate = useNavigate()
+
+    const backLink = '/'
+
 
     return (
         (!courses) ?
@@ -30,48 +33,36 @@ function NavBar() {
                     <Container >
                         <Navbar.Brand >
 
-                                    <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
-                                        {
-                                            courses.map(
-                                                (course, index) => {
-                                                    return (
-                                                        !course.is_current ?
-                                                            <NavDropdown.Item 
-                                                            onClick={() => CourseSwitcher(course.phase_id, course.subcourses[0].id, navigate)} 
+                            <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
+                                {
+                                    courses.map(
+                                        (course, index) => {
+                                            return (
+                                                !course.is_current ?
+                                                    <NavDropdown.Item
+                                                        onClick={() => CourseSwitcher(course.phase_id, course.subcourses[0].id, navigate)}
 
-                                                            key={index}> 
+                                                        key={index}>
 
-                                                            {course.course_name} 
+                                                        {course.course_name}
 
-                                                            </NavDropdown.Item >
-                                                            :
-                                                            null
-                                                    )
-                                                }
+                                                    </NavDropdown.Item >
+                                                    :
+                                                    null
                                             )
                                         }
-                                    </NavDropdown>
+                                    )
+                                }
+                            </NavDropdown>
 
                         </Navbar.Brand>
-                        {/* <Form className="d-flex"> */}
-                            {/* <button> */}
 
-                            <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}
-                            >
-              <FiSearch size={30} color='black' />
-            </button>
+                        <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}
+                        >
+                            <FiSearch size={30} color='black' />
+                        </button>
 
-                        {/* <FiSearch size={30} color='black' /> */}
 
-                            {/* </button> */}
-                        {/*     <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button> */}
-                        {/* </Form> */}
                     </Container>
                 </Navbar>
             </div>

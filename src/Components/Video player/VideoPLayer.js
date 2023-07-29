@@ -22,7 +22,7 @@ export default function VideoPlayer() {
   var urlLastSegment = null
   
   try{
-     urlLastSegment = window.atob(urlSegments[urlSegments.length - 1])
+     urlLastSegment = urlSegments[urlSegments.length - 1]
   }
 
   catch(err) {

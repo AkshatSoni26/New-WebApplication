@@ -2,8 +2,8 @@ import React, { memo, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { chapterTable } from '../../../Constants/Constants';
 import { useSelector } from 'react-redux';
-import ChapterContentType from '../ChapterComponents/ChapterCONTENTtype';
-import ChapterCOLLECTIONType from '../ChapterComponents/ChapterCOLLECTIONType';
+import ChapterContentType from '../ChapterComponents/ChapterContentType';
+import ChapterCollectionType from '../ChapterComponents/ChapterCollectionType';
 
 const ChapterPageSideBar = () => {
 
@@ -11,7 +11,7 @@ const ChapterPageSideBar = () => {
 
     const learn = useSelector(state => state.learn)
     const chapterContent = learn.content
-    // console.log('ChapterPageNavBar', learn)
+    console.log('ChapterPageNavBar', learn)
 
     const [activeKey, setActiveKey] = useState(0)
 
@@ -31,7 +31,8 @@ const ChapterPageSideBar = () => {
                                 <div key={index} >
 
                                     {
-                                        <Accordion activeKey={activeKey} onSelect={handleAccordionChange} >
+                                    ((chapterContent[chapterTable[index].toLowerCase()]).length > 0) &&    <Accordion activeKey={activeKey} onSelect={handleAccordionChange} >
+                                            
                                             <Accordion.Item eventKey={index} >
                                                 <Accordion.Header > <div className='accodionHeader'> {chapterTable[index]} </div> </Accordion.Header>
                                                 <Accordion.Body className='accordionBody'>
@@ -44,7 +45,7 @@ const ChapterPageSideBar = () => {
 
                                                                         {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
 
-                                                                        {(((value.content_data).length) > 0) && <ChapterCOLLECTIONType content_data={value.content_data} />}
+                                                                        {(((value.content_data).length) > 0) && <ChapterCollectionType content_data={value.content_data} />}
 
                                                                     </div>
                                                                 )

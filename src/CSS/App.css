@@ -20,12 +20,13 @@ body {
   display: flex;
 }
 
- /* .LeftSide {
+/* .LeftSide {
   flex: 1; 
 } */
 
 
-.mainPage, .LeftSide{
+.mainPage,
+.LeftSide {
   margin-left: 0%;
 }
 
@@ -39,9 +40,9 @@ body {
 
 /* RightSlider */
 
-.carouselItems{
-width:75%;
-/* height: 70vh;*/
+.carouselItems {
+  width: 75%;
+  /* height: 70vh;*/
 }
 
 
@@ -152,7 +153,7 @@ p {
 .home {
   display: flex;
   /* width: 100%; */
-  overflow-y: hidden; 
+  overflow-y: hidden;
 }
 
 .menuBarcontent {
@@ -488,7 +489,8 @@ p {
   border-radius: 8px
 }
 
-.ChapterContent, .SubjectContent {
+.ChapterContent,
+.SubjectContent {
   position: relative;
   padding: 3%;
   padding-bottom: 0%;
@@ -533,12 +535,13 @@ p {
   border-radius: 5%;
   /* opacity: 0; */
 }
-.layer{
+
+.layer {
   position: relative;
 
 }
 
-.accordianImage2{
+.accordianImage2 {
   background-color: rgba(13, 16, 21, 0.66);
   position: absolute;
   /* top: 50px;
@@ -550,7 +553,7 @@ p {
   height: 100px;
   border-radius: 5%;
 
- 
+
 }
 
 
@@ -598,16 +601,16 @@ p {
 } 
 */
 
- /* .image-container:hover   {
+/* .image-container:hover   {
   opacity: 0.5;
 } */
 
-.carousel-indicators{
+.carousel-indicators {
   display: none;
 }
 
 
-.lottie{
+.lottie {
   /* position: relative; */
   z-index: 1;
   /* background-color: rgba(13, 16, 21, 0.66); */
@@ -616,19 +619,20 @@ p {
 }
 
 
-.LottieBackgroundColour{
+.LottieBackgroundColour {
   /* position: absolute; */
   /* background-color: rgba(13, 16, 21, 0.66); */
   width: 20%;
 }
 
-.buttonBAckground, .buttonBAckground:hover {
+.buttonBAckground,
+.buttonBAckground:hover {
   background-color: #5F46E3;
   width: 70%;
 }
 
 
-.CarousalCaption{
+.CarousalCaption {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -644,23 +648,24 @@ p {
 }
 
 
-.targetBut{
+.targetBut {
   /* display: flex; */
   /* flex-direction: column; */
   /* width: 0%; */
 }
 
-.thumbnailBox{
+.thumbnailBox {
   width: 30%;
   height: auto;
 }
 
 
-.rpv-core__inner-page, .rpv-core__viewer {
-background-color: #F8F8F8 ;
+.rpv-core__inner-page,
+.rpv-core__viewer {
+  background-color: #F8F8F8;
 }
 
-.Spinner{
+.Spinner {
   display: flex;
   /* margin-top: 40%; */
   flex-direction: column;
@@ -670,22 +675,52 @@ background-color: #F8F8F8 ;
   align-content: center;
 }
 
-.searchBar{
+.searchBar {
   background-color: #FFF;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
+  justify-content: flex-end;
 }
 
-.searchButton{
-  background-color: black;
-    color: white;
-    border-radius: 12%;
+.serachInput,
+.serachInput:focus {
+  background-color: #F8F8F8;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* Add any other styling you want here */
+  border-radius: 0;
+
+  /* border-bottom: 2px solid black; */
+  /* Change #000 to your desired border color */
+  padding: 5px 0;
+  /* Add some spacing above the bottom border */
+  border-radius: 0;
+
+  width: 300px;
+  /* Set your desired width */
+  /* Set the desired border radius for the container */
+  border-radius: 5px;
+
+  /* border-bottom: 2px solid black  ; */
+  /* Change #000 to your desired border color */
+  border-radius: 0;
+
+  margin-left: 1%;
+  background-color: #FFF;
 }
 
-div .ratio{
+.searchButton {
+  /* background-color: black; */
+  color: white;
+  border-radius: 12%;
+}
+
+div .ratio {
   position: relative;
   margin-top: 1%;
   width: 90%;
@@ -699,4 +734,32 @@ div .react-multi-carousel-list {
   position: relative;
   width: 70vw;
   overflow-x: scroll;
+}
+
+.SearchResult {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.NoResultImg img {
+  width: 20vw;
+  height: auto;
+}
+
+.NoResultText {
+
+  width: 284px;
+  height: 56px;
+  top: 424px;
+  left: 38px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+
+
 }
