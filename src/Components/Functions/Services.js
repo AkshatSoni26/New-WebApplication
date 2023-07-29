@@ -398,3 +398,36 @@ export function SearchWinNav(navigate) {
   // setIsSearch(true)
   navigate(FRONTEND_URLS.SEARCH_ROUTE)
 }
+
+
+export function SearchButton(inputRef, setData, navigate, LearnData) {
+  console.log(inputRef)
+
+  const access = window.atob(localStorage.getItem('Access Key'))
+
+  if (access) {
+
+      axios.post(
+          BACKEND_URLS.SEARCH_API,
+          { subject: 0, chapter: 0, search_str: inputRef.current.value },
+          {
+              headers: {
+                  "Content-Type": "application/json",
+                  Authorization: "Bearer " + access,
+              },
+          }
+      ).then(
+          (response) => {
+              console.log(response.data.data.search_results)
+              setData(response.data.data.search_results)
+              LearnData({ 'content': response.data.data.search_results })
+              let data = response.data.data.search_results
+              navigate(`${FRONTEND_URLS.SEARCH_ROUTE}/${window.btoa(data.learn[0].content_data.content_info.video_id)}`)
+          }
+      ).catch(
+          (err) => {
+              console.log('err', err)
+          }
+      )
+  }
+}

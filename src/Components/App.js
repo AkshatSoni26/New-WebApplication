@@ -52,6 +52,8 @@ function App() {
 
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter/:video_id' element={<ChapterPage />} />
+                {/* <Route path='/:subject/:chapter/:ContentType/:video_id' element={<ChapterPage />} /> */}
+
 
 
                 <Route path='/:errorName' element={<GeneralPageError />} />

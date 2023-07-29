@@ -56,7 +56,7 @@ const ChapterPage = () => {
                         console.log('data[i].node_id', data[i].node_id)
 
                         LearnData({ 'content': data[i].content, 'display_name': data[i].display_name })
-                        console.log('data[i]', { 'content': data[i].content, 'display_name': data[i].display_name })
+                        console.log('data[i]', data[i] )
                         setLoading(false)
                         isChapter = true
                         break;
@@ -66,10 +66,6 @@ const ChapterPage = () => {
                 if (isChapter == false) {
                     navigate(`/${window.btoa(chapter)}`)
                 }
-
-                // if (access){
-                //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
-                // }
             }
 
         }, []
