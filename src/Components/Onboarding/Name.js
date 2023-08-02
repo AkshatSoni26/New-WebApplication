@@ -17,26 +17,19 @@ const Name = ({ setIsName }) => {
     )
 
     return (
-        <div>
 
-            <div className="container">
-                <div className="row">
-                    <div className='mainPage mb-3'>
+        <div className="mainPage">
 
-                        <OnBordText isName='Hi 👋' startLine='Let’s customize your eSaral journey'/>
+            <OnBordText isName='Hi 👋' startLine='Let’s customize your eSaral journey' />
 
-                        <InputField inputRef={inputRef} Que='What’s your name?' variable={'name'}/>
+            <InputField inputRef={inputRef} Que='What’s your name?' variable={'name'} />
 
-                    </div>
+            <div id='message'></div>
 
-                    <br></br>
-
-                    <ButtonLo setIsName={setIsName} inputRef={inputRef} />
-
-                </div>
-            </div>
+            <ButtonLo setIsName={setIsName} inputRef={inputRef} />
 
         </div>
+
     );
 };
 

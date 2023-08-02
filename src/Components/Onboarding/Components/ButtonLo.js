@@ -41,6 +41,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
             if (format.test(user_input)) {
 
                 const mess = document.getElementById('message')
+                mess.style.color='red'
                 mess.innerHTML = 'Please remove special Characters.'
 
             }
@@ -71,11 +72,13 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
         else {
             const mess = document.getElementById('message')
             mess.innerHTML = 'first enter the name'
+            mess.style.color='red'
+
         }
     }
 
     return (
-        <div className=" buttonclass col text-center">
+        <div className='buttonclass'>
 
             <button
                 onClick={NameTaker}
@@ -88,7 +91,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
             </button>
 
-            <div id='message'></div>
+            
 
         </div>
     );

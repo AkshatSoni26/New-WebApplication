@@ -20,7 +20,7 @@ const SideBar = () => {
           <img className='companyLogo' src={companyLogo} />
         </div>
 
-        <div className='tableHome float-left'>
+        <div className='tableHome'>
 
           {
             SideBarItem.map((item, index) => {
@@ -38,7 +38,7 @@ const SideBar = () => {
                       </div>
                     </div>
                   </button>
-                  <br />
+                  
                 </React.Fragment>
               );
             })

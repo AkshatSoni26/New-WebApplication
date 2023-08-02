@@ -33,7 +33,7 @@ const SubjectSideBar = () => {
                   <React.Fragment key={index}>
                     <button onClick={() => { ChapterScroll(data.node_id) }} className='subject'>
                       <div className='tableContent float-left'>
-                        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={<Tooltip id="tooltip">{data.display_name}</Tooltip>}>
+                        <OverlayTrigger className='OverlayTrigger' placement="top" delay={{ show: 250, hide: 400 }} overlay={<Tooltip id="tooltip">{data.display_name}</Tooltip>}>
                           <div className='subjectdataTable'>
                             {
                               data.display_name.length < 15 ? data.display_name : data.display_name.slice(0, 18) + '...'

@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
-import '../../CSS/App.css'
 import PhoneNumber from './Phonenumber/PhoneNumber';
 import RightSlider from './rightSlider';
 import { FRONTEND_URLS } from '../Links/Config';
 import { useNavigate } from 'react-router-dom';
+import '../../CSS/App.css'
+import '../../CSS/Phone.css'
+
+
 
 
 function LoginPage() {
@@ -21,23 +24,24 @@ function LoginPage() {
             {
                 navigate(FRONTEND_URLS.REGISTER_ROUTE, { state: access })
             }
-            if (access){
-                navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            }
-            if (access && userData){
+            else if (access && userData){
                 navigate(FRONTEND_URLS.HOME_ROUTE)
             }
-        },[]
+            else if (access){
+                localStorage.clear()
+                navigate(FRONTEND_URLS.LOGIN_ROUTE)
+            }
+        },[reg]
     )
 
 
     return (
         <div className='LoginPage'>
-            <div className='RightSide'>
+            <div className='leftPortion'>
                 <RightSlider />
             </div>
 
-            <div className='LeftSide'>
+            <div className='rightPortion'>
                 <PhoneNumber />
             </div>
         </div>

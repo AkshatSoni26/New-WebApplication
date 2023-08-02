@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
-import { testingNumber } from '../../../Constants/Constants'
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../../State';
 import { OTPSender, verifiOTP } from '../../Functions/Services';
 import { FRONTEND_URLS } from '../../Links/Config';
-import OnBordText from '../../Onboarding/Components/OnBordText';
 import InputField from '../../Onboarding/Components/InputField';
-import ButtonLo from '../../Onboarding/Components/ButtonLo';
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import ButtonText from '../Comp/ButtonText';
+import OtpInput from 'react-otp-input';
+import { IoIosArrowBack } from 'react-icons/io'
+
 
 
 
@@ -18,10 +15,11 @@ function PhoneNumber() {
 
   console.log('PhoneNumber')
 
-  const [phoneNumber, setPhoneNumber] = useState(testingNumber);
+  const [phoneNumber, setPhoneNumber] = useState();
   const [Nonce, setNonce] = useState('')
   const [OtpSend, setOtpSend] = useState(false)
   const [otpVerifi, setOtpVerifi] = useState(false)
+  const [otp, setOtp] = useState('');
 
   const PhoneRef = useRef(null)
   const OtpRef = useRef(null)
@@ -34,7 +32,7 @@ function PhoneNumber() {
 
   useEffect(
     () => {
-      
+
       access && userData && navigate(FRONTEND_URLS.HOME_ROUTE)
       // if (access && userData) {
       //   navigate(FRONTEND_URLS.HOME_ROUTE)
@@ -44,32 +42,31 @@ function PhoneNumber() {
   )
 
 
+  function OtpPageBack() {
+    setOtpSend(false);
+    setOtp('')
+    const mess = document.getElementById("mess");
+    mess.innerHTML = '' ;
+  }
+
+
   return (
 
     (!OtpSend)
       ?
       (
-      <>
-        <div className="container">
-          <div className="row">
-            <div className='mainPage mb-3'>
+        <>
+          <div className='mainPage'>
 
-              <OnBordText isName='Hi 👋'
-              // startLine='Let’s customize your eSaral journey'
-              />
+            {/* <OnBordText isName='Hi 👋' /> */}
 
-              <InputField inputRef={PhoneRef} Que='Enter your Phone Number' variable={'Phone Number'} />
+            <InputField inputRef={PhoneRef} Que='Enter Phone Number' messSec='We’ll send you an OTP for verification' variable={'Phone Number'} />
 
+            <div id='mess'></div>
 
-              {console.log('phone number InputField', PhoneRef)}
+            <div className="buttonclass">
 
-              <div id='mess'></div>
-
-            </div>
-
-            <br></br>
-
-            <div className=" buttonclass col text-center">
+              <div className='TermsAndCond'> By continuing, you agree to our <a href='#'>Terms and Conditions.</a> </div>
 
               <button className='btn buttonBAckground' type="submit"
                 onClick={() => {
@@ -78,48 +75,75 @@ function PhoneNumber() {
                   console.log("OTPSender", PhoneRef.current.value)
                 }}
               >
-                <div style={{ color: '#fff' }}>
-                  Continue <AiOutlineArrowRight color='#fff' />
-                </div>
+                <ButtonText />
               </button>
+
 
             </div>
 
           </div>
-        </div>
-      </>
+        </>
       )
       :
 
       (
-      <>
-            <div className="container">
-          <div className="row">
-            <div className='mainPage mb-3'>
+        <>
 
-            <InputField inputRef={OtpRef} Que='Enter your OTP' variable={'OTP'} />
+          <div className='mainPage '>
+            {console.log('OtpRef', otp)}
+
+            {/* <InputField inputRef={OtpRef} Que='Verify OTP' OtpNotRecieve={`Didn’t recieve the OTP? ${anc}`} messSec={`OTP sent to +91 ${phoneNumber}.`} variable={'OTP'} /> */}
+
+            <div className='nameAskingSection'>
+
+              <div className='OtpBackBut'>
+                <button className='subject' onClick={OtpPageBack}>
+                  <IoIosArrowBack size={30} color='black' />
+                </button>
+              </div>
+
+              <div className='nameQue'>Verify OTP</div>
+
+              <div className='messageSec'>{`OTP sent to +91 ${phoneNumber}.`}</div>
+
+              <OtpInput
+                value={otp}
+                onChange={setOtp}
+                numInputs={4}
+                inputStyle='Otp_Box'
+                containerStyle='Otp_Conta'
+                // renderSeparator={<span></span>}
+                renderInput={(props) => <input {...props} />}
+              // shouldAutoFocus={true}
+              />
+
+            </div>
 
             <div id='mess'></div>
 
+            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button className='subject OtpNotRecieveBut' onClick={() => {
+              OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect)
+            }}>Resend</button>
             </div>
-            <br></br>
-            <div className=" buttonclass col text-center">  
-              <button
-                className='btn buttonBAckground'
-                type="submit"
+
+            <div className='OtpNotRecieve'>
+              Still facing difficulties? <a className='OtpNotRecieveBut'> Contact Us</a>
+            </div>
+
+
+            <div className="buttonclass">
+
+              <button className='btn buttonBAckground' type="submit"
                 onClick={() => {
-                  verifiOTP(Nonce, OtpRef.current.value, navigate, phoneNumber, setOtpVerifi);
-                  // console.log(  phoneNumber)
+                  verifiOTP(Nonce, otp, navigate, phoneNumber, setOtpVerifi);
                 }}
               >
-                <div style={{ color: '#fff' }}>
-                  Continue <AiOutlineArrowRight color='#fff' />
-                </div>
+                <ButtonText />
               </button>
             </div>
           </div>
-        </div>
-      </>
+
+        </>
       )
 
 

@@ -28,31 +28,22 @@ const Exam = ({ isName, targets, setExamId }) => {
 
         Buttons
             ?
-            <div className='OnborMainPage'>
-                <OnBordText isName={str} />
+            <div className='mainPage AttemptYear Exam'>
 
-                <div className='targetLottie'>
+                <OnBordText isName={str} startLine='Let’s customize your eSaral journey' />
+
+                <div className='PencilLottie'>
                     <LottieImgComp animationData={animationData} />
                 </div>
 
-
+                <div className='textonly'>
                 <OptionChooseText mess='I am preparing for' />
 
-                <div className='colorBoxBig'>
-
-                    {/* <div className='container' >
-                    <div className='row' > */}
-                    <div className='buttonClass'>
-
+                {/* <div className='colorBoxBig'> */}
+                    <div className='AttemptButtons ExamBut'>
                         {Buttons}
-
                     </div>
-
-
-                    {/* </div>
-                </div> */}
                 </div>
-
             </div>
             :
             <SpinnerFun />

@@ -31,10 +31,10 @@ const Register = () => {
 
     return (
         <div className='LoginPage'>
-            <div className='RightSide'>
+            <div className='leftPortion'>
                 <RightSlider />
             </div>
-            <div className='LeftSide'>
+            <div className='rightPortion'>
 
                 { (!isName) && <Name setIsName={setIsName}/> }
 

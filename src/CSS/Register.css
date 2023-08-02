@@ -1,62 +1,58 @@
-a:link,
+/* a:link,
 a:visited,
 a:hover,
 a:active {
   text-decoration: none !important;
   cursor: pointer;
-}
+} */
 
 
 
 /* LoginPage */
 
-.LoginPage {
+/* .LoginPage {
   display: flex;
-}
+} */
 
-.LeftSide {
+/* .LeftSide {
   flex: 1;
   /* margin-left: 10%; */
-  margin-top: 1%;
+  /* margin-top: 1%;
   overflow: hidden;
-}
+} */ */
 
 
-/* PhoneNumber */
+/* PhoneNumber
 .PhoneNumber {
   margin-top: 100%;
   margin-left: 40%;
-}
+} */
 
 
 
 
-img {
-  width: 150px;
-  height: 400px;
-}
 
-h3,
+/* h3,
 p {
   color: black;
 }
 
 /* NavBar */
-.NavBar {
+/* .NavBar {
   width: 80vw;
-}
+} */
 
 /* sideBar */
 
-.SideBar {
+/* .SideBar {
   background-color: #FFF;
   width: 20vw;
 
 
   /* padding-left: 100px; */
-}
+/* } */ */ */
 
-.SubjectSideBar {
+/* .SubjectSideBar {
   width: 29vw;
 }
 
@@ -80,7 +76,7 @@ p {
   padding-left: 3%;
   background-color: #FFF;
   /* margin: 10% */
-}
+/* } */ */
 
 
 /* .SubjectPageNavBar {
@@ -109,7 +105,7 @@ p {
   /* height: 1vh; */
   background-color: #FFF;
 }
-
+/* 
 .tableData {
   display: flex;
   width: 100%;
@@ -118,7 +114,7 @@ p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
 
 
 /* Home */
@@ -312,14 +308,16 @@ p {
 
 
 
-.tableHome {
+/* .tableHome {
   padding-left: 2.5vw;
   font-size: 16px;
   line-height: 44px;
   width: 100%;
   height: 85vh;
   background-color: #FFF;
-}
+
+  
+} */
 
 .HomeNavBar {
   background-color: #fff;
@@ -327,14 +325,14 @@ p {
 
 }
 
-.HomeMainContent {
+/* .HomeMainContent {
   background-color: #FFF;
   margin-left: 1%;
   margin-top: 1%;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 89vh;
-}
+} */
 
 /* .HomePageSubject {
   margin-left: 7vw;
@@ -467,19 +465,7 @@ p {
 }
 
 
-.accordianContent {
-  flex: 1;
-  padding-left: 5%;
 
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #0D1015;
-
-  margin-top: 10%;
-}
 
 
 .VidThum {
@@ -513,8 +499,11 @@ p {
   /* Set z-index property to place this element on top of the first layer */
   z-index: 1;
   /* Set other styling properties for the second layer */
-  width: 175px;
-  height: 100px;
+  aspect-ratio: 90/150;
+  width: 100%;
+  height: 100%;
+  /* width: 175px;
+  height: 100px; */
   border-radius: 5%;
   /* margin-top: 10%; */
 }
@@ -585,48 +574,13 @@ p {
 }
 
 
-.start {
-  color: rgba(13, 16, 21, 1);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 2%;
-}
 
-.startline {
-  color: rgba(51, 58, 71, 1);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-}
 
-.nameQue {
-  color: rgba(51, 58, 71, 1);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 2%;
 
-}
 
-.nameAskingSection {
-  margin-top: 4%;
-  width: 320px;
-  height: 94px;
-  top: 133px;
-  left: 20px;
-  border-radius: 8px
-}
 
-.textonly {
-  margin-top: 5%;
-}
+
+
 
 .input_border {
   border: 2px solid #5F46E3;
@@ -634,38 +588,32 @@ p {
   width: 100%;
 }
 
-.focused_input {
-  border: 2px solid #5F46E3;
-  border-radius: 8px;
-  padding: 2%;
-  width: 100%;
-  /* margin-left: 10%; */
+
+.buttonText{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
-.buttonBAckground {
+/* .buttonBAckground {
   background-color: #5F46E3;
   justify-content: end;
   width: 100%;
-}
+} */
 
-.buttonclass {
-  align-items: flex-end;
-  padding: 10%;
-  padding-left: 0%;
-  margin-top: 50%;
-  margin-left: 5%;
-  align-items: center;
-}
 
-.RightSide {
+/* .RightSide {
   display: none;
-}
+} */
 
-.mainPage {
+/* .mainPage {
   /* justify-content: flex-start; */
-  padding: 10%;
+  /* padding: 10%;
   padding-left: 0%;
-}
+} */ 
 
 .OnborImg {
   margin-top: 7%;
@@ -687,19 +635,19 @@ p {
 
 }
 
-.colorBox {
+/* .colorBox {
   background-color: var(--main-color);
   border-color: #FFB023;
   border-style: solid;
   border-width: 1px;
   /* padding-top: 10%; */
-  display: flex;
+  /* display: flex;
   flex-wrap: nowrap;
   align-items: center;
   /* padding-bottom: 20%; */
-  aspect-ratio: 150/64;
+  /* aspect-ratio: 150/64;
   /* padding-top: 5%; */
-  align-items: center;
+  /* align-items: center;
   justify-content: center;
   margin: 3%;
   flex: 1 1;
@@ -712,29 +660,29 @@ p {
   letter-spacing: 0em;
   text-align: center;
   /* height: 5vh; */
-  overflow-y: hidden;
+  /* overflow-y: hidden;
   flex-direction: column;
   align-content: center;
-}
+} */ 
 
 
-.colorBoxBig {
+/* .colorBoxBig {
   /* display: flex; */
-  overflow-y: hidden;
-}
+  /* overflow-y: hidden; */
+/* } */
 
 
-.currOptionchoice {
+/* .currOptionchoice {
   font-size: 32px;
   font-weight: 400;
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
-}
+} */
 
 
   /* SubjectCaursal */
-  .subject {
+  /* .subject {
     background: none;
     color: inherit;
     border: none;
@@ -743,37 +691,49 @@ p {
     font: inherit;
     cursor: pointer;
     outline: inherit;
-  }
+  } */
 
 
-.colorBoxButton{
-  width: 45%;
-  height: auto;
-  margin: 2%;
-  margin-left: -1%;
-  margin-right: 4%;
-  /* display: flex; 
-  flex: 1; */
-}
 
-.buttonClass{
+
+/* .buttonClass{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
+} */
 
-  
+
+
+
 
 @media (min-width: 376px) {
+  
+  /* .accordianContent {
+    flex: 1;
+    padding-left: 5%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0D1015;
+  
+    
+  } */
+  
+ 
+/* .accordianContent {
+  display: none;
+} */
 
-
-  .mainPage {
+  /* .mainPage {
     padding: 0%;
     margin-top: 5%;
     margin-left: 30%;
     overflow-y: hidden;
     overflow-x: hidden;
-  }
+    height: 90vh;
+  } */
 
   .rocket_image{
    overflow: hidden;
@@ -788,36 +748,39 @@ p {
     /* height: 50%; */
   }
 
-  .buttonclass {
-    margin-left: 22%;
-    margin-right: 10%;
-    margin-top: 40%;
-    padding: 0%;
-  }
+  /* .buttonclass {
+    /* margin-left: 22%; */
+    /* margin-right: 11.7%; */
+    /* margin-top: 45vh; */
+    /* padding: 0%; */
+    /* height: 70%;
+    display: flex;
+    align-items: flex-end; */
+  /* } */
 
-  .buttonBAckground, .buttonBAckground:hover {
+  /* .buttonBAckground, .buttonBAckground:hover {
     background-color: #5F46E3;
     width: 76.5%;
-  }
+  } */
 
   /* RightSlider */
-
+/* 
   .RightSide {
     flex: 1;
     display: inline;
-  }
+  } */
 
-  .OnborMainPage {
+  /* .OnborMainPage {
     overflow-y: hiddens;
     margin-left: 20%;
     margin-top: 0%;
     /* margin-bottom: 20%; */
     /* margin-left: 0%; */
     /* margin-right: 10%; */
-    padding-right: 10%;
+    /* padding-right: 10%; */
     /* height: 100vh; */
     /* overflow-y: hidden; */
-  }
+  /* } */ 
 
 
   Big {
@@ -835,17 +798,17 @@ p {
     margin-left: -10%;
   }
 
-  .PencilLottie{
-    position: relative;
-    height: 37vh;
-    width: 80%;
-    /* height: 60%; */
-  }
+    /* .PencilLottie{
+      position: relative;
+      height: 37vh;
+      width: 80%;
+      /* height: 60%; */
+    /* } */
 
-  
-  .PencilLottie svg{
-    margin-top: -17%;
-  }
+    
+    /* .PencilLottie svg{
+      margin-top: -17%;
+    } */ 
 
 
 }

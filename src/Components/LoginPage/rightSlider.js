@@ -9,38 +9,44 @@ function RightSlider() {
     console.log('RightSlider')
 
     return (
-        <div className='RightSide'>
-            <Carousel controls={false}>
+        <>
+            <Carousel controls={false} fade slide={false}>
 
                 {
                     IMG.map(
                         (data, index) => {
                             return (
-                                <Carousel.Item interval={interval} key={index} className='carouselItems'>
-                                    <img
-                                        className="d-block w-100 carousalImage"
-                                        src={data.url}
-                                    />
-                                    {/* <Carousel.Caption> */}
-                                      <div className='CarousalCaption'>
-                                        <div className='CarousalHeading'>
-                                        <h3>{data.heading}</h3>
+                                <Carousel.Item interval={interval} key={index} >
+
+                                    <div className='carouselItems'>
+
+                                        <div className='coursoImg' >
+                                            <img
+                                              className="carousalImage" 
+                                                src={data.url}
+                                            />
                                         </div>
 
-                                        <div className='CarousalText'>
-                                        <p>{data.text}</p>
+                                        <div className='CarousalCaption'>
+                                            <div className='CarousalHeading'>
+                                                <h3>{data.heading}</h3>
+                                            </div>
+
+                                            <div className='CarousalText'>
+                                                <p>{data.text}</p>
+                                            </div>
+
                                         </div>
 
-                                      </div>
-                                    {/* </Carousel.Caption> */}
+                                    </div>
                                 </Carousel.Item>
                             )
                         }
                     )
                 }
-                
+
             </Carousel>
-        </div>
+        </>
     );
 }
 

@@ -25,11 +25,12 @@ const FacultiCaursol = () => {
                     <Carousel className='FacultiCarsal'
                         responsive={responsive(3)}
                         autoPlay={false}
-                        swipeable={true}
-                        draggable={true}
+                        swipeable={false}
+                        draggable={false}
                         showDots={false}
                         infinite={false}
                         partialVisible={false}
+                        arrows={false}
                     >
                         {
                             FacultieData.map(

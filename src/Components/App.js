@@ -29,7 +29,7 @@ function App() {
         () => {
 
             if (!accessKey || accessKey == null || accessKey == undefined) {
-                // localStorage.clear()
+                localStorage.clear()
                navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
             
@@ -38,7 +38,7 @@ function App() {
                navigate(FRONTEND_URLS.LOGIN_ROUTE)
            }
 
-        }, [accessKey]
+        }, [accessKey, userData]
     )
 
 
