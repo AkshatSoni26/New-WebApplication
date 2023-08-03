@@ -72,3 +72,7 @@ export const alert_circle = '<svg xmlns="http://www.w3.org/2000/svg" width="24" 
 export const NoResult = 'Content for this section is not ready at the moment. Please check later.'
 export const SearchText = 'Search for concepts, videos, sheets, notes, etc'
 export const SearchPlacholder = 'Search here'
+
+
+
+export const MenuBarIcon = {'size':30, 'color':'#333A47' }

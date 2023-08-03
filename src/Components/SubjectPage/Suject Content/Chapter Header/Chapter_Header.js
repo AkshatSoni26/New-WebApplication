@@ -16,13 +16,13 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
       <div className="chapterHeader">
         <button onClick={
           () => {
-            // console.log()
             ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
-            // re_video_id( init_video_id)
           }
         }
           className='subject chapterHeaderButton'>
-          <div className="ProgressPart">
+          <div 
+            className="ProgressPart"
+              >
            
 
             <div className="ChapLec">

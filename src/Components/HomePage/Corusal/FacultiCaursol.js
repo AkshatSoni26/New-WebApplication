@@ -38,13 +38,13 @@ const FacultiCaursol = () => {
                                     return (
                                         <div class="col">
 
-                                        {/* // <button disabled className='facultiimages subject' key={index}> */}
+                                            {/* // <button disabled className='facultiimages subject' key={index}> */}
                                             <img className='FacultiImg' src={data.thumbnail} />
                                             <div className='LectureName'>
                                                 <div  >  <b > {data.name}  </b></div>
                                                 <div >{data.designation[0] + data.designation.slice(1,).toLowerCase()}</div>
                                             </div>
-                                        {/* // </button> */}
+                                            {/* // </button> */}
                                         </div>
                                     )
                                 }

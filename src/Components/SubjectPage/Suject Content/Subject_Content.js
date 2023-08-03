@@ -37,9 +37,9 @@ const SubjectContent = ({ subjectId }) => {
     }
 
     return (
-        <div className='Subject_Content'>
-        <div >
-            <br></br>
+        // <div className='Subject_Content'>
+        < >
+            {/* <br></br> */}
             {
                 content.map(
                     (data, index) => {
@@ -49,7 +49,9 @@ const SubjectContent = ({ subjectId }) => {
                         return (
                             ((data.content.learn).length > 0) ?
                             <>
-                                <section id={`${data.node_id}`} key={index} className='SubjectContent'>
+                                <section id={`${data.node_id}`} key={index} 
+                                // className='SubjectContent'
+                                >
 
                                     <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
 
@@ -61,7 +63,10 @@ const SubjectContent = ({ subjectId }) => {
 
                                     
                                 </section>
-                                <div className='SubjectContanier'>
+                                
+                                <div 
+                                className='SubjectContanier'
+                                >
 
                                         <Carousel
                                             responsive={responsive(4)}
@@ -77,20 +82,21 @@ const SubjectContent = ({ subjectId }) => {
                                                 (data.content.learn).map(
                                                     (chapter, index) => {
                                                         return (
-                                                            <div key={index}>
-                                                                <button className='subject'
+                                                            <div key={index} className='SubjectImgAndName'>
+                                                                <button 
+                                                                className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            // test(`/${urlPar}/${ data.node_id }/${'learn'}/${chapter.content_data.node_id}`)
-                                                                            // console.log('chapter.content_data',data)
                                                                             ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
-                                                                            
                                                                              }
                                                                     }
 
                                                                 >
-                                                                    <div className='VidThum '> 
-                                                                        <img className='accordianImage'
+                                                                    <div 
+                                                                    // className='VidThum'
+                                                                    > 
+                                                                        <img 
+                                                                        className='accordianImage'
                                                                             src={
                                                                                 chapter?.content_data?.content_info?.thumbnail ?
                                                                                     chapter.content_data.content_info.thumbnail
@@ -98,15 +104,17 @@ const SubjectContent = ({ subjectId }) => {
                                                                                     DefaultThumbnails.video
                                                                             } />
 
-                                                                        <ThumbanailButton />
+                                                                        {/* <ThumbanailButton />
                                                                         <ThumbnailDur
                                                                             duration={chapter?.content_data?.content_info?.duration}
-                                                                        />
+                                                                        /> */}
 
                                                                     </div>
 
                                                                 </button>
-                                                                <div className='LectureName'> {chapter.display_name} </div>
+                                                                <div 
+                                                                className='LectureName'
+                                                                > {chapter.display_name} </div>
                                                             </div>
                                                         )
                                                     }
@@ -122,8 +130,8 @@ const SubjectContent = ({ subjectId }) => {
                     }
                 )
             }
-        </div>
-        </div>
+        </>
+        // {/* // </div> */}
     );
 };
 

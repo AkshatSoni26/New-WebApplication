@@ -34,10 +34,8 @@ const SubjectCaural = () => {
                                     return (
                                         <div class="col">
 
-                                                <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-6 my-3 '>
-                                                    <div
-                                                    className='innerSuvjectCaursalDiv'
-                                                    >
+                                                <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-4 my-3 '>
+                                                    <div className='innerSuvjectCaursalDiv' >
                                                         <img className='subjectImages' src={data.thumbnail} />
                                                         <div className='LectureName'>{data.display_name}</div>
                                                     </div>

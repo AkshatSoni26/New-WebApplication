@@ -20,11 +20,12 @@ const SideBar = () => {
       :
       <div className='HomeSideBar'>
         <div className='homeSide'>
+          
           <div className='Logo_Image'>
             <img className='companyLogo' src={companyLogo} />
           </div>
 
-          <div className='tableHome'>
+          <div className='tableHome HomeTable'>
 
             {
               SideBarItem.map((item, index) => {

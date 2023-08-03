@@ -1,7 +1,4 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
@@ -9,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
 import { FiSearch } from 'react-icons/fi'
+import SideBarEffect from '../SiderBar/SideBarEffect';
 
 
 
@@ -31,7 +29,10 @@ function NavBar() {
             <div className='HomeNavBar'>
                 <Navbar expand="lg" >
                     <Container className='' >
-                        <Navbar.Brand >
+
+                        <Navbar.Brand className='NavbarBrandHome' >
+
+                            <SideBarEffect />
 
                             <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
                                 {
@@ -60,7 +61,6 @@ function NavBar() {
                         <button className='subject HomeNavContanier' onClick={() => { SearchWinNav(navigate) }}>
                             <FiSearch size={30} color='black' />
                         </button>
-
 
                     </Container>
                 </Navbar>

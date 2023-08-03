@@ -12,6 +12,7 @@ import { SearchWinNav } from './Functions/Services';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../State';
+import SideBarEffect from './HomePage/SiderBar/SideBarEffect';
 
 
 
@@ -33,44 +34,33 @@ const CommonNavBar = ({ name, id }) => {
     }
   }
 
- const backLink = (window.location.href).split("http://localhost:3000")[1]
- LinkTrial(backLink)
+  const backLink = (window.location.href).split("http://localhost:3000")[1]
+  LinkTrial(backLink)
 
-  // useEffect(() => {
-  //   if (isSearch) {
-  //     inputRef.current.focus();
-  //   }
-  // }, [isSearch]);
 
   return (
-    <div className='ChapterNav'>
-    <div className='SubjectPageNavBar'style={{marginLeft:"0%"}}>
-    <Navbar expand="lg" >
+    <div className='HomeNavBar'>
+      <Navbar expand="lg" >
 
-      <Container fluid>
-        {/* {
-        (!isSearch) ? */}
-          <>
-            <button className='subject' onClick={PreviousPage}>
-              <Navbar.Brand >  {<AiOutlineArrowLeft />} {name}  </Navbar.Brand>
-            </button>
+        <Container  className=''>
 
-            <button className='d-flex subject' onClick={() => { 
-              // console.log('test', )
-              SearchWinNav(navigate, backLink) 
-              }}>
+            <Navbar.Brand className='NavbarBrandHome' >
+
+              <SideBarEffect />
+
+              <button className='subject' onClick={PreviousPage}>
+                <AiOutlineArrowLeft /> {name}
+              </button>
+
+            </Navbar.Brand>
+            
+
+            <button className='subject HomeNavContanier' onClick={() => { SearchWinNav(navigate, backLink) }}>
               <FiSearch size={30} color='black' />
             </button>
-          </>
-          {/* //  :
-          // <div >
-          //   <input  className='commonNavBarInput' />
-          // </div> */}
-         {/* }  */}
-      </Container>
-
-    </Navbar>
-    </div>
+          
+        </Container>
+      </Navbar>
     </div>
   );
 };

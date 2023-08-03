@@ -24,16 +24,12 @@ const Home = () => {
     useEffect(
         () => {
 
-            if (!accessKey ) {
-                // localStorage.clear()
+            if (!accessKey) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-            // if  {
-            //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
-            // }
 
-             if (!userData || userData == null || userData == undefined) {
+            if (!userData || userData == null || userData == undefined) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
@@ -48,19 +44,13 @@ const Home = () => {
             <section className='mainHome'>
                 <div className='home'>
 
-                    {/* <section> */}
-                        <div className='SideBar'> 
-
-                            {/* <SideBarEffect />   */}
-                            
-                            <SideBar />
-                            
-                         </div>
-                    {/* </section> */}
+                    <div className='SideBar HomeSideBar'>
+                        <SideBar />
+                    </div>
 
                     <div className='NavBar'>
 
-                    <NavBar /> 
+                        <NavBar />
 
                         <div className='HomeMainContent '>
 
@@ -72,13 +62,13 @@ const Home = () => {
 
                             <section >
                                 <div className='SubjectCaural'>
-                         <SubjectCaural /> 
+                                    <SubjectCaural />
                                 </div>
                             </section>
 
                             <section >
                                 <div className='FacultiCaursol'>
-                               <FacultiCaursol /> 
+                                    <FacultiCaursol />
                                 </div>
                             </section>
 

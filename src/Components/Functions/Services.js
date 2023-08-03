@@ -10,17 +10,17 @@ import { redirect } from "react-router-dom";
 export const responsive = (a) => {
   return {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 781 },
       items: a,
       slidesToSlide: 1, // optional, defaults to 1.
     },
     tablet: {
-      breakpoint: { max: 1220, min: 768 },
-      items: 3,
+      breakpoint: { max: 780, min: 481 },
+      items: 2,
       slidesToSlide: 1, // optional, defaults to 1.
     },
     mobile: {
-      breakpoint: { max: 930, min: 464 },
+      breakpoint: { max: 480},
       items: 2,
       slidesToSlide: 1, // optional, defaults to 1.
     },

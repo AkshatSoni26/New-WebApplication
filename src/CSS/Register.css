@@ -1,129 +1,7 @@
-/* a:link,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none !important;
-  cursor: pointer;
-} */
-
-
-
-/* LoginPage */
-
-/* .LoginPage {
-  display: flex;
-} */
-
-/* .LeftSide {
-  flex: 1;
-  /* margin-left: 10%; */
-  /* margin-top: 1%;
-  overflow: hidden;
-} */ */
-
-
-/* PhoneNumber
-.PhoneNumber {
-  margin-top: 100%;
-  margin-left: 40%;
-} */
-
-
-
-
-
-/* h3,
-p {
-  color: black;
-}
-
-/* NavBar */
-/* .NavBar {
-  width: 80vw;
-} */
-
-/* sideBar */
-
-/* .SideBar {
-  background-color: #FFF;
-  width: 20vw;
-
-
-  /* padding-left: 100px; */
-/* } */ */ */
-
-/* .SubjectSideBar {
-  width: 29vw;
-}
-
-.SideBarItem {
-  margin: 15%;
-  margin-top: 50px;
-  width: 100%;
-}
-
-.menuBar {
-  display: flex;
-  width: 100%;
-
-}
-
-.Logo_Image {
-  width: 100%;
-  align-self: center;
-  margin-bottom: 10%;
-  padding-top: 7%;
-  padding-left: 3%;
-  background-color: #FFF;
-  /* margin: 10% */
-/* } */ */
-
-
-/* .SubjectPageNavBar {
-  margin-left: 1%;
-  background-color: #FFF;
-} */
-
-
-.companyLogo {
-  padding: 5%;
-  width: 100%;
-  height: auto;
-  background-color: #FFF;
-}
-
-
 /* SideMenu */
 .side_Menu {
   width: 100%;
 }
-
-
-/* .homeSide {
-  display: block;
-  width: 14vw;
-  /* height: 1vh; */
-  /* background-color: #FFF;
-} */ */
-/* 
-.tableData {
-  display: flex;
-  width: 100%;
-  align-items: start;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
-
-
-/* Home */
-/* .home {
-  display: flex;
-  /* width: 100%; */
-  /* overflow-y: hidden;
-} */ 
-
 
 .menuBarcontent {
   padding-left: 12px;
@@ -136,96 +14,12 @@ p {
   margin-bottom: 1rem;
 }
 
-
 /* NavBar  */
 #navbarScrollingDropdown {
-  color: #333A47;
+  color: #333a47;
   top: 40px;
-  left: 60px
+  left: 60px;
 }
-
-/* Caursal
-.FacultiImg,
-.subjectImages {
-  height: 180px;
-  width: 200px;
-  border-radius: 5%;
-} */
-
-/* SubjectCaursal */
-/* .SubjectNames {
-  display: flex;
-} */
-
-/* .subjectImages{
-
-
-} */
-
-/* Faculti carusals */
-/* .facultiimages{
-
-} */
-
-
-
-/* Subject Side Bar */
-.bookLogo {
-  margin-top: 17px;
-  margin-left: 39px;
-  padding: 3.75px 2.4999990463256836px 3.75px 2.499969482421875px
-}
-
-.logo_and_index {
-  display: flex;
-  height: auto;
-  width: auto;
-}
-
-.index {
-  margin-top: 20px;
-  margin-left: 10px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #0D1015;
-}
-
-/* .table {
-  color: #0D1015;
-  display: block;
-  /* margin-top: 5px; */
-  /* padding-left: 19px;
-  margin-top: 10%;
-  margin-left: 25px;
-  font-size: 16px;
-  line-height: 44px;
-  width: 18.4vw;
-  height: 83vh;
-  overflow-y: scroll; */
-/* } */ */
-
-.tableContent {
-  width: 100%;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-}
-
-/* .Subject_Content {
-  overflow-x: hidden;
-  margin-left: 1vw;
-  overflow-y: scroll;
-  width: auto;
-  height: 89vh;
-  margin-top: 1%;
-  background-color: #FFF;
-
-} */
 
 .subjectPageClass {
   display: flex;
@@ -240,23 +34,6 @@ p {
   border-radius: 10px;
 }
 
-.SubjectContanier {
-  /* margin-top: 5vh; */
-  /* margin-bottom: 1vh; */
-}
-
-/* .LectureName {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-
-  width: 200px;
-  word-wrap: break-word;
-} */
-
-
 /* Chapter Header */
 .chapterHeader {
   display: flex;
@@ -266,7 +43,7 @@ p {
 }
 
 .chapterName {
-  color: #0D1015;
+  color: #0d1015;
   font-size: 18px;
   width: 100%;
   font-weight: 700;
@@ -277,69 +54,18 @@ p {
 }
 
 .lecturesLength {
-  color: #333A47;
+  color: #333a47;
 
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0em;
   text-align: left;
-
 }
 
 .rightArrow {
   margin-top: 1.2%;
 }
-
-/* .Progress{
- 
-} */
-
-
-/* .ProgressPart {
-  display: flex;
-  width: 90%
-} */
-
-
-/* .ChapLec {
-  margin-left: 2%;
-} */
-
-
-
-
-/* .tableHome {
-  padding-left: 2.5vw;
-  font-size: 16px;
-  line-height: 44px;
-  width: 100%;
-  height: 85vh;
-  background-color: #FFF;
-
-  
-} */
-/* 
-.HomeNavBar {
-  background-color: #fff;
-  margin-left: 1%;
-
-} */
-
-/* .HomeMainContent {
-  background-color: #FFF;
-  margin-left: 1%;
-  margin-top: 1%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 89vh;
-} */
-
-/* .HomePageSubject {
-  margin-left: 7vw;
-} */
-
-
 
 .startingPhrase {
   font-size: 14px;
@@ -347,19 +73,17 @@ p {
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
-  color: #333A47;
+  color: #333a47;
 }
 
 .userName {
-
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
-  color: #0D1015;
+  color: #0d1015;
 }
-
 
 .FacultiCarsal {
   margin-left: 6vw;
@@ -377,58 +101,24 @@ p {
   text-align: left;
 }
 
-/* .chapterHeaderButton {
-  display: flex;
-  width: 100%;
-} */
-
 .ChapterPageSideBar {
   width: 30vw;
   background-color: #fff;
-
 }
 
 .accodionHeader {
-  color: #0D1015;
+  color: #0d1015;
   font-size: 18px;
   font-weight: 700;
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
 }
-/* 
-.accordionBody {
-  max-height: 46vh;
-  overflow-y: scroll;
-  flex: 1;
-} */
-
-
-
-
-
-
-
-
-/* .ChaptrSide {
-  margin-top: 3vh;
-  background-color: #fff;
-  width: 30vw;
-  height: 86.5vh; */
-/* } */
 
 .ChapterNav {
-  background-color: #FFF;
+  background-color: #fff;
   padding-bottom: 1%;
 }
-
-/* .ChapterCon {
-  background-color: #FFF;
-  width: 70vw;
-  margin-top: 3vh;
-  margin-left: 1vw;
-  overflow-y: hidden;
-} */
 
 .contentSep {
   display: flex;
@@ -438,15 +128,12 @@ p {
   width: 10%;
 }
 
-/* .collectionAccordion {} */
-
 .ChapterMainImage {
-
   width: 100%;
   height: auto;
   top: 125px;
   left: 498px;
-  border-radius: 8px
+  border-radius: 8px;
 }
 
 .ChapterContent {
@@ -460,36 +147,12 @@ p {
   margin-top: 2%;
 }
 
-
 .accordianDiv {
   display: flex;
 }
 
-
-
-
-
-.VidThum {
-  flex: 1;
-  position: relative;
-  display: flex;
-  margin-top: 10%;
-}
-
-
-.accordianImage {
-  position: relative;
-  height: 15vh;
-  width: auto;
-  flex: 1;
-  border-radius: 5%;
-  /* opacity: 0; */
-  /* margin-top: 10%; */
-}
-
 .layer {
   position: relative;
-
 }
 
 .accordianImage2 {
@@ -509,9 +172,6 @@ p {
   /* margin-top: 10%; */
 }
 
-
-
-
 .playbuttondiv {
   /* position: relative; */
 }
@@ -530,304 +190,80 @@ p {
   /* align-self: flex-end; */
   margin-top: 42%;
   margin-left: 68%;
-
 }
-
 
 .videoTime {
   position: relative;
-  color: #FFF;
+  color: #fff;
   background-color: rgba(13, 16, 21, 0.66);
-  padding-left: .5vw;
-  padding-right: .5vw;
-  padding-top: .005vh;
-  padding-bottom: .05vh;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  padding-top: 0.005vh;
+  padding-bottom: 0.05vh;
   z-index: 1;
   border-radius: 5vh;
-
 }
 
-
-/* .image-container{
-  opacity: 1; 
-  transition: opacity 0.3s ease;
-} 
-*/
-
-/* .image-container:hover   {
-  opacity: 0.5;
-} */
-
-
 .lottie {
-  /* position: relative; */
   z-index: 1;
-  /* background-color: rgba(13, 16, 21, 0.66); */
-  /* padding:20% ; */
   padding-top: 100;
 }
 
-
 .LottieBackgroundColour {
-  /* position: absolute; */
-  /* background-color: rgba(13, 16, 21, 0.66); */
   width: 20%;
 }
 
-
-
-
-
-
-
-
-
-
 .input_border {
-  border: 2px solid #5F46E3;
+  border: 2px solid #5f46e3;
   border-radius: 10px;
   width: 100%;
 }
 
-
-.buttonText{
+.buttonText {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
-
-/* .buttonBAckground {
-  background-color: #5F46E3;
-  justify-content: end;
-  width: 100%;
-} */
-
-
-/* .RightSide {
-  display: none;
-} */
-
-/* .mainPage {
-  /* justify-content: flex-start; */
-  /* padding: 10%;
-  padding-left: 0%;
-} */ 
 
 .OnborImg {
   margin-top: 7%;
   margin-bottom: 7%;
-  /* width: auto; */
-  /* height: 30%; */
 }
 
 .OnborImage {
   height: 100%;
-  /* width: auto; */
 }
-
-
-:root {
-  --main-color: #ff0000;
-  /* Replace with your desired color value */
-  --main-border-color: #ffff;
-
-}
-
-/* .colorBox {
-  background-color: var(--main-color);
-  border-color: #FFB023;
-  border-style: solid;
-  border-width: 1px;
-  /* padding-top: 10%; */
-  /* display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  /* padding-bottom: 20%; */
-  /* aspect-ratio: 150/64;
-  /* padding-top: 5%; */
-  /* align-items: center;
-  justify-content: center;
-  margin: 3%;
-  flex: 1 1;
-  border-radius: 8px;
-  height: auto;
-  color: #0D1015;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: center;
-  /* height: 5vh; */
-  /* overflow-y: hidden;
-  flex-direction: column;
-  align-content: center;
-} */ 
-
-
-/* .colorBoxBig {
-  /* display: flex; */
-  /* overflow-y: hidden; */
-/* } */
-
-
-/* .currOptionchoice {
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0em;
-  text-align: left;
-} */
-
-
-  /* SubjectCaursal */
-  /* .subject {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0px;
-    margin: 0px 0px;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  } */
-
-
-
-
-/* .buttonClass{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
-
-
-
-
 
 @media (min-width: 376px) {
-  
-  /* .accordianContent {
-    flex: 1;
-    padding-left: 5%;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #0D1015;
-  
-    
-  } */
-  
- 
-/* .accordianContent {
-  display: none;
-} */
-
-  /* .mainPage {
-    padding: 0%;
-    margin-top: 5%;
-    margin-left: 30%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    height: 90vh;
-  } */
-
-  .rocket_image{
-   overflow: hidden;
+  .rocket_image {
+    overflow: hidden;
   }
 
-  .rocket_image2{ 
+  .rocket_image2 {
     height: 80vh;
     margin-right: 30%;
   }
 
-  .rocket_image svg{
-    /* height: 50%; */
+  .rocket_image svg {
   }
-
-  /* .buttonclass {
-    /* margin-left: 22%; */
-    /* margin-right: 11.7%; */
-    /* margin-top: 45vh; */
-    /* padding: 0%; */
-    /* height: 70%;
-    display: flex;
-    align-items: flex-end; */
-  /* } */
-
-  /* .buttonBAckground, .buttonBAckground:hover {
-    background-color: #5F46E3;
-    width: 76.5%;
-  } */
-
-  /* RightSlider */
-/* 
-  .RightSide {
-    flex: 1;
-    display: inline;
-  } */
-
-  /* .OnborMainPage {
-    overflow-y: hiddens;
-    margin-left: 20%;
-    margin-top: 0%;
-    /* margin-bottom: 20%; */
-    /* margin-left: 0%; */
-    /* margin-right: 10%; */
-    /* padding-right: 10%; */
-    /* height: 100vh; */
-    /* overflow-y: hidden; */
-  /* } */ 
-
 
   Big {
     overflow: hidden;
   }
 
-  .targetLottie{
+  .targetLottie {
     position: relative;
-    /* height: 40%; */
     height: 50vh;
   }
 
-  .targetLottie svg{
+  .targetLottie svg {
     margin-top: -13%;
     margin-left: -10%;
   }
-
-    /* .PencilLottie{
-      position: relative;
-      height: 37vh;
-      width: 80%;
-      /* height: 60%; */
-    /* } */
-
-    
-    /* .PencilLottie svg{
-      margin-top: -17%;
-    } */ 
-
-
 }
-
-
-
-
-
-/* .rocket_image{
-  /* aspect-ratio: 297/56; */
-  /* height: aspect-ratio*0.2vh; */
-  /* margin-top: -34%;
-  margin-left: -20%; */
-  /* overflow: hidden; */
-  /* overflow-y: hidden; */
-
-
-
 
 .settingHeader {
   font-size: 32px;
@@ -835,14 +271,14 @@ p {
   line-height: 44px;
   letter-spacing: 0em;
   text-align: left;
-  color: #0D1015;
+  color: #0d1015;
 }
 
-.settingheaderUnderline{
-font-size: 16px;
-font-weight: 400;
-line-height: 28px;
-letter-spacing: 0em;
-text-align: left;
-color: #0D1015;
+.settingheaderUnderline {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0d1015;
 }

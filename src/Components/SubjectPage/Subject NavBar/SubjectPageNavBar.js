@@ -4,12 +4,12 @@ import CommonNavBar from '../../CommonNavBar';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 const SubjectPageNavBar = ({ subjectId }) => {
-  const [subjectName, setSubjectName] = useState('');
-  const [id, setId] = useState()
 
+  console.log('SubjectPageNavBar', SubjectPageNavBar)
+
+  const [subjectName, setSubjectName] = useState('');
   const subjectData = JSON.parse(localStorage.getItem('userData'))?.subjects;
 
-  console.log('SubjectPageNavBar',subjectId)
 
   useEffect(() => {
     if (subjectData && subjectData.length > 0) {
@@ -25,15 +25,14 @@ const SubjectPageNavBar = ({ subjectId }) => {
   }, []);
 
   return (
-    <>
-      {!subjectName ? (
-        <SpinnerFun />
-      ) : (
-        <div className='SubjectPageNavBar'>
-          <CommonNavBar name={subjectName}  />
-        </div>
-      )}
-    </>
+
+    !subjectName ?
+
+      <SpinnerFun />
+      :
+      <CommonNavBar name={subjectName} />
+
+
   );
 };
 

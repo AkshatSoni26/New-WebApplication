@@ -21,10 +21,8 @@ const SubjectPage = () => {
     console.log("SubjectPage")
 
     console.log('subjectId', useParams())
-    const {subject} =  useParams()
-
-    const subjectId = subject 
-    // console.log('subjectId', subjectId)
+    const { subject } = useParams()
+    const subjectId = subject
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
@@ -38,12 +36,10 @@ const SubjectPage = () => {
         () => {
 
             subjectPageData(SubjectData, subjectId, setSubjData, navigate)
-            
+
             var subjectData = null
-            try{
-
+            try {
                 var subjectData = JSON.parse(userData).subjects
-
                 let isChapter = false
                 for (let i = 0; i < subjectData.length; i++) {
                     if (subjectData[i].node_id == subjectId) {
@@ -54,22 +50,13 @@ const SubjectPage = () => {
                 if (isChapter == false) {
                     navigate(`/${subjectId}`)
                 }
-                
             }
             catch (err) {
                 console.log('err', err)
                 // localStorage.clear()
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
-
-
-
             !accessKey && navigate(FRONTEND_URLS.LOGIN_ROUTE)
-
-            // if (!userData) {
-                
-            // }
-
         }, []
     )
 
@@ -78,47 +65,59 @@ const SubjectPage = () => {
             ?
             <SpinnerFun />
             :
-            <>
-                {
-                    (SubData?.node_type == "COLLECTION") &&
+            <section className='mainHome'>
+                <div className='home'>
 
-                    <div>
+                    {
+                        (SubData?.node_type == "COLLECTION") &&
 
-                        <div className='ChapterNav'>
-                            <ChapterPageNavBar chapterName={SubData.display_name} subjectPageId={''} />
-                        </div>
+                        <div>
 
-                        <div className='contentSep'>
-
-                            <div className='ChaptrSide'>
-                                {(SubData?.content) && <ChapterPageSideBar chapterContent={SubData.content} />}
+                            <div className='ChapterNav'>
+                                <ChapterPageNavBar chapterName={SubData.display_name} subjectPageId={''} />
                             </div>
 
-                            <div className='ChapterCon'>
-                                {(SubData?.content) && <ChapterContentPortion chapterContent={SubData.content} />}
+                            <div className='contentSep'>
+
+                                <div className='ChaptrSide'>
+                                    {(SubData?.content) && <ChapterPageSideBar chapterContent={SubData.content} />}
+                                </div>
+
+                                <div className='ChapterCon'>
+                                    {(SubData?.content) && <ChapterContentPortion chapterContent={SubData.content} />}
+                                </div>
+
                             </div>
 
                         </div>
-
-                    </div>
-                }
+                    }
 
 
-                {
-                    (SubData.length > 1) &&
-                    <div className=' subjectPageClass'>
-                        <div className='SideBar'>
-                            <SubjectSideBar />
-                        </div>
+                    {
+                        (SubData.length > 1) &&
+                        <>
+                            <div className='SideBar'>
+                                <SubjectSideBar />
+                            </div>
 
-                        <div className='NavBar'>
-                            {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
+                            <div className='NavBar'>
 
-                            {(subjectId) && <SubjectContent subjectId={subjectId} />}
-                        </div>
-                    </div>
-                }
-            </>
+                                {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
+
+                                <div className='HomeMainContent '>
+                                    <section >
+                                        {/* <div className='SubjectCaural'> */}
+                                            {(subjectId) && <SubjectContent subjectId={subjectId} />}
+                                        {/* </div> */}
+                                    </section>
+                                </div>
+
+                            </div>
+
+                        </>
+                    }
+                </div>
+            </section>
     );
 };
 

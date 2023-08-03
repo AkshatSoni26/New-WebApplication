@@ -1,52 +1,52 @@
 @media screen and (max-width:480px) {
-    
 
-/* CSS Reset */
-/* *{
+
+  /* CSS Reset */
+  /* *{
     margin:0;
     padding: 0;
   }
    */
-  
+
   /* CSS Variables */
-  :root{
-    --Primary-Font-Family:'Lato', sans-serif;
+  :root {
+    --Primary-Font-Family: 'Lato', sans-serif;
     --Primary-Background-Color: #F8F8F8;
   }
-  
 
-/* DOM font family  and background color */
-body{
+
+  /* DOM font family  and background color */
+  body {
     font-family: var(--Primary-Font-Family);
     background-color: var(--Primary-Background-Color);
   }
-  
 
-/* Display which is hiddie in this portion  */
-.leftPortion{
+
+  /* Display which is hiddie in this portion  */
+  .leftPortion {
     display: none;
-}
+  }
 
 
 
-/* Right portion is shown whole in the screen  */
-.rightPortion {
+  /* Right portion is shown whole in the screen  */
+  .rightPortion {
     padding-top: 0%;
     width: 100%;
     height: 100%;
-}
+  }
 
-.mainPage {
+  .mainPage {
     margin: 5%;
     margin-top: 0%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
-}
+  }
 
 
-.nameAskingSection {
+  .nameAskingSection {
     margin-top: 4%;
     width: 100%;
     height: auto;
@@ -55,69 +55,233 @@ body{
     border-radius: 8px
   }
 
+  .nameAskingSection ~ .buttonclass {
+    height: 66vh;
+  }
 
-  .focused_input, .buttonBAckground {
+
+  .focused_input,
+  .buttonBAckground {
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     margin-left: 2%;
     padding: 2%;
     width: 90%;
     /* margin-left: 10%; */
-}
-  
-.buttonclass {
+  }
+
+  .buttonclass {
     padding-left: 0%;
-    height: 60vh;
+    height: 75vh;
     width: 100%;
   }
 
-  .OtpBackBut{
-    display:flex;
+  .OtpBackBut {
+    display: flex;
   }
 
-    .PencilLottie{
-      position: relative;
-      height: 37vh;
-      width: 100%;
-      height: 60%;
-     }
+  .PencilLottie {
+    position: relative;
+    height: 37vh;
+    width: 100%;
+    height: 60%;
+  }
 
-    .PencilLottie .lottoImage{
-        width: 80%;
-        margin-top: 4%; 
-    }
+  .PencilLottie .lottoImage {
+    width: 80%;
+    margin-top: 4%;
+  }
 
-    .PencilLottie svg{
-      margin-top: -17%;
-      width: 120%;
-    }
+  .PencilLottie svg {
+    margin-top: -17%;
+    width: 120%;
+  }
 
-    .colorBoxBig {
-        width: 100%;
-    }
+  .colorBoxBig {
+    width: 100%;
+  }
 
-    /* .colorBox{
+  /* .colorBox{
         aspect-ratio: 1;
     } */
 
-    .home .SideBar .homeSide {
-      /* display: none */
-    }
+  .home .SideBar .homeSide {
+    display: none
+  }
 
-    .home > .SideBar > .respHomeSide{
-      /* display: block; */
-    }
+  .home .NavBar {
+    width: 100vw;
+  }
+
+
+  /*-------------------------------------------Home--------------------------------------------------- */
+  /*-------------------------- NavBar-------------------------  */
+  .HomeNavBar .container {
+    margin-left: 0%;
+    margin-right: 10%;
+    padding: 0%;
+
+  }
+
+  .HomeNavBar>nav {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    --bs-navbar-brand-padding-y: 0rem;
+  }
+
+  /*-------------------------- Subject Portion-------------------------  */
+
+  .container>.row>.col {
+    flex: 1 1;
+    /* width: 109%; */
+    /* display: flex; */
+  }
+
+  .row-cols-1>* {
+    flex: 1 1;
+    width: 50%;
+  }
+
+  .subjectImages {
+    height: 20vh;
+    width: 20vh;
+  }
+
+  /*-------------------------- Faculti Potion-------------------------  */
+  div .react-multi-carousel-list {
+    width: 88%;
+  }
+
+  .FacultiImg {
+    height: 20vh;
+    width: 25vh;
+    /* border-radius: 5%; */
+}
+
+
+  /*-------------------------- overlay CSS-------------------------  */
+  #overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 1;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+  }
+
+  /*-----------------------------------------------Side Bar Menu ----------------------------------------- */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+
+  }
+
+  .openbtn:hover {
+    background-color: #444;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  .respHomeSide {
+    display: flex;
+  }
+
+  .tableHome {
+    padding-left: 4.5vw;
+    font-size: 16px;
+    line-height: 44px;
+    height: 85.5vh;
+    overflow-x: hidden;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .LogoCloseBut {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10%;
+    margin-top: 8%;
+  }
+
+  .companyLogo {
+    padding: 0%;
+    width: 100%;
+    margin: 0%;
+    margin-left: 0%;
+  }
+
+  .Logo_Image {
+    margin: 5%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+  }
+
+  .sidebar {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--second-primary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+
+  }
+
+  .sidebar .closebtn {
+    /* position: absolute; */
+    top: 0;
+    /* right: 25px; */
+    font-size: 36px;
+    /* margin-left: 50px; */
+  }
 
 
 
-  
-  /* Utiity classes */
-  
+  .sidebar a {
+    padding: 0%;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    /* display: ; */
+    transition: 0.3s;
+  }
 
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+
+
+ /*-----------------------------------------------Utility classes----------------------------------------- */
+  .container {
+    max-width: 100%;
+  }
 
 
 
 
 }
-
-
