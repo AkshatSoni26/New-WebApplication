@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import NavBar from './NavBar/NavBar';
 import SideBar from './SiderBar/SideBar';
 import '../../CSS/App.css'
+import '../../CSS/Tab.css'
+import '../../CSS/Phone.css'
 import UserData from './UserData/UserData';
 import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
 import { full_name } from '../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
+import SideBarEffect from './SiderBar/SideBarEffect';
 
 
 const Home = () => {
@@ -45,11 +48,15 @@ const Home = () => {
             <section className='mainHome'>
                 <div className='home'>
 
-                    <section>
-                        <div className='SideBar'>
+                    {/* <section> */}
+                        <div className='SideBar'> 
+
+                            {/* <SideBarEffect />   */}
+                            
                             <SideBar />
-                        </div>
-                    </section>
+                            
+                         </div>
+                    {/* </section> */}
 
                     <div className='NavBar'>
 

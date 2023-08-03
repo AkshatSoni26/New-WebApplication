@@ -99,12 +99,12 @@ p {
 }
 
 
-.homeSide {
+/* .homeSide {
   display: block;
   width: 14vw;
   /* height: 1vh; */
-  background-color: #FFF;
-}
+  /* background-color: #FFF;
+} */ */
 /* 
 .tableData {
   display: flex;
@@ -118,11 +118,12 @@ p {
 
 
 /* Home */
-.home {
+/* .home {
   display: flex;
   /* width: 100%; */
-  overflow-y: hidden;
-}
+  /* overflow-y: hidden;
+} */ 
+
 
 .menuBarcontent {
   padding-left: 12px;
@@ -152,9 +153,9 @@ p {
 } */
 
 /* SubjectCaursal */
-.SubjectNames {
+/* .SubjectNames {
   display: flex;
-}
+} */
 
 /* .subjectImages{
 
@@ -318,12 +319,12 @@ p {
 
   
 } */
-
+/* 
 .HomeNavBar {
   background-color: #fff;
   margin-left: 1%;
 
-}
+} */
 
 /* .HomeMainContent {
   background-color: #FFF;

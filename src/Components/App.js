@@ -4,6 +4,10 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './HomePage/Home';
 import SubjectPage from './SubjectPage/SubjectPage';
 import ChapterPage from './Chapter Page/ChapterPage';
+import '../CSS/Tab.css'
+import '../CSS/Phone.css'
+import '../CSS/App.css'
+
 
 import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';

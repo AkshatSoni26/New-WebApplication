@@ -5,6 +5,7 @@ import { FRONTEND_URLS } from '../Links/Config';
 import { useNavigate } from 'react-router-dom';
 import '../../CSS/App.css'
 import '../../CSS/Phone.css'
+import '../../CSS/Tab.css'
 
 
 

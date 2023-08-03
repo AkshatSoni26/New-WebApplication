@@ -92,8 +92,6 @@ body{
       width: 120%;
     }
 
-
-
     .colorBoxBig {
         width: 100%;
     }
@@ -102,7 +100,13 @@ body{
         aspect-ratio: 1;
     } */
 
+    .home .SideBar .homeSide {
+      /* display: none */
+    }
 
+    .home > .SideBar > .respHomeSide{
+      /* display: block; */
+    }
 
 
 
@@ -115,3 +119,5 @@ body{
 
 
 }
+
+

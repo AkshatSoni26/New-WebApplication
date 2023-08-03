@@ -8,8 +8,9 @@
 /* CSS Variables */
 :root {
   --Primary-Font-Family: 'Lato', sans-serif;
-  --Primary-Background-Color: #ffffff;
+  --Primary-Background-Color:#F8F8F8;
   --primary-color: #5F46E3;
+  --second-primary-color:#fff;
 }
 
 
@@ -352,15 +353,25 @@ letter-spacing: 0em;
 text-align: left;
 }
 
-
-
-
-
+/* ------------------------------------- Home -------------------------- */
 
 
 
 
 /* Utiity classes */
+
+/* For Removing default css of button  */
+.subject {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0px;
+  margin: 0px 0px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
+}
 
 .buttonBAckground,
 .buttonBAckground:hover {
@@ -411,59 +422,22 @@ text-align: left;
   /* margin-left: 7%; */
 }
 
+.home > .SideBar > .respHomeSide{
+  /* display: none; */
+ }
 
 
 
-@media screen and (min-width:480px) and (max-width:1000px) {
 
-  .mainPage {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
 
-  .nameAskingSection {
-    margin-top: 4%;
-    width: 70%;
-    height: auto;
-    top: 133px;
-    left: 20px;
-    border-radius: 8px;
-  }
-
-  .focused_input,
-  .buttonBAckground {
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 2%;
-    width: 100%;
-    /* margin-left: 10%; */
-  }
-
-  .buttonclass {
-    padding-left: 0%;
-    height: 50vh;
-    width: 70%;
-  }
-
-  .coursoImg img{
-    aspect-ratio: 1;
-    width: 70%;
-    height: 50%;
+/*=---------------------------------------------------------------*/
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
 }
-
-
-}
-
-@media (max-width: 650px) {
-  .coursoImg img {
-    aspect-ratio: 1;
-    width: 100%;
-    height: 50%;
-}
-}
-
 
 
 
@@ -500,11 +474,11 @@ p {
 
 /* sideBar */
 
-.SideBar {
+.home .SideBar .homeSide {
   background-color: #FFF;
-  width: 20vw;
-
-
+  width: 24vw;
+  /* min-width: 60%; */
+  height: 100%;
   /* padding-left: 100px; */
 }
 
@@ -525,10 +499,9 @@ p {
 }
 
 .Logo_Image {
-  width: 100%;
+  width: 25vh;
   align-self: center;
   margin-bottom: 10%;
-  padding-top: 7%;
   padding-left: 3%;
   background-color: #FFF;
   /* margin: 10% */
@@ -546,8 +519,11 @@ p {
 .companyLogo {
   padding: 5%;
   width: 100%;
+  margin: 25%;
+  margin-left: 10%;
+  margin-bottom: 0%;
   height: auto;
-  background-color: #FFF;
+  background-color: var(--second-primary-color);
 }
 
 
@@ -558,7 +534,7 @@ p {
 
 
 .homeSide {
-  display: block;
+  /* display: block; */
   width: 14vw;
   /* height: 1vh; */
   background-color: #FFF;
@@ -568,12 +544,10 @@ p {
   display: flex;
   width: 100%;
   align-items: start;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 
@@ -604,10 +578,15 @@ p {
 }
 
 /* Caursal */
-.FacultiImg,
-.subjectImages {
+.FacultiImg {
   height: 25vh;
   width: auto;
+  border-radius: 5%;
+}
+
+.subjectImages {
+  height: 25vh;
+  width: 25vh;
   border-radius: 5%;
 }
 
@@ -618,17 +597,7 @@ p {
 
 
 /* SubjectCaursal */
-.subject {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0px;
-  margin: 0px 0px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  width: 100%;
-}
+
 
 /* Subject Side Bar */
 .bookLogo {
@@ -787,14 +756,35 @@ p {
 
 }
 
+.HomeNavContanier{
+  display: flex;
+  width: 6%;
+  justify-content: flex-end;
+}
+
+.innerSuvjectCaursalDiv{
+  display: flex;
+  flex-direction: column;
+}
+
 .HomeMainContent {
   background-color: #FFF;
   margin-left: 1%;
   margin-top: 1%;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 89vh;
+  height: 88.5vh;
   padding-left: 1%;
+}
+
+.tableHome {
+  padding-left: 4.5vw;
+  font-size: 16px;
+  line-height: 44px;
+  /* width: 100%; */
+  height: 85.5vh;
+  overflow-x: hidden;
+  background-color: #FFF;
 }
 
 .HomePageSubject {
@@ -938,32 +928,7 @@ p {
   margin-top: 10%;
 }
 
-@media (max-width:800px) {
 
-  .accordianContent {
-    display: none;
-  }
-
-  /* .tableHome {
-    padding-left: 2.5vw;
-    font-size: 16px;
-    line-height: 44px;
-    width: 100%;
-    height: 85vh;
-    background-color: #FFF;
-  
-    display: flex;
-    flex-direction: column;
-    
-  } */
-  /* .menuBarcontentSvgs svg{
-    height: 1.5em;
-    width: 1.5em;
-  } */
-
-  .menuBarcontentSvgs {}
-
-}
 
 
 .VidThum {
@@ -1168,6 +1133,8 @@ div .react-multi-carousel-list {
   position: relative;
   width: 70vw;
   overflow-x: scroll;
+  /* margin-left: -5%; */
+  margin-left: 5%;
 }
 
 .SearchResult {
@@ -1204,3 +1171,119 @@ div .react-multi-carousel-list {
   height: 85vh;
   background-color: #fff;
 }
+
+
+
+
+
+
+
+
+@media screen and (min-width:480px) and (max-width:1000px) {
+
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .nameAskingSection {
+    margin-top: 4%;
+    width: 70%;
+    height: auto;
+    top: 133px;
+    left: 20px;
+    border-radius: 8px;
+  }
+
+  .focused_input,
+  .buttonBAckground {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 2%;
+    width: 100%;
+    /* margin-left: 10%; */
+  }
+
+  .buttonclass {
+    padding-left: 0%;
+    height: 50vh;
+    width: 70%;
+  }
+
+  .coursoImg img{
+    aspect-ratio: 1;
+    width: 70%;
+    height: 50%;
+}
+
+
+}
+
+
+/*--------------------------------------------------------------------------*/
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;  
+
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 0px;}
+  .sidebar a {font-size: 0px;}
+}
+
+
+
+

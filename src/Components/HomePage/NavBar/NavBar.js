@@ -30,7 +30,7 @@ function NavBar() {
             :
             <div className='HomeNavBar'>
                 <Navbar expand="lg" >
-                    <Container >
+                    <Container className='' >
                         <Navbar.Brand >
 
                             <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
@@ -57,8 +57,7 @@ function NavBar() {
 
                         </Navbar.Brand>
 
-                        <button className='d-flex subject' onClick={() => { SearchWinNav(navigate) }}
-                        >
+                        <button className='subject HomeNavContanier' onClick={() => { SearchWinNav(navigate) }}>
                             <FiSearch size={30} color='black' />
                         </button>
 

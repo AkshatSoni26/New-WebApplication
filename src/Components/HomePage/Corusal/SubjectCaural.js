@@ -24,24 +24,35 @@ const SubjectCaural = () => {
             <div>
                 <div className="startingPhrase ChapLec">{slogen}</div>
 
-                <div className='SubjectNames'>
-                    <div className='container' >
-                        <div className='row'>
-                            {
-                                SubjectData.map(
-                                    (data, index) => {
-                                        return (
-                                            <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-6 my-3 '>
-                                                <img className=' subjectImages' src={data.thumbnail} />
-                                                <div className='LectureName HomePageSubject'>{data.display_name}</div>
-                                            </button>
-                                        )
-                                    }
-                                )
-                            }
-                        </div>
+                {/* <div className='SubjectNames'> */}
+                <div class="container">
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style={{marginLeft:"4%"}}>
+                        {
+                            SubjectData.map(
+                                (data, index) => {
+                                    return (
+                                        <div class="col">
+
+                                                <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-6 my-3 '>
+                                                    <div
+                                                    className='innerSuvjectCaursalDiv'
+                                                    >
+                                                        <img className='subjectImages' src={data.thumbnail} />
+                                                        <div className='LectureName'>{data.display_name}</div>
+                                                    </div>
+                                                </button>
+
+                                        </div>
+
+                                    )
+                                }
+                            )
+                        }
                     </div>
                 </div>
+
+
             </div>
     );
 };
