@@ -11,6 +11,10 @@
   --Primary-Background-Color:red;
   --primary-color: #5F46E3;
   --second-primary-color:#fff;
+
+  --ChaptePageButtons-color:#333A47;
+
+
   --text-color: #0D1015;
 
   --SubjectIndexTab-color:#060D21;
@@ -571,6 +575,10 @@ div .react-multi-carousel-list {
   align-items: center;
   flex-direction: row;
   align-content: center;
+}
+
+.ChapterSideResp {
+  display: none;
 }
 
 

@@ -261,18 +261,9 @@
 
 
   /*----------------------------------------------Chapter Classes----------------------------------------- */
-  .ChaptrSide{
-    display: none;
-  }
+  
 
-  .ChapterCon {
-    background-color: #FFF;
-    width: 100%;
-    height: 100%;
-    margin-top: 3vh;
-    /* margin-left: 1vw; */
-    overflow-y: hidden;
-}
+
 
 
 
