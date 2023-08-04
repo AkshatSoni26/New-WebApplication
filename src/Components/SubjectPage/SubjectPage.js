@@ -7,12 +7,13 @@ import SubjectContent from './Suject Content/Subject_Content';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
-import { subjectPageData } from '../Functions/Services';
+import { OverlayOff, OverlayOn, subjectPageData } from '../Functions/Services';
 import { FRONTEND_URLS } from '../Links/Config';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
 import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
 import SpinnerFun from '../SpinnerFun/SpinnerFun';
+import TabSubjectSideBar from './Subject SideBar/TabSubjectSideBar';
 
 
 
@@ -28,9 +29,14 @@ const SubjectPage = () => {
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
     const [SubData, setSubjData] = useState()
 
+    const content = useSelector(state => state.content)
+
+
     const accessKey = localStorage.getItem('Access Key')
     const userData = localStorage.getItem('userData')
     const navigate = useNavigate()
+
+    const [TabIndexBut, setTabIndexBut] = useState(false)
 
     useEffect(
         () => {
@@ -59,6 +65,8 @@ const SubjectPage = () => {
             !accessKey && navigate(FRONTEND_URLS.LOGIN_ROUTE)
         }, []
     )
+
+    
 
     return (
         (!SubData)
@@ -106,11 +114,36 @@ const SubjectPage = () => {
 
                                 <div className='HomeMainContent '>
                                     <section >
-                                        {/* <div className='SubjectCaural'> */}
-                                            {(subjectId) && <SubjectContent subjectId={subjectId} />}
-                                        {/* </div> */}
+
+                                        <div id="overlay" onClick={() => {
+                                            OverlayOff();
+                                            setTabIndexBut(false)
+                                        }}></div>
+
+                                        {(subjectId) && <SubjectContent subjectId={subjectId} />}
+
                                     </section>
                                 </div>
+
+                                {
+                                    !TabIndexBut
+                                        ?
+                                        <div className='subjectFlexIndex'>
+
+                                            <button className='subject' onClick={() => { setTabIndexBut(true); OverlayOn() }}>
+
+                                                <div className='FlotingSubjectIndex'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                                    &nbsp;  Index
+                                                </div>
+
+                                            </button>
+                                        </div>
+                                        :
+                                        <div id="SubjectMain ">
+                                            <TabSubjectSideBar setTabIndexBut={setTabIndexBut} />
+                                        </div>
+                                }
 
                             </div>
 

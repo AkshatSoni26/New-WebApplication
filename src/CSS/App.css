@@ -11,6 +11,10 @@
   --Primary-Background-Color:red;
   --primary-color: #5F46E3;
   --second-primary-color:#fff;
+  --text-color: #0D1015;
+
+  --SubjectIndexTab-color:#060D21;
+
 }
 
 
@@ -370,9 +374,14 @@ text-align: left;
   background-color: #FFF;
 }
 
-.respHomeSide{
+.respHomeSide, .subjectFlexIndex, .FlotingSubjectIndex{
   display: none;
 }
+
+.subjectFloatingindexButs{
+  margin:5%
+}
+
 
 div .react-multi-carousel-list {
   display: flex;
@@ -412,7 +421,7 @@ div .react-multi-carousel-list {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .buttonBAckground,
@@ -447,26 +456,13 @@ div .react-multi-carousel-list {
   display:none;
 }
 
-/* .AttemptButtons{
-  display: flex;
-  flex-wrap: wrap;
-  /* align-content: center; */
-  /* justify-content: flex-start; */
-  /* align-items: center; */
-  /* height: 100%; */
-  /* margin-right: 57%;
-} */ 
+
 
 .AttemptButtons{
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  /* grid-gap:2em */
-  /* margin-left: 7%; */
 }
 
-.home > .SideBar > .respHomeSide{
-  /* display: none; */
- }
 
 /*=------------------------------------------------ Subject portion -----------------------------------*/
 .SubjectSideBar .table {
@@ -486,6 +482,7 @@ div .react-multi-carousel-list {
   align-content: flex-start;
   align-items: flex-start;
 }
+
 
 /*=---------------- Side Bar ------------------*/
 .index {
@@ -535,18 +532,24 @@ div .react-multi-carousel-list {
   height: 100%;
 }
 
+/*---------------------------------------------- Chapter ------------------------------*/
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 100%;
+}
+
+
 /*=---------------- Main content ------------------*/
 .SubjectContanier {
   margin-top: 5vh;
   margin-bottom: 1vh;
-  /* margin-left: 5vw; */
+  
 }
 
 
 .SubjectContanier > .react-multi-carousel-list {
   display: flex;
   align-items: center;
-  /* overflow: hidden; */
   position: relative;
   width: 70vw;
   overflow-x: scroll;
@@ -925,7 +928,7 @@ p {
   margin-top: 3vh;
   background-color: #fff;
   width: 30vw;
-  height: 84vh;
+  height: 86vh;
 }
 
 .ChapterNav {
@@ -936,7 +939,7 @@ p {
 .ChapterCon {
   background-color: #FFF;
   width: 69vw;
-  height: 84vh;
+  height: 86vh;
   margin-top: 3vh;
   margin-left: 1vw;
   overflow-y: hidden;

@@ -48,28 +48,28 @@ const SubjectContent = ({ subjectId }) => {
 
                         return (
                             ((data.content.learn).length > 0) ?
-                            <>
-                                <section id={`${data.node_id}`} key={index} 
-                                // className='SubjectContent'
-                                >
+                                <>
+                                    <section id={`${data.node_id}`} key={index}
+                                    // className='SubjectContent'
+                                    >
 
-                                    <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
+                                        <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
 
-                                        subjectId={subjectId} chapterId={chapterId} init_video_id={data.content.learn[0].content_data.content_info.video_id}
+                                            subjectId={subjectId} chapterId={chapterId} init_video_id={data.content.learn[0].content_data.content_info.video_id}
 
-                                        display_name={data.display_name}
+                                            display_name={data.display_name}
 
-                                        lecLen={(data.content.learn).length} />
+                                            lecLen={(data.content.learn).length} />
 
-                                    
-                                </section>
-                                
-                                <div 
-                                className='SubjectContanier'
-                                >
+
+                                    </section>
+
+                                    <div
+                                        className='SubjectContanier'
+                                    >
 
                                         <Carousel
-                                            responsive={responsive(4)}
+                                            responsive={responsive(4, 2, 1)}
                                             autoPlay={false}
                                             arrows={false}
                                             swipeable={false}
@@ -83,20 +83,20 @@ const SubjectContent = ({ subjectId }) => {
                                                     (chapter, index) => {
                                                         return (
                                                             <div key={index} className='SubjectImgAndName'>
-                                                                <button 
-                                                                className='subject'
+                                                                <button
+                                                                    className='subject'
                                                                     onClick={
                                                                         () => {
-                                                                            ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id) 
-                                                                             }
+                                                                            ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id)
+                                                                        }
                                                                     }
 
                                                                 >
-                                                                    <div 
+                                                                    <div
                                                                     // className='VidThum'
-                                                                    > 
-                                                                        <img 
-                                                                        className='accordianImage'
+                                                                    >
+                                                                        <img
+                                                                            className='accordianImage'
                                                                             src={
                                                                                 chapter?.content_data?.content_info?.thumbnail ?
                                                                                     chapter.content_data.content_info.thumbnail
@@ -112,8 +112,8 @@ const SubjectContent = ({ subjectId }) => {
                                                                     </div>
 
                                                                 </button>
-                                                                <div 
-                                                                className='LectureName'
+                                                                <div
+                                                                    className='LectureName'
                                                                 > {chapter.display_name} </div>
                                                             </div>
                                                         )

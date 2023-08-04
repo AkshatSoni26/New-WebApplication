@@ -46,7 +46,10 @@ const CommonNavBar = ({ name, id }) => {
 
             <Navbar.Brand className='NavbarBrandHome' >
 
-              <SideBarEffect />
+              {/* <SideBarEffect /> */}
+              {/* <div id="main"/> */}
+
+              <div ></div>
 
               <button className='subject' onClick={PreviousPage}>
                 <AiOutlineArrowLeft /> {name}

@@ -7,7 +7,7 @@ import ColorButton2 from "../Onboarding/Components/ColorButton2";
 import { redirect } from "react-router-dom";
 
 //----------------------------- faculti responsive data  ---------------------------------- //
-export const responsive = (a) => {
+export const responsive = (a, b, c) => {
   return {
     desktop: {
       breakpoint: { max: 3000, min: 781 },
@@ -16,12 +16,12 @@ export const responsive = (a) => {
     },
     tablet: {
       breakpoint: { max: 780, min: 481 },
-      items: 2,
+      items: b,
       slidesToSlide: 1, // optional, defaults to 1.
     },
     mobile: {
       breakpoint: { max: 480},
-      items: 2,
+      items: c,
       slidesToSlide: 1, // optional, defaults to 1.
     },
   };
@@ -399,6 +399,7 @@ export function SearchWinNav(navigate, backLink='/') {
   navigate(FRONTEND_URLS.SEARCH_ROUTE, {state:backLink})
 }
 
+//-------------------------------------------------------------------------------------//
 
 export function SearchButton(inputRef, setData, setErr, navigate, LearnData, setSearhed) {
   console.log(inputRef)
@@ -438,4 +439,33 @@ export function SearchButton(inputRef, setData, setErr, navigate, LearnData, set
           }
       )
   }
+}
+
+
+
+//--------------------------------- Overlay Function  ----------------------------------------------------//
+
+export function HomeOpenNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  // document.getElementById("main").style.marginLeft = "250px";
+  // document.getElementById("mySidebar").style.background ='black';
+  // document.getElementById("main").style.display ='block'
+  OverlayOn()
+}
+
+export function HomeCloseNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  // document.getElementById("main").style.display ='none'
+  OverlayOff() 
+
+}
+
+
+export function OverlayOn() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+export function OverlayOff() {
+  document.getElementById("overlay").style.display = "none";
 }

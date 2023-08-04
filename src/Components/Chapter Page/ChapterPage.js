@@ -56,7 +56,7 @@ const ChapterPage = () => {
                         console.log('data[i].node_id', data[i].node_id)
 
                         LearnData({ 'content': data[i].content, 'display_name': data[i].display_name })
-                        console.log('data[i]', data[i] )
+                        console.log('data[i]', data[i])
                         setLoading(false)
                         isChapter = true
                         break;
@@ -73,13 +73,15 @@ const ChapterPage = () => {
 
     return (
 
-        <div>
-
-            <ChapterPageNavBar />
+        <section className='mainHome'>
+            
+            <div className='ChapterNav'>
+                <ChapterPageNavBar />
+            </div>
 
             <ChapterMainCom />
 
-        </div>
+        </section>
     );
 };
 

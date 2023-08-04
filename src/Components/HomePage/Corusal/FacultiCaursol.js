@@ -23,7 +23,7 @@ const FacultiCaursol = () => {
                     <div className="chapterName ChapLec">{facultiePortionLine}</div>
 
                     <Carousel className='FacultiCarsal'
-                        responsive={responsive(3)}
+                        responsive={responsive(3, 2, 2)}
                         autoPlay={false}
                         swipeable={false}
                         draggable={false}
