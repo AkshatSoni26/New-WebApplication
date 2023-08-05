@@ -28,7 +28,7 @@ const TabSubjectSideBar = ({ setTabIndexBut }) => {
                                             OverlayOff()
                                             ChapterScroll(data.node_id);
                                         }}
-                                            className='subject '>
+                                            className='subject'  style={{width: "100%"}}    >
                                             <div className=''>
                                                 <div className='tableData'>
                                                     <div className='menuBarcontentSvgs subjectFloatingindexButs'>

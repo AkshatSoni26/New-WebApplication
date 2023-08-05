@@ -12,20 +12,21 @@ export const responsive = (a, b, c) => {
     desktop: {
       breakpoint: { max: 3000, min: 781 },
       items: a,
-      slidesToSlide: 1, // optional, defaults to 1.
+      slidesToSlide: 1,
     },
     tablet: {
       breakpoint: { max: 780, min: 481 },
       items: b,
-      slidesToSlide: 1, // optional, defaults to 1.
+      slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 480},
+      breakpoint: { max: 480,  min: 0  },
       items: c,
-      slidesToSlide: 1, // optional, defaults to 1.
+      slidesToSlide: 1,
     },
   };
 };
+
 
 //----------------------------- Login page caursal images  ---------------------------------- //
 export const IMG = [

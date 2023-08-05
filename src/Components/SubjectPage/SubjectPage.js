@@ -74,7 +74,7 @@ const SubjectPage = () => {
             <SpinnerFun />
             :
             <section className='mainHome'>
-                <div className='home'>
+                <div className=''>
 
                     {
                         (SubData?.node_type == "COLLECTION") &&
@@ -104,23 +104,19 @@ const SubjectPage = () => {
                     {
                         (SubData.length > 1) &&
                         <>
-                            <div className='SideBar'>
                                 <SubjectSideBar />
-                            </div>
 
-                            <div className='NavBar'>
+                            <div className='subjectNavBar'>
+
+                                <div className='subjectOverlay'>
 
                                 {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
+                                </div>
 
                                 <div className='HomeMainContent '>
                                     <section >
 
-                                        <div id="overlay" onClick={() => {
-                                            OverlayOff();
-                                            setTabIndexBut(false)
-                                        }}></div>
-
-                                        {(subjectId) && <SubjectContent subjectId={subjectId} />}
+                                        {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
 
                                     </section>
                                 </div>

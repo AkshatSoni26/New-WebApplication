@@ -27,6 +27,37 @@
     display: none;
   }
 
+  .rocket_image2 {
+    height: 100%;
+    /* margin-right: 30%; */
+  }
+
+  /*-----------------------------Register Portion -------------------------*/
+
+  .rocket_image {
+    overflow: hidden;
+  }
+
+
+  Big {
+    overflow: hidden;
+  }
+
+  .targetLottie {
+    position: relative;
+    height: 50vh;
+  }
+
+  .targetLottie svg {
+    margin-top: -13%;
+    margin-left: -10%;
+  }
+
+  .lottoImage {
+    width: 100%;
+    height: auto;
+  }
+
 
 
   /* Right portion is shown whole in the screen  */
@@ -105,11 +136,12 @@
         aspect-ratio: 1;
     } */
 
-  .home .SideBar .homeSide {
+   .HomeSideBar  {
     display: none
   }
 
   .home .NavBar {
+    margin-left: 0px;
     width: 100vw;
   }
 
@@ -124,12 +156,17 @@
   }
 
   .HomeNavBar>nav {
-    padding-top: 0%;
-    padding-bottom: 0%;
+    padding-top: 2%;
+    padding-bottom: 3%;
     --bs-navbar-brand-padding-y: 0rem;
   }
 
   /*-------------------------- Subject Portion-------------------------  */
+
+  .subjectNavBar{
+    margin-left: 0;
+    width: 100%;
+  }
 
   .container>.row>.col {
     flex: 1 1;
@@ -143,20 +180,99 @@
   }
 
   .subjectImages {
-    height: 20vh;
-    width: 20vh;
+    height: 100%;
+    width: 80px;
+}
+
+  .SubjectContanier > .react-multi-carousel-list {
+    width: 100%;
   }
 
+  .FacultiImg {
+    height: 20vh;
+    width: auto;
+    border-radius: 5%;
+}
+
+  
+
+  .SubjectContanier ul > li {
+    width: 211px;
+  }
+
+  .SubjectImgAndName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.HomeNavBar, .HomeMainContent {
+  background-color:var(--second-primary-color);
+  margin-left: 0%;
+}
+
+.subjectFlexIndex {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* top: 0; */
+  bottom: 0;
+  margin-left: 50%;
+  z-index: 2;
+}
+
+.FlotingSubjectIndex {
+  display: flex;
+  z-index: 1000;
+  background-color: var(--SubjectIndexTab-color);
+  color: var(--second-primary-color);
+  width: 114px;
+  height: 48px;
+  top: 648px;
+  left: 123px;
+  border-radius: 140px;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transform: translateX(-50%);
+}
+
+
+.FlotingSubjectTable {
+  display: flex;
+  z-index: 1000;
+  background-color: var(--second-primary-color);
+  color: var(--text-color);
+  width: 314px;
+  height: 433px;
+  top: 267px;
+  left: 22px;
+  padding-left: 5%;
+  border-radius: 7px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  transform: translateX(-50%);
+  align-content: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  /* transform: scale(1);	 */
+  /* transition: all 2s ease 5s; */
+}
   /*-------------------------- Faculti Potion-------------------------  */
   div .react-multi-carousel-list {
     width: 88%;
   }
 
   .FacultiImg {
-    height: 20vh;
-    width: 25vh;
+    height: 100%;
+    width: 100%;
     /* border-radius: 5%; */
-  }
+}
 
 
   /*-------------------------- overlay CSS-------------------------  */
@@ -278,56 +394,58 @@
 
   /*-----------------------------------------------Chapter Portion ----------------------------------------- */
 
+  .ChapterNav {
+    background-color: #fff;
+    padding-top: 3%;
+    padding-bottom: 2%;
+  }
+
   .contentSep {
     display: flex;
     flex-direction: column-reverse;
-}
+  }
 
-.ChapterCon {
-  background-color: #FFF;
-  width: 100%;
-  height: 100%;
-  margin-top: 3vh;
-  margin-left: 1vw;
-  overflow-y: hidden;
-}
-
-  /* .ChapterCon {
+  .ChapterCon {
     background-color: #FFF;
     width: 100%;
     height: 100%;
     margin-top: 3vh;
-    margin-left: 0%;
+    margin-left: 1vw;
     overflow-y: hidden;
   }
 
-
   .ChaptrSide {
-    display: none;
+    margin-top: 3vh;
+    background-color: #fff;
+    width: 100%;
+    height: 86vh;
   }
 
-  .ChapterSideResp {
-    width: 100vw;
-    padding: 3%;
-    height: 100%;
-    background: var(--second-primary-color);
-    color: var(--ChaptePageButtons-color);
-
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
-
-
+  .accordianContent {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-  } */
+  }
 
+
+  .ChapterPageSideBar {
+    width: 100%;
+    background-color: #fff;
+  }
+
+
+  /*-----------------------------------------------Search classes----------------------------------------- */
+
+  .searchBar {
+    justify-content: flex-start;
+}
+
+  .phoneSearch{
+    display: flex;
+  }
+
+  .NoResultImg img {
+    width: 50%;
+    height: auto;
+  }
 
   /*-----------------------------------------------Utility classes----------------------------------------- */
   .container {

@@ -22,7 +22,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
         const user_input = inputRef.current.value
 
-        const format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/ 
+        const format =/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0-9]/
         console.log('localStorage.getItem(Access Key)',access)  
         
      

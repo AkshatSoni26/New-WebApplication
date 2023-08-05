@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { slogen } from '../../../Constants/Constants';
+import { DefaultThumbnails, slogen } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
@@ -25,18 +25,20 @@ const SubjectCaural = () => {
                 <div className="startingPhrase ChapLec">{slogen}</div>
 
                 {/* <div className='SubjectNames'> */}
-                <div class="container">
+                <div className="container">
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style={{marginLeft:"4%"}}>
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" 
+                    // style={{marginLeft:"4%"}}
+                    >
                         {
                             SubjectData.map(
                                 (data, index) => {
                                     return (
-                                        <div class="col">
+                                        <div className="col">
 
                                                 <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-4 my-3 '>
                                                     <div className='innerSuvjectCaursalDiv' >
-                                                        <img className='subjectImages' src={data.thumbnail} />
+                                                        <img className='subjectImages' src={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
                                                         <div className='LectureName'>{data.display_name}</div>
                                                     </div>
                                                 </button>

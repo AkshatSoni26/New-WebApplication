@@ -61,7 +61,7 @@ const SideBarEffect = () => {
 
 
             <div id="main">
-                <button class="subject" onClick={HomeOpenNav}>
+                <button className="subject" onClick={HomeOpenNav}>
                     <BiMenuAltLeft color={color} size={size} />
                 </button>
             </div>

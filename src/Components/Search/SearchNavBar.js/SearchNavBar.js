@@ -9,7 +9,7 @@ import { actionCreators } from '../../../State';
 import { SearchButton } from '../../Functions/Services';
 import { SearchPlacholder } from '../../../Constants/Constants';
 
-const SearchNavBar = ( {setData, setErr, setSearhed } ) => {
+const SearchNavBar = ({ setData, setErr, setSearhed }) => {
 
     const navigate = useNavigate()
 
@@ -20,40 +20,38 @@ const SearchNavBar = ( {setData, setErr, setSearhed } ) => {
 
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
-    const inputRef = useRef(  )
+    const inputRef = useRef()
 
     useEffect(() => {
         inputRef.current.focus();
-        if (search_string){
+        if (search_string) {
             SearchButton(inputRef, setData, setErr, navigate, LearnData, setSearhed)
         }
-      }, [search_string]);
+    }, [search_string]);
 
     return (
-        <div className='ChapterNav'>
-            <div className=''>
-                <Navbar expand="lg" >
-                    <Container fluid>
-                        <button className=' subject' onClick={() => {
-                            navigate(backlink)
-                        }}>
-                            {<AiOutlineArrowLeft size={30} />}
-                        </button>
-                        <div className='searchBar'>
-                            <div>
-                                <input placeholder={SearchPlacholder} className='serachInput NoResultText' style={{textAlign:'left'}} ref={inputRef} tabIndex="1" />
-                            </div>
+        <div className='HomeNavBar' style={{ marginLeft: "0%" }}>
+            <Navbar expand="lg" >
+                <Container >
 
-                            <button className=' subject searchButton' onClick={() => {
-                                SearchButton(inputRef, setData, setErr, navigate, LearnData, setSearhed)
-                            }}><FiSearch size={30} color='black' /></button>
+                    <span className='NavbarBrandHom'  onClick={() => { navigate(backlink) }}>
+                        <AiOutlineArrowLeft size={30} />
+                    </span>
 
-                        </div>
+                    <div className='searchBar'>
+                        <input placeholder={SearchPlacholder} className='serachInput NoResultText ' style={{ textAlign: 'left' }} ref={inputRef} tabIndex="1" />
+                    </div>
 
-                    </Container>
+                    <div className='HomeNavContanier'>
+                        <button className=' subject searchButton' onClick={() => {
+                            console.log('phone', inputRef.current.value)
+                            SearchButton(inputRef, setData, setErr, navigate, LearnData, setSearhed)
+                        }}><FiSearch size={30} color='black' /></button>
+                    </div>
 
-                </Navbar>
-            </div>
+                </Container>
+
+            </Navbar>
         </div>
     );
 };

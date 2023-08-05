@@ -12,10 +12,11 @@ const SubjectSideBar = () => {
 
 
   return (
-    <div className='HomeSideBar'>
-      <div className='homeSide'>
+    
+            <div className=' SideBar HomeSideBar homeSide'>
 
-        <div className='Logo_Image SubjectSideBar '>
+
+        <div className='Logo_Image  '>
           {/* <div className='companyLogo' style={{background:'white'}}  /> */}
           
           <div className='logo_and_index'>
@@ -25,7 +26,7 @@ const SubjectSideBar = () => {
 
         </div>
 
-        <div className='tableHome'>
+        <div className='tableHome HomeTable'>
           {
             content.map((data, index) => {
               return (
@@ -37,7 +38,9 @@ const SubjectSideBar = () => {
                           <OverlayTrigger className='OverlayTrigger' placement="top" delay={{ show: 250, hide: 400 }} overlay={<Tooltip id="tooltip">{data.display_name}</Tooltip>}>
                             <div className='menuBarcontentSvgs'>
                               {
-                                data.display_name.length < 15 ? data.display_name : data.display_name.slice(0, 18) + '...'
+                                // data.display_name.length < 15 ? 
+                                data.display_name 
+                                // : data.display_name.slice(0, 18) + '...'
                               }
                             </div>
                           </OverlayTrigger>
@@ -54,7 +57,6 @@ const SubjectSideBar = () => {
           }
         </div>
       </div>
-    </div>
 
   );
 };

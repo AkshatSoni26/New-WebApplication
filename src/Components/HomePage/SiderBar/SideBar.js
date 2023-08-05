@@ -18,39 +18,39 @@ const SideBar = () => {
     (!data) ?
       <SpinnerFun />
       :
-      <div className='HomeSideBar'>
-        <div className='homeSide'>
-          
-          <div className='Logo_Image'>
-            <img className='companyLogo' src={companyLogo} />
-          </div>
+      <div className=' SideBar HomeSideBar homeSide'>
 
-          <div className='tableHome HomeTable'>
+        <div className='Logo_Image'>
+          <img className='companyLogo' src={companyLogo} />
 
-            {
-              SideBarItem.map((item, index) => {
-                return (
-                  <React.Fragment key={index}>
-                    <button className='subject'>
-                      <div className=''>
-                        <div className='tableData'>
-                          <div className='menuBarcontentSvgs'>
-                            {item[1]}
-                          </div>
-                          <div className='menuBarcontent'>
-                            {item[0]}
-                          </div>
+        </div>
+        <div className='tableHome HomeTable'>
+
+          {
+            SideBarItem.map((item, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <button className='subject'>
+                    <div className=''>
+                      <div className='tableData'>
+                        <div className='menuBarcontentSvgs'>
+                          {item[1]}
+                        </div>
+                        <div className='menuBarcontent'>
+                          {item[0]}
                         </div>
                       </div>
-                    </button>
+                    </div>
+                  </button>
 
-                  </React.Fragment>
-                );
-              })
-            }
-          </div>
+                </React.Fragment>
+              );
+            })
+          }
         </div>
       </div>
+    // </div>
+    // {/* </div> */}
   );
 };
 

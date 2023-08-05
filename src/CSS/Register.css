@@ -7,12 +7,6 @@
   padding-left: 12px;
 }
 
-.userData,
-.SubjectCaural,
-.FacultiCaursol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 
 /* NavBar  */
 #navbarScrollingDropdown {
@@ -35,12 +29,6 @@
 }
 
 /* Chapter Header */
-.chapterHeader {
-  display: flex;
-  position: relative;
-  left: 0%;
-  /* width: 100%; */
-}
 
 .chapterName {
   color: #0d1015;
@@ -101,10 +89,6 @@
   text-align: left;
 }
 
-.ChapterPageSideBar {
-  width: 30vw;
-  background-color: #fff;
-}
 
 .accodionHeader {
   color: #0d1015;
@@ -113,11 +97,6 @@
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
-}
-
-.ChapterNav {
-  background-color: #fff;
-  padding-bottom: 1%;
 }
 
 
@@ -223,30 +202,6 @@
   height: 100%;
 }
 
-@media (min-width: 376px) {
-  .rocket_image {
-    overflow: hidden;
-  }
-
-  .rocket_image2 {
-    height: 80vh;
-    margin-right: 30%;
-  }
-
-  Big {
-    overflow: hidden;
-  }
-
-  .targetLottie {
-    position: relative;
-    height: 50vh;
-  }
-
-  .targetLottie svg {
-    margin-top: -13%;
-    margin-left: -10%;
-  }
-}
 
 
 

@@ -34,11 +34,12 @@ function PhoneNumber() {
     () => {
 
       access && userData && navigate(FRONTEND_URLS.HOME_ROUTE)
-      // if (access && userData) {
-      //   navigate(FRONTEND_URLS.HOME_ROUTE)
-      // }
+      
+      if (otp.length == 4) {
+        verifiOTP(Nonce, otp, navigate, phoneNumber, setOtpVerifi)
+      }
 
-    }, [access, userData]
+    }, [access, userData, otp]
   )
 
 
@@ -97,7 +98,7 @@ function PhoneNumber() {
             <div className='nameAskingSection'>
 
               <div className='OtpBackBut'>
-                <button className='subject' onClick={OtpPageBack}>
+                <button className='subject' style={{ width:"0%"}} onClick={OtpPageBack}>
                   <IoIosArrowBack size={30} color='black' />
                 </button>
               </div>
@@ -121,7 +122,7 @@ function PhoneNumber() {
 
             <div id='mess'></div>
 
-            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button className='subject OtpNotRecieveBut' onClick={() => {
+            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button style={{ width:"0%"}}  className='subject OtpNotRecieveBut' onClick={() => {
               OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect)
             }}>Resend</button>
             </div>
@@ -131,16 +132,16 @@ function PhoneNumber() {
             </div>
 
 
-            <div className="buttonclass">
+            {/* <div className="buttonclass">
 
               <button className='btn buttonBAckground' type="submit"
                 onClick={() => {
-                  verifiOTP(Nonce, otp, navigate, phoneNumber, setOtpVerifi);
+                 ;
                 }}
               >
                 <ButtonText />
               </button>
-            </div>
+            </div> */}
           </div>
 
         </>

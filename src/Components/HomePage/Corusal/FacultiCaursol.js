@@ -17,43 +17,29 @@ const FacultiCaursol = () => {
         (!FacultieData) ?
             <SpinnerFun />
             :
-            <div className='container '>
-
-                <div className="" >
+            <>
                     <div className="chapterName ChapLec">{facultiePortionLine}</div>
 
-                    <Carousel className='FacultiCarsal'
-                        responsive={responsive(3, 2, 2)}
-                        autoPlay={false}
-                        swipeable={false}
-                        draggable={false}
-                        showDots={false}
-                        infinite={false}
-                        partialVisible={false}
-                        arrows={false}
+                    <div className='subjectCoursal' 
+                    // style={{marginLeft:"6%"}}
                     >
                         {
                             FacultieData.map(
                                 (data, index) => {
                                     return (
-                                        <div class="col">
-
-                                            {/* // <button disabled className='facultiimages subject' key={index}> */}
+                                        <div key={index} className='SubjectImgAndName' style={{marginRight: "13%"}}>
                                             <img className='FacultiImg' src={data.thumbnail} />
                                             <div className='LectureName'>
                                                 <div  >  <b > {data.name}  </b></div>
                                                 <div >{data.designation[0] + data.designation.slice(1,).toLowerCase()}</div>
                                             </div>
-                                            {/* // </button> */}
                                         </div>
                                     )
                                 }
                             )
                         }
-                    </Carousel>
-
-                </div>
-            </div>
+                    </div>
+            </>
     );
 };
 

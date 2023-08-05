@@ -16,7 +16,7 @@ const Search = () => {
     const location = useLocation()
     const backLink = location.state
 
-  
+
 
     // console.log('link', link)    
 
@@ -44,12 +44,10 @@ const Search = () => {
         <>
             <SearchNavBar setData={setData} setErr={setErr} setSearhed={setSearhed} />
             <>
-
-
                 {
                     (!searhed) ?
 
-                    <div className='SearchBack'>
+                        <div className='SearchBack'>
                             <div className='SearchResult'>
                                 <div className='NoResultImg'>
                                     <img src={SearchImg} />
@@ -68,13 +66,14 @@ const Search = () => {
                             </>
                             :
                             <div className='SearchBack'>
-                                <div className='SearchResult'>
+                            <div className='SearchResult'>
                                     <div className='NoResultImg'>
                                         <img src={NoResultImg} />
                                     </div>
                                     <div className='NoResultText'>{NoResult}</div>
-                                </div>
                             </div>
+                            </div>
+
                 }
 
 

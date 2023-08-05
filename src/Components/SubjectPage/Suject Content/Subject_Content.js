@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from 'react-multi-carousel';
 import { useSelector } from 'react-redux';
 import Chapter_Header from './Chapter Header/Chapter_Header';
 import '../../../CSS/App.css'
-import { ChapterNavigator, responsive } from '../../Functions/Services';
+import { ChapterNavigator, OverlayOff, responsive } from '../../Functions/Services';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
-import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
-import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
 
 
 
-const SubjectContent = ({ subjectId }) => {
+const SubjectContent = ({ subjectId, setTabIndexBut }) => {
 
     console.log('SubjectContent')
 
@@ -31,15 +28,12 @@ const SubjectContent = ({ subjectId }) => {
         }, [currentUrl]
     )
 
-    function test(a) {
-        console.log('test', a)
-
-    }
-
     return (
-        // <div className='Subject_Content'>
-        < >
-            {/* <br></br> */}
+        <>
+        <div id="overlay" onClick={() => {
+                                            OverlayOff();
+                                            setTabIndexBut(false)
+                                        }}></div>
             {
                 content.map(
                     (data, index) => {
@@ -64,65 +58,58 @@ const SubjectContent = ({ subjectId }) => {
 
                                     </section>
 
-                                    <div
+                                    {/* <div
                                         className='SubjectContanier'
-                                    >
+                                    > */}
 
-                                        <Carousel
-                                            responsive={responsive(4, 2, 1)}
-                                            autoPlay={false}
-                                            arrows={false}
-                                            swipeable={false}
-                                            draggable={false}
-                                            showDots={false}
-                                            infinite={false}
-                                            partialVisible={true}
-                                        >
-                                            {
-                                                (data.content.learn).map(
-                                                    (chapter, index) => {
-                                                        return (
-                                                            <div key={index} className='SubjectImgAndName'>
-                                                                <button
-                                                                    className='subject'
-                                                                    onClick={
-                                                                        () => {
-                                                                            ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id)
-                                                                        }
+                                    <div className='subjectCoursal'>
+                                        {
+                                            (data.content.learn).map(
+                                                (chapter, index) => {
+                                                    return (
+                                                        (chapter?.content_data?.content_info?.video_id) &&
+                                                        <div key={index} className='SubjectImgAndName'>
+                                                            <div
+                                                                className='subject'
+                                                                onClick={
+                                                                    () => {
+                                                                        ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id)
                                                                     }
-
+                                                                }
+                                                            >
+                                                                <div
+                                                                // className='VidThum'
                                                                 >
-                                                                    <div
-                                                                    // className='VidThum'
-                                                                    >
-                                                                        <img
-                                                                            className='accordianImage'
-                                                                            src={
-                                                                                chapter?.content_data?.content_info?.thumbnail ?
-                                                                                    chapter.content_data.content_info.thumbnail
-                                                                                    :
-                                                                                    DefaultThumbnails.video
-                                                                            } />
+                                                                    <img
+                                                                        className='accordianImage'
+                                                                        src={
+                                                                            chapter?.content_data?.content_info?.thumbnail ?
+                                                                                chapter.content_data.content_info.thumbnail
+                                                                                :
+                                                                                DefaultThumbnails.video
+                                                                        } />
 
-                                                                        {/* <ThumbanailButton />
+                                                                    {/* <ThumbanailButton />
                                                                         <ThumbnailDur
                                                                             duration={chapter?.content_data?.content_info?.duration}
                                                                         /> */}
 
-                                                                    </div>
+                                                                </div>
 
-                                                                </button>
                                                                 <div
                                                                     className='LectureName'
                                                                 > {chapter.display_name} </div>
                                                             </div>
-                                                        )
-                                                    }
-                                                )
-                                            }
-                                        </Carousel>
+                                                        </div>
 
+
+                                                    )
+                                                }
+                                            )
+                                        }
                                     </div>
+
+                                    {/* </div> */}
                                 </>
                                 :
                                 null

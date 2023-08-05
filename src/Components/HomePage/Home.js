@@ -44,9 +44,9 @@ const Home = () => {
             <section className='mainHome'>
                 <div className='home'>
 
-                    <div className='SideBar HomeSideBar'>
+                    {/* <div className='SideBar'> */}
                         <SideBar />
-                    </div>
+                    {/* </div> */}
 
                     <div className='NavBar'>
 
