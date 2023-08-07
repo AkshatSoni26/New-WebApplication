@@ -7,6 +7,7 @@ import ButtonText from '../Comp/ButtonText';
 import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
 import flag from '../../../Images/india-flag.png'
+import CountdownTimer from './CountdownTimer';
 
 
 
@@ -32,6 +33,8 @@ function PhoneNumber() {
   const access = localStorage.getItem('Access Key')
   const userData = localStorage.getItem('userData')
 
+
+
   useEffect(
     () => {
 
@@ -53,6 +56,7 @@ function PhoneNumber() {
   }
 
 
+
   return (
 
     (!OtpSend)
@@ -64,11 +68,11 @@ function PhoneNumber() {
             {/* <OnBordText isName='Hi 👋' /> */}
 
             <div className='nameAskingSection'>
+
               <div className='nameQue'> Enter Phone Number </div>
               <div className='messageSec'> We’ll send you an OTP for verification. </div>
 
-
-              <input ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' className='focused_input' />
+              <input autoFocus ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' id='PhoneInput' className='focused_input ' />
 
             </div>
 
@@ -123,21 +127,20 @@ function PhoneNumber() {
                 inputStyle='Otp_Box'
                 containerStyle='Otp_Conta'
                 // renderSeparator={<span></span>}
+                shouldAutoFocus={true}
                 renderInput={(props) => <input {...props} />}
-              // shouldAutoFocus={true}
               />
 
             </div>
 
             <div id='mess'></div>
 
-            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button style={{ width: "0%" }} className='subject OtpNotRecieveBut' onClick={() => {
-              OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect)
-            }}>Resend</button>
+            <div className='OtpNotRecieve'>Didn’t recieve the OTP? &nbsp;
+            <CountdownTimer phoneNumber={phoneNumber} setOtpSend={setOtpSend} setNonce={setNonce} setErro={setErro} redirect={redirect}/>
             </div>
 
             <div className='OtpNotRecieve'>
-              Still facing difficulties? <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '> Contact Us</a>
+              Still facing difficulties? &nbsp; <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '>  Contact Us</a>
             </div>
           </div>
 

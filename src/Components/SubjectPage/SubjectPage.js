@@ -113,13 +113,13 @@ const SubjectPage = () => {
                                 {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
                                 </div>
 
-                                <div className='HomeMainContent '>
+                                {/* <div className='HomeMainContent '> */}
                                     <section >
 
                                         {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
 
                                     </section>
-                                </div>
+                                {/* </div> */}
 
                                 {
                                     !TabIndexBut

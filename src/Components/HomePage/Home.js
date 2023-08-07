@@ -45,35 +45,34 @@ const Home = () => {
                 <div className='home'>
 
                     {/* <div className='SideBar'> */}
-                        <SideBar />
+                    <SideBar />
                     {/* </div> */}
 
                     <div className='NavBar'>
 
                         <NavBar />
 
-                        <div className='HomeMainContent '>
+                        <div>
+                            <div className='HomeMainContent '>
+                                <section >
+                                    <div className='userData'>
+                                        <UserData />
+                                    </div>
+                                </section>
+
+                                <section >
+                                    <div className='SubjectCaural'>
+                                        <SubjectCaural />
+                                    </div>
+                                </section>
+                            </div>
 
                             <section >
-                                <div className='userData'>
-                                    <UserData />
-                                </div>
-                            </section>
-
-                            <section >
-                                <div className='SubjectCaural'>
-                                    <SubjectCaural />
-                                </div>
-                            </section>
-
-                            <section >
-                                <div className='FacultiCaursol'>
+                                <div className='HomeMainFacultiContentPortion'>
                                     <FacultiCaursol />
                                 </div>
                             </section>
-
                         </div>
-
                     </div>
 
                 </div>

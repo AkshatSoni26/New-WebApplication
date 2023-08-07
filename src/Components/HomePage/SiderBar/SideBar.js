@@ -22,25 +22,24 @@ const SideBar = () => {
 
         <div className='Logo_Image'>
           <img className='companyLogo' src={companyLogo} />
-
         </div>
-        <div className='tableHome HomeTable'>
 
+        <div className='tableHome HomeTable'>
           {
             SideBarItem.map((item, index) => {
               return (
                 <React.Fragment key={index}>
-                  <button className='subject'>
-                    <div className=''>
-                      <div className='tableData'>
+                  <button className='subject tableData'>
+                    {/* <div className=''>
+                      <div className='tableData'> */}
                         <div className='menuBarcontentSvgs'>
                           {item[1]}
                         </div>
                         <div className='menuBarcontent'>
                           {item[0]}
                         </div>
-                      </div>
-                    </div>
+                      {/* </div>
+                    </div> */}
                   </button>
 
                 </React.Fragment>

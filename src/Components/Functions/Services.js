@@ -93,11 +93,17 @@ export function OTPSender(
         setErro(true);
         // redirect(`/${error.message}`)
       });
-  } else {
+  } 
+  
+  else {
     const mess = document.getElementById("mess");
     mess.innerHTML = alert_circle + ' ' + `Please enter a valid number first`;
     mess.style.color = "red";
+    
+    const numberBox =  document.getElementById("PhoneInput");
+    numberBox.style.border = "2px solid red";
   }
+
 }
 
 //-------------------------------------------------------------------------------------//
@@ -123,7 +129,14 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber, setOtpVerifi) {
 
           const mess = document.getElementById("mess");
           mess.innerHTML = alert_circle + ' ' + "Incorrect OTP";
-          mess.style.color = "red";   
+          mess.style.color = "red";
+
+          const OtpBoxes = document.getElementsByClassName('Otp_Box');
+
+          for (let i = 0; i < OtpBoxes.length; i++) {
+            OtpBoxes[i].style.border = "2px solid red";
+          }
+          
         } 
         else if (response.data.message === "OTP Verified Successfully") {
           const nonce = response.data.data.nonce;

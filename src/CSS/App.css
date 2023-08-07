@@ -32,6 +32,10 @@ body {
 img {
   width: 45%;
   height: 50%;
+
+  user-drag: none;
+  -moz-user-drag: none;
+  -webkit-user-drag: none;
 }
 
 
@@ -166,14 +170,26 @@ img {
 }
 
 
-.focused_input,
+.focused_input, .focused_input:focus
 .buttonBAckground {
   border: 2px solid var(--primary-color);
+  outline: none;
+  /* border: 0px;
+  outline: none; */
+
   border-radius: 8px;
   padding: 2%;
   width: 315px;
   /* margin-left: 10%; */
 }
+
+/* .focused_input:focus{
+  border: 2px solid var(--primary-color);
+  outline: none;
+} */
+
+
+
 
 .phoneNumberInput {
   border-left: 0px;
@@ -219,6 +235,7 @@ img {
 }
 
 .OtpNotRecieve {
+  display: flex;
   margin-top: 2%;
   margin-bottom: 2%;
   font-size: 12px;
@@ -402,7 +419,7 @@ a .OtpNotRecieveBut {
   display: flex;
   flex-direction: row;
   align-content: center;
-
+  margin-bottom: 7%;
   overflow-x: scroll;
   scroll-behavior: smooth;
 
@@ -437,6 +454,18 @@ div .react-multi-carousel-list {
   overflow-x: scroll;
   /* margin-left: -5%; */
   margin-left: 5%;
+}
+
+.HomeMainFacultiContent {
+
+  background-color: #FFF;
+  margin-left: 1%;
+  /* margin-top: 1%; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* height: 89.7vh; */
+  padding-left: 2%;
+  /* padding-top: 1%; */
 }
 
 
@@ -516,15 +545,16 @@ div .react-multi-carousel-list {
 }
 
 .nameAskingSection .Otp_Box {
-  border: 1px solid var(--primary-color);
+  border: 0px solid var(--primary-color);
   border-radius: 7px;
-  /* padding: 2%; */
   flex: 1 1;
-  /* width: 100px; */
-  /* height: 50px; */
   aspect-ratio: 1;
   margin: 5%;
-  /* padding: 5%; */
+}
+
+.Otp_Box:focus{
+  border: 2px solid var(--primary-color);
+  outline: none;
 }
 
 /* .Otp_Conta {
@@ -659,10 +689,18 @@ div .react-multi-carousel-list {
 
 .SubjectImgAndName {
   display: inline-block;
-  margin: 10px;
+  /* margin: 10px; */
+  margin-right: 50px;
+  /* margin-left: 0px; */
   text-align: center;
 }
 
+
+.HomeMainFacultiContentPortion {
+  background-color: var(--second-primary-color);
+  margin-left: 1%;
+  overflow-x: hidden;
+}
 
 /*=---------------------------------------------------------------*/
 .navbar>.container,
@@ -804,7 +842,7 @@ p {
 /* Home */
 .home {
   display: flex;
-  /* width: 100%; */
+  width: 100%;
   overflow-y: hidden;
 }
 
@@ -898,10 +936,11 @@ p {
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  width: 180px;
+  width: auto;
   word-wrap: break-word;
   /* margin-left: 5%; */
 }
+
 
 
 /* Chapter Header */

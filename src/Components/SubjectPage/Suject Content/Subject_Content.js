@@ -42,8 +42,8 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
 
                         return (
                             ((data.content.learn).length > 0) ?
-                                <>
-                                    <section id={`${data.node_id}`} key={index}
+                                <div className='HomeMainContent' style={{marginBottom:"2%", height:"auto"}}>
+                                    <section id={`${data.node_id}`} key={index} 
                                     // className='SubjectContent'
                                     >
 
@@ -62,7 +62,7 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                         className='SubjectContanier'
                                     > */}
 
-                                    <div className='subjectCoursal'>
+                                    <div className='subjectCoursal' style={{marginBottom:"2%"}}>
                                         {
                                             (data.content.learn).map(
                                                 (chapter, index) => {
@@ -110,7 +110,7 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                     </div>
 
                                     {/* </div> */}
-                                </>
+                                </div>
                                 :
                                 null
                         )

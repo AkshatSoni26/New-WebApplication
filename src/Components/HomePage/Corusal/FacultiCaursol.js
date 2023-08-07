@@ -18,27 +18,28 @@ const FacultiCaursol = () => {
             <SpinnerFun />
             :
             <>
-                    <div className="chapterName ChapLec">{facultiePortionLine}</div>
+                <div className="chapterName ChapLec HomeMainFacultiContent">{facultiePortionLine}</div>
 
-                    <div className='subjectCoursal' 
-                    // style={{marginLeft:"6%"}}
-                    >
-                        {
-                            FacultieData.map(
-                                (data, index) => {
-                                    return (
-                                        <div key={index} className='SubjectImgAndName' style={{marginRight: "13%"}}>
-                                            <img className='FacultiImg' src={data.thumbnail} />
-                                            <div className='LectureName'>
-                                                <div  >  <b > {data.name}  </b></div>
-                                                <div >{data.designation[0] + data.designation.slice(1,).toLowerCase()}</div>
-                                            </div>
+                <div className='subjectCoursal' 
+                style={{marginBottom:"0%"}} 
+                >
+                    {   
+                        FacultieData.map(
+                            (data, index) => {
+                                return (
+
+                                    <div key={index} className='SubjectImgAndName' style={{ marginRight: "13%",paddingLeft: (index==0)? "3%" : 0}}>
+                                        <img className='FacultiImg' src={data.thumbnail} />
+                                        <div className='LectureName'>
+                                            <div  >  <b > {data.name}  </b></div>
+                                            <div >{data.designation[0] + data.designation.slice(1,).toLowerCase()}</div>
                                         </div>
-                                    )
-                                }
-                            )
-                        }
-                    </div>
+                                    </div>
+                                )
+                            }
+                        )
+                    }
+                </div>
             </>
     );
 };
