@@ -1,10 +1,12 @@
 /*--------------------------------Tab View------------------------------------------*/
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
-  .home>.SideBar>.HomeSideBar, .phoneSearch {
+
+  .home>.SideBar>.HomeSideBar,
+  .phoneSearch {
     display: none;
   }
-  
+
   .home .NavBar {
     margin-left: 0px;
     width: 100vw;
@@ -17,101 +19,106 @@
 
   /*-------------------------------------------Login--------------------------------------------------- */
   /*-------------------------- Phone Number-------------------------  */
-  /* .buttonclass {
-    padding-left: 0%;
-    /* height: 76vh; */
-  /* width: 100%; */
-  /* } */
+
+  .focused_input,
+  .buttonBAckground {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 2%;
+    width: 280px;
+
+    /* margin-left: 10%; */
+     }
 
   /*-------------------------------------------Home--------------------------------------------------- */
-  /*-------------------------- NavBar-------------------------  */
-  .HomeNavBar {
-    margin-left: 0%;
-  }
+    /*-------------------------- NavBar-------------------------  */
+    .HomeNavBar {
+      margin-left: 0%;
+    }
 
-  .HomeMainContent {
-    margin-left: 0%
-  }
+    .HomeMainContent {
+      margin-left: 0%
+    }
 
-  .HomeNavBar .container {
-    margin-left: 0%;
-    /* margin-right: 10%; */
-    padding: 0%;
+    .HomeNavBar .container {
+      margin-left: 0%;
+      /* margin-right: 10%; */
+      padding: 0%;
 
-  }
+    }
 
-  .HomeNavBar>nav {
-    padding-top: 0%;
-    padding-bottom: 0%;
-    --bs-navbar-brand-padding-y: 0rem;
-  }
+    .HomeNavBar>nav {
+      padding-top: 0%;
+      padding-bottom: 0%;
+      --bs-navbar-brand-padding-y: 0rem;
+    }
 
-  .HomeSideBar {
-    display: none;
-  }
+    .HomeSideBar {
+      display: none;
+    }
 
-  /*-------------------------- Subject Portion-------------------------  */
+    /*-------------------------- Subject Portion-------------------------  */
 
-  .container>.row>.col {
-    flex: 1;
-    /* width: 109%; */
-    /* display: flex; */
-  }
+    .container>.row>.col {
+      flex: 1;
+      /* width: 109%; */
+      /* display: flex; */
+    }
 
-  .subjectNavBar{
-    margin-left: 0;
-    width: 100%;
-  }
+    .subjectNavBar {
+      margin-left: 0;
+      width: 100%;
+    }
 
-  /*-------------------------- Faculti Potion-------------------------  */
-  div .react-multi-carousel-list {
-    width: 88%;
-  }
+    /*-------------------------- Faculti Potion-------------------------  */
+    div .react-multi-carousel-list {
+      width: 88%;
+    }
 
 
-  /*-------------------------- overlay CSS-------------------------  */
-  #overlay {
-    position: fixed;
-    /* Sit on top of the page content */
-    display: none;
-    /* Hidden by default */
-    width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black background with opacity */
-    z-index: 1;
-    /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer;
-    /* Add a pointer on hover */
-  }
+    /*-------------------------- overlay CSS-------------------------  */
+    #overlay {
+      position: fixed;
+      /* Sit on top of the page content */
+      display: none;
+      /* Hidden by default */
+      width: 100%;
+      /* Full width (cover the whole page) */
+      height: 100%;
+      /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black background with opacity */
+      z-index: 1;
+      /* Specify a stack order in case you're using a different order for other elements */
+      cursor: pointer;
+      /* Add a pointer on hover */
+    }
 
-  /*-----------------------------------------------Side Bar Menu ----------------------------------------- */
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
+    /*-----------------------------------------------Side Bar Menu ----------------------------------------- */
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
 
-  }
+    }
 
-  .openbtn:hover {
-    background-color: #444;
-  }
+    .openbtn:hover {
+      background-color: #444;
+    }
 
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
 
-  /* .FlotingSubjectTable{
+    /* .FlotingSubjectTable{
     width: 0px;
     height: 0px;
     transition: all 0.5s ease-in-out
@@ -122,178 +129,170 @@
     height:433px;
   } */
 
-  .FlotingSubjectTable{
-    display: none;
+    .FlotingSubjectTable {
+      display: none;
+    }
+
+
+
+
+
+
+
+    .respHomeSide {
+      display: flex;
+    }
+
+    .tableHome {
+      padding-left: 4.5vw;
+      font-size: 16px;
+      line-height: 44px;
+      height: 85.5vh;
+      overflow-x: hidden;
+      background-color: #FFF;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .LogoCloseBut {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10%;
+      margin-top: 8%;
+    }
+
+    .companyLogo {
+      padding: 0%;
+      width: 100%;
+      margin: 0%;
+      margin-left: 0%;
+    }
+
+    .Logo_Image {
+      margin: 5%;
+      margin-left: 0%;
+      margin-bottom: 0%;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: var(--second-primary-color);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 0px;
+
+    }
+
+    .sidebar .closebtn {
+      /* position: absolute; */
+      top: 0;
+      /* right: 25px; */
+      font-size: 36px;
+      /* margin-left: 50px; */
+    }
+
+
+
+    .sidebar a {
+      padding: 0%;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      /* display: ; */
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    /*-----------------------------------------------Subject Portion----------------------------------------- */
+
+
+    .NavbarBrandHome {
+      height: 59px;
+    }
+
+    .SubjectContanier>.react-multi-carousel-list {
+      width: 94vw;
+    }
+
+    .subjectFlexIndex {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* top: 0; */
+      bottom: 0;
+      margin-left: 50%;
+      z-index: 2;
+    }
+
+    .FlotingSubjectIndex {
+      display: flex;
+      z-index: 1000;
+      background-color: var(--SubjectIndexTab-color);
+      color: var(--second-primary-color);
+      width: 114px;
+      height: 48px;
+      top: 648px;
+      left: 123px;
+      border-radius: 140px;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      transform: translateX(-50%);
+    }
+
+
+    .FlotingSubjectTable {
+      display: flex;
+      z-index: 1000;
+      background-color: var(--second-primary-color);
+      color: var(--text-color);
+      width: 314px;
+      height: 433px;
+      top: 267px;
+      left: 22px;
+      padding-left: 5%;
+      border-radius: 7px;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      transform: translateX(-50%);
+      align-content: center;
+      justify-content: flex-start;
+      overflow-y: scroll;
+      /* transform: scale(1);	 */
+      /* transition: all 2s ease 5s; */
+    }
+
+
+    /*----------------------------------------------Chapter Classes----------------------------------------- */
+
+    .accordianContent {
+      display: none;
+    }
+
+
+
+
+    /*-----------------------------------------------Utility classes----------------------------------------- */
+    .container {
+      max-width: 100%;
+    }
+
+
+
   }
 
-
-
-
-
-
-
-  .respHomeSide {
-    display: flex;
-  }
-
-  .tableHome {
-    padding-left: 4.5vw;
-    font-size: 16px;
-    line-height: 44px;
-    height: 85.5vh;
-    overflow-x: hidden;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .LogoCloseBut {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10%;
-    margin-top: 8%;
-  }
-
-  .companyLogo {
-    padding: 0%;
-    width: 100%;
-    margin: 0%;
-    margin-left: 0%;
-  }
-
-  .Logo_Image {
-    margin: 5%;
-    margin-left: 0%;
-    margin-bottom: 0%;
-  }
-
-  .sidebar {
-    height: 100vh;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--second-primary-color);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 0px;
-
-  }
-
-  .sidebar .closebtn {
-    /* position: absolute; */
-    top: 0;
-    /* right: 25px; */
-    font-size: 36px;
-    /* margin-left: 50px; */
-  }
-
-
-
-  .sidebar a {
-    padding: 0%;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    /* display: ; */
-    transition: 0.3s;
-  }
-
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-
-  /*-----------------------------------------------Subject Portion----------------------------------------- */
-
-
-  .NavbarBrandHome {
-    height: 59px;
-  }
-
-  .SubjectContanier>.react-multi-carousel-list {
-    width: 94vw;
-  }
-
-  .subjectFlexIndex {
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* top: 0; */
-    bottom: 0;
-    margin-left: 50%;
-    z-index: 2;
-  }
-
-  .FlotingSubjectIndex {
-    display: flex;
-    z-index: 1000;
-    background-color: var(--SubjectIndexTab-color);
-    color: var(--second-primary-color);
-    width: 114px;
-    height: 48px;
-    top: 648px;
-    left: 123px;
-    border-radius: 140px;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    transform: translateX(-50%);
-  }
-
-
-  .FlotingSubjectTable {
-    display: flex;
-    z-index: 1000;
-    background-color: var(--second-primary-color);
-    color: var(--text-color);
-    width: 314px;
-    height: 433px;
-    top: 267px;
-    left: 22px;
-    padding-left: 5%;
-    border-radius: 7px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    transform: translateX(-50%);
-    align-content: center;
-    justify-content: flex-start;
-    overflow-y: scroll;
-    /* transform: scale(1);	 */
-    /* transition: all 2s ease 5s; */
-  }
-
-
-  /*----------------------------------------------Chapter Classes----------------------------------------- */
-  
-  .accordianContent {
-    display: none;
-  }
-
-
-
-
-  /*-----------------------------------------------Utility classes----------------------------------------- */
-  .container {
-    max-width: 100%;
-  }
-
-
-
-}
-
-/*--------------------------------------------------------------------------*/
-
-@media (max-width: 650px) {
-  .coursoImg img {
-    aspect-ratio: 1;
-    width: 100%;
-    height: 50%;
-  }
-}
+  /*--------------------------------------------------------------------------*/

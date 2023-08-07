@@ -171,8 +171,25 @@ img {
   border: 2px solid var(--primary-color);
   border-radius: 8px;
   padding: 2%;
-  width: 100%;
+  width: 315px;
   /* margin-left: 10%; */
+}
+
+.phoneNumberInput {
+  border-left: 0px;
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0px 8px 8px 0px;
+}
+
+.countryCode {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 2%;
+  width: 250px;
+  /* width: 315px; */
+  border-right: 0px;
+  /* margin-left: 10%; */
+  border-radius: 8px 0px 0px 8px;
 }
 
 
@@ -184,7 +201,7 @@ img {
   letter-spacing: 0em;
   text-align: left;
   padding-left: 2%;
-
+  padding-bottom: 3%;
 }
 
 .buttonclass {
@@ -372,34 +389,35 @@ a .OtpNotRecieveBut {
 
 
 .tableHome {
-    padding-left: 40px;
-    font-size: 16px;
-    line-height: 44px;
-    /* width: 100%; */
-    height: 85.5vh;
-    overflow-x: hidden;
-    /* background-color: #FFF; */
+  padding-left: 40px;
+  font-size: 16px;
+  line-height: 44px;
+  /* width: 100%; */
+  height: 85.5vh;
+  overflow-x: hidden;
+  /* background-color: #FFF; */
 }
+
 .subjectCoursal {
   display: flex;
   flex-direction: row;
   align-content: center;
-  
+
   overflow-x: scroll;
   scroll-behavior: smooth;
- 
+
 }
 
 .ChapLec {
   margin-left: 1%;
 }
 
-.subjectNavBar{
+.subjectNavBar {
   margin-left: 300px;
   /* width: 79% */
 }
 
- .respHomeSide,
+.respHomeSide,
 .subjectFlexIndex,
 .FlotingSubjectIndex {
   display: none;
@@ -431,12 +449,12 @@ div .react-multi-carousel-list {
   height: 100vh;
 } */
 
-.homeSide{
-  
-    position: fixed;
-    height: 100%;
-    background-color: white;
-    width: 300px;
+.homeSide {
+
+  position: fixed;
+  height: 100%;
+  background-color: white;
+  width: 300px;
 
 }
 
@@ -550,8 +568,8 @@ div .react-multi-carousel-list {
 }
 
 .subjectOverlay {
-    position: relative;
-    z-index: 200;
+  position: relative;
+  z-index: 200;
 }
 
 
@@ -617,7 +635,7 @@ div .react-multi-carousel-list {
   display: flex;
   position: relative;
   left: 0%;
-  margin-top:2% ;
+  margin-top: 2%;
   /* width: 100%; */
 }
 
@@ -661,7 +679,8 @@ div .react-multi-carousel-list {
   align-content: center;
 }
 
-.ChapterSideResp, .phoneSearch {
+.ChapterSideResp,
+.phoneSearch {
   display: none;
 }
 
@@ -683,7 +702,7 @@ div .react-multi-carousel-list {
   background-color: #fff;
 }
 
-.NoResultImg{
+.NoResultImg {
   /* margin-bottom: -5%; */
   display: flex;
   justify-content: center;
@@ -696,7 +715,7 @@ div .react-multi-carousel-list {
   height: auto;
 }
 
-.NavbarBrandHom{
+.NavbarBrandHom {
   cursor: pointer;
 }
 
@@ -766,10 +785,10 @@ p {
 
 /* .homeSide {
   /* display: block; */
-  /* width: 14vw;
+/* width: 14vw;
   /* height: 1vh; */
-  /* background-color: #FFF;
-} */ 
+/* background-color: #FFF;
+} */
 
 .tableData {
   display: flex;
@@ -829,7 +848,7 @@ p {
 
 /* SubjectCaursal */
 
-.subjectFlexIndex{
+.subjectFlexIndex {
   display: none;
 }
 
@@ -1358,15 +1377,6 @@ div .ratio {
     top: 133px;
     left: 20px;
     border-radius: 8px;
-  }
-
-  .focused_input,
-  .buttonBAckground {
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 2%;
-    width: 100%;
-    /* margin-left: 10%; */
   }
 
   .buttonclass {

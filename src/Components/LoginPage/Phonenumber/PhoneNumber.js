@@ -6,6 +6,8 @@ import InputField from '../../Onboarding/Components/InputField';
 import ButtonText from '../Comp/ButtonText';
 import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
+import flag from '../../../Images/india-flag.png'
+
 
 
 
@@ -34,7 +36,7 @@ function PhoneNumber() {
     () => {
 
       access && userData && navigate(FRONTEND_URLS.HOME_ROUTE)
-      
+
       if (otp.length == 4) {
         verifiOTP(Nonce, otp, navigate, phoneNumber, setOtpVerifi)
       }
@@ -47,7 +49,7 @@ function PhoneNumber() {
     setOtpSend(false);
     setOtp('')
     const mess = document.getElementById("mess");
-    mess.innerHTML = '' ;
+    mess.innerHTML = '';
   }
 
 
@@ -61,13 +63,20 @@ function PhoneNumber() {
 
             {/* <OnBordText isName='Hi 👋' /> */}
 
-            <InputField inputRef={PhoneRef} Que='Enter Phone Number' messSec='We’ll send you an OTP for verification' variable={'Phone Number'} />
+            <div className='nameAskingSection'>
+              <div className='nameQue'> Enter Phone Number </div>
+              <div className='messageSec'> We’ll send you an OTP for verification. </div>
+
+
+              <input ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' className='focused_input' />
+
+            </div>
 
             <div id='mess'></div>
 
             <div className="buttonclass">
 
-              <div className='TermsAndCond'> By continuing, you agree to our <a href='#'>Terms and Conditions.</a> </div>
+              <div className='TermsAndCond'> By continuing, you agree to our <a href='https://www.esaral.com/terms-and-condition/'>Terms and Conditions.</a> </div>
 
               <button className='btn buttonBAckground' type="submit"
                 onClick={() => {
@@ -98,7 +107,7 @@ function PhoneNumber() {
             <div className='nameAskingSection'>
 
               <div className='OtpBackBut'>
-                <button className='subject' style={{ width:"0%"}} onClick={OtpPageBack}>
+                <button className='subject' style={{ width: "0%" }} onClick={OtpPageBack}>
                   <IoIosArrowBack size={30} color='black' />
                 </button>
               </div>
@@ -122,26 +131,14 @@ function PhoneNumber() {
 
             <div id='mess'></div>
 
-            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button style={{ width:"0%"}}  className='subject OtpNotRecieveBut' onClick={() => {
+            <div className='OtpNotRecieve'>Didn’t recieve the OTP? <button style={{ width: "0%" }} className='subject OtpNotRecieveBut' onClick={() => {
               OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect)
             }}>Resend</button>
             </div>
 
             <div className='OtpNotRecieve'>
-              Still facing difficulties? <a className='OtpNotRecieveBut'> Contact Us</a>
+              Still facing difficulties? <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '> Contact Us</a>
             </div>
-
-
-            {/* <div className="buttonclass">
-
-              <button className='btn buttonBAckground' type="submit"
-                onClick={() => {
-                 ;
-                }}
-              >
-                <ButtonText />
-              </button>
-            </div> */}
           </div>
 
         </>

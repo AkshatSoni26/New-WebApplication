@@ -9,8 +9,7 @@ const InputField = ({ inputRef, Que, variable, messSec }) => {
     <div className='nameAskingSection'>
       <div className='nameQue'>{Que}</div>
       <div className='messageSec'>{messSec}</div>
-      <input ref={inputRef} type="text" placeholder={exp} className='focused_input' />
-
+      <input ref={inputRef}  type="text" placeholder={exp} className='focused_input' />
     </div>
   );
 };
