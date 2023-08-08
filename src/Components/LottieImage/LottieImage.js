@@ -9,20 +9,36 @@ import '../../CSS/App.css'
 
 const LottieImage = () => {
     return (
-        <>
-            <div className='accordianImage2'></div>
+        <div className='accordianImage2'>
+            <Lottie style={{height: 30, width: 30}} animationData={animationData} loop={true} />
+        </div>
 
-            <div className='LottieBackgroundColour'>
+        );
+    };
+    
+    export default memo(LottieImage);
 
-                <div className='playbuttondiv'> 
-                    <div className='playbutton lottie'>
-                        <Lottie animationData={animationData} loop={true} />
-                    </div> 
-                </div>
+    
+//     // <>
+//     // <div className='accordianImage2'>
 
-            </div>
-        </>
-    );
-};
+//         {/* <div className='LottieBackgroundColour'>
 
-export default memo(LottieImage);
+//             <div className='playbuttondiv'>
+//                 <div className='playbutton lottie'> */}
+//         {/* <div style={{
+// height: "50%", 
+// marginTop: "10%"
+// }}> */}
+// {/* 
+//         <div className='Trail'>
+//             <Lottie animationData={animationData} loop={true} />
+//         </div>   */}
+
+//         {/* </div>
+//             </div>
+
+//         </div> */}
+
+//     // </div >
+//     // {/* </> */ }

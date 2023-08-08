@@ -4,8 +4,8 @@ import '../../CSS/App.css'
 const ThumbanailButton = () => {
     return (
 
-        <div className='playbuttondiv image-container'>
-            <img className='playbutton' src={require('../../Images/play button.png')} />
+        <div className='accordianImage2' style={{background: 'none'}}>
+            <img style={{height: 30, width: 30}} src={require('../../Images/play button.png')} />
         </div>
 
     );

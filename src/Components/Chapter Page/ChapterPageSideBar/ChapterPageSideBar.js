@@ -21,53 +21,51 @@ const ChapterPageSideBar = () => {
 
     return (
         (chapterContent) &&
-        <div className='ChaptrSide'>
-                <div className='ChapterPageSideBar'>
-                    {
-                        chapterTable.map(
-                            (ChData, index) => {
-                                return (
-                                    <div key={index} >
+        <div className='ChaptrSide ChapterPageSideBar'>
+            {
+                chapterTable.map(
+                    (ChData, index) => {
+                        return (
+                            <div key={index} >
 
-                                        {
-                                            ((chapterContent[chapterTable[index].toLowerCase()]).length > 0) && 
-                                            
-                                            <Accordion 
-                                            activeKey={activeKey} 
-                                            onSelect={handleAccordionChange} >
+                                {
+                                    ((chapterContent[chapterTable[index].toLowerCase()]).length > 0) &&
 
-                                                <Accordion.Item eventKey={index} >
-                                                    <Accordion.Header > <div className='accodionHeader'> {chapterTable[index]} </div> </Accordion.Header>
-                                                    <Accordion.Body className='accordionBody'>
+                                    <Accordion
+                                        activeKey={activeKey}
+                                        onSelect={handleAccordionChange} >
 
-                                                        {
-                                                            (chapterContent[chapterTable[index].toLowerCase()]) && (chapterContent[chapterTable[index].toLowerCase()]).map(
-                                                                (value, i) => {
-                                                                    return (
-                                                                        <div key={i}>
+                                        <Accordion.Item eventKey={index} >
+                                            <Accordion.Header > <div className='accodionHeader'> {chapterTable[index]} </div> </Accordion.Header>
+                                            <Accordion.Body className='accordionBody'>
 
-                                                                            {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
+                                                {
+                                                    (chapterContent[chapterTable[index].toLowerCase()]) && (chapterContent[chapterTable[index].toLowerCase()]).map(
+                                                        (value, i) => {
+                                                            return (
+                                                                <div key={i}>
 
-                                                                            {(((value.content_data).length) > 0) && <ChapterCollectionType content_data={value.content_data} />}
+                                                                    {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
 
-                                                                        </div>
-                                                                    )
-                                                                }
+                                                                    {(((value.content_data).length) > 0) && <ChapterCollectionType content_data={value.content_data} />}
+
+                                                                </div>
                                                             )
                                                         }
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                            </Accordion>
-                                        }
-                                    </div>
-                                )
-                            }
+                                                    )
+                                                }
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
+                                }
+                            </div>
                         )
                     }
-                </ div>  
-                </ div>       
+                )
+            }
+        </ div>
 
-        
+
     );
 };
 

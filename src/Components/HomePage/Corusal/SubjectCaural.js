@@ -22,7 +22,7 @@ const SubjectCaural = () => {
             <SpinnerFun />
             :
             <div>
-                <div className="startingPhrase ChapLec">{slogen}</div>
+                <div className="startingPhrase ChapLec" style={{ marginLeft :"1%" }}>{slogen}</div>
 
                 {/* <div className='SubjectNames'> */}
                 <div className="container">

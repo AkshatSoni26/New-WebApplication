@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { LuArrowLeft } from 'react-icons/lu'
 import '../../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../../Links/Config';
@@ -86,7 +86,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
             >
 
                 <div style={{ color: '#fff' }}>
-                    Continue <AiOutlineArrowRight color='#fff' />
+                    Continue <LuArrowLeft color='#fff' />
                 </div>
 
             </button>

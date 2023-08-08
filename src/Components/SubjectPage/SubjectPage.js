@@ -66,7 +66,7 @@ const SubjectPage = () => {
         }, []
     )
 
-    
+
 
     return (
         (!SubData)
@@ -74,78 +74,72 @@ const SubjectPage = () => {
             <SpinnerFun />
             :
             <section className='mainHome'>
-                <div className=''>
 
-                    {
-                        (SubData?.node_type == "COLLECTION") &&
+                {
+                    (SubData?.node_type == "COLLECTION") &&
 
-                        <div>
+                    <div>
 
-                            <div className='ChapterNav'>
-                                <ChapterPageNavBar chapterName={SubData.display_name} subjectPageId={''} />
+                        <div className='ChapterNav'>
+                            <ChapterPageNavBar chapterName={SubData.display_name} subjectPageId={''} />
+                        </div>
+
+                        <div className='contentSep'>
+
+                            <div className='ChaptrSide'>
+                                {(SubData?.content) && <ChapterPageSideBar chapterContent={SubData.content} />}
                             </div>
 
-                            <div className='contentSep'>
-
-                                <div className='ChaptrSide'>
-                                    {(SubData?.content) && <ChapterPageSideBar chapterContent={SubData.content} />}
-                                </div>
-
-                                <div className='ChapterCon'>
-                                    {(SubData?.content) && <ChapterContentPortion chapterContent={SubData.content} />}
-                                </div>
-
+                            <div className='ChapterCon '>
+                                {(SubData?.content) && <ChapterContentPortion chapterContent={SubData.content} />}
                             </div>
 
                         </div>
-                    }
+
+                    </div>
+                }
 
 
-                    {
-                        (SubData.length > 1) &&
-                        <>
-                                <SubjectSideBar />
+                {
+                    (SubData.length > 1) &&
+                    <>
+                        <SubjectSideBar />
 
-                            <div className='subjectNavBar'>
+                        <div className='subjectNavBar'>
 
-                                <div className='subjectOverlay'>
+                            <div className='subjectOverlay'>
 
                                 {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
-                                </div>
-
-                                {/* <div className='HomeMainContent '> */}
-                                    <section >
-
-                                        {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
-
-                                    </section>
-                                {/* </div> */}
-
-                                {
-                                    !TabIndexBut
-                                        ?
-                                        <div className='subjectFlexIndex'>
-
-                                            <button className='subject' onClick={() => { setTabIndexBut(true); OverlayOn() }}>
-
-                                                <div className='FlotingSubjectIndex'>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                                                    &nbsp;  Index
-                                                </div>
-
-                                            </button>
-                                        </div>
-                                        :
-                                        <div id="SubjectMain ">
-                                            <TabSubjectSideBar setTabIndexBut={setTabIndexBut} />
-                                        </div>
-                                }
-
                             </div>
 
-                        </>
-                    }
-                </div>
+                            {/* <div className='HomeMainContent '> */}
+                            <section className='scrollView'>
+
+                                {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
+
+                            </section>
+
+                            {
+                                !TabIndexBut
+                                    ?
+                                    <div className='subjectFlexIndex'>
+                                        <button className='subject' onClick={() => { setTabIndexBut(true); OverlayOn() }}>
+                                            <div className='FlotingSubjectIndex'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                                &nbsp;  Index
+                                            </div>
+                                        </button>
+                                    </div>
+                                    :
+                                    <div id="SubjectMain ">
+                                        <TabSubjectSideBar setTabIndexBut={setTabIndexBut} />
+                                    </div>
+                            }
+
+                        </div>
+
+                    </>
+                }
             </section>
     );
 };

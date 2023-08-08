@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import ChapterMainCom from './ChapterMainCom';
+import ChapterPageSideBarResponsivePart from './ChapterPageSideBar/ChapterPageSideBarResponsivePart';
 
 
 const ChapterPage = () => {
@@ -74,12 +75,19 @@ const ChapterPage = () => {
     return (
 
         <section className='mainHome'>
-            
+
             <div className='ChapterNav'>
                 <ChapterPageNavBar />
             </div>
+                <div className='scrollView'> 
+                <ChapterMainCom />
+                </div>
+            {/* <ChapterPageSideBarResponsivePart />
+            
+            <div className='scrollView'>
+                <ChapterContentPortion />
+            </div> */}
 
-            <ChapterMainCom />
 
         </section>
     );

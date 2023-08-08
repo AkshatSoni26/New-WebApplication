@@ -1,7 +1,7 @@
 import React from "react";
 import { BACKEND_URLS, FRONTEND_URLS } from "../Links/Config";
 import axios from "axios";
-import { BorderColors, Colors, alert_circle, country_code } from "../../Constants/Constants";
+import { BorderColors, Colors, OtpTimer, alert_circle, country_code } from "../../Constants/Constants";
 import ColorButton from "../Onboarding/Components/ColorButton";
 import ColorButton2 from "../Onboarding/Components/ColorButton2";
 import { redirect } from "react-router-dom";
@@ -67,7 +67,8 @@ export function OTPSender(
   setOtpSend,
   setNonce,
   setErro,
-  redirect
+  redirect,
+  setCounter
 ) {
   const format = /[0-9]/;
 
@@ -86,6 +87,7 @@ export function OTPSender(
           console.log("under the phone Number", response.data.message);
           setOtpSend(true);
           setNonce(nonce);
+          setCounter(OtpTimer)
         }
       })
       .catch((error) => {
@@ -98,10 +100,17 @@ export function OTPSender(
   else {
     const mess = document.getElementById("mess");
     mess.innerHTML = alert_circle + ' ' + `Please enter a valid number first`;
-    mess.style.color = "red";
+    // mess.style.color = "red";
+
+    const CounCodeBox =  document.getElementById("country_code");
+    CounCodeBox.style.border = "2px solid red";
+    CounCodeBox.style.borderRight = '0px'
     
     const numberBox =  document.getElementById("PhoneInput");
     numberBox.style.border = "2px solid red";
+    numberBox.style.borderLeft = '0px'
+
+    numberBox.focus()
   }
 
 }
@@ -129,7 +138,7 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber, setOtpVerifi) {
 
           const mess = document.getElementById("mess");
           mess.innerHTML = alert_circle + ' ' + "Incorrect OTP";
-          mess.style.color = "red";
+          // mess.style.color = "red";
 
           const OtpBoxes = document.getElementsByClassName('Otp_Box');
 
@@ -154,7 +163,7 @@ export function verifiOTP(nonce, otp, navigate, phoneNumber, setOtpVerifi) {
 else {
     const mess = document.getElementById("mess");
     mess.innerHTML = alert_circle + ' ' + "Incorrect OTP";
-    mess.style.color = "red";
+    // mess.style.color = "red";
   }
 }
 

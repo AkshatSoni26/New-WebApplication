@@ -5,6 +5,7 @@ import ThumbnailDur from "../../Thumbnail/ThumbnailDur";
 import ThumbanailButton from "../../Thumbnail/ThumbanailButton";
 import LottieImage from "../../LottieImage/LottieImage";
 import SpinnerFun from "../../SpinnerFun/SpinnerFun";
+import OverLayFunction from "../../../Utility/OverLayFunction";
 
 const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
   console.log("ChapterPageVideoButton");
@@ -18,26 +19,26 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
 
   return currentUrl ? (
     <div className="VidThum">
-      <div className="layer">
+      {/* <div className="layer"></div> */}
+      <div>
         <img
-          className="accordianImage "
+          className="accordianImage"
           src={
             content_info?.thumbnail
               ? content_info.thumbnail
               : DefaultThumbnails.video
-          }
-          alt=""
-        />
+          } alt="" />
       </div>
-
-      {urlPar === content_info.video_id ? (
-        <>
+      {
+        urlPar === content_info.video_id
+          ?
           <LottieImage />
-        </>
-      ) : (
-        <ThumbanailButton />
-      )}
+          :
+          <ThumbanailButton />
+      }
+
       <ThumbnailDur duration={content_info.duration} />
+
     </div>
   ) : (
     <SpinnerFun />

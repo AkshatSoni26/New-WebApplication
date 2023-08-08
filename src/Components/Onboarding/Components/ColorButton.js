@@ -10,7 +10,7 @@ export default function ColorButton({targets,isName, className, color, borderCol
 
     
   return (
-    <button className='subject colorBoxButton' onClick={test}>
+    <button className='subject colorBoxButton'onClick={test}>
       <div className='colorBox ' style={{ backgroundColor: color, borderColor: borderColor }}>
         {className}
       </div>

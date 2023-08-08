@@ -32,7 +32,6 @@ const SubjectPageNavBar = ({ subjectId }) => {
       :
       <CommonNavBar name={subjectName} />
 
-
   );
 };
 

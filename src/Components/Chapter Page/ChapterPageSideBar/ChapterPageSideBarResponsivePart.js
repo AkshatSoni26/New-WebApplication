@@ -17,15 +17,11 @@ const ChapterPageSideBarResponsivePart = () => {
                     (chapterData, index) => {
 
                         return (
-                            <div>
-                                <button className='subject'>
-                                    {chapterData}
-                                </button>
+                            <div className='subject'>
+                                {chapterData}
                             </div>
                         )
                     }
-
-
                 )
             }
         </div>

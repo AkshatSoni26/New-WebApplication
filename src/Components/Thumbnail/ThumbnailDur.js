@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toHoursAndMinutes } from '../Functions/Services';
 
-const ThumbnailDur = ( {duration} ) => {
+const ThumbnailDur = ({ duration }) => {
 
     const [time, setTime] = useState()
 
@@ -21,7 +21,7 @@ const ThumbnailDur = ( {duration} ) => {
         }, [timeCal]
     )
     return (
-        <div className='videotimeUpdiv'>
+        <div className='accordianImage2' style={{ background: 'none', alignItems: "flex-end", justifyContent: "flex-end" }}>
 
             {
                 (timeCal.h > 0)

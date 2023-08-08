@@ -7,7 +7,8 @@ import { searchPlugin, RenderSearchProps } from '@react-pdf-viewer/search';
 import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 import { FiMaximize, FiSearch } from 'react-icons/fi'
-import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import {  AiOutlineArrowRight, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import {LuArrowLeft} from 'react-icons/lu'
 // import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 
 const ToolBarlayout = ({ toolbarPluginInstance }) => {
@@ -158,7 +159,7 @@ const ToolBarlayout = ({ toolbarPluginInstance }) => {
                                             disabled={props.isDisabled}
                                             onClick={props.onClick}
                                         >
-                                            <AiOutlineArrowLeft />
+                                            <LuArrowLeft />
                                         </button>
                                     )}
                                 </GoToPreviousPage> */}

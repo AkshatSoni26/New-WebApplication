@@ -42,20 +42,21 @@ const Home = () => {
             <>Erro</>
             :
             <section className='mainHome'>
-                <div className='home'>
+                {/* <div className='home'> */}
 
                     {/* <div className='SideBar'> */}
                     <SideBar />
                     {/* </div> */}
 
-                    <div className='NavBar'>
+                    <div className='subjectNavBar'>
 
                         <NavBar />
 
-                        <div>
+                        <div className='scrollView HomeBackPhoneview' > 
+                       
                             <div className='HomeMainContent '>
                                 <section >
-                                    <div className='userData'>
+                                    <div className='userData' >
                                         <UserData />
                                     </div>
                                 </section>
@@ -65,8 +66,8 @@ const Home = () => {
                                         <SubjectCaural />
                                     </div>
                                 </section>
-                            </div>
 
+                            </div>
                             <section >
                                 <div className='HomeMainFacultiContentPortion'>
                                     <FacultiCaursol />
@@ -75,7 +76,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                </div>
+                {/* </div> */}
             </section>
     );
 };

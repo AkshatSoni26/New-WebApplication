@@ -8,6 +8,7 @@ import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
 import flag from '../../../Images/india-flag.png'
 import CountdownTimer from './CountdownTimer';
+import { OtpTimer } from '../../../Constants/Constants';
 
 
 
@@ -32,6 +33,8 @@ function PhoneNumber() {
   const navigate = useNavigate()
   const access = localStorage.getItem('Access Key')
   const userData = localStorage.getItem('userData')
+
+  const [ContactUs, setContactUs] = useState(OtpTimer)
 
 
 
@@ -72,13 +75,19 @@ function PhoneNumber() {
               <div className='nameQue'> Enter Phone Number </div>
               <div className='messageSec'> We’ll send you an OTP for verification. </div>
 
-              <input autoFocus ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' id='PhoneInput' className='focused_input ' />
+              <div className='CountryAndPhoneNumber' >
 
+                <div id="country_code" className="countryCode">
+                  <div > +91    </div>
+                  <img src={flag} style={{ width: "2em", height: "auto" }} />
+                </div>
+                <input autoFocus={true} ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' id='PhoneInput' className='focused_input phoneNumberInput' />
+              </div>
             </div>
 
             <div id='mess'></div>
 
-            <div className="buttonclass">
+            <div className="buttonclass extraPho">
 
               <div className='TermsAndCond'> By continuing, you agree to our <a href='https://www.esaral.com/terms-and-condition/'>Terms and Conditions.</a> </div>
 
@@ -111,7 +120,7 @@ function PhoneNumber() {
             <div className='nameAskingSection'>
 
               <div className='OtpBackBut'>
-                <button className='subject' style={{ width: "0%" }} onClick={OtpPageBack}>
+                <button className='subject' onClick={OtpPageBack}>
                   <IoIosArrowBack size={30} color='black' />
                 </button>
               </div>
@@ -136,12 +145,15 @@ function PhoneNumber() {
             <div id='mess'></div>
 
             <div className='OtpNotRecieve'>Didn’t recieve the OTP? &nbsp;
-            <CountdownTimer phoneNumber={phoneNumber} setOtpSend={setOtpSend} setNonce={setNonce} setErro={setErro} redirect={redirect}/>
+              <CountdownTimer phoneNumber={phoneNumber} setOtpSend={setOtpSend} setNonce={setNonce} setErro={setErro} redirect={redirect} ContactUs={ContactUs} setContactUs={setContactUs}/>
             </div>
 
-            <div className='OtpNotRecieve'>
-              Still facing difficulties? &nbsp; <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '>  Contact Us</a>
-            </div>
+            {
+              (ContactUs == 0) && 
+              <div className='OtpNotRecieve'>
+                Still facing difficulties? &nbsp; <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '>  Contact Us</a>
+              </div>
+            }
           </div>
 
         </>

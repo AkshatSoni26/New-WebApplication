@@ -33,9 +33,9 @@ const ChapterContentType = ({ content_data }) => {
     }
 
     return (
-        <div>
+        <>
             {getContent(content_data)}
-        </div>
+        </>
     );
 };
 export default memo(ChapterContentType);

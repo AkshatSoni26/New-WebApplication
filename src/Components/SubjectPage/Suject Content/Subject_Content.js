@@ -5,6 +5,8 @@ import '../../../CSS/App.css'
 import { ChapterNavigator, OverlayOff, responsive } from '../../Functions/Services';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
+import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
+import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
 
 
 
@@ -30,10 +32,10 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
 
     return (
         <>
-        <div id="overlay" onClick={() => {
-                                            OverlayOff();
-                                            setTabIndexBut(false)
-                                        }}></div>
+            <div id="overlay scrollView" onClick={() => {
+                OverlayOff();
+                setTabIndexBut(false)
+            }}></div>
             {
                 content.map(
                     (data, index) => {
@@ -42,8 +44,10 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
 
                         return (
                             ((data.content.learn).length > 0) ?
-                                <div className='HomeMainContent' style={{marginBottom:"2%", height:"auto"}}>
-                                    <section id={`${data.node_id}`} key={index} 
+                                <div className='HomeMainFacultiContentPortion subjectCardClass'>
+
+                            
+                                    <section id={`${data.node_id}`} key={index}
                                     // className='SubjectContent'
                                     >
 
@@ -62,45 +66,43 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                         className='SubjectContanier'
                                     > */}
 
-                                    <div className='subjectCoursal' style={{marginBottom:"2%"}}>
+                                    <div className='subjectCoursal' style={{ marginBottom: "2%" }}>
                                         {
                                             (data.content.learn).map(
                                                 (chapter, index) => {
                                                     return (
                                                         (chapter?.content_data?.content_info?.video_id) &&
-                                                        <div key={index} className='SubjectImgAndName'>
-                                                            <div
-                                                                className='subject'
-                                                                onClick={
-                                                                    () => {
-                                                                        ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id)
-                                                                    }
+                                                        <div key={index} className='subject SubjectImgAndName' style={{ marginRight: "13%", paddingLeft: (index == 0) ? "3%" : 0 }}
+                                                            onClick={
+                                                                () => {
+                                                                    ChapterNavigator(urlPar, chapterId, navigate, chapter.content_data.content_info.video_id)
                                                                 }
-                                                            >
-                                                                <div
-                                                                // className='VidThum'
-                                                                >
+                                                            }>
+                                                            <div className="VidThum">
+                                                                {/* <div> */}
                                                                     <img
-                                                                        className='accordianImage'
+                                                                        className='accordianImage' style={{
+                                                                            width: "208px",
+                                                                        }}
                                                                         src={
                                                                             chapter?.content_data?.content_info?.thumbnail ?
                                                                                 chapter.content_data.content_info.thumbnail
                                                                                 :
                                                                                 DefaultThumbnails.video
                                                                         } />
+                                                                {/* </div> */}
 
-                                                                    {/* <ThumbanailButton />
-                                                                        <ThumbnailDur
-                                                                            duration={chapter?.content_data?.content_info?.duration}
-                                                                        /> */}
+                                                                <ThumbanailButton />
+                                                                <ThumbnailDur duration={chapter?.content_data?.content_info?.duration} />
 
-                                                                </div>
 
-                                                                <div
-                                                                    className='LectureName'
-                                                                > {chapter.display_name} </div>
                                                             </div>
+
+                                                            <div
+                                                                className='LectureName'
+                                                            > {chapter.display_name} </div>
                                                         </div>
+                                                        // </div>
 
 
                                                     )
@@ -110,7 +112,7 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                     </div>
 
                                     {/* </div> */}
-                                </div>
+                                </div >
                                 :
                                 null
                         )

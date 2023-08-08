@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
-import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { LuArrowLeft } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi'
 import { FRONTEND_URLS } from './Links/Config';
@@ -49,10 +49,10 @@ const CommonNavBar = ({ name, id }) => {
               {/* <SideBarEffect /> */}
               {/* <div id="main"/> */}
 
-              <div ></div>
+              {/* <div ></div> */}
 
               <button className='subject' onClick={PreviousPage}>
-                <AiOutlineArrowLeft /> {name}
+                <LuArrowLeft /> {name}
               </button>
 
             </Navbar.Brand>

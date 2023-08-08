@@ -2,6 +2,10 @@
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
 
+  /* body{
+    background-color: var(--primary-primary-color);
+  } */
+
   .home>.SideBar>.HomeSideBar,
   .phoneSearch {
     display: none;
@@ -20,15 +24,41 @@
   /*-------------------------------------------Login--------------------------------------------------- */
   /*-------------------------- Phone Number-------------------------  */
 
-  .focused_input,
-  .buttonBAckground {
+  .focused_input, .focused_input:focus
+{
     border: 2px solid var(--primary-color);
+  outline: none;
+
     border-radius: 8px;
     padding: 2%;
-    width: 280px;
+    width: 300px;
 
     /* margin-left: 10%; */
      }
+     .phoneNumberInput, .phoneNumberInput:focus {
+      /* background-color: var(--Primary-Background-Color); */
+      border-left: 0px;
+      /* top-left | top-right | bottom-right | bottom-left */
+      border-radius: 0px 8px 8px 0px;
+    }
+
+    .buttonclass {
+      padding-left: 0%;
+      height: 50vh;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      /* align-items: flex-end; */
+      /* align-items: center; */
+      /* padding: 10%; */
+      /* margin-top: 50%; */
+      /* margin-left: 5%; */
+    }
+    
+    .extraPho{
+      width: 360px;
+    }
 
   /*-------------------------------------------Home--------------------------------------------------- */
     /*-------------------------- NavBar-------------------------  */
@@ -68,6 +98,12 @@
     .subjectNavBar {
       margin-left: 0;
       width: 100%;
+    }
+
+    .subjectImages {
+      height: 23vh;
+      width: 23vh;
+      border-radius: 5%;
     }
 
     /*-------------------------- Faculti Potion-------------------------  */
@@ -253,6 +289,12 @@
       transform: translateX(-50%);
     }
 
+    .subjectCardClass{
+      margin-bottom: 2%;
+      margin-left: 0%;
+      margin-top:2%; 
+      height: auto
+    }
 
     .FlotingSubjectTable {
       display: flex;

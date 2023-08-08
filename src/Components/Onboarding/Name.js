@@ -22,7 +22,7 @@ const Name = ({ setIsName }) => {
 
             <OnBordText isName='Hi 👋' startLine='Let’s customize your eSaral journey' />
 
-            <InputField inputRef={inputRef} Que='What’s your name?' variable={'name'} />
+            <InputField inputRef={inputRef} Question='What’s your name?' variable={'name'} />
 
             <div id='message'></div>
 

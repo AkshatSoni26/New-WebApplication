@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Container, Navbar } from 'react-bootstrap';
 import { FiSearch } from 'react-icons/fi'
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { LuArrowLeft } from 'react-icons/lu';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -35,7 +35,7 @@ const SearchNavBar = ({ setData, setErr, setSearhed }) => {
                 <Container >
 
                     <span className='NavbarBrandHom'  onClick={() => { navigate(backlink) }}>
-                        <AiOutlineArrowLeft size={30} />
+                        <LuArrowLeft size={30} />
                     </span>
 
                     <div className='searchBar'>

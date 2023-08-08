@@ -1,10 +1,10 @@
 import React from 'react';
-import {AiOutlineArrowRight} from 'react-icons/ai'
+import {LuArrowLeft} from 'react-icons/lu'
 
 const ButtonText = () => {
     return (
         <div className='buttonText'>
-            <span style={{ color: '#fff' }}> Continue </span> <AiOutlineArrowRight color='#fff' />
+            <span style={{ color: '#fff' }}> Continue </span> <LuArrowLeft color='#fff' />
         </div>
     );
 };

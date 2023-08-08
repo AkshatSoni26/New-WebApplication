@@ -14,6 +14,8 @@
 
   --ChaptePageButtons-color: #333A47;
 
+  --error-color: #CC2C2C;
+
 
   --text-color: #0D1015;
 
@@ -24,15 +26,16 @@
 
 /* DOM font family  and background color */
 
+html{
+  background-color: var(--second-primary-color);
+}
+
 body {
   font-family: var(--Primary-Font-Family);
   background-color: var(--Primary-Background-Color);
 }
 
 img {
-  width: 45%;
-  height: 50%;
-
   user-drag: none;
   -moz-user-drag: none;
   -webkit-user-drag: none;
@@ -45,8 +48,13 @@ img {
 .LoginPage {
   display: flex;
   height: 100vh;
+  background-color: var(--second-primary-color);
 }
 
+.CountryAndPhoneNumber {
+  display: inline-flex;
+  /* display: 'inline-flex'; */
+}
 
 .LoginPage .leftPortion,
 .rightPortion {
@@ -153,13 +161,13 @@ img {
   top: 88px;
   left: 20px;
   font-weight: 700;
-  Size: 1.6rem;
+  font-size: 24px;
   line-height: 1.8rem;
   color: #0D1015;
 }
 
 .messageSec {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
@@ -169,9 +177,19 @@ img {
   padding-left: 0%;
 }
 
+.Que {
+  /* font-family: Lato  ; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333A47;
+  padding-bottom: 10px;
+}
 
-.focused_input, .focused_input:focus
-.buttonBAckground {
+.focused_input,
+.focused_input:focus {
   border: 2px solid var(--primary-color);
   outline: none;
   /* border: 0px;
@@ -191,23 +209,26 @@ img {
 
 
 
-.phoneNumberInput {
+.phoneNumberInput,
+.phoneNumberInput:focus {
+  /* background-color: var(--Primary-Background-Color); */
   border-left: 0px;
   /* top-left | top-right | bottom-right | bottom-left */
   border-radius: 0px 8px 8px 0px;
 }
 
+
 .countryCode {
+  display: flex;
   border: 2px solid var(--primary-color);
   border-radius: 8px;
   padding: 2%;
-  width: 250px;
-  /* width: 315px; */
   border-right: 0px;
-  /* margin-left: 10%; */
   border-radius: 8px 0px 0px 8px;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 }
-
 
 .TermsAndCond {
   color: #333A47;
@@ -223,7 +244,7 @@ img {
 .buttonclass {
   padding-left: 0%;
   height: 50vh;
-  width: 50%;
+  width: 315px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -232,6 +253,10 @@ img {
   /* padding: 10%; */
   /* margin-top: 50%; */
   /* margin-left: 5%; */
+}
+
+.extraPho {
+  width: 374px;
 }
 
 .OtpNotRecieve {
@@ -346,7 +371,7 @@ a .OtpNotRecieveBut {
 
 
 .colorBoxButton {
-  width: 50%;
+  width: 100%;
   height: auto;
   margin: 2%;
   margin-left: -1%;
@@ -396,16 +421,39 @@ a .OtpNotRecieveBut {
   text-align: left;
 }
 
+#mess {
+  /* width: 225px;
+height: 20px;
+top: 242px;
+left: 20px; */
+  color: var(--error-color);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
 /* ------------------------------------- Home ---------------------------------------- */
 
 .NavbarBrandHome {
   display: flex;
   align-items: center;
   margin-left: 2%;
+  
+}
+
+.scrollView {
+  overflow-y: scroll;
+  height: 89.7vh;
+  /* background-color: var(--second-primary-color); */
 }
 
 
 .tableHome {
+  display: flex;
   padding-left: 40px;
   font-size: 16px;
   line-height: 44px;
@@ -413,8 +461,8 @@ a .OtpNotRecieveBut {
   height: 85.5vh;
   overflow-x: hidden;
   /* background-color: #FFF; */
+  flex-direction: column;
 }
-
 .subjectCoursal {
   display: flex;
   flex-direction: row;
@@ -422,12 +470,19 @@ a .OtpNotRecieveBut {
   margin-bottom: 7%;
   overflow-x: scroll;
   scroll-behavior: smooth;
-
 }
 
 .ChapLec {
-  margin-left: 1%;
+  margin-left: 4%;
 }
+
+.subjectCardClass{
+  margin-bottom: 2%;
+  margin-left: 1%;
+  margin-top:2%; 
+  height: auto
+}
+
 
 .subjectNavBar {
   margin-left: 300px;
@@ -534,7 +589,7 @@ div .react-multi-carousel-list {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .buttonBAckground,
@@ -546,13 +601,16 @@ div .react-multi-carousel-list {
 
 .nameAskingSection .Otp_Box {
   border: 0px solid var(--primary-color);
+  background-color: var(--Primary-Background-Color);
   border-radius: 7px;
   flex: 1 1;
   aspect-ratio: 1;
   margin: 5%;
+  margin-left: 0%;
 }
 
-.Otp_Box:focus{
+.Otp_Box:focus {
+  background-color: var(--Primary-Background-Color);
   border: 2px solid var(--primary-color);
   outline: none;
 }
@@ -567,7 +625,10 @@ div .react-multi-carousel-list {
 }
 
 .OtpBackBut {
-  display: none;
+  display: flex;
+  margin: 2%;
+  margin-left: -2%;
+  width: 0%;
 }
 
 
@@ -873,8 +934,8 @@ p {
 }
 
 .subjectImages {
-  height: 25vh;
-  width: 25vh;
+  height: 20vh;
+  width: 20vh;
   border-radius: 5%;
 }
 
@@ -936,7 +997,7 @@ p {
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  width: auto;
+  width: 100%;
   word-wrap: break-word;
   /* margin-left: 5%; */
 }
@@ -981,8 +1042,8 @@ p {
 
 
 .ProgressPart {
-  display: flex;
-  /* width: 90% */
+  display: flex; 
+  width: 100%
 }
 
 
@@ -1001,7 +1062,7 @@ p {
 
 .HomeNavContanier {
   display: flex;
-  width: 6%;
+  /* width: 6%; */
   justify-content: flex-end;
 }
 
@@ -1016,7 +1077,7 @@ p {
   margin-top: 1%;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 89.7vh;
+  /* height: 89.7vh; */
   padding-left: 2%;
   padding-top: 1%;
 }
@@ -1177,32 +1238,35 @@ p {
 
 .accordianImage {
   position: relative;
-  height: 15vh;
-  width: auto;
-  flex: 1;
+  height: 100%;
+  width: 100%;
+  /* flex: 1; */
   border-radius: 5%;
   /* opacity: 0; */
 }
+
+.accordianImage2{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  height: 100%;
+  border-radius: 5%;
+  align-items: center;
+} 
+
+
+.Trail {
+  position: absolute;
+}
+
 
 .layer {
   position: relative;
 
 }
 
-.accordianImage2 {
-  background-color: rgba(13, 16, 21, 0.66);
-  position: absolute;
-  /* top: 50px;
-  left: 50px; */
-  /* Set z-index property to place this element on top of the first layer */
-  z-index: 1;
-  /* Set other styling properties for the second layer */
-  width: 173px;
-  height: 100px;
-  border-radius: 5%;
-
-
-}
 
 
 
@@ -1411,18 +1475,19 @@ div .ratio {
 
   .nameAskingSection {
     margin-top: 4%;
-    width: 70%;
+    width: 100%;
     height: auto;
     top: 133px;
     left: 20px;
     border-radius: 8px;
   }
 
-  .buttonclass {
+  /* .buttonclass {
     padding-left: 0%;
     height: 50vh;
     width: 70%;
-  }
+  } */
+
 
   .coursoImg img {
     aspect-ratio: 1;
@@ -1459,3 +1524,6 @@ div .ratio {
 ::-webkit-scrollbar-thumb:hover {
   background: #c7cbd1;
 }
+
+
+

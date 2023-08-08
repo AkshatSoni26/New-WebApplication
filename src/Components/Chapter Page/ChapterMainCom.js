@@ -7,13 +7,11 @@ const ChapterMainCom = () => {
     return (
         <div className='contentSep'>
 
-
             <ChapterPageSideBar />
-
+            
             <ChapterPageSideBarResponsivePart />
 
             <ChapterContentPortion />
-
         </div>
     );
 };

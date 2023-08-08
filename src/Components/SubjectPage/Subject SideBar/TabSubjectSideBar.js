@@ -12,12 +12,12 @@ const TabSubjectSideBar = ({ setTabIndexBut }) => {
    
 
     return (
-        <div className='subjectFlexIndex'>
-            <button className='subject'
+        <div className='subjectFlexIndex FlotingSubjectTable'>
+            {/* <button className='subject'
             //  onClick={() => { setTabIndexBut(false) }}
-            >
+            > */}
 
-                <div className='FlotingSubjectTable'>
+                {/* <div className=''> */}
                     {
                         content.map((data, index) => {
                             return (
@@ -45,9 +45,9 @@ const TabSubjectSideBar = ({ setTabIndexBut }) => {
                         }
                         )
                     }
-                </div>
+                {/* </div> */}
 
-            </button>
+            {/* </button> */}
         </div>
     );
 };
