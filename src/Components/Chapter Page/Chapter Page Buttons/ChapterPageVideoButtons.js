@@ -19,7 +19,7 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
 
   return currentUrl ? (
     <div className="VidThum">
-      {/* <div className="layer"></div> */}
+
       <div>
         <img
           className="accordianImage"
@@ -29,6 +29,7 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
               : DefaultThumbnails.video
           } alt="" />
       </div>
+      
       {
         urlPar === content_info.video_id
           ?

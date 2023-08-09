@@ -36,12 +36,12 @@ const SubjectCaural = () => {
                                     return (
                                         <div className="col">
 
-                                                <button key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-4 my-3 '>
+                                                <div key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-4 my-3' style={{width: "20vh"}}>
                                                     <div className='innerSuvjectCaursalDiv' >
                                                         <img className='subjectImages' src={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
                                                         <div className='LectureName'>{data.display_name}</div>
                                                     </div>
-                                                </button>
+                                                </div>
 
                                         </div>
 

@@ -6,7 +6,9 @@ const ChapterPagePDFButton = ( {content_info} ) => {
     console.log('ChapterPagePDFButton')
 
     return (
-        <div> <img className='accordianImage '
+        <div className="VidThum">
+
+            <img className='accordianImage '
             src={
                 (content_info?.thumbnail)
                     ?
@@ -14,6 +16,7 @@ const ChapterPagePDFButton = ( {content_info} ) => {
                     :
                     DefaultThumbnails.pdf
             } />
+            
         </div>
     );
 };

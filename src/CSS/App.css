@@ -663,7 +663,9 @@ div .react-multi-carousel-list {
   z-index: 200;
 }
 
-
+.col{
+  /* width: */
+}
 /*=---------------- Side Bar ------------------*/
 .index {
   margin-left: 20px;

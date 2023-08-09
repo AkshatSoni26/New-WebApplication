@@ -69,7 +69,7 @@ const Home = () => {
 
                             </div>
                             <section >
-                                <div className='HomeMainFacultiContentPortion'>
+                                <div className='HomeMainFacultiContentPortion' style={{marginLeft:'0%'}}>
                                     <FacultiCaursol />
                                 </div>
                             </section>
