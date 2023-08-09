@@ -32,10 +32,11 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
 
     return (
         <>
-            <div id="overlay scrollView" onClick={() => {
+            <div id="overlay" onClick={() => {
                 OverlayOff();
                 setTabIndexBut(false)
             }}></div>
+
             {
                 content.map(
                     (data, index) => {
@@ -45,27 +46,13 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                         return (
                             ((data.content.learn).length > 0) ?
                                 <div className='HomeMainFacultiContentPortion subjectCardClass'>
-
-                            
-                                    <section id={`${data.node_id}`} key={index}
-                                    // className='SubjectContent'
-                                    >
-
+                                    <section id={`${data.node_id}`} key={index}>
                                         <Chapter_Header intialChaDa={data.content.learn[0].content_data.content_info}
-
                                             subjectId={subjectId} chapterId={chapterId} init_video_id={data.content.learn[0].content_data.content_info.video_id}
-
                                             display_name={data.display_name}
-
                                             lecLen={(data.content.learn).length} />
-
-
                                     </section>
-
-                                    {/* <div
-                                        className='SubjectContanier'
-                                    > */}
-
+                                    
                                     <div className='subjectCoursal' style={{ marginBottom: "2%" }}>
                                         {
                                             (data.content.learn).map(
@@ -79,7 +66,6 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                                                 }
                                                             }>
                                                             <div className="VidThum">
-                                                                {/* <div> */}
                                                                     <img
                                                                         className='accordianImage' style={{
                                                                             width: "208px",
@@ -90,28 +76,18 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                                                                                 :
                                                                                 DefaultThumbnails.video
                                                                         } />
-                                                                {/* </div> */}
-
                                                                 <ThumbanailButton />
                                                                 <ThumbnailDur duration={chapter?.content_data?.content_info?.duration} />
-
-
                                                             </div>
-
                                                             <div
                                                                 className='LectureName'
                                                             > {chapter.display_name} </div>
                                                         </div>
-                                                        // </div>
-
-
                                                     )
                                                 }
                                             )
                                         }
                                     </div>
-
-                                    {/* </div> */}
                                 </div >
                                 :
                                 null
@@ -120,7 +96,6 @@ const SubjectContent = ({ subjectId, setTabIndexBut }) => {
                 )
             }
         </>
-        // {/* // </div> */}
     );
 };
 

@@ -283,10 +283,11 @@
   z-index: 1000;
   background-color: var(--second-primary-color);
   color: var(--text-color);
-  width: 314px;
+  max-width: 314px;
   max-height: 433px;
   top: 267px;
-  left: 22px;
+  /* left: 22px; */
+  margin-bottom: -3%;
   padding-left: 5%;
   border-radius: 7px;
   flex-direction: column;
@@ -478,7 +479,9 @@
     width: 100%;
     background-color: #fff;
     margin-top: 10%;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    flex: 1;
+    height: 100%;
 }
 
   .subjectCardClass{
@@ -504,12 +507,14 @@
     height: auto;
   }
 
+  .HomeSubjectButton {
+    max-width: 30vh;
+    max-height: 17vh;
+    width: auto;
+  }
+
   /*-----------------------------------------------Utility classes----------------------------------------- */
   .container {
     max-width: 100%;
   }
-
-
-
-
 }

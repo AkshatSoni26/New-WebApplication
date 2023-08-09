@@ -91,6 +91,7 @@
 
     .container>.row>.col {
       flex: 1;
+      margin-right: 5%;
       /* width: 109%; */
       /* display: flex; */
     }
@@ -154,20 +155,9 @@
       padding: 16px;
     }
 
-    /* .FlotingSubjectTable{
-    width: 0px;
-    height: 0px;
-    transition: all 0.5s ease-in-out
-  }
+    
+  
 
-  .FlotingSubjectTable.active{
-    width:314px;
-    height:433px;
-  } */
-
-    .FlotingSubjectTable {
-      display: none;
-    }
 
 
 
@@ -289,22 +279,29 @@
       transform: translateX(-50%);
     }
 
-    .subjectCardClass{
-      margin-bottom: 2%;
+    .subjectCardClass {
+      /* margin-bottom: 2%; */
       margin-left: 0%;
-      margin-top:2%; 
-      height: auto
-    }
+      margin-top: 1%;
+      height: auto;
+  }
+
+  .commonBar .container {
+    margin-left: 3%;
+    margin-right: 10%;
+    padding: 0%;
+}
 
     .FlotingSubjectTable {
       display: flex;
       z-index: 1000;
       background-color: var(--second-primary-color);
       color: var(--text-color);
-      width: 314px;
-      height: 433px;
+      max-width: 314px;
+      max-height: 433px;
       top: 267px;
-      left: 22px;
+      margin-bottom: -3%;
+      /* left: 22px; */
       padding-left: 5%;
       border-radius: 7px;
       flex-direction: column;

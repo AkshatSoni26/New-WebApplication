@@ -106,24 +106,22 @@ const SubjectPage = () => {
                         <SubjectSideBar />
 
                         <div className='subjectNavBar'>
-
                             <div className='subjectOverlay'>
-
                                 {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
                             </div>
 
                             {/* <div className='HomeMainContent '> */}
-                            <section className='scrollView'>
-
+                            <section className='scrollView' style={{overflowY:'scroll'}}>
                                 {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
-
                             </section>
 
                             {
                                 !TabIndexBut
                                     ?
                                     <div className='subjectFlexIndex'>
-                                        <button className='subject' onClick={() => { setTabIndexBut(true); OverlayOn() }}>
+                                        <button className='subject' onClick={() => { setTabIndexBut(true);
+                                             OverlayOn() }}
+                                             >
                                             <div className='FlotingSubjectIndex'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                                                 &nbsp;  Index

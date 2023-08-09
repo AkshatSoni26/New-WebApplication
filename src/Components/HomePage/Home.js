@@ -7,10 +7,8 @@ import '../../CSS/Phone.css'
 import UserData from './UserData/UserData';
 import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
-import { full_name } from '../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
-import SideBarEffect from './SiderBar/SideBarEffect';
 
 
 const Home = () => {
@@ -42,41 +40,32 @@ const Home = () => {
             <>Erro</>
             :
             <section className='mainHome'>
-                {/* <div className='home'> */}
-
-                    {/* <div className='SideBar'> */}
-                    <SideBar />
-                    {/* </div> */}
-
-                    <div className='subjectNavBar'>
-
-                        <NavBar />
-
-                        <div className='scrollView HomeBackPhoneview' > 
-                       
-                            <div className='HomeMainContent '>
-                                <section >
-                                    <div className='userData' >
-                                        <UserData />
-                                    </div>
-                                </section>
-
-                                <section >
-                                    <div className='SubjectCaural'>
-                                        <SubjectCaural />
-                                    </div>
-                                </section>
-
-                            </div>
+                <SideBar />
+                <div className='subjectNavBar'>
+                    <NavBar />
+                    <div className='scrollView HomeBackPhoneview' style={{ overflowY: 'scroll' }}>
+                        <div className='HomeMainContent '>
                             <section >
-                                <div className='HomeMainFacultiContentPortion' style={{marginLeft:'0%'}}>
-                                    <FacultiCaursol />
+                                <div className='userData' >
+                                    <UserData />
                                 </div>
                             </section>
-                        </div>
-                    </div>
 
-                {/* </div> */}
+                            <section >
+                                <div className='SubjectCaural'>
+                                    <SubjectCaural />
+                                </div>
+                            </section>
+
+                        </div>
+                        <section >
+                            <div className='HomeMainFacultiContentPortion' style={{ marginLeft: '1%' }}>
+                                <FacultiCaursol />
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
             </section>
     );
 };

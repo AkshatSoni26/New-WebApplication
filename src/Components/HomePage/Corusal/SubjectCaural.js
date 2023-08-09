@@ -3,6 +3,7 @@ import { DefaultThumbnails, slogen } from '../../../Constants/Constants';
 import '../../../CSS/App.css'
 import { useNavigate } from 'react-router-dom';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+import HomeSubjectButton from './HomeSubjectButton';
 
 
 const SubjectCaural = () => {
@@ -12,9 +13,7 @@ const SubjectCaural = () => {
     const SubjectData = JSON.parse(localStorage.getItem('userData')).subjects
 
 
-    function SubjectPage(node_id) {
-        navigate(`/${node_id}`)
-    }
+    
 
     return (
         (!SubjectData)
@@ -22,28 +21,33 @@ const SubjectCaural = () => {
             <SpinnerFun />
             :
             <div>
-                <div className="startingPhrase ChapLec" style={{ marginLeft :"1%" }}>{slogen}</div>
+
+                <div className="startingPhrase ChapLec" style={{ marginLeft: "1%" }}>{slogen}</div>
 
                 {/* <div className='SubjectNames'> */}
-                <div className="container">
+                {/* <div className="Subjectcontainer"> */}
 
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" 
+                {/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" 
                     // style={{marginLeft:"4%"}}
-                    >
+                    > */}
+
+                <div className='container'>
+                    <div className='row'>
                         {
                             SubjectData.map(
                                 (data, index) => {
                                     return (
-                                        <div className="col">
+                                        // <div className="col">
 
-                                                <div key={index} onClick={() => SubjectPage(data.node_id)} className='subject col-md-4 col-sm-4 my-3' style={{width: "20vh"}}>
-                                                    <div className='innerSuvjectCaursalDiv' >
+                                        <div key={index}  className=' col-6 col-sm-6 col-md-6 col-lg-4 my-3 Testing' style={{ marginRight: "0%"}} >
+                                            {/* <div className='innerSuvjectCaursalDiv' >
                                                         <img className='subjectImages' src={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
                                                         <div className='LectureName'>{data.display_name}</div>
-                                                    </div>
-                                                </div>
-
+                                                    </div> */}
+                                        <HomeSubjectButton index={index} node_id={data.node_id} display_name={data.display_name} thumbnail={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
                                         </div>
+
+                                        // </div>
 
                                     )
                                 }
@@ -51,8 +55,6 @@ const SubjectCaural = () => {
                         }
                     </div>
                 </div>
-
-
             </div>
     );
 };

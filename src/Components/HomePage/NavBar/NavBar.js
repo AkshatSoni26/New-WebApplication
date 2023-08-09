@@ -30,7 +30,7 @@ function NavBar() {
                 <Navbar expand="lg" >
                     <Container className='' >
 
-                        <Navbar.Brand className='NavbarBrandHome' >
+                        <Navbar.Brand className='NavbarBrandHome NavbarBrandHomeMargin' >
 
                             <SideBarEffect />
 
@@ -54,6 +54,13 @@ function NavBar() {
                                         }
                                     )
                                 }
+
+                                    <hr />
+                                <NavDropdown.Item className='courseAdder'> 
+                                    {/* <div> */}
+                                        +
+                                    {/* </div> */}
+                                </NavDropdown.Item >
                             </NavDropdown>
 
                         </Navbar.Brand>

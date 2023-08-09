@@ -26,7 +26,7 @@
 
 /* DOM font family  and background color */
 
-html{
+html {
   background-color: var(--second-primary-color);
 }
 
@@ -108,13 +108,6 @@ img {
   /* align-items: center; */
 }
 
-
-.AttemptYear {
-  /* margin-left: 13%; */
-  /* height: 100vh; */
-  /* width:100%;   */
-  /* overflow-y: scroll; */
-}
 
 
 .Exam {
@@ -441,13 +434,13 @@ left: 20px; */
 .NavbarBrandHome {
   display: flex;
   align-items: center;
-  margin-left: 2%;
-  
+  /* margin-left: 2%; */
 }
 
 .scrollView {
-  overflow-y: scroll;
-  height: 89.7vh;
+  /* overflow-y: scroll; */
+  overflow-y: hidden;
+  height: 87.5vh;
   /* background-color: var(--second-primary-color); */
 }
 
@@ -463,6 +456,7 @@ left: 20px; */
   /* background-color: #FFF; */
   flex-direction: column;
 }
+
 .subjectCoursal {
   display: flex;
   flex-direction: row;
@@ -476,14 +470,27 @@ left: 20px; */
   margin-left: 4%;
 }
 
-.subjectCardClass{
-  margin-bottom: 2%;
+.subjectCardClass {
+  /* margin-bottom: 2%; */
   margin-left: 1%;
-  margin-top:2%; 
-  height: auto
+  margin-top: 1%;
+  height: auto;
 }
 
 
+.accordion-header .accordion-button:not(.collapsed){
+  color: none; 
+  background-color: none;
+  box-shadow: none;
+}
+
+
+.accordion-header .accordion-button:focus {
+  z-index: 3;
+  border-color: none;
+  /* outline: 0; */
+  box-shadow: var(--bs-accordion-btn-focus-box-shadow);
+}
 .subjectNavBar {
   margin-left: 300px;
   /* width: 79% */
@@ -663,9 +670,10 @@ div .react-multi-carousel-list {
   z-index: 200;
 }
 
-.col{
+.col {
   /* width: */
 }
+
 /*=---------------- Side Bar ------------------*/
 .index {
   margin-left: 20px;
@@ -698,21 +706,27 @@ div .react-multi-carousel-list {
 .logo_and_index {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 5%;
   width: 100%;
-  margin: 25%;
+  /* margin: 25%; */
   margin-top: 0%;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   margin-bottom: 0%;
   padding-top: 10%;
+  padding-left: 40px;
   height: auto;
   background-color: var(--second-primary-color);
 }
 
-/* .HomeSideBar {
-  height: 100%;
-} */
+.commonNavBarSub {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  align-content: center;
+  /* justify-content: center; */
+  align-items: center;
+}
 
 /*---------------------------------------------- Chapter ------------------------------*/
 
@@ -994,12 +1008,16 @@ p {
 
 
 .LectureName {
+
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+
   width: 100%;
+  color: #0D1015;
+
   word-wrap: break-word;
   /* margin-left: 5%; */
 }
@@ -1040,20 +1058,10 @@ p {
   margin-top: 1.2%;
 }
 
-
-
-
 .ProgressPart {
-  display: flex; 
+  display: flex;
   width: 100%
 }
-
-
-
-
-
-
-
 
 
 .HomeNavBar {
@@ -1148,10 +1156,11 @@ p {
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
+  margin-left: 2%;
 }
 
 .accordionBody {
-  max-height: 43vh;
+  max-height: 38vh;
   overflow-y: scroll;
   flex: 1;
 }
@@ -1247,16 +1256,16 @@ p {
   /* opacity: 0; */
 }
 
-.accordianImage2{
+.accordianImage2 {
   position: absolute;
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0, 0, 0, .4);
   height: 100%;
   border-radius: 5%;
   align-items: center;
-} 
+}
 
 
 .Trail {
@@ -1304,7 +1313,13 @@ p {
   padding-top: .005vh;
   padding-bottom: .05vh;
   z-index: 1;
-  border-radius: 5vh;
+  border-radius: 4px;
+
+  margin-bottom: 2%;
+  margin-right: 2%;
+
+  /* width: 34px
+height: 20px */
 
 }
 
@@ -1527,5 +1542,89 @@ div .ratio {
   background: #c7cbd1;
 }
 
+.courseAdder{
+  display: flex;
+  /* align-content: center; */
+  justify-content: center;
+  /* align-items: center; */
+}
+
+hr {
+  margin: 0.11rem 0;
+}
+
+.Subjectcontainer{
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+.NavbarBrandHomeMargin {
+  /* display: flex;
+  align-items: center; */
+  margin-left: 2%;
+}
+
+.HomeSubjectButtonImg{
+  width: 38.333128053851304px;
+height: 38.333128053851304px;
+}
+
+.HomeSubjectButton{
+  /* width: 150px;
+  height: 135px; */
+/* 
+  aspect-ratio: 150/135;
+
+  width: aspect-ratio*2;
+  height: aspect-ratio*2; */
+
+  width: 30vh;
+  height: 25vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+
+  padding-left: 5%;
+}
+
+.ProgressPart{
+  font-family: Lato;
+font-size: 12px;
+font-weight: 700;
+line-height: 14px;
+letter-spacing: 0.12em;
+text-align: left;
+
+font-family: Lato;
+font-size: 12px;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+
+font-family: Lato;
+font-size: 12px;
+font-weight: 700;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+color: #0D1015;
+}
+
+.SubjectName{
+  font-family: Lato;
+font-size: 16px;
+font-weight: 700;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+color: #0D1015;
+}
 
 
+/* .Testing{
+  margin-right: min(32px,5%);
+} */
