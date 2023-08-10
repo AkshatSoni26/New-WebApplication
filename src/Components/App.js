@@ -14,6 +14,7 @@ import GeneralPageError from './ErrorPages/GeneralPageError';
 import ErrorPages from './ErrorPages/ErrorPages';
 import Register from './Onboarding/Register'
 import Search from './Search/Search';
+import Enrollments from './Enrollments/Enrollments';
 
 
 
@@ -22,7 +23,7 @@ function App() {
     
     const navigate = useNavigate()
     
-    const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE, SEARCH_ROUTE } = FRONTEND_URLS
+    const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE, SEARCH_ROUTE, ENROLLMENTS } = FRONTEND_URLS
     
     const accessKey = localStorage.getItem('Access Key')
     const userData = localStorage.getItem('userData')
@@ -52,11 +53,12 @@ function App() {
 
                 <Route path={LOGIN_ROUTE} element={<LoginPage />} />
 
+                <Route path={ENROLLMENTS} element={<Enrollments />}/>
+
                 <Route path={HOME_ROUTE} element={<Home />} />
 
                 <Route path='/:subject' element={<SubjectPage />} />
                 <Route path='/:subject/:chapter/:video_id' element={<ChapterPage />} />
-                {/* <Route path='/:subject/:chapter/:ContentType/:video_id' element={<ChapterPage />} /> */}
 
                 <Route path='/:errorName' element={<GeneralPageError />} />
 

@@ -9,6 +9,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 
 import ToolBarlayout from './ToolBarlayout';
 import SpinnerFun from '../SpinnerFun/SpinnerFun';
+import Scroller from '../SpinnerFun/Scroller';
 
 
 
@@ -60,7 +61,7 @@ const PDFViewer = () => {
 
     return (
         fileUrl
-            ?
+            &&
             <div>
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                     <div
@@ -104,8 +105,8 @@ const PDFViewer = () => {
                     </div>
                 </Worker>
             </div>
-            :
-            <SpinnerFun />
+            // :
+            // <Scroller />  
     );
 };
 

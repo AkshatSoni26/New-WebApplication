@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import ChapterMainCom from './ChapterMainCom';
 import ChapterPageSideBarResponsivePart from './ChapterPageSideBar/ChapterPageSideBarResponsivePart';
+import Scroller from '../SpinnerFun/Scroller';
 
 
 const ChapterPage = () => {
@@ -20,6 +21,8 @@ const ChapterPage = () => {
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
     const access = localStorage.getItem('Access Key')
+
+    const data = localStorage.getItem('data')
 
     const navigate = useNavigate()
 
@@ -45,8 +48,6 @@ const ChapterPage = () => {
                 navigate(-1)
             }
 
-
-
             if (data) {
                 console.log(data)
 
@@ -69,10 +70,12 @@ const ChapterPage = () => {
                 }
             }
 
-        }, []
+        }, [data]
     )
 
     return (
+
+        data ?
 
         <section className='mainHome'>
 
@@ -82,14 +85,10 @@ const ChapterPage = () => {
                 <div className='scrollView'> 
                 <ChapterMainCom />
                 </div>
-            {/* <ChapterPageSideBarResponsivePart />
             
-            <div className='scrollView'>
-                <ChapterContentPortion />
-            </div> */}
-
-
         </section>
+        :
+        <Scroller />
     );
 };
 

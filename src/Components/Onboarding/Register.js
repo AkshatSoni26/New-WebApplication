@@ -34,7 +34,7 @@ const Register = () => {
             <div className='leftPortion'>
                 <RightSlider />
             </div>
-            <div className='rightPortion'>
+            <div className='rightPortion scrollingOnBording'>
 
                 { (!isName) && <Name setIsName={setIsName}/> }
 

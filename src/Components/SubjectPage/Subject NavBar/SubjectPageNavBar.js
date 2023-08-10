@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FRONTEND_URLS } from '../../Links/Config';
 import CommonNavBar from '../../CommonNavBar';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+import Scroller from '../../SpinnerFun/Scroller';
 
 const SubjectPageNavBar = ({ subjectId }) => {
 
@@ -25,13 +26,7 @@ const SubjectPageNavBar = ({ subjectId }) => {
   }, []);
 
   return (
-
-    !subjectName ?
-
-      <SpinnerFun />
-      :
-      <CommonNavBar name={subjectName} />
-
+    subjectName && <CommonNavBar name={subjectName} />
   );
 };
 

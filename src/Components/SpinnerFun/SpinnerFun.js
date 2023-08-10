@@ -1,16 +1,12 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
+import Scroller from './Scroller';
 
 const SpinnerFun = () => {
     return (
-        <div className='Spinner'
-        //  style={{
-        //     display: 'flex',
-        //     justifyContent: 'center',
-        //     alignContent: 'center'
-        // }} 
-            >
-            <Spinner animation="border" />
+        <div className='Spinner' >
+            
+            <Scroller />
         </div>
     )
 };

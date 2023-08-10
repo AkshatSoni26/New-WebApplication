@@ -11,6 +11,7 @@ import axios from 'axios';
 import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
 import SpinnerFun from '../SpinnerFun/SpinnerFun';
 import { useNavigate } from 'react-router-dom';
+import Scroller from '../SpinnerFun/Scroller';
 
 
 
@@ -71,8 +72,8 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
 
     return (
 
-        (Buttons)
-            ?
+        // (Buttons)
+        //     ?
             <div className="mainPage AttemptYear">
 
                 <OnBordText isName={str} startLine='Let’s customize your eSaral journey'/>
@@ -93,8 +94,8 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
                     </div>
                 </div>
             </div>
-            :
-            <SpinnerFun />
+            // :
+            // <Scroller />  
     );
 };
 

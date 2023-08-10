@@ -481,7 +481,6 @@ export function HomeCloseNav() {
   document.getElementById("main").style.marginLeft = "0";
   // document.getElementById("main").style.display ='none'
   OverlayOff() 
-
 }
 
 

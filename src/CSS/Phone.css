@@ -16,11 +16,11 @@
 
 
   /* DOM font family  and background color */
-  
+/*   
   html {
     font-family: var(--Primary-Font-Family);
     background-color: var(--secondary-Background-Color);
-  }
+  } */
   body {
     font-family: var(--Primary-Font-Family);
     background-color: var(--Primary-Background-Color);
@@ -175,19 +175,24 @@
     align-content: center;
   }
 
+  .HomeNavBar .container {
+    margin-left: 4%;
+    margin-right: 10%;
+    padding: 0%;
+  }
 
   /*-------------------------------------------Home--------------------------------------------------- */
   /*-------------------------- NavBar-------------------------  */
-  .HomeNavBar .container {
+
+  .HomePart .container {
     margin-left: 0%;
     margin-right: 10%;
     padding: 0%;
-
-  }
+}
 
   .HomeNavBar>nav {
-    padding-top: 2%;
-    padding-bottom: 3%;
+    /* padding-top: 2%;
+    padding-bottom: 3%; */
     --bs-navbar-brand-padding-y: 0rem;
   }
 
@@ -285,7 +290,7 @@
   color: var(--text-color);
   max-width: 314px;
   max-height: 433px;
-  top: 267px;
+  /* top: 267px; */
   /* left: 22px; */
   margin-bottom: -3%;
   padding-left: 5%;
@@ -353,6 +358,7 @@
   #main {
     transition: margin-left .5s;
     padding: 16px;
+    padding-left:0px;
   }
 
   .respHomeSide {
@@ -508,9 +514,11 @@
   }
 
   .HomeSubjectButton {
-    max-width: 30vh;
-    max-height: 17vh;
-    width: auto;
+    /* max-width: 30vh;
+    max-height: 25vh; */
+    /* aspect-ratio: 150/135; */
+    width: min(30vw, 150px);
+    height: 135px;
   }
 
   /*-----------------------------------------------Utility classes----------------------------------------- */

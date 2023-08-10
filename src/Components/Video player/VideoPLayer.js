@@ -6,6 +6,7 @@ import PDFViewer from "../PDFViewer/PDFViewer";
 import SpinnerFun from "../SpinnerFun/SpinnerFun";
 import { MDBContainer, MDBIframe } from "mdbreact";
 import { FRONTEND_URLS } from "../Links/Config";
+import Scroller from "../SpinnerFun/Scroller";
 
 // import "./styles.css";
 
@@ -20,13 +21,13 @@ export default function VideoPlayer() {
   // Extract the segments from the URL
   const urlSegments = currentUrl.split('/');
   var urlLastSegment = null
-  
-  try{
-     urlLastSegment = urlSegments[urlSegments.length - 1]
+
+  try {
+    urlLastSegment = urlSegments[urlSegments.length - 1]
   }
 
-  catch(err) {
-    console.log('err',err)
+  catch (err) {
+    console.log('err', err)
     navigate(FRONTEND_URLS.LOGIN_ROUTE)
   }
 
@@ -61,8 +62,8 @@ export default function VideoPlayer() {
       <PDFViewer />
       // <>Loading......</>
       :
-      vidInfo?.otp
-        ?
+     vidInfo?.otp
+        &&
         <div className="ratio ratio-16x9" >
           {urlLastSegment && ChapterScroll(urlLastSegment)}
 
@@ -74,10 +75,8 @@ export default function VideoPlayer() {
             allowFullScreen
           ></iframe>
 
-
         </div>
-        :
-
-        <SpinnerFun />
+        
+        // <Scroller />
   );
 }

@@ -7,6 +7,8 @@ import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
 import { FiSearch } from 'react-icons/fi'
 import SideBarEffect from '../SiderBar/SideBarEffect';
+import Scroller from '../../SpinnerFun/Scroller';
+import { FRONTEND_URLS } from '../../Links/Config';
 
 
 
@@ -24,9 +26,10 @@ function NavBar() {
 
     return (
         (!courses) ?
-            <SpinnerFun />
+        <Scroller />  
             :
-            <div className='HomeNavBar'>
+            <div className='HomeNavBar HomePart'>
+                
                 <Navbar expand="lg" >
                     <Container className='' >
 
@@ -56,10 +59,8 @@ function NavBar() {
                                 }
 
                                     <hr />
-                                <NavDropdown.Item className='courseAdder'> 
-                                    {/* <div> */}
+                                <NavDropdown.Item className='courseAdder' onClick={() => {navigate(FRONTEND_URLS.ENROLLMENTS)}}> 
                                         +
-                                    {/* </div> */}
                                 </NavDropdown.Item >
                             </NavDropdown>
 

@@ -26,9 +26,9 @@
 
 /* DOM font family  and background color */
 
-html {
+/* html {
   background-color: var(--second-primary-color);
-}
+} */
 
 body {
   font-family: var(--Primary-Font-Family);
@@ -478,8 +478,8 @@ left: 20px; */
 }
 
 
-.accordion-header .accordion-button:not(.collapsed){
-  color: none; 
+.accordion-header .accordion-button:not(.collapsed) {
+  color: none;
   background-color: none;
   box-shadow: none;
 }
@@ -491,6 +491,7 @@ left: 20px; */
   /* outline: 0; */
   box-shadow: var(--bs-accordion-btn-focus-box-shadow);
 }
+
 .subjectNavBar {
   margin-left: 300px;
   /* width: 79% */
@@ -1542,7 +1543,7 @@ div .ratio {
   background: #c7cbd1;
 }
 
-.courseAdder{
+.courseAdder {
   display: flex;
   /* align-content: center; */
   justify-content: center;
@@ -1553,7 +1554,7 @@ hr {
   margin: 0.11rem 0;
 }
 
-.Subjectcontainer{
+.Subjectcontainer {
   display: flex;
   justify-content: space-between;
   /* flex-wrap: wrap; */
@@ -1565,15 +1566,15 @@ hr {
   margin-left: 2%;
 }
 
-.HomeSubjectButtonImg{
+.HomeSubjectButtonImg {
   width: 38.333128053851304px;
-height: 38.333128053851304px;
+  height: 38.333128053851304px;
 }
 
-.HomeSubjectButton{
+.HomeSubjectButton {
   /* width: 150px;
   height: 135px; */
-/* 
+  /* 
   aspect-ratio: 150/135;
 
   width: aspect-ratio*2;
@@ -1590,41 +1591,93 @@ height: 38.333128053851304px;
   padding-left: 5%;
 }
 
-.ProgressPart{
+.ProgressPart {
   font-family: Lato;
-font-size: 12px;
-font-weight: 700;
-line-height: 14px;
-letter-spacing: 0.12em;
-text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-align: left;
 
-font-family: Lato;
-font-size: 12px;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
 
-font-family: Lato;
-font-size: 12px;
-font-weight: 700;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-color: #0D1015;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
 }
 
-.SubjectName{
+.SubjectName {
   font-family: Lato;
-font-size: 16px;
-font-weight: 700;
-line-height: 19px;
-letter-spacing: 0em;
-text-align: left;
-color: #0D1015;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0D1015;
 }
 
 
 /* .Testing{
   margin-right: min(32px,5%);
 } */
+
+.SpinnerCSS {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollingOnBording {
+  overflow-y: scroll;
+}
+
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 1;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+
+.NewEnrollments{
+  background-color: var(--second-primary-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Enrollments {
+  padding-top: 1%;
+  background-color: var(--second-primary-color);
+  /* width: 32%; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

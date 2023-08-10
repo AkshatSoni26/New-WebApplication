@@ -18,5 +18,6 @@ export const FRONTEND_URLS = {
     LOGIN_ROUTE: '/login',
     HOME_ROUTE:'/',
     REGISTER_ROUTE:'/Register',
-    SEARCH_ROUTE:'/search'
+    SEARCH_ROUTE:'/search',
+    ENROLLMENTS:'/enrollment'
 }

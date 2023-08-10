@@ -4,6 +4,7 @@ import '../../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../../Links/Config';
 import { useLocation } from 'react-router-dom';
+import {AiOutlineArrowRight } from 'react-icons/ai'
 
 const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
@@ -86,7 +87,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
             >
 
                 <div style={{ color: '#fff' }}>
-                    Continue <LuArrowLeft color='#fff' />
+                    Continue <AiOutlineArrowRight  color='#fff' />
                 </div>
 
             </button>

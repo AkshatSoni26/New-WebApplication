@@ -13,8 +13,6 @@ const SideBarEffect = () => {
 
     const { size, color } = MenuBarIcon
 
-    
-
     return (
         <>
         

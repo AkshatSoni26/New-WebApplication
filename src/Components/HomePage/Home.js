@@ -9,6 +9,7 @@ import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
+import Scroller from '../SpinnerFun/Scroller';
 
 
 const Home = () => {
@@ -26,7 +27,6 @@ const Home = () => {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
 
-
             if (!userData || userData == null || userData == undefined) {
                 navigate(FRONTEND_URLS.LOGIN_ROUTE)
             }
@@ -37,8 +37,9 @@ const Home = () => {
     return (
         (!userData)
             ?
-            <>Erro</>
+            <Scroller />  
             :
+            // <Scroller />    
             <section className='mainHome'>
                 <SideBar />
                 <div className='subjectNavBar'>

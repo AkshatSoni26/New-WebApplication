@@ -14,29 +14,26 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
   return (
     <div>
       <div className="chapterHeader">
-        <button onClick={
-          () => {
-            ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
-          }
-        }
-          className='subject chapterHeaderButton'>
-          <div 
-            className="ProgressPart"
-              >
-           
 
-            <div className="ChapLec">
+        <div className=' chapterHeaderButton'>
+
+          <div className=" subject ProgressPart" >
+            <div className="ChapLec" onClick={ () => {
+            ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
+          }}  >
               <div className="chapterName">{display_name}</div>
               <div className="lecturesLength">Lectures: {lecLen}</div>
             </div>
           </div>
 
 
-          <div className="rightArrow">
+          <div className="rightArrow subject" onClick={ () => {
+            ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
+          }}  >
             <BsChevronRight size={24} />
           </div>
 
-        </button>
+        </div>
       </div>
     </div>
   );
