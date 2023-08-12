@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
 import { OTPSender, verifiOTP } from '../../Functions/Services';
 import { FRONTEND_URLS } from '../../Links/Config';
-import InputField from '../../Onboarding/Components/InputField';
 import ButtonText from '../Comp/ButtonText';
 import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
 import flag from '../../../Images/india-flag.png'
 import CountdownTimer from './CountdownTimer';
 import { OtpTimer } from '../../../Constants/Constants';
- 
+import { InputBox } from '../../Parts/InputBox';
+
+
 
 function PhoneNumber() {
 
@@ -48,11 +49,6 @@ function PhoneNumber() {
 
 
   function OtpPageBack() {
-    // setOtpSend(false);
-    // setOtp('')
-    // const mess = document.getElementById("mess");
-    // mess.innerHTML = '';
-
     window.location.reload()
   }
 
@@ -64,24 +60,15 @@ function PhoneNumber() {
       ?
       (
         <>
-          <div className='mainPage'>
+          <div className='mainPage PhoneNumberTrial'>
 
             <div className='nameAskingSection'>
-
               <div className='nameQue'> Enter Phone Number </div>
               <div className='messageSec'> We’ll send you an OTP for verification. </div>
-
-              <div className='CountryAndPhoneNumber' >
-
-                <div id="country_code" className="countryCode">
-                  <div > +91    </div>
-                  <img src={flag} className='FlagClass' />
-                </div>
-                <input autoFocus={true} ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' id='PhoneInput' className='focused_input phoneNumberInput' />
-              </div>
+              <InputBox PhoneRef={PhoneRef} />
+              <div id='mess'></div>
             </div>
 
-            <div id='mess'></div>
 
             <div className="buttonclass extraPho">
               <div className='TermsAndCond'> By continuing, you agree to our <a href='https://www.esaral.com/terms-and-condition/'>Terms and Conditions.</a> </div>

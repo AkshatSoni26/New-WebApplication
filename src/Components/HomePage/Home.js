@@ -4,13 +4,14 @@ import SideBar from './SiderBar/SideBar';
 import '../../CSS/App.css'
 import '../../CSS/Tab.css'
 import '../../CSS/Phone.css'
-import UserData from './UserData/UserData';
 import FacultiCaursol from './Corusal/FacultiCaursol';
 import SubjectCaural from './Corusal/SubjectCaural';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
 import Scroller from '../SpinnerFun/Scroller';
 import SelectionCoursal from './Corusal/SelectionCoursal';
+import HomeComp from '../Manu Bar/HomeComp';
+import MyAccount from '../Manu Bar/MyAccount';
 
 
 const Home = () => {
@@ -40,42 +41,12 @@ const Home = () => {
             ?
             <Scroller />
             :
-            // <Scroller />    
             <section className='mainHome'>
                 <SideBar />
                 <div className='subjectNavBar'>
                     <NavBar />
-                    <div className='scrollView HomeBackPhoneview HomeScrollProb'  style={{ overflowY: 'scroll'}}>
-                        <div className='ViewPortProblem'>
-                            <div className='HomeMainContent '>
-                                <section >
-                                    <div className='userData' >
-                                        <UserData />
-                                    </div>
-                                </section>
-
-                                <section >
-                                    <div className='SubjectCaural'>
-                                        <SubjectCaural />
-                                    </div>
-                                </section>
-
-                            </div>
-
-                            <section >
-                                <div className='HomeMainFacultiContentPortion HomeMainFacultiContentPortionStyle'>
-                                    <FacultiCaursol />
-                                </div>
-                            </section>
-
-                            <section >
-                                <div className='HomeMainFacultiContentPortion HomeMainFacultiContentPortionStyle'>
-                                    <SelectionCoursal />
-                                </div>
-                            </section>
-
-                        </div>
-                    </div>
+                    {/* <HomeComp /> */}
+                    <MyAccount />
                 </div>
 
             </section>

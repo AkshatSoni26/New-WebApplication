@@ -70,6 +70,7 @@ export const DefaultThumbnails = {
 const varSize =20
 export const alert_circle = `<svg xmlns="http://www.w3.org/2000/svg" width=${varSize} height=${varSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`
 
+export const editBut = <svg xmlns="http://www.w3.org/2000/svg" width={varSize} height={varSize} viewBox="0 0 24 24" fill="none" stroke="#5F46E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
 
 //----------------------------------------------------------------- // 
 export const NoResult = 'Content for this section is not ready at the moment. Please check later.'
