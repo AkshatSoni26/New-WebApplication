@@ -79,10 +79,10 @@ const ChapterPage = () => {
 
         <section className='mainHome'>
 
-            <div className='ChapterNav'>
+            <div className='ChapterNav '>
                 <ChapterPageNavBar />
             </div>
-                <div className='scrollView'> 
+                <div className='scrollView subjectPageScollPro' > 
                 <ChapterMainCom />
                 </div>
             
@@ -93,5 +93,6 @@ const ChapterPage = () => {
 };
 
 export default memo(ChapterPage);
+
 
 

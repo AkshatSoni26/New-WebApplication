@@ -7,8 +7,6 @@ const CountdownTimer = ({ phoneNumber, setOtpSend, setNonce, setErro, redirect, 
     const [counter, setCounter] = useState(OtpTimer)
     const [ResendClick, setResendClick] = useState(false)
 
-    // var a = 0
-
     useEffect(
         () => {
             if (ResendClick == true)
@@ -19,30 +17,12 @@ const CountdownTimer = ({ phoneNumber, setOtpSend, setNonce, setErro, redirect, 
         }, [ContactUs, ResendClick]
     )
 
-    // useEffect(
-    //     () => {
-    //         counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-    //     }, [counter]
-    // )
-
     useEffect(
         () => {
-
-            
                 counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-                // console.log('Resend Button Click', )
                 console.log("counter", counter)
-            
-
         }, [counter]
     )
-
-    // function trial() {
-    //     if (!ResendClick) {
-    //         setResendClick(true)
-    //         console.log('Resend button click')
-    //     }
-    // }
 
     return (
         <div>
@@ -50,7 +30,6 @@ const CountdownTimer = ({ phoneNumber, setOtpSend, setNonce, setErro, redirect, 
                 (counter == 0)
                     ?
                     <a className='OtpNotRecieveBut' style={{ width: "0%" }} onClick={() => {
-                        // !ResendClick && trial()
                         setResendClick(true)
                         OTPSender(phoneNumber, setOtpSend, setNonce, setErro, redirect, setCounter);
                     }}> Resend</a>

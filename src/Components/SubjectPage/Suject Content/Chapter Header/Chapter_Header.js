@@ -17,7 +17,7 @@ const Chapter_Header = ({ chapterId, subjectId, display_name, lecLen, init_video
 
         <div className=' chapterHeaderButton'>
 
-          <div className=" subject ProgressPart" >
+          <div className=" subject ProgressPart" style={{marginBottom:'0%', paddingTop:'0'}}>
             <div className="ChapLec" onClick={ () => {
             ChapterNavigator(subjectId, chapterId, navigate, init_video_id)
           }}  >

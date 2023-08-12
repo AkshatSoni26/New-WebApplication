@@ -33,6 +33,15 @@ function App() {
     useEffect(
         () => {
 
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('mousedown', (e) => {
+                    e.preventDefault();
+                });
+
+            });
+           
+
             if (!accessKey || accessKey == null || accessKey == undefined) {
                 localStorage.clear()
                navigate(FRONTEND_URLS.LOGIN_ROUTE)

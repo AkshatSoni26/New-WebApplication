@@ -11,16 +11,10 @@
   --Primary-Background-Color: #F8F8F8;
   --primary-color: #5F46E3;
   --second-primary-color: #fff;
-
   --ChaptePageButtons-color: #333A47;
-
   --error-color: #CC2C2C;
-
-
   --text-color: #0D1015;
-
   --SubjectIndexTab-color: #060D21;
-
 }
 
 
@@ -33,6 +27,9 @@
 body {
   font-family: var(--Primary-Font-Family);
   background-color: var(--Primary-Background-Color);
+  user-select: none;
+  height: 100%;
+  width: 100%;
 }
 
 img {
@@ -440,7 +437,7 @@ left: 20px; */
 .scrollView {
   /* overflow-y: scroll; */
   overflow-y: hidden;
-  height: 87.5vh;
+  height: 88vh;
   /* background-color: var(--second-primary-color); */
 }
 
@@ -464,6 +461,7 @@ left: 20px; */
   margin-bottom: 7%;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  padding-bottom: 5%;
 }
 
 .ChapLec {
@@ -1178,10 +1176,16 @@ p {
   padding-bottom: 1%;
 }
 
+.ChaptrSide,
+.ChapterCon {
+  height: 86.3vh;
+  overflow-y: hidden;
+}
+
 .ChapterCon {
   background-color: #FFF;
   width: 69vw;
-  height: 86vh;
+
   margin-top: 3vh;
   margin-left: 1vw;
   overflow-y: hidden;
@@ -1307,21 +1311,21 @@ p {
 
 .videoTime {
   position: relative;
-  color: #FFF;
+  color: var(--second-primary-color);
   background-color: rgba(13, 16, 21, 0.66);
-  padding-left: .5vw;
-  padding-right: .5vw;
-  padding-top: .005vh;
-  padding-bottom: .05vh;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0.005vh;
+  padding-bottom: 0.05vh;
   z-index: 1;
   border-radius: 4px;
-
   margin-bottom: 2%;
   margin-right: 2%;
-
-  /* width: 34px
-height: 20px */
-
 }
 
 
@@ -1471,16 +1475,7 @@ div .ratio {
   letter-spacing: 0em;
   text-align: center;
 
-
 }
-
-
-
-
-
-
-
-
 
 @media screen and (min-width:480px) and (max-width:1000px) {
 
@@ -1572,23 +1567,14 @@ hr {
 }
 
 .HomeSubjectButton {
-  /* width: 150px;
-  height: 135px; */
-  /* 
-  aspect-ratio: 150/135;
-
-  width: aspect-ratio*2;
-  height: aspect-ratio*2; */
-
   width: 30vh;
-  height: 25vh;
-
+  height: 28vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   border-radius: 20px;
-
-  padding-left: 5%;
+  padding: 7%;
+  padding-top: 3%;
 }
 
 .ProgressPart {
@@ -1665,12 +1651,12 @@ hr {
   /* Add a pointer on hover */
 }
 
-.NewEnrollments{
+.NewEnrollments {
   background-color: var(--second-primary-color);
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .Enrollments {
@@ -1680,4 +1666,129 @@ hr {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* .webView{
+  display: flex;
+}
+
+.phoneView{
+  display: none;
+} */
+
+.plusBut {
+  width: 100%;
+  height: 100vh;
+  padding: 0%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--second-primary-color);
+}
+
+.plusBut .Exam {
+  margin-left: 0%;
+}
+
+.AddNew {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+
+.ViewPortProblem {
+  height: 100vh;
+}
+
+.HomeMainFacultiContentPortionStyle {
+  margin-left: 1%;
+  margin-top: 1%;
+  padding-bottom: 4%;
+}
+
+.HomeSubjectButtonImg,
+.HomeSubjectButtonImg .ProgressPart {
+  margin-top: 6%;
+  /* margin-bottom:1%; */
+  height: auto;
+}
+
+.SubjectName {
+  height: 59px;
+  padding-top: 6%;
+  display: flex;
+  align-items: center;
+}
+
+.HomeSubjectButtonImg {
+  margin-top: 10%;
+}
+
+.ProgressPart {
+  padding-top: 10%;
+}
+
+
+
+
+.SubjectProgress {
+  width: 100%;
+  height: 6%;
+  /* border-style: solid; */
+  /* border-color: black; */
+  border-radius: 60px;
+  background-color: rgba(13, 16, 21, 0.08);
+  margin-top: 8%;
+}
+
+.SubjectProgressPart {
+  background-color: aqua;
+  width: 80%;
+  height: 100%;
+  border-radius: 60px;
+}
+
+.HomeSubjectButtonImgSize {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 10%;
+  margin-top: 7%;
+}
+
+.subectNav {
+  margin-left: 1%;
+}
+
+.facultiStyle {
+  /* height: 0px; */
+  padding-top: 0%
+}
+
+.HomeScrollProblem {
+  overflow-y: scroll;
+  height: 90vh
+}
+
+.SubjectScrollProbl {
+  height: 89vh;
+}
+
+.subjectPageScollPro {
+  height: 88vh
+}
+
+.HomeScrollProb {
+  height: 91vh;
+}
+
+.FlagClass {
+  width: 2em;
+  height: auto;
+  padding-left: 8%
 }

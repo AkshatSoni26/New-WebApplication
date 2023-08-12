@@ -197,7 +197,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       // localStorage.setItem('Access Key', access)
 
-      if (is_course_assigned == true) {
+      if (is_course_assigned == false) {
         Register(access, navigate,first_name);
         localStorage.setItem('reg', 'register')
       } 
@@ -490,4 +490,10 @@ export function OverlayOn() {
 
 export function OverlayOff() {
   document.getElementById("overlay").style.display = "none";
+}
+
+//--------------------------------- Logout Function ----------------------------------------------------//
+export function Logout() {
+  localStorage.clear();
+  window.location.reload(true);
 }

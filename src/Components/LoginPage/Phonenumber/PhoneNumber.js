@@ -9,11 +9,7 @@ import { IoIosArrowBack } from 'react-icons/io'
 import flag from '../../../Images/india-flag.png'
 import CountdownTimer from './CountdownTimer';
 import { OtpTimer } from '../../../Constants/Constants';
-
-
-
-
-
+ 
 
 function PhoneNumber() {
 
@@ -52,10 +48,12 @@ function PhoneNumber() {
 
 
   function OtpPageBack() {
-    setOtpSend(false);
-    setOtp('')
-    const mess = document.getElementById("mess");
-    mess.innerHTML = '';
+    // setOtpSend(false);
+    // setOtp('')
+    // const mess = document.getElementById("mess");
+    // mess.innerHTML = '';
+
+    window.location.reload()
   }
 
 
@@ -68,8 +66,6 @@ function PhoneNumber() {
         <>
           <div className='mainPage'>
 
-            {/* <OnBordText isName='Hi 👋' /> */}
-
             <div className='nameAskingSection'>
 
               <div className='nameQue'> Enter Phone Number </div>
@@ -79,7 +75,7 @@ function PhoneNumber() {
 
                 <div id="country_code" className="countryCode">
                   <div > +91    </div>
-                  <img src={flag} style={{ width: "2em", height: "auto" }} />
+                  <img src={flag} className='FlagClass' />
                 </div>
                 <input autoFocus={true} ref={PhoneRef} maxLength="10" type="text" placeholder='Enter your Phone Number here.' id='PhoneInput' className='focused_input phoneNumberInput' />
               </div>
@@ -88,9 +84,7 @@ function PhoneNumber() {
             <div id='mess'></div>
 
             <div className="buttonclass extraPho">
-
               <div className='TermsAndCond'> By continuing, you agree to our <a href='https://www.esaral.com/terms-and-condition/'>Terms and Conditions.</a> </div>
-
               <button className='btn buttonBAckground' type="submit"
                 onClick={() => {
                   OTPSender(PhoneRef.current.value, setOtpSend, setNonce, setErro, redirect)
@@ -100,25 +94,16 @@ function PhoneNumber() {
               >
                 <ButtonText />
               </button>
-
-
             </div>
-
           </div>
         </>
       )
       :
-
       (
         <>
 
           <div className='mainPage '>
-            {console.log('OtpRef', otp)}
-
-            {/* <InputField inputRef={OtpRef} Que='Verify OTP' OtpNotRecieve={`Didn’t recieve the OTP? ${anc}`} messSec={`OTP sent to +91 ${phoneNumber}.`} variable={'OTP'} /> */}
-
             <div className='nameAskingSection'>
-
               <div className='OtpBackBut'>
                 <button className='subject' onClick={OtpPageBack}>
                   <IoIosArrowBack size={30} color='black' />
@@ -135,7 +120,6 @@ function PhoneNumber() {
                 numInputs={4}
                 inputStyle='Otp_Box'
                 containerStyle='Otp_Conta'
-                // renderSeparator={<span></span>}
                 shouldAutoFocus={true}
                 renderInput={(props) => <input {...props} />}
               />
@@ -145,11 +129,11 @@ function PhoneNumber() {
             <div id='mess'></div>
 
             <div className='OtpNotRecieve'>Didn’t recieve the OTP? &nbsp;
-              <CountdownTimer phoneNumber={phoneNumber} setOtpSend={setOtpSend} setNonce={setNonce} setErro={setErro} redirect={redirect} ContactUs={ContactUs} setContactUs={setContactUs}/>
+              <CountdownTimer phoneNumber={phoneNumber} setOtpSend={setOtpSend} setNonce={setNonce} setErro={setErro} redirect={redirect} ContactUs={ContactUs} setContactUs={setContactUs} />
             </div>
 
             {
-              (ContactUs == 0) && 
+              (ContactUs == 0) &&
               <div className='OtpNotRecieve'>
                 Still facing difficulties? &nbsp; <a className='OtpNotRecieveBut' href='https://www.esaral.com/contact '>  Contact Us</a>
               </div>

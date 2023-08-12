@@ -196,6 +196,16 @@
     --bs-navbar-brand-padding-y: 0rem;
   }
 
+  .HomeNavBar> .navbar {
+    /* --bs-navbar-padding-x: 0; */
+   --bs-navbar-padding-y: 0rem;
+  }
+
+  .HomeMainFacultiContentPortionStyle{
+    margin-left: 0%;
+  }
+
+
   /*-------------------------- Subject Portion-------------------------  */
 
   .HomeBackPhoneview{
@@ -340,6 +350,15 @@
     /* Add a pointer on hover */
   }
 
+  .Testing {
+    margin-left: -1%;
+  }
+
+  .SubjectScrollProbl{
+    height: 92vh;
+}
+
+
   /*-----------------------------------------------Side Bar Menu ----------------------------------------- */
   .openbtn {
     font-size: 20px;
@@ -435,6 +454,21 @@
     color: #f1f1f1;
   }
 
+  .subectNav{
+    margin-left: 0%;
+  }
+
+  .ProgressPart {
+    padding-top: 0%;
+  }
+
+  .SubjectName {
+    height: 59px;
+    padding-top: 0%;
+    display: flex;
+    align-items: center;
+  }
+
   /*-----------------------------------------------Chapter Portion ----------------------------------------- */
 
   .ChapterNav {
@@ -513,13 +547,32 @@
     height: auto;
   }
 
+  .NoResultText, .NoResultText:focus {
+    width: 200px;
+  }
+  /* .SearchInputBox:focus{
+    width: 100px;
+  } */
+
   .HomeSubjectButton {
     /* max-width: 30vh;
     max-height: 25vh; */
     /* aspect-ratio: 150/135; */
-    width: min(30vw, 150px);
-    height: 135px;
-  }
+    width: 20vh;
+    height: 24vh;
+}
+  
+
+  .NewEnrollments, .Enrollments {
+    display: none
+}
+
+/* .webView{
+  display: none;
+}
+.phoneView{
+  display: flex;
+} */
 
   /*-----------------------------------------------Utility classes----------------------------------------- */
   .container {

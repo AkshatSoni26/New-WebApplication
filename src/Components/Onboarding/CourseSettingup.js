@@ -4,7 +4,6 @@ import LottieImgComp from './Components/LottieImgComp';
 import '../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../Links/Config';
-import { PiCrownSimple } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { UserData } from '../Functions/Services';
 

@@ -104,14 +104,14 @@ const SubjectPage = () => {
                     (SubData.length > 1) &&
                     <>
                         <SubjectSideBar />
-
+                        
                         <div className='subjectNavBar'>
-                            <div className='subjectOverlay'>
+                            <div className='subjectOverlay ChapterNav subectNav'>
                                 {(subjectId) && <SubjectPageNavBar subjectId={subjectId} />}
                             </div>
 
                             {/* <div className='HomeMainContent '> */}
-                            <section className='scrollView' style={{overflowY:'scroll'}}>
+                            <section className='scrollView SubjectScrollProbl' style={{overflowY:'scroll', }}>
                                 {(subjectId) && <SubjectContent subjectId={subjectId} setTabIndexBut={setTabIndexBut} />}
                             </section>
 
@@ -143,3 +143,5 @@ const SubjectPage = () => {
 };
 
 export default SubjectPage;
+
+    

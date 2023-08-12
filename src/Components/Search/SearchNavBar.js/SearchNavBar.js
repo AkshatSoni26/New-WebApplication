@@ -39,7 +39,7 @@ const SearchNavBar = ({ setData, setErr, setSearhed }) => {
                     </span>
 
                     <div className='searchBar'>
-                        <input placeholder={SearchPlacholder} className='serachInput NoResultText ' style={{ textAlign: 'left' }} ref={inputRef} tabIndex="1" />
+                        <input placeholder={SearchPlacholder} className='serachInput NoResultText SearchInputBox' style={{ textAlign: 'left' }} ref={inputRef} tabIndex="1" />
                     </div>
 
                     <div className='HomeNavContanier'>

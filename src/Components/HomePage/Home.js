@@ -10,6 +10,7 @@ import SubjectCaural from './Corusal/SubjectCaural';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
 import Scroller from '../SpinnerFun/Scroller';
+import SelectionCoursal from './Corusal/SelectionCoursal';
 
 
 const Home = () => {
@@ -37,33 +38,43 @@ const Home = () => {
     return (
         (!userData)
             ?
-            <Scroller />  
+            <Scroller />
             :
             // <Scroller />    
             <section className='mainHome'>
                 <SideBar />
                 <div className='subjectNavBar'>
                     <NavBar />
-                    <div className='scrollView HomeBackPhoneview' style={{ overflowY: 'scroll' }}>
-                        <div className='HomeMainContent '>
+                    <div className='scrollView HomeBackPhoneview HomeScrollProb'  style={{ overflowY: 'scroll'}}>
+                        <div className='ViewPortProblem'>
+                            <div className='HomeMainContent '>
+                                <section >
+                                    <div className='userData' >
+                                        <UserData />
+                                    </div>
+                                </section>
+
+                                <section >
+                                    <div className='SubjectCaural'>
+                                        <SubjectCaural />
+                                    </div>
+                                </section>
+
+                            </div>
+
                             <section >
-                                <div className='userData' >
-                                    <UserData />
+                                <div className='HomeMainFacultiContentPortion HomeMainFacultiContentPortionStyle'>
+                                    <FacultiCaursol />
                                 </div>
                             </section>
 
                             <section >
-                                <div className='SubjectCaural'>
-                                    <SubjectCaural />
+                                <div className='HomeMainFacultiContentPortion HomeMainFacultiContentPortionStyle'>
+                                    <SelectionCoursal />
                                 </div>
                             </section>
 
                         </div>
-                        <section >
-                            <div className='HomeMainFacultiContentPortion' style={{ marginLeft: '1%' }}>
-                                <FacultiCaursol />
-                            </div>
-                        </section>
                     </div>
                 </div>
 

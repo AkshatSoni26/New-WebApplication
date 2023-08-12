@@ -60,6 +60,14 @@
       width: 360px;
     }
 
+    /* .webView{
+      display: none;
+    }
+
+    .phoneView{
+      display: flex;
+    } */
+
   /*-------------------------------------------Home--------------------------------------------------- */
     /*-------------------------- NavBar-------------------------  */
     .HomeNavBar {
@@ -87,6 +95,18 @@
       display: none;
     }
 
+    .HomeMainFacultiContentPortion {
+      margin-left: 0%;
+    }
+
+    /* .navbarScrollingDropdown{
+      display: none;
+    } */
+
+    /* #navbarScrollingDropdown .dropdown-menu.show {
+      display: none;
+    } */
+
     /*-------------------------- Subject Portion-------------------------  */
 
     .container>.row>.col {
@@ -106,6 +126,7 @@
       width: 23vh;
       border-radius: 5%;
     }
+    
 
     /*-------------------------- Faculti Potion-------------------------  */
     div .react-multi-carousel-list {
@@ -157,20 +178,9 @@
     }
 
     .HomeSubjectButton {
-      width: min(30vw, 150px);
-      height: 25vh;
+    min-width: 70px;
+      max-height: 35vh;
       }
-    
-
-    
-  
-
-
-
-
-
-
-
 
     .respHomeSide {
       display: flex;
@@ -322,6 +332,14 @@
       /* transition: all 2s ease 5s; */
     }
 
+    .subectNav{
+      margin-left: 0%;
+    }
+
+    /* .ProgressPart {
+      padding-top: 10%;
+    } */
+
 
     /*----------------------------------------------Chapter Classes----------------------------------------- */
 
@@ -331,6 +349,11 @@
 
 
 
+    .HomeScrollProblem{
+      height: 88vh
+    }
+
+    .subjectPageScollPro{height: 89vh}
 
     /*-----------------------------------------------Utility classes----------------------------------------- */
     .container {

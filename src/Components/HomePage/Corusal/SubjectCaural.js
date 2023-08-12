@@ -22,8 +22,13 @@ const SubjectCaural = () => {
                         SubjectData.map(
                             (data, index) => {
                                 return (
-                                        <div key={index} className=' col-6 col-sm-6 col-md-6 col-lg-4 my-3 Testing' style={{ marginRight: "0%" }} >
-                                        <HomeSubjectButton index={index} node_id={data.node_id} display_name={data.display_name} thumbnail={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
+                                        <div key={index} className='Testing col-6 col-sm-6 col-md-6 col-lg-4 my-2 '>
+                                        <HomeSubjectButton index={index} 
+                                        node_id={data.node_id} 
+                                        display_name={data.display_name} 
+                                        content_consumed_in_sec={data.content_consumed_in_sec}
+                                        total_duration_in_sec = {data.total_duration_in_sec}
+                                        thumbnail={data.thumbnail ? data.thumbnail : DefaultThumbnails.video} />
                                     </div>
                                 )
                             }

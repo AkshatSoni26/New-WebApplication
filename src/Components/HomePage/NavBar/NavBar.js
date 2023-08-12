@@ -26,10 +26,10 @@ function NavBar() {
 
     return (
         (!courses) ?
-        <Scroller />  
+            <Scroller />
             :
             <div className='HomeNavBar HomePart'>
-                
+
                 <Navbar expand="lg" >
                     <Container className='' >
 
@@ -38,30 +38,29 @@ function NavBar() {
                             <SideBarEffect />
 
                             <NavDropdown title={`${current_course}`} id="navbarScrollingDropdown">
-                                {
-                                    courses.map(
-                                        (course, index) => {
-                                            return (
-                                                !course.is_current ?
-                                                    <NavDropdown.Item
-                                                        onClick={() => CourseSwitcher(course.phase_id, course.subcourses[0].id, navigate)}
-
-                                                        key={index}>
-
-                                                        {course.course_name}
-
-                                                    </NavDropdown.Item >
-                                                    :
-                                                    null
-                                            )
-                                        }
-                                    )
-                                }
+                                <div className='navbarScrollingDropdown'>
+                                    {
+                                        courses.map(
+                                            (course, index) => {
+                                                return (
+                                                    !course.is_current ?
+                                                        <NavDropdown.Item
+                                                            onClick={() => CourseSwitcher(course.phase_id, course.subcourses[0].id, navigate)}
+                                                            key={index}>
+                                                            {course.course_name}
+                                                        </NavDropdown.Item >
+                                                        :
+                                                        null
+                                                )
+                                            }
+                                        )
+                                    }
 
                                     <hr />
-                                <NavDropdown.Item className='courseAdder' onClick={() => {navigate(FRONTEND_URLS.ENROLLMENTS)}}> 
-                                        +
-                                </NavDropdown.Item >
+                                    <NavDropdown.Item className='courseAdder AddNew' onClick={() => { navigate(FRONTEND_URLS.ENROLLMENTS) }}>
+                                        +  Add New
+                                    </NavDropdown.Item >
+                                </div>
                             </NavDropdown>
 
                         </Navbar.Brand>

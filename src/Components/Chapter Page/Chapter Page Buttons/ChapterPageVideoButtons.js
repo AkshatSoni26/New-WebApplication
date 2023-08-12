@@ -38,10 +38,12 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
           ?
           <LottieImage />
           :
+          <>
           <ThumbanailButton />
-      }
 
       <ThumbnailDur duration={content_info.duration} />
+      </>
+        }
 
     </div>
   // ) : (
