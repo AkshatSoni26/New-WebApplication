@@ -44,7 +44,6 @@ export const chapterTable = ['Learn', 'Practise', 'Test', 'Revise']
 export const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['Courses', <GoBook />], ['Mentorship', <PiStudentBold />], ['Doubut Solve', <BiMessageAltCheck />], ["Help and Support", <FiHelpCircle />]]
 
 
-
 //-------------------------- logo ------------------------------ // 
 export const companyLogo = logo
 

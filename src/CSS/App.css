@@ -1808,10 +1808,12 @@ hr {
 }
 
 
-.MyAccount, .MyAccount .MyProfile .Info {
+.MyAccount,
+.MyAccount .MyProfile .Info {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .MyAccount {
@@ -1830,7 +1832,7 @@ hr {
   border: 1px #F3F3F4;
 }
 
-.MyAccount .MyAccountHardCode{
+.MyAccount .MyAccountHardCode {
   padding-top: 1%;
   padding-bottom: 1%;
 }
@@ -1848,17 +1850,18 @@ hr {
 .MyAccount .MyProfile .Image {
   padding: 10%;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
-.MyAccount .MyProfile .Info > .editBut, .phoneNumber{
+.MyAccount .MyProfile .Info>.editBut,
+.phoneNumber {
   display: flex;
   flex-direction: row;
 }
 
 .MyAccount .MyProfile .Info .editBut {
   align-items: center;
-  align-self: baseline; 
+  align-self: baseline;
   color: var(--primary-color)
 }
 
@@ -1872,6 +1875,58 @@ hr {
 }
 
 /* .MyAccount  .MyProfile  .Info .editBut .pan{} */
-.MyAccount .MyProfile .Info > .name, .editBut, .phoneNumber{
+.MyAccount .MyProfile .Info>.name,
+.editBut,
+.phoneNumber {
   /* padding: 4%; */
+}
+
+.MyTarget {
+  margin-bottom: 2%;
+  padding-left: 2%;
+}
+
+.MyAccount .MyProfile .Info>.editBut>.pan {
+  /* padding-right: 10%; */
+}
+
+.logout {
+  color: #CC2C2C;
+  align-self: baseline;
+  /* padding-bottom: -2%; */
+}
+
+
+.IsEnrolled {
+  background: #D9F6E8;
+  width: 68px;
+  height: 29px;
+  top: 403px;
+  left: 257px;
+  border-radius: 80px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 22%;
+}
+
+
+.IsEnrolled>.Enrolled {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #008445;
+}
+
+.targetName {
+  display: flex;
+  justify-content: start;
 }

@@ -4,14 +4,13 @@ import SideBar from './SiderBar/SideBar';
 import '../../CSS/App.css'
 import '../../CSS/Tab.css'
 import '../../CSS/Phone.css'
-import FacultiCaursol from './Corusal/FacultiCaursol';
-import SubjectCaural from './Corusal/SubjectCaural';
 import { useNavigate } from 'react-router-dom';
 import { FRONTEND_URLS } from '../Links/Config';
 import Scroller from '../SpinnerFun/Scroller';
-import SelectionCoursal from './Corusal/SelectionCoursal';
-import HomeComp from '../Manu Bar/HomeComp';
 import MyAccount from '../Manu Bar/MyAccount';
+import HomeComp from '../Manu Bar/HomeComp';
+import { SideBarItem, editBut } from '../../Constants/Constants';
+import MyProfile from '../Manu Bar/MyProfile';
 
 
 const Home = () => {
@@ -36,6 +35,8 @@ const Home = () => {
         }, []
     )
 
+
+
     return (
         (!userData)
             ?
@@ -45,7 +46,9 @@ const Home = () => {
                 <SideBar />
                 <div className='subjectNavBar'>
                     <NavBar />
+
                     {/* <HomeComp /> */}
+                    
                     <MyAccount />
                 </div>
 

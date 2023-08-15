@@ -1,54 +1,31 @@
 import React from 'react';
+import MyProfile from './MyProfile';
+import MyTargets from './MyTargets';
 import { SideBarItem, editBut } from '../../Constants/Constants';
+import { FiTarget, FiLogOut } from 'react-icons/fi'
+import { Logout } from '../Functions/Services';
+
+
+
 
 const MyAccount = () => {
 
-    const { full_name, phone_number } = JSON.parse(localStorage.getItem('userData')).user
 
     return (
         <div className='scrollView HomeBackPhoneview HomeScrollProb' style={{ overflowY: 'scroll' }}>
             <div className='ViewPortProblem'>
-                <div className='HomeMainContent' style={{ paddingBottom: "2%" }} >
+                <MyProfile profile='My Profile' symbol={SideBarItem[1][1]} but={editBut} but_name='Edit' />
+                <MyTargets profile='My Targets' symbol={<FiTarget />} but={editBut} but_name='See History' />
+
+                <div className='HomeMainContent'  >
                     <div className='menuBarcontent MyAccount'>
 
-                        <div className='MyAccountHardCode'>
-                            {SideBarItem[1][1]} My Profile
+                        <div className='MyAccountHardCode logout subject' onClick={Logout}>
+                            <FiLogOut /> Logout
                         </div>
 
-                        <div className='MyProfile'>
-                            <div className='Image'>
-                                Images
-                            </div>
-                            <div className='Info' >
-                                <div className='name'>
-                                    {full_name}
-                                </div>
-
-                                <div className='phoneNumber'>
-                                        
-                                    <div>
-                                        +91
-                                    </div>
-
-                                    <div>
-                                        {phone_number}
-                                    </div>
-
-                                </div>
-
-                                <span className='editBut subject'>
-                                    <div className='pan'>
-                                        {editBut}
-                                    </div>
-                                    <div className='Edit'>
-                                        Edit
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

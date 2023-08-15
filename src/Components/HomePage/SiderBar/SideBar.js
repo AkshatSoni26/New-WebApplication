@@ -42,9 +42,7 @@ const SideBar = () => {
               );
             })
           }
-          <div className='subject' onClick={Logout}>
-            Log Out
-          </div>
+         
         </div>
       </div>
   );
