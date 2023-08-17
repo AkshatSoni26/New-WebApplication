@@ -2,8 +2,8 @@ import React, { memo, useEffect } from 'react';
 import Lottie from "lottie-react";
 import '../../CSS/Register.css'
 import animationData from '../lottie utils/esaral_loader.json'
-import OverLayFunction from '../../Utility/OverLayFunction';
-import { HomeOpenNav, OverlayOn } from '../Functions/Services';
+import OverLayFunction from '../../GlobalComponents/OverLayFunction';
+import { HomeOpenNav, OverlayOn } from '../../Functions/Services';
 
 // import 
 

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import PhoneNumber from './Phonenumber/PhoneNumber';
-import RightSlider from './rightSlider';
-import { FRONTEND_URLS } from '../Links/Config';
+// import PhoneNumber from './Phonenumber/PhoneNumber';
+// import RightSlider from './rightSlider';
+// import { FRONTEND_URLS } from '../Links/Config';
 import { useNavigate } from 'react-router-dom';
-import '../../CSS/App.css'
-import '../../CSS/Phone.css'
-import '../../CSS/Tab.css'
+import { FRONTEND_URLS } from '../../Components/Links/Config';
+import RightSlider from './rightSlider';
+import PhoneNumber from './Phonenumber/PhoneNumber'
+
 
 
 

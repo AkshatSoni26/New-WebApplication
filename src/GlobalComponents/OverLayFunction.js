@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeCloseNav } from '../Components/Functions/Services';
+import { HomeCloseNav } from '../Functions/Services';
 
 const OverLayFunction = () => {
     return (

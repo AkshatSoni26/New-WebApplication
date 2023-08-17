@@ -3,7 +3,7 @@ import AttemptYear from '../Onboarding/AttemptYear';
 import Exam from '../Onboarding/Exam';
 import axios from 'axios';
 import { BACKEND_URLS } from '../Links/Config';
-import { UserData } from '../Functions/Services';
+import { UserData } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 
 const Enrollments = () => {

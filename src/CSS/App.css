@@ -189,6 +189,8 @@ img {
   padding: 2%;
   width: 315px;
   /* margin-left: 10%; */
+
+  background-color: var(--Primary-Background-Color);
 }
 
 /* .focused_input:focus{
@@ -444,7 +446,7 @@ left: 20px; */
 
 .tableHome {
   display: flex;
-  padding-left: 40px;
+  /* padding-left: 40px; */
   font-size: 16px;
   line-height: 44px;
   /* width: 100%; */
@@ -1929,4 +1931,26 @@ hr {
 .targetName {
   display: flex;
   justify-content: start;
+}
+
+.selectedOption {
+  width: 215px;
+  background-color: var(--Primary-Background-Color);
+  /* color: var(--primary-color); */
+  border-radius: 0px 100px 100px 0px;
+  /* outline-color: var(--primary-color); */
+}
+
+.selectedOption > .rectangle{
+    width: 4px;
+    background-color: var(--primary-color);
+    height: 100%;
+}
+
+.selectedOption > .colored{
+  color:var(--primary-color)
+}
+
+.tableData > .optionMargin{
+  margin-right: 40px;
 }

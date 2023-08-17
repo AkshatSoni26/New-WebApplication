@@ -1,8 +1,17 @@
 import React from 'react';
+// import Name from '../Onboarding/Name';
 
-const MyProfile = ({ profile, but, but_name, symbol }) => {
+const MyProfile = ({ setModalShow, profile, but, but_name, symbol, setIsEdit }) => {
 
     const { full_name, phone_number } = JSON.parse(localStorage.getItem('userData')).user
+
+    function test() {
+
+        const doc = document.getElementsByClassName("trial")
+        doc.innerHTML = '<Name />'
+        // console.log("doc", doc)
+
+    }
 
     return (
         <div className='HomeMainContent' style={{ paddingBottom: "2%" }} >
@@ -12,17 +21,17 @@ const MyProfile = ({ profile, but, but_name, symbol }) => {
                     {symbol} {profile}
                 </div>
 
-                <div className='MyProfile'>
-                    <div className='Image'>
+                <div className='MyProfile MyTarget'>
+                    {/* <div className='Image'>
                         Images
-                    </div>
+                    </div> */}
                     <div className='Info' >
                         <div className='name'>
                             {full_name}
                         </div>
 
                         <div className='phoneNumber'>
-                        <div>
+                            <div>
                                 +91
                             </div>
                             <div>
@@ -30,7 +39,12 @@ const MyProfile = ({ profile, but, but_name, symbol }) => {
                             </div>
                         </div>
 
-                        <div className='editBut subject'>
+                        <div className='editBut subject' onClick={() => {
+                            test();
+                            setIsEdit(true);
+                            // console.log('print name is click')
+                            // setModalShow(true)
+                        }}>
                             <div className='pan'>
                                 {but} &nbsp;
                             </div>
@@ -38,8 +52,11 @@ const MyProfile = ({ profile, but, but_name, symbol }) => {
                                 {but_name}
                             </div>
                         </div>
+
                     </div>
                 </div>
+
+
             </div>
         </div>
 

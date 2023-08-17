@@ -4,7 +4,13 @@ import { GoBook } from 'react-icons/go'
 import { BiMessageAltCheck } from 'react-icons/bi'
 
 
-import logo from '../Images/logo.png'
+import logo from '../utils/Images/logo.png'
+import { FRONTEND_URLS } from "../Components/Links/Config";
+// import HomeComp from "../Components/Manu Bar/HomeComp";
+// import HomeComp from "../Components/Manu Bar/HomeComp";
+// import MyAccount from "../Components/Manu Bar/MyAccount";
+// import CommingSoon from "../pages/Manu Bar/CommingSoon";
+// import { FRONTEND_URLS } from "../Components/Links/Config";
 
 
 //-------------------------- Login Data ------------------------------ // 
@@ -41,7 +47,7 @@ export const chapterTable = ['Learn', 'Practise', 'Test', 'Revise']
 //-------------------------- home page side bar data ------------------------------ // 
 
 
-export const SideBarItem = [['Home', <FiHome />], ['My Account', <FiUser />], ['Courses', <GoBook />], ['Mentorship', <PiStudentBold />], ['Doubut Solve', <BiMessageAltCheck />], ["Help and Support", <FiHelpCircle />]]
+export const SideBarItem = [['Home', <FiHome />, `${FRONTEND_URLS.HOME_ROUTE}`], ['My Account', <FiUser />, `${FRONTEND_URLS.MY_ACCOUNT}`], ['Courses', <GoBook />, `${FRONTEND_URLS.COURSES}`], ['Mentorship', <PiStudentBold />, `${FRONTEND_URLS.MENTORSHIP}`], ['Doubut Solve', <BiMessageAltCheck />, `${FRONTEND_URLS.DOUBUT_SOLVE}`], ["Help and Support", <FiHelpCircle />, `${FRONTEND_URLS.HELP_AND_SUPPORT}`]]
 
 
 //-------------------------- logo ------------------------------ // 
@@ -69,7 +75,7 @@ export const DefaultThumbnails = {
 const varSize =20
 export const alert_circle = `<svg xmlns="http://www.w3.org/2000/svg" width=${varSize} height=${varSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`
 
-export const editBut = <svg xmlns="http://www.w3.org/2000/svg" width={varSize} height={varSize} viewBox="0 0 24 24" fill="none" stroke="#5F46E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+export const editBut = <svg xmlns="http://www.w3.org/2000/svg" width={varSize} height={varSize} viewBox="0 0 24 24" fill="none" stroke="#5F46E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
 
 //----------------------------------------------------------------- // 
 export const NoResult = 'Content for this section is not ready at the moment. Please check later.'

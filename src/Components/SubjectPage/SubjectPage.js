@@ -7,7 +7,7 @@ import SubjectContent from './Suject Content/Subject_Content';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
-import { OverlayOff, OverlayOn, subjectPageData } from '../Functions/Services';
+import { OverlayOff, OverlayOn, subjectPageData } from '../../Functions/Services';
 import { FRONTEND_URLS } from '../Links/Config';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';

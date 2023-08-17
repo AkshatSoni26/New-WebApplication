@@ -1,9 +1,9 @@
 import React from "react";
-import { BACKEND_URLS, FRONTEND_URLS } from "../Links/Config";
+import { BACKEND_URLS, FRONTEND_URLS } from "../Components/Links/Config";
 import axios from "axios";
-import { BorderColors, Colors, OtpTimer, alert_circle, country_code } from "../../Constants/Constants";
-import ColorButton from "../Onboarding/Components/ColorButton";
-import ColorButton2 from "../Onboarding/Components/ColorButton2";
+import { BorderColors, Colors, OtpTimer, alert_circle, country_code } from "../Constants/Constants";
+import ColorButton from "../Components/Onboarding/Components/ColorButton";
+import ColorButton2 from "../Components/Onboarding/Components/ColorButton2";
 import { redirect } from "react-router-dom";
 
 //----------------------------- faculti responsive data  ---------------------------------- //
@@ -31,22 +31,22 @@ export const responsive = (a, b, c) => {
 //----------------------------- Login page caursal images  ---------------------------------- //
 export const IMG = [
   {
-    url: require("../../Images/Learn.png"),
+    url: require("../utils/Images/Learn.png"),
     heading: "Learn",
     text: "Kota's top IITian and Doctor faculties. Amazing visualisation to understand any concept easily.",
   },
   {
-    url: require("../../Images/Practice.png"),
+    url: require("../utils/Images/Practice.png"),
     heading: "Practice",
     text: "Chapter-wise sheets and PYQs with detailed solutions.",
   },
   {
-    url: require("../../Images/Revise.png"),
+    url: require("../utils/Images/Revise.png"),
     heading: "Revise",
     text: "Quickly revise the syllabus with crystallized videos, mind maps and notes.",
   },
   {
-    url: require("../../Images/Test.png"),
+    url: require("../utils/Images/Test.png"),
     heading: "Test",
     text: "Latest Pattern tests from expert faculties with detailed analysis.",
   },
@@ -470,16 +470,13 @@ export function SearchButton(inputRef, setData, setErr, navigate, LearnData, set
 
 export function HomeOpenNav() {
   document.getElementById("mySidebar").style.width = "250px";
-  // document.getElementById("main").style.marginLeft = "250px";
-  // document.getElementById("mySidebar").style.background ='black';
-  // document.getElementById("main").style.display ='block'
+
   OverlayOn()
 }
 
 export function HomeCloseNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
-  // document.getElementById("main").style.display ='none'
   OverlayOff() 
 }
 
@@ -496,4 +493,30 @@ export function OverlayOff() {
 export function Logout() {
   localStorage.clear();
   window.location.reload(true);
+}
+
+//------------------------------------------------------------------------------------//
+
+export function MenuSelection(setSelectOption, id, item) {
+  setSelectOption(item)
+  var element = document.getElementById(id);
+  element.classList.add("selectedOption");
+}
+
+//-------------------------------------------------------------------------------------//
+export function OptionSelected(id) {
+  const prevTargets = document.querySelectorAll('.selectedOption');
+  
+  prevTargets.forEach(prevTarget => {
+    prevTarget.classList.remove('selectedOption');
+  });
+  
+  const target = document.getElementById(id);
+  const target1 = document.getElementById(`${id}eff`);
+
+  
+  if (target) {
+    target.classList.add('selectedOption');
+    target1.classList.add('selectedOption');
+  }
 }

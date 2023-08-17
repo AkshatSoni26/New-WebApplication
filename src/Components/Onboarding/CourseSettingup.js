@@ -5,7 +5,7 @@ import '../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../Links/Config';
 import { useNavigate } from 'react-router-dom';
-import { UserData } from '../Functions/Services';
+import { UserData } from '../../Functions/Services';
 
 
 

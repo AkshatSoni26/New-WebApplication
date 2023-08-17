@@ -1,10 +1,11 @@
 import React from 'react';
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import '../../../CSS/App.css'
-import { facultiePortionLine } from '../../../Constants/Constants';
-import { responsive } from '../../Functions/Services';
-import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+import SpinnerFun from '../../../Components/SpinnerFun/SpinnerFun';
+// import '../../../CSS/App.css'
+// import { facultiePortionLine } from '../../../Constants/Constants';
+// import { responsive } from '../../Functions/Services';
+// import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 
 
 const SelectionCoursal = () => {

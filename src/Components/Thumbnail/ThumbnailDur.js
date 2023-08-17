@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { toHoursAndMinutes } from '../Functions/Services';
+import { toHoursAndMinutes } from '../../Functions/Services';
 
 const ThumbnailDur = ({ duration }) => {
 

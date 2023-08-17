@@ -3,7 +3,7 @@ import '../../../CSS/App.css'
 import { useSelector } from 'react-redux';
 import { OverlayTrigger } from 'react-bootstrap';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { ChapterScroll } from '../../Functions/Services';
+import { ChapterScroll } from '../../../Functions/Services';
 
 const SubjectSideBar = () => {
 
@@ -34,6 +34,7 @@ const SubjectSideBar = () => {
                     <button onClick={() => { ChapterScroll(data.node_id) }} className='subject'>
                       <div className=''>
                         <div className='tableData'>
+                            <div class="rectangle optionMargin"></div>
                           <OverlayTrigger className='OverlayTrigger' placement="top" delay={{ show: 250, hide: 400 }} overlay={<Tooltip id="tooltip">{data.display_name}</Tooltip>}>
                             <div className='menuBarcontentSvgs'>
                               {

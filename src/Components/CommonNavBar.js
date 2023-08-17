@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import { LuArrowLeft } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi'
-import { SearchWinNav } from './Functions/Services';
+import { SearchWinNav } from '../Functions/Services';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../State';

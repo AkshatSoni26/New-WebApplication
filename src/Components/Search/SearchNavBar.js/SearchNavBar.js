@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../State';
-import { SearchButton } from '../../Functions/Services';
+import { SearchButton } from '../../../Functions/Services';
 import { SearchPlacholder } from '../../../Constants/Constants';
 
 const SearchNavBar = ({ setData, setErr, setSearhed }) => {

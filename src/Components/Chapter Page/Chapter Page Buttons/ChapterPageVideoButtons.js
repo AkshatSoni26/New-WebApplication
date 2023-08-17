@@ -5,7 +5,7 @@ import ThumbnailDur from "../../Thumbnail/ThumbnailDur";
 import ThumbanailButton from "../../Thumbnail/ThumbanailButton";
 import LottieImage from "../../LottieImage/LottieImage";
 import SpinnerFun from "../../SpinnerFun/SpinnerFun";
-import OverLayFunction from "../../../Utility/OverLayFunction";
+import OverLayFunction from "../../../GlobalComponents/OverLayFunction";
 import Scroller from "../../SpinnerFun/Scroller";
 
 const ChapterPageVideoButton = ({ content_info, currentUrl }) => {

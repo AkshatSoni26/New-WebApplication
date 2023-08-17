@@ -5,7 +5,7 @@ const ThumbanailButton = () => {
     return (
 
         <div className='accordianImage2' style={{background: 'none'}}>
-            <img style={{height: 30, width: 30}} src={require('../../Images/play button.png')} />
+            <img style={{height: 30, width: 30}} src={require('../../utils/Images/play button.png')} />
         </div>
 
     );

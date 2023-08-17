@@ -17,7 +17,7 @@ const MyTargets = ({ profile, but, but_name, symbol }) => {
                     enrollment.map(
                         (data, index) => {
                             return (
-                                <div className='MyProfile MyTarget'>
+                                <div key={index} className='MyProfile MyTarget'>
 
                                     <div className='Info' >
                                         <div className='name targetName'>

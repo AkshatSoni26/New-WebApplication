@@ -1,19 +1,22 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
+// import { CourseSwitcher, SearchWinNav, currCourse } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
-import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+// import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { memo } from 'react';
 import { FiSearch } from 'react-icons/fi'
 import SideBarEffect from '../SiderBar/SideBarEffect';
-import Scroller from '../../SpinnerFun/Scroller';
-import { FRONTEND_URLS } from '../../Links/Config';
+// import Scroller from '../../SpinnerFun/Scroller';
+// import { FRONTEND_URLS } from '../../Links/Config';
+import { CourseSwitcher, SearchWinNav, currCourse } from '../../../Functions/Services';
+import Scroller from '../../../Components/SpinnerFun/Scroller';
+import { FRONTEND_URLS } from '../../../Components/Links/Config';
 
 
 
 
-function NavBar() {
+function NavBar({setSelectOption}) {
 
     const courses = JSON.parse(localStorage.getItem('userData')).enrollments
     console.log('courses', courses)
