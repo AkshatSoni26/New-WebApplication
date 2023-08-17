@@ -1,12 +1,12 @@
 import React, { memo, useEffect, useState } from "react";
 import { DefaultThumbnails } from "../../../Constants/Constants";
 import "../../../CSS/App.css";
-import ThumbnailDur from "../../Thumbnail/ThumbnailDur";
-import ThumbanailButton from "../../Thumbnail/ThumbanailButton";
-import LottieImage from "../../LottieImage/LottieImage";
-import SpinnerFun from "../../SpinnerFun/SpinnerFun";
+import ThumbnailDur from "../../../Components/Thumbnail/ThumbnailDur";
+import ThumbanailButton from "../../../Components/Thumbnail/ThumbanailButton";
+import LottieImage from "../../../Components/LottieImage/LottieImage";
+import SpinnerFun from "../../../Components/SpinnerFun/SpinnerFun";
 import OverLayFunction from "../../../GlobalComponents/OverLayFunction";
-import Scroller from "../../SpinnerFun/Scroller";
+import Scroller from "../../../Components/SpinnerFun/Scroller";
 
 const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
   console.log("ChapterPageVideoButton");

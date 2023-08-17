@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { FRONTEND_URLS } from '../../Links/Config';
-import CommonNavBar from '../../CommonNavBar';
-import SpinnerFun from '../../SpinnerFun/SpinnerFun';
-import Scroller from '../../SpinnerFun/Scroller';
+// import { FRONTEND_URLS } from '../../Links/Config';
+// import CommonNavBar from '../../CommonNavBar';
+// import SpinnerFun from '../../SpinnerFun/SpinnerFun';
+// import Scroller from '../../SpinnerFun/Scroller';
+import CommonNavBar from '../../../Components/CommonNavBar';
 
 const SubjectPageNavBar = ({ subjectId }) => {
 

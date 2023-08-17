@@ -1,17 +1,15 @@
 import React, { createContext, useEffect, useState } from 'react';
-
 import { Route, Routes, useNavigate } from 'react-router-dom';
-// import Home from './HomePage/Home';
-import SubjectPage from './SubjectPage/SubjectPage';
-import ChapterPage from './Chapter Page/ChapterPage';
-import { FRONTEND_URLS } from './Links/Config'
-import GeneralPageError from './ErrorPages/GeneralPageError';
-import ErrorPages from './ErrorPages/ErrorPages';
-import Register from './Onboarding/Register'
-import Search from './Search/Search';
-import Enrollments from './Enrollments/Enrollments';
-import LoginPage from '../pages/LoginPage/LoginPage';
-import Home from '../pages/HomePage/Home';
+import ChapterPage from './pages/Chapter Page/ChapterPage';
+import { FRONTEND_URLS } from './Components/Links/Config'
+import GeneralPageError from './Components/ErrorPages/GeneralPageError';
+import ErrorPages from './Components/ErrorPages/ErrorPages';
+import Register from './Components/Onboarding/Register'
+import Search from './Components/Search/Search';
+import Enrollments from './Components/Enrollments/Enrollments';
+import LoginPage from './pages/LoginPage/LoginPage';
+import Home from './pages/HomePage/Home';
+import SubjectPage from './pages/SubjectPage/SubjectPage';
 
 
 

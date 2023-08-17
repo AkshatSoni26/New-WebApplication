@@ -45,7 +45,7 @@ const ChapterPageSideBar = () => {
                                                             return (
                                                                 <div key={i}>
 
-                                                                    {(value.node_type == "CONTENT") && (value.content_data) && < ChapterContentType content_data={value.content_data} />}
+                                                                    {(value.node_type == "CONTENT") && (value.content_data) && <ChapterContentType content_data={value.content_data} />}
 
                                                                     {(((value.content_data).length) > 0) && <ChapterCollectionType content_data={value.content_data} />}
 

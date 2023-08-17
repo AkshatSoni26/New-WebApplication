@@ -5,8 +5,8 @@ import '../../../CSS/App.css'
 import { ChapterNavigator, OverlayOff, responsive } from '../../../Functions/Services';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
-import ThumbanailButton from '../../Thumbnail/ThumbanailButton';
-import ThumbnailDur from '../../Thumbnail/ThumbnailDur';
+import ThumbnailDur from '../../../Components/Thumbnail/ThumbnailDur';
+import ThumbanailButton from '../../../Components/Thumbnail/ThumbanailButton';
 
 
 

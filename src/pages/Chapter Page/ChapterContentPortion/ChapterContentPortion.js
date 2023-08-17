@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import VideoPlayer from '../../Video player/VideoPLayer';
+import VideoPlayer from '../../../Components/Video player/VideoPLayer';
 import { useParams } from 'react-router-dom';
 
 const ChapterContentPortion = () => {

@@ -8,11 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import { OverlayOff, OverlayOn, subjectPageData } from '../../Functions/Services';
-import { FRONTEND_URLS } from '../Links/Config';
+import { FRONTEND_URLS } from '../../Components/Links/Config';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
 import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
-import SpinnerFun from '../SpinnerFun/SpinnerFun';
+import SpinnerFun from '../../Components/SpinnerFun/SpinnerFun';
 import TabSubjectSideBar from './Subject SideBar/TabSubjectSideBar';
 
 

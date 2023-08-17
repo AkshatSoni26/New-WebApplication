@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
-import ChapterMainCom from '../Chapter Page/ChapterMainCom';
-
 import NoResultImg from '../../utils/Images/no-results.png'
 import { NoResult, SearchText, chapterTable } from '../../Constants/Constants';
 import SearchImg from '../../utils/Images/Search.png';
 import SearchNavBar from './SearchNavBar.js/SearchNavBar';
+import ChapterMainCom from '../../pages/Chapter Page/ChapterMainCom';
 
 
 

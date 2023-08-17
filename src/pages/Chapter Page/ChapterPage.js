@@ -3,13 +3,13 @@ import ChapterPageNavBar from './ChapterPageNavBar/ChapterPageNavBar';
 import { useNavigate, useParams } from 'react-router-dom';
 import ChapterPageSideBar from './ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from './ChapterContentPortion/ChapterContentPortion';
-import { FRONTEND_URLS } from '../Links/Config';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State';
 import ChapterMainCom from './ChapterMainCom';
 import ChapterPageSideBarResponsivePart from './ChapterPageSideBar/ChapterPageSideBarResponsivePart';
-import Scroller from '../SpinnerFun/Scroller';
+import { FRONTEND_URLS } from '../../Components/Links/Config';
+import Scroller from '../../Components/SpinnerFun/Scroller';
 
 
 const ChapterPage = () => {

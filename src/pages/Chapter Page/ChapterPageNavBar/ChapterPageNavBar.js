@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import CommonNavBar from '../../CommonNavBar';
+import CommonNavBar from '../../../Components/CommonNavBar';
 import { useSelector } from 'react-redux';
 
 
-const ChapterPageNavBar = ( ) => {
+const ChapterPageNavBar = () => {
 
   console.log("ChapterPageNavBar")
 
@@ -15,7 +15,7 @@ const ChapterPageNavBar = ( ) => {
   const urlSegments = currentUrl.split('/');
 
   return (
-        <CommonNavBar name={learn.display_name} id={urlSegments[urlSegments.length-3]} />
+    <CommonNavBar name={learn.display_name} id={urlSegments[urlSegments.length - 3]} />
   );
 };
 
