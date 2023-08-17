@@ -4,7 +4,9 @@ import '../../../CSS/Tab.css'
 import '../../../CSS/Phone.css'
 import { SideBarItem, companyLogo } from '../../../Constants/Constants';
 import SpinnerFun from '../../SpinnerFun/SpinnerFun';
-import { Logout } from '../../Functions/Services';
+import { MenuSelection, OptionSelected } from '../../Functions/Services';
+import { useNavigate } from 'react-router-dom';
+import CompanyLogo from '../CompanyLogo';
 
 
 
@@ -13,36 +15,41 @@ const SideBar = () => {
   console.log('SideBar')
 
   const data = localStorage.getItem('userData')
+  const navigate = useNavigate()
+
+
 
   return (
 
     (!data) ?
       <SpinnerFun />
       :
-      <div className=' SideBar HomeSideBar homeSide'>
-        <div className='Logo_Image'>
-          <img className='companyLogo' src={companyLogo} />
-        </div>
+      <div className='SideBar HomeSideBar homeSide'>
+        <CompanyLogo />
 
         <div className='tableHome HomeTable'>
           {
             SideBarItem.map((item, index) => {
               return (
                 <React.Fragment key={index}>
-                  <button className='subject tableData'>
-                        <div className='menuBarcontentSvgs'>
-                          {item[1]}
-                        </div>
-                        <div className='menuBarcontent'>
-                          {item[0]}
-                        </div>
-                  </button>
+                  <div id={item[2]} className='subject tableData' onClick={() => {
+                    navigate(item[2]);
+                    OptionSelected(item[2])
+                  }}>
+                    <div className='rectangle optionMargin'></div>
+                    <div className='menuBarcontentSvgs colored '>
+                      {item[1]}
+                    </div>
+                    <div className='menuBarcontent colored'>
+                      {item[0]}
+                    </div>
+                  </div>
 
                 </React.Fragment>
               );
             })
           }
-         
+
         </div>
       </div>
   );

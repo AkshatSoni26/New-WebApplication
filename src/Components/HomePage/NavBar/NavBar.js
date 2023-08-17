@@ -13,7 +13,7 @@ import { FRONTEND_URLS } from '../../Links/Config';
 
 
 
-function NavBar() {
+function NavBar({setSelectOption}) {
 
     const courses = JSON.parse(localStorage.getItem('userData')).enrollments
     console.log('courses', courses)

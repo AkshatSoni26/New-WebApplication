@@ -4,66 +4,64 @@ import '../../../CSS/App.css'
 import '../../../CSS/Tab.css'
 import '../../../CSS/Phone.css'
 import { BiMenuAltLeft } from 'react-icons/bi'
-import { HomeOpenNav } from '../../Functions/Services';
+import { HomeCloseNav, HomeOpenNav, MenuSelection, OptionSelected, OverlayOff } from '../../Functions/Services';
 import OverLayFunction from '../../../Utility/OverLayFunction';
+import { useLocation, useNavigate } from 'react-router-dom';
+import CompanyLogo from '../CompanyLogo';
 
 
 
 const SideBarEffect = () => {
 
     const { size, color } = MenuBarIcon
+    const navigate = useNavigate()
 
     return (
         <>
-        
-        <OverLayFunction />
-        
-        <div className='respHomeSide'>
+            <OverLayFunction />
 
-            <div id="mySidebar" className='homeSide sidebar'>
+            <div className='respHomeSide'>
 
-                <div className='LogoCloseBut'>
-
-                    <div className='Logo_Image'>
-                        <img className='companyLogo' src={companyLogo} />
+                <div id="mySidebar" className='homeSide sidebar'>
+                    <div className='LogoCloseBut'>
+                        <CompanyLogo />
                     </div>
 
-                </div>
+                    <div className='tableHome HomeTable'>
 
-                <div className='tableHome'>
-
-                    {
-                        SideBarItem.map((item, index) => {
-                            console.log('SideBarItemEffect', item)
-                            return (
-                                <React.Fragment key={index}>
-                                    <button className='subject'>
-                                        <div className=''>
-                                            <div className='tableData'>
-                                                <div className='menuBarcontentSvgs'>
-                                                    {item[1]}
-                                                </div>
-                                                <div className='menuBarcontent'>
-                                                    {item[0]}
-                                                </div>
+                        {
+                            SideBarItem.map((item, index) => {
+                                console.log('SideBarItemEffect', item)
+                                return (
+                                    <React.Fragment key={index}>
+                                        <div id={`${item[2]}eff`} className='subject tableData' onClick={() => {
+                                            HomeCloseNav();
+                                            navigate(item[2]);
+                                            OptionSelected(item[2])
+                                        }}>
+                                            <div className='rectangle optionMargin'></div>
+                                            <div className='menuBarcontentSvgs colored'>
+                                                {item[1]}
+                                            </div>
+                                            <div className='menuBarcontent colored'>
+                                                {item[0]}
                                             </div>
                                         </div>
-                                    </button>
 
-                                </React.Fragment>
-                            );
-                        })
-                    }
+                                    </React.Fragment>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+
+
+                <div id="main">
+                    <button className="subject" onClick={HomeOpenNav}>
+                        <BiMenuAltLeft color={color} size={size} />
+                    </button>
                 </div>
             </div>
-
-
-            <div id="main">
-                <button className="subject" onClick={HomeOpenNav}>
-                    <BiMenuAltLeft color={color} size={size} />
-                </button>
-            </div>
-        </div>
         </>
     );
 };

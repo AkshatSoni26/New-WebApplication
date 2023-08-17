@@ -470,16 +470,13 @@ export function SearchButton(inputRef, setData, setErr, navigate, LearnData, set
 
 export function HomeOpenNav() {
   document.getElementById("mySidebar").style.width = "250px";
-  // document.getElementById("main").style.marginLeft = "250px";
-  // document.getElementById("mySidebar").style.background ='black';
-  // document.getElementById("main").style.display ='block'
+
   OverlayOn()
 }
 
 export function HomeCloseNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
-  // document.getElementById("main").style.display ='none'
   OverlayOff() 
 }
 
@@ -496,4 +493,30 @@ export function OverlayOff() {
 export function Logout() {
   localStorage.clear();
   window.location.reload(true);
+}
+
+//------------------------------------------------------------------------------------//
+
+export function MenuSelection(setSelectOption, id, item) {
+  setSelectOption(item)
+  var element = document.getElementById(id);
+  element.classList.add("selectedOption");
+}
+
+//-------------------------------------------------------------------------------------//
+export function OptionSelected(id) {
+  const prevTargets = document.querySelectorAll('.selectedOption');
+  
+  prevTargets.forEach(prevTarget => {
+    prevTarget.classList.remove('selectedOption');
+  });
+  
+  const target = document.getElementById(id);
+  const target1 = document.getElementById(`${id}eff`);
+
+  
+  if (target) {
+    target.classList.add('selectedOption');
+    target1.classList.add('selectedOption');
+  }
 }

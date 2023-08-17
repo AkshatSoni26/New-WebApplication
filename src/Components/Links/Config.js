@@ -19,5 +19,12 @@ export const FRONTEND_URLS = {
     HOME_ROUTE:'/',
     REGISTER_ROUTE:'/Register',
     SEARCH_ROUTE:'/search',
-    ENROLLMENTS:'/enrollment'
+    ENROLLMENTS:'/enrollment',
+    MY_ACCOUNT: '/my-account',
+    COURSES: '/courses',
+    MENTORSHIP: '/mentorship',
+    DOUBUT_SOLVE: '/doubut-solve',
+    HELP_AND_SUPPORT: '/help-and-support',
+    PAGE_NOT_FOUND: '/PageNotFound',
 }
+

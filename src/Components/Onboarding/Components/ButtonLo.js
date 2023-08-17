@@ -4,17 +4,11 @@ import '../../../CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../../Links/Config';
 import { useLocation } from 'react-router-dom';
-import {AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 
-const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
+const ButtonLo = ({ setIsName, inputRef, NameTaker, butText }) => {
 
-    const location = useLocation() 
-
-    const access = localStorage.setItem('Access Key', location.state)
-
-    console.log("ButtonLo",location)
-
-
+    const access = localStorage.getItem('Access Key')
 
     function NameTaker() {
 
@@ -23,18 +17,18 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
 
         const user_input = inputRef.current.value
 
-        const format =/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0-9]/
-        console.log('localStorage.getItem(Access Key)',access)  
-        
-     
+        const format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0-9]/
+        console.log('localStorage.getItem(Access Key)', access)
+
+
         const Headers = {
             'Authorization': 'Bearer ' + access,
-           'Content-Type': 'application/json'
-       }
-    
-       const Body =  {
-        'full_name': user_input,
-    }
+            'Content-Type': 'application/json'
+        }
+
+        const Body = {
+            'full_name': user_input,
+        }
 
 
         if (user_input.length > 0) {
@@ -42,11 +36,11 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
             if (format.test(user_input)) {
 
                 const mess = document.getElementById('message')
-                mess.style.color='red'
+                mess.style.color = 'red'
                 mess.innerHTML = 'Please remove special Characters.'
 
             }
-            else{
+            else {
                 setIsName(inputRef.current.value)
 
                 axios.post(
@@ -55,7 +49,7 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
                     {
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': 'Bearer ' + location.state 
+                            'Authorization': 'Bearer ' + access
                         }
                     }
                 ).then(
@@ -67,13 +61,13 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
                         console.log('error', err);
                     }
                 );
-                
+
             }
         }
         else {
             const mess = document.getElementById('message')
             mess.innerHTML = 'first enter the name'
-            mess.style.color='red'
+            mess.style.color = 'red'
 
         }
     }
@@ -87,15 +81,20 @@ const ButtonLo = ({ setIsName, inputRef, NameTaker }) => {
             >
 
                 <div style={{ color: '#fff' }}>
-                    Continue <AiOutlineArrowRight  color='#fff' />
+                    {butText}
                 </div>
 
             </button>
-
-            
-
         </div>
     );
 };
 
 export default ButtonLo;
+
+ButtonLo.defaultProps = {
+    butText: (
+        <React.Fragment>
+            Continue <AiOutlineArrowRight color='#fff' />
+        </React.Fragment>
+    )
+};
