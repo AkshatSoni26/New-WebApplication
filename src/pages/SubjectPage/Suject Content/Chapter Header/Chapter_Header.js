@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../../CSS/App.css";
+import "../../../../assets/CSS/App.css";
 import { BsChevronRight } from 'react-icons/bs'
 import { useNavigate } from "react-router-dom";
 import { ChapterNavigator } from "../../../../Functions/Services";

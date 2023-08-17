@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import OnBordText from './Components/OnBordText';
 import InputField from './Components/InputField';
 import ButtonLo from './Components/ButtonLo';
-import '../../CSS/Register.css'
+import '../../assets/CSS/Register.css'
 
 
 const Name = ({ setIsName }) => {

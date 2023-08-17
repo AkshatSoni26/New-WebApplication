@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import ChapterContentType from './ChapterContentType';
-import '../../../CSS/App.css'
+import '../../../assets/CSS/App.css'
 import ChapterSheetType from './ChapterSheetType';
 
 const ChapterCollectionType = ({ content_data }) => {

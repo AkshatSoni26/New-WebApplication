@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Chapter_Header from './Chapter Header/Chapter_Header';
-import '../../../CSS/App.css'
+import '../../../assets/CSS/App.css'
 import { ChapterNavigator, OverlayOff, responsive } from '../../../Functions/Services';
 import { DefaultThumbnails } from '../../../Constants/Constants';
 import { useNavigate } from 'react-router-dom';

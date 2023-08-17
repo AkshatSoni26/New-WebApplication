@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-// import '../../CSS/App.css'
-// import '../../CSS/Tab.css'
+import '../../assets/CSS/App.css'
+import '../../assets/CSS/Tab.css'
 import { IMG } from '../../Functions/Services';
 import { interval } from '../../Constants/Constants';
 

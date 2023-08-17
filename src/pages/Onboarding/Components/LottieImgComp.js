@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Lottie from "lottie-react";
-import '../../../CSS/Register.css'
+import '../../../assets/CSS/Register.css'
 
 
 const LottieImgComp = ({ animationData }) => {

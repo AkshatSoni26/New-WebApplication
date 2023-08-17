@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../CSS/App.css'
+import '../../../assets/CSS/App.css'
 import { useSelector } from 'react-redux';
 import { OverlayTrigger } from 'react-bootstrap';
 import Tooltip from 'react-bootstrap/Tooltip';

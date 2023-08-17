@@ -1,8 +1,8 @@
 import React from 'react';
 import { MenuBarIcon, SideBarItem, companyLogo } from '../../../Constants/Constants';
-import '../../../CSS/App.css'
-import '../../../CSS/Tab.css'
-import '../../../CSS/Phone.css'
+import '../../../assets/CSS/App.css'
+import '../../../assets/CSS/Tab.css'
+import '../../../assets/CSS/Phone.css'
 import { BiMenuAltLeft } from 'react-icons/bi'
 import { HomeCloseNav, HomeOpenNav, MenuSelection, OptionSelected, OverlayOff } from '../../../Functions/Services';
 import OverLayFunction from '../../../GlobalComponents/OverLayFunction';

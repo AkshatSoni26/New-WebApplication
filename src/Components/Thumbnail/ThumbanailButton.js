@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../CSS/App.css'
+import '../../assets/CSS/App.css'
 
 const ThumbanailButton = () => {
     return (

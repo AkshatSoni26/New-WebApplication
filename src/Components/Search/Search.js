@@ -12,13 +12,6 @@ const Search = () => {
 
     const location = useLocation()
     const backLink = location.state
-
-
-
-    // console.log('link', link)    
-
-
-
     const [data, setData] = useState()
     const [err, setErr] = useState(false)
     const [searhed, setSearhed] = useState(false)
@@ -31,7 +24,6 @@ const Search = () => {
 
     useEffect(() => {
         // Focus the input element on component mount
-        // console.log("change")
         for (let i = 0; i < chapterTable.length; i++) {
         }
     }, [linkTest]);

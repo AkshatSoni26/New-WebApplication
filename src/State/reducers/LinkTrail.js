@@ -1,11 +1,14 @@
 const reducer = (state = '/', action) => {
 
-    if(action.type == 'link'){
+    console.log("action.payload", action.payload)
+
+    if(action.type == 'link' && action.payload){
         state = action.payload
+        
         return state
     }
     else{
-        return state
+        return '/'
     }
 }
 

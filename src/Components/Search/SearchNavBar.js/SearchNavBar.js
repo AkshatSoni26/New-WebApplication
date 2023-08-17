@@ -18,6 +18,8 @@ const SearchNavBar = ({ setData, setErr, setSearhed }) => {
 
     const backlink = useSelector(state => state.link)
 
+    console.log("backlink search", backlink)
+
     const dispatch = useDispatch()
     const { LearnData } = bindActionCreators(actionCreators, dispatch)
     const inputRef = useRef()

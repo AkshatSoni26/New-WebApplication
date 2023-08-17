@@ -1,7 +1,7 @@
 import React from 'react';
-// import '../../../CSS/App.css'
-// import '../../../CSS/Tab.css'
-// import '../../../CSS/Phone.css'
+import '../../../assets/CSS/App.css'
+import '../../../assets/CSS/Tab.css'
+import '../../../assets/CSS/Phone.css'
 import { SideBarItem, companyLogo } from '../../../Constants/Constants';
 // import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import { useNavigate } from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { DefaultThumbnails } from "../../../Constants/Constants";
-import "../../../CSS/App.css";
+import "../../../assets/CSS/App.css";
 import ThumbnailDur from "../../../Components/Thumbnail/ThumbnailDur";
 import ThumbanailButton from "../../../Components/Thumbnail/ThumbanailButton";
 import LottieImage from "../../../Components/LottieImage/LottieImage";

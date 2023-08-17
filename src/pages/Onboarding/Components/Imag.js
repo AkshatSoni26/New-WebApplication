@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../CSS/Register.css'
+import '../../../assets/CSS/Register.css'
 
 
 

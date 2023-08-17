@@ -6,8 +6,8 @@ import animationData from '../../utils/lottie utils/rocket-launch.json'
 import { UserData } from '../../Functions/Services';
 import LottieImgComp from './Components/LottieImgComp';
 import { BACKEND_URLS } from '../../Components/Links/Config';
-    
-// import '../../CSS/Register.css'
+
+import '../../assets/CSS/Register.css'
 
 
 

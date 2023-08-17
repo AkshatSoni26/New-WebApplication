@@ -1,6 +1,6 @@
 import React from 'react';
 import { DefaultThumbnails, slogen } from '../../../Constants/Constants';
-import '../../../CSS/App.css'
+import '../../../assets/CSS/App.css'
 import { useNavigate } from 'react-router-dom';
 // import SpinnerFun from '../../SpinnerFun/SpinnerFun';
 import HomeSubjectButton from './HomeSubjectButton';

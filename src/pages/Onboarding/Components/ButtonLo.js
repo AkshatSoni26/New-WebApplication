@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { LuArrowLeft } from 'react-icons/lu'
-import '../../../CSS/Register.css'
+import '../../../assets/CSS/Register.css'
 import axios from 'axios';
 import { BACKEND_URLS } from '../../../Components/Links/Config';
 import { useLocation } from 'react-router-dom';

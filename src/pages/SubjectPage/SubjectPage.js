@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SubjectPageNavBar from './Subject NavBar/SubjectPageNavBar';
 import SubjectSideBar from './Subject SideBar/SubjectSideBar';
-import '../../CSS/App.css'
+import '../../assets/CSS/App.css'
 import SubjectContent from './Suject Content/Subject_Content';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -21,22 +21,22 @@ const SubjectPage = () => {
 
     console.log("SubjectPage")
 
-    console.log('subjectId', useParams())
+    const navigate = useNavigate()
+    // console.log('subjectId', useParams())
     const { subject } = useParams()
     const subjectId = subject
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
-    const [SubData, setSubjData] = useState()
+    const [SubData, setSubjData] = useState({})
 
-    const content = useSelector(state => state.content)
+    // const content = useSelector(state => state.content)
 
-
-    const accessKey = localStorage.getItem('Access Key')
-    const userData = localStorage.getItem('userData')
-    const navigate = useNavigate()
 
     const [TabIndexBut, setTabIndexBut] = useState(false)
+    const accessKey = localStorage.getItem('Access Key')
+    const userData = localStorage.getItem('userData')
+
 
     useEffect(
         () => {

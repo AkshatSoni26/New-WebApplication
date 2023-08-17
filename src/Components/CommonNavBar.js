@@ -29,7 +29,9 @@ const CommonNavBar = ({ name, id }) => {
   }
 
   const backLink = (window.location.href).split("http://localhost:3000")[1]
+  console.log("backLink",backLink)
   LinkTrial(backLink)
+
 
 
   return (

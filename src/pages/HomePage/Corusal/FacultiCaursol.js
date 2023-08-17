@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
-// import '../../../CSS/App.css'
+import '../../../assets/CSS/App.css'
 import { facultiePortionLine } from '../../../Constants/Constants';
 import SpinnerFun from '../../../Components/SpinnerFun/SpinnerFun';
 // import { responsive } from '../../../Functions/Services';

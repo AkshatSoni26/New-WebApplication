@@ -9,7 +9,7 @@ import animationData from '../../utils/lottie utils/pencil-animation.json'
 import { BACKEND_URLS, FRONTEND_URLS } from '../../Components/Links/Config';
 import LottieImgComp from './Components/LottieImgComp';
 
-// import '../../CSS/Register.css'
+import '../../assets/CSS/Register.css'
 
 
 
