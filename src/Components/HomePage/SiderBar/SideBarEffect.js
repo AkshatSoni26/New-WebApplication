@@ -5,7 +5,7 @@ import '../../../CSS/Tab.css'
 import '../../../CSS/Phone.css'
 import { BiMenuAltLeft } from 'react-icons/bi'
 import { HomeCloseNav, HomeOpenNav, MenuSelection, OptionSelected, OverlayOff } from '../../Functions/Services';
-import OverLayFunction from '../../../Utility/OverLayFunction';
+import OverLayFunction from '../../../GlobalComponents/OverLayFunction';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CompanyLogo from '../CompanyLogo';
 

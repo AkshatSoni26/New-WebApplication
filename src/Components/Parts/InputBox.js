@@ -1,5 +1,5 @@
 import React from "react";
-import flag from '../../Images/india-flag.png'
+import flag from '../../utils/Images/india-flag.png'
 
 
 

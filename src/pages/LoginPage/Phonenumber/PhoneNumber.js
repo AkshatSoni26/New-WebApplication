@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
-import { OTPSender, verifiOTP } from '../../Functions/Services';
-import { FRONTEND_URLS } from '../../Links/Config';
-import ButtonText from '../Comp/ButtonText';
 import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
-import flag from '../../../Images/india-flag.png'
 import CountdownTimer from './CountdownTimer';
+import { InputBox } from '../../../Components/Parts/InputBox';
+import { OTPSender, verifiOTP } from '../../../Components/Functions/Services';
+import ButtonText from '../Comp/ButtonText';
+import { FRONTEND_URLS } from '../../../Components/Links/Config';
 import { OtpTimer } from '../../../Constants/Constants';
-import { InputBox } from '../../Parts/InputBox';
 
 
 

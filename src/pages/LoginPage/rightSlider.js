@@ -1,8 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
-import '../../CSS/App.css'
-import '../../CSS/Tab.css'
-import { IMG } from '../Functions/Services';
+// import '../../CSS/App.css'
+// import '../../CSS/Tab.css'
+import { IMG } from '../../Components/Functions/Services';
 import { interval } from '../../Constants/Constants';
+
 
 
 function RightSlider() {
@@ -12,7 +13,6 @@ function RightSlider() {
     return (
         <>
             <Carousel controls={false} fade slide={false}>
-
                 {
                     IMG.map(
                         (data, index) => {
@@ -23,7 +23,7 @@ function RightSlider() {
 
                                         <div className='coursoImg' >
                                             <img
-                                              className="carousalImage" 
+                                                className="carousalImage"
                                                 src={data.url}
                                             />
                                         </div>

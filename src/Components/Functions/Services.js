@@ -31,22 +31,22 @@ export const responsive = (a, b, c) => {
 //----------------------------- Login page caursal images  ---------------------------------- //
 export const IMG = [
   {
-    url: require("../../Images/Learn.png"),
+    url: require("../../utils/Images/Learn.png"),
     heading: "Learn",
     text: "Kota's top IITian and Doctor faculties. Amazing visualisation to understand any concept easily.",
   },
   {
-    url: require("../../Images/Practice.png"),
+    url: require("../../utils/Images/Practice.png"),
     heading: "Practice",
     text: "Chapter-wise sheets and PYQs with detailed solutions.",
   },
   {
-    url: require("../../Images/Revise.png"),
+    url: require("../../utils/Images/Revise.png"),
     heading: "Revise",
     text: "Quickly revise the syllabus with crystallized videos, mind maps and notes.",
   },
   {
-    url: require("../../Images/Test.png"),
+    url: require("../../utils/Images/Test.png"),
     heading: "Test",
     text: "Latest Pattern tests from expert faculties with detailed analysis.",
   },

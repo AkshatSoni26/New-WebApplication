@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import '../../CSS/Register.css'
+import { useLocation, useNavigate } from 'react-router-dom';
+import RightSlider from '../../pages/LoginPage/rightSlider';
 import Name from './Name';
-import RightSlider from '../LoginPage/rightSlider';
 import AttemptYear from './AttemptYear';
 import Exam from './Exam';
-import CourseSettingup from './CourseSettingup';
-import { useLocation, useNavigate } from 'react-router-dom';
+import CourseSettingup from './CourseSettingup'
 
 
 const Register = () => {
@@ -27,7 +26,6 @@ const Register = () => {
             if (localStorage.getItem("Access Key") && localStorage.getItem("userData") ){
                 navigate('/')
             }
-
         },[]
     )
 

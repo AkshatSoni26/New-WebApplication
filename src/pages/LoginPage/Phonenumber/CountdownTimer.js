@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { OTPSender } from '../../Functions/Services';
 import { OtpTimer } from '../../../Constants/Constants';
+import { OTPSender } from '../../../Components/Functions/Services';
 
 const CountdownTimer = ({ phoneNumber, setOtpSend, setNonce, setErro, redirect, ContactUs, setContactUs }) => {
 

@@ -1,14 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react';
-import LoginPage from './LoginPage/LoginPage';
+
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './HomePage/Home';
 import SubjectPage from './SubjectPage/SubjectPage';
 import ChapterPage from './Chapter Page/ChapterPage';
-import '../CSS/Tab.css'
-import '../CSS/Phone.css'
-import '../CSS/App.css'
-
-
 import { FRONTEND_URLS } from './Links/Config'
 import GeneralPageError from './ErrorPages/GeneralPageError';
 import ErrorPages from './ErrorPages/ErrorPages';
@@ -17,12 +12,13 @@ import Search from './Search/Search';
 import Enrollments from './Enrollments/Enrollments';
 import MyAccount from './Manu Bar/MyAccount';
 import CommingSoon from './Manu Bar/CommingSoon';
+import LoginPage from '../pages/LoginPage/LoginPage';
+
 
 
 
 function App() {
 
-    
     const navigate = useNavigate()
     
     const { LOGIN_ROUTE, HOME_ROUTE,REGISTER_ROUTE, PAGE_NOT_FOUND, SEARCH_ROUTE, ENROLLMENTS, MY_ACCOUNT, COURSES, MENTORSHIP, DOUBUT_SOLVE, HELP_AND_SUPPORT } = FRONTEND_URLS
@@ -68,7 +64,6 @@ function App() {
                 <Route path={REGISTER_ROUTE} element={<Register />} />
                 
                 <Route path={MY_ACCOUNT} element={<Home /> } />
-                {/* <Route path={MY_ACCOUNT} element={<MyAccount /> } /> */}
                 <Route path={COURSES} element={<Home /> } />
                 <Route path={MENTORSHIP} element={<Home /> } />
                 <Route path={DOUBUT_SOLVE} element={<Home /> } />
