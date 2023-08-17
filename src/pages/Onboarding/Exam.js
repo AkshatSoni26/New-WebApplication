@@ -6,9 +6,6 @@ import { ColorContainerNew } from '../../Functions/Services';
 import animationData from '../../utils/lottie utils/target.json'
 import LottieImgComp from './Components/LottieImgComp';
 import SpinnerFun from '../../Components/SpinnerFun/SpinnerFun';
-// import '../../CSS/Register.css'
-// import SpinnerFun from '../SpinnerFun/SpinnerFun';
-
 
 
 
