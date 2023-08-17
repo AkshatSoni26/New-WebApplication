@@ -4,7 +4,7 @@ import OtpInput from 'react-otp-input';
 import { IoIosArrowBack } from 'react-icons/io'
 import CountdownTimer from './CountdownTimer';
 import { InputBox } from '../../../Components/Parts/InputBox';
-import { OTPSender, verifiOTP } from '../../../Components/Functions/Services';
+import { OTPSender, verifiOTP } from '../../../Functions/Services';
 import ButtonText from '../Comp/ButtonText';
 import { FRONTEND_URLS } from '../../../Components/Links/Config';
 import { OtpTimer } from '../../../Constants/Constants';

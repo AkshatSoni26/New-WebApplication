@@ -3,7 +3,7 @@ import '../../../CSS/App.css'
 import { useSelector } from 'react-redux';
 import { OverlayTrigger } from 'react-bootstrap';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { ChapterScroll } from '../../Functions/Services';
+import { ChapterScroll } from '../../../Functions/Services';
 
 const SubjectSideBar = () => {
 

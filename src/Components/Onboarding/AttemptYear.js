@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import OnBordText from './Components/OnBordText';
 import Imag from './Components/Imag';
 import OptionChooseText from './Components/OptionChooseText';
-import { ColorContainer } from '../Functions/Services';
+import { ColorContainer } from '../../Functions/Services';
 import animationData from '../lottie utils/pencil-animation.json'
 import LottieImgComp from './Components/LottieImgComp';
 import '../../CSS/Register.css'

@@ -1,9 +1,8 @@
 import React from 'react';
-import NavBar from '../HomePage/NavBar/NavBar';
+// import NavBar from '../HomePage/NavBar/NavBar';
 import SubjectCaural from '../HomePage/Corusal/SubjectCaural';
 import SelectionCoursal from '../HomePage/Corusal/SelectionCoursal';
 import FacultiCaursol from '../HomePage/Corusal/FacultiCaursol';
-import { useNavigate } from 'react-router-dom';
 import UserData from '../HomePage/UserData/UserData'
 
 const HomeComp = () => {

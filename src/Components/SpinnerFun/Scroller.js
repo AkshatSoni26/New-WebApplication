@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import '../../CSS/Register.css'
 import animationData from '../lottie utils/esaral_loader.json'
 import OverLayFunction from '../../GlobalComponents/OverLayFunction';
-import { HomeOpenNav, OverlayOn } from '../Functions/Services';
+import { HomeOpenNav, OverlayOn } from '../../Functions/Services';
 
 // import 
 

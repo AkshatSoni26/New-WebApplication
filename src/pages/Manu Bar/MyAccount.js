@@ -3,18 +3,16 @@ import MyProfile from './MyProfile';
 import MyTargets from './MyTargets';
 import { SideBarItem, editBut } from '../../Constants/Constants';
 import { FiTarget, FiLogOut } from 'react-icons/fi'
-import { Logout, UserData } from '../Functions/Services';
-import Name from '../Onboarding/Name';
+// import { Logout,  } from '../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import MyVerticallyCenteredModal from './NameUpdateModal';
-import InputField from '../Onboarding/Components/InputField';
-import ButtonLo from '../Onboarding/Components/ButtonLo';
+import ButtonLo from '../../Components/Onboarding/Components/ButtonLo';
+import { Logout, UserData } from '../../Functions/Services';
 
 
 
 
 const MyAccount = () => {
-
 
     const { full_name, phone_number } = JSON.parse(localStorage.getItem('userData')).user
 

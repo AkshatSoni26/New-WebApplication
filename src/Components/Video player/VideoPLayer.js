@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ChapterScroll, VideoFun } from "../Functions/Services";
+import { ChapterScroll, VideoFun } from "../../Functions/Services";
 import { useSelector } from "react-redux";
 import PDFViewer from "../PDFViewer/PDFViewer";
 import SpinnerFun from "../SpinnerFun/SpinnerFun";

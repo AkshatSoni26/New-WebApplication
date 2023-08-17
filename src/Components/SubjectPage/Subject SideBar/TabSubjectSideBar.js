@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ChapterScroll, OverlayOff } from '../../Functions/Services';
+import { ChapterScroll, OverlayOff } from '../../../Functions/Services';
 import '../../../CSS/Tab.css'
 
 

@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from './NavBar/NavBar';
 import SideBar from './SiderBar/SideBar';
-import '../../CSS/App.css'
-import '../../CSS/Tab.css'
-import '../../CSS/Phone.css'
+// import '../../CSS/App.css'
+// import '../../CSS/Tab.css'
+// import '../../CSS/Phone.css'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { FRONTEND_URLS } from '../Links/Config';
-import Scroller from '../SpinnerFun/Scroller';
+import Scroller from '../../Components/SpinnerFun/Scroller';
+// import MyAccount from '../../Components/Manu Bar/MyAccount';
+// import CommingSoon from '../Manu Bar/CommingSoon';
+// import HomeComp from '../../Components/Manu Bar/HomeComp';
+import { FRONTEND_URLS } from '../../Components/Links/Config';
+import { SideBarItem } from '../../Constants/Constants';
 import MyAccount from '../Manu Bar/MyAccount';
 import HomeComp from '../Manu Bar/HomeComp';
-import { SideBarItem, editBut } from '../../Constants/Constants';
-import MyProfile from '../Manu Bar/MyProfile';
 import CommingSoon from '../Manu Bar/CommingSoon';
-import { OptionSelected } from '../Functions/Services';
+import { OptionSelected } from '../../Functions/Services';
+
 
 
 const Home = () => {

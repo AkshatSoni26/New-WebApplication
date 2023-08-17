@@ -5,10 +5,12 @@ import { BiMessageAltCheck } from 'react-icons/bi'
 
 
 import logo from '../utils/Images/logo.png'
-import HomeComp from "../Components/Manu Bar/HomeComp";
-import MyAccount from "../Components/Manu Bar/MyAccount";
-import CommingSoon from "../Components/Manu Bar/CommingSoon";
 import { FRONTEND_URLS } from "../Components/Links/Config";
+// import HomeComp from "../Components/Manu Bar/HomeComp";
+// import HomeComp from "../Components/Manu Bar/HomeComp";
+// import MyAccount from "../Components/Manu Bar/MyAccount";
+// import CommingSoon from "../pages/Manu Bar/CommingSoon";
+// import { FRONTEND_URLS } from "../Components/Links/Config";
 
 
 //-------------------------- Login Data ------------------------------ // 

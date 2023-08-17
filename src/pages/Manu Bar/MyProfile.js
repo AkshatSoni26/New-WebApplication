@@ -1,5 +1,5 @@
 import React from 'react';
-import Name from '../Onboarding/Name';
+// import Name from '../Onboarding/Name';
 
 const MyProfile = ({ setModalShow, profile, but, but_name, symbol, setIsEdit }) => {
 

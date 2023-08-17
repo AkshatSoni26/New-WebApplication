@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Home from './HomePage/Home';
+// import Home from './HomePage/Home';
 import SubjectPage from './SubjectPage/SubjectPage';
 import ChapterPage from './Chapter Page/ChapterPage';
 import { FRONTEND_URLS } from './Links/Config'
@@ -10,9 +10,8 @@ import ErrorPages from './ErrorPages/ErrorPages';
 import Register from './Onboarding/Register'
 import Search from './Search/Search';
 import Enrollments from './Enrollments/Enrollments';
-import MyAccount from './Manu Bar/MyAccount';
-import CommingSoon from './Manu Bar/CommingSoon';
 import LoginPage from '../pages/LoginPage/LoginPage';
+import Home from '../pages/HomePage/Home';
 
 
 
