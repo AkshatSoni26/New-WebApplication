@@ -3,11 +3,10 @@ import MyProfile from './MyProfile';
 import MyTargets from './MyTargets';
 import { SideBarItem, editBut } from '../../Constants/Constants';
 import { FiTarget, FiLogOut } from 'react-icons/fi'
-// import { Logout,  } from '../Functions/Services';
 import { useNavigate } from 'react-router-dom';
 import MyVerticallyCenteredModal from './NameUpdateModal';
-import ButtonLo from '../../Components/Onboarding/Components/ButtonLo';
 import { Logout, UserData } from '../../Functions/Services';
+import ButtonLo from '../Onboarding/Components/ButtonLo';
 
 
 
@@ -85,7 +84,7 @@ const MyAccount = () => {
                                 <div className='Que'>Phone</div>
                                 <input value={phone_number} disabled autoFocus={true} type="text" className='focused_input' />
 
-                                <ButtonLo setIsName={setIsName} inputRef={inputRef} butText='Save'/>
+                                <ButtonLo  setIsName={setIsName} inputRef={inputRef} butText='Save'/>
                             
                             </div>
                         </div>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
+
 import OnBordText from './Components/OnBordText';
 import OptionChooseText from './Components/OptionChooseText';
-import Imag from './Components/Imag';
 import { ColorContainerNew } from '../../Functions/Services';
-import animationData from '../lottie utils/target.json'
+import animationData from '../../utils/lottie utils/target.json'
 import LottieImgComp from './Components/LottieImgComp';
-import '../../CSS/Register.css'
-import { BorderColors, Colors } from '../../Constants/Constants';
-import SpinnerFun from '../SpinnerFun/SpinnerFun';
+import SpinnerFun from '../../Components/SpinnerFun/SpinnerFun';
+// import '../../CSS/Register.css'
+// import SpinnerFun from '../SpinnerFun/SpinnerFun';
 
 
 

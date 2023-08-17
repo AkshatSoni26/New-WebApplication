@@ -4,9 +4,9 @@ import ChapterPage from './pages/Chapter Page/ChapterPage';
 import { FRONTEND_URLS } from './Components/Links/Config'
 import GeneralPageError from './Components/ErrorPages/GeneralPageError';
 import ErrorPages from './Components/ErrorPages/ErrorPages';
-import Register from './Components/Onboarding/Register'
+import Register from './pages/Onboarding/Register'
 import Search from './Components/Search/Search';
-import Enrollments from './Components/Enrollments/Enrollments';
+import Enrollments from './pages/HomePage/Enrollments/Enrollments';
 import LoginPage from './pages/LoginPage/LoginPage';
 import Home from './pages/HomePage/Home';
 import SubjectPage from './pages/SubjectPage/SubjectPage';

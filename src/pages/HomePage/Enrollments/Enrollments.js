@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import AttemptYear from '../Onboarding/AttemptYear';
-import Exam from '../Onboarding/Exam';
 import axios from 'axios';
-import { BACKEND_URLS } from '../Links/Config';
-import { UserData } from '../../Functions/Services';
 import { useNavigate } from 'react-router-dom';
+import { UserData } from '../../../Functions/Services';
+import { BACKEND_URLS } from '../../../Components/Links/Config';
+import AttemptYear from '../../Onboarding/AttemptYear';
+import Exam from '../../Onboarding/Exam';
 
 const Enrollments = () => {
 

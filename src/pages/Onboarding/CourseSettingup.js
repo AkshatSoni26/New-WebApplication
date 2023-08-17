@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import animationData from '../lottie utils/rocket-launch.json'
-import LottieImgComp from './Components/LottieImgComp';
-import '../../CSS/Register.css'
 import axios from 'axios';
-import { BACKEND_URLS } from '../Links/Config';
 import { useNavigate } from 'react-router-dom';
+
+import animationData from '../../utils/lottie utils/rocket-launch.json'
 import { UserData } from '../../Functions/Services';
+import LottieImgComp from './Components/LottieImgComp';
+import { BACKEND_URLS } from '../../Components/Links/Config';
+    
+// import '../../CSS/Register.css'
 
 
 

@@ -2,8 +2,8 @@ import React from "react";
 import { BACKEND_URLS, FRONTEND_URLS } from "../Components/Links/Config";
 import axios from "axios";
 import { BorderColors, Colors, OtpTimer, alert_circle, country_code } from "../Constants/Constants";
-import ColorButton from "../Components/Onboarding/Components/ColorButton";
-import ColorButton2 from "../Components/Onboarding/Components/ColorButton2";
+import ColorButton from "../pages/Onboarding/Components/ColorButton";
+import ColorButton2 from "../pages/Onboarding/Components/ColorButton2";
 import { redirect } from "react-router-dom";
 
 //----------------------------- faculti responsive data  ---------------------------------- //
@@ -197,7 +197,7 @@ export function UserDataProvider(nonce, navigate, phoneNumber) {
 
       // localStorage.setItem('Access Key', access)
 
-      if (is_course_assigned == false) {
+      if (is_course_assigned == true) {
         Register(access, navigate,first_name);
         localStorage.setItem('reg', 'register')
       } 

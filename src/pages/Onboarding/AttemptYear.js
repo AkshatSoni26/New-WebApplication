@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 import OnBordText from './Components/OnBordText';
-import Imag from './Components/Imag';
 import OptionChooseText from './Components/OptionChooseText';
 import { ColorContainer } from '../../Functions/Services';
-import animationData from '../lottie utils/pencil-animation.json'
+import animationData from '../../utils/lottie utils/pencil-animation.json'
+import { BACKEND_URLS, FRONTEND_URLS } from '../../Components/Links/Config';
 import LottieImgComp from './Components/LottieImgComp';
-import '../../CSS/Register.css'
-import { BorderColors, Colors } from '../../Constants/Constants';
-import axios from 'axios';
-import { BACKEND_URLS, FRONTEND_URLS } from '../Links/Config';
-import SpinnerFun from '../SpinnerFun/SpinnerFun';
-import { useNavigate } from 'react-router-dom';
-import Scroller from '../SpinnerFun/Scroller';
 
+// import '../../CSS/Register.css'
 
 
 
@@ -32,7 +29,6 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
     useEffect(
         () => {
             const access = localStorage.getItem('Access Key')
-            // if(access === null || access === undefined) {
 
             axios.get(
                 BACKEND_URLS.GET_ALL_TARGETS,
@@ -61,41 +57,27 @@ const AttemptYear = ({ isName, setAttemptYearList }) => {
             }
                 }
             )
-        // }
-        // else{
-        //     // localStorage.clear()
-        //     navigate(FRONTEND_URLS.LOGIN_ROUTE)
-        // }
         }, []
     )
 
 
     return (
-
-        // (Buttons)
-        //     ?
             <div className="mainPage AttemptYear">
 
                 <OnBordText isName={str} startLine='Let’s customize your eSaral journey'/>
    
-
                 <div className='PencilLottie'>
                     <LottieImgComp animationData={animationData} />
                 </div>
 
                 <div className='textonly'>
                 <OptionChooseText mess='I am studying in class' />
-                {/* </div> */}
-
-                {/* <div className='colorBoxBig'> */}
 
                     <div className='AttemptButtons'>
                         {Buttons}
                     </div>
                 </div>
             </div>
-            // :
-            // <Scroller />  
     );
 };
 
