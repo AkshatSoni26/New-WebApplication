@@ -12,8 +12,8 @@ import { FRONTEND_URLS } from '../../Components/Links/Config';
 import ChapterPageSideBar from '../Chapter Page/ChapterPageSideBar/ChapterPageSideBar';
 import ChapterContentPortion from '../Chapter Page/ChapterContentPortion/ChapterContentPortion';
 import ChapterPageNavBar from '../Chapter Page/ChapterPageNavBar/ChapterPageNavBar';
-import SpinnerFun from '../../Components/SpinnerFun/SpinnerFun';
 import TabSubjectSideBar from './Subject SideBar/TabSubjectSideBar';
+import SpinnerFun from '../../Components/SpinnerFun/SpinnerFun';
 
 
 
@@ -28,7 +28,7 @@ const SubjectPage = () => {
 
     const dispatch = useDispatch()
     const { SubjectData } = bindActionCreators(actionCreators, dispatch)
-    const [SubData, setSubjData] = useState({})
+    const [SubData, setSubjData] = useState([])
 
     // const content = useSelector(state => state.content)
 
@@ -66,10 +66,10 @@ const SubjectPage = () => {
         }, []
     )
 
-
+console.log("SubData", SubData.length)
 
     return (
-        (!SubData)
+        (SubData.length == 0)
             ?
             <SpinnerFun />
             :

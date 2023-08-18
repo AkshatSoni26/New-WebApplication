@@ -8,7 +8,7 @@ const reducer = (state = '/', action) => {
         return state
     }
     else{
-        return '/'
+        return state
     }
 }
 

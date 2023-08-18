@@ -3,10 +3,11 @@ import { DefaultThumbnails } from "../../../Constants/Constants";
 import "../../../assets/CSS/App.css";
 import ThumbnailDur from "../../../Components/Thumbnail/ThumbnailDur";
 import ThumbanailButton from "../../../Components/Thumbnail/ThumbanailButton";
-import LottieImage from "../../../Components/LottieImage/LottieImage";
+// import LottieImage from "../../../Components/LottieImage/LottieImage";
 import SpinnerFun from "../../../Components/SpinnerFun/SpinnerFun";
 import OverLayFunction from "../../../GlobalComponents/OverLayFunction";
 import Scroller from "../../../Components/SpinnerFun/Scroller";
+import LottieImage from "../../../Components/LottieImage/LottieImage";
 
 const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
   console.log("ChapterPageVideoButton");
@@ -19,8 +20,6 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
   }, [currentUrl]);
 
   return(
-
-  //  currentUrl ? (
     <div className="VidThum">
 
       <div>
@@ -46,9 +45,7 @@ const ChapterPageVideoButton = ({ content_info, currentUrl }) => {
         }
 
     </div>
-  // ) : (
-  //   <Scroller />  
-  // )
+
 
   );
 };

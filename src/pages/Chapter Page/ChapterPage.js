@@ -10,6 +10,7 @@ import ChapterMainCom from './ChapterMainCom';
 import ChapterPageSideBarResponsivePart from './ChapterPageSideBar/ChapterPageSideBarResponsivePart';
 import { FRONTEND_URLS } from '../../Components/Links/Config';
 import Scroller from '../../Components/SpinnerFun/Scroller';
+// import Scroller from '../../Components/SpinnerFun/Scroller';
 
 
 const ChapterPage = () => {

@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
-
 import Lottie from "lottie-react";
 
-import animationData from '../lottie utils/playing image.json'
+import animationData from '../../utils/lottie utils/playing image.json'
 import '../../assets/CSS/App.css'
 
 
@@ -16,29 +15,4 @@ const LottieImage = () => {
         );
     };
     
-    export default memo(LottieImage);
-
-    
-//     // <>
-//     // <div className='accordianImage2'>
-
-//         {/* <div className='LottieBackgroundColour'>
-
-//             <div className='playbuttondiv'>
-//                 <div className='playbutton lottie'> */}
-//         {/* <div style={{
-// height: "50%", 
-// marginTop: "10%"
-// }}> */}
-// {/* 
-//         <div className='Trail'>
-//             <Lottie animationData={animationData} loop={true} />
-//         </div>   */}
-
-//         {/* </div>
-//             </div>
-
-//         </div> */}
-
-//     // </div >
-//     // {/* </> */ }
+export default memo(LottieImage);

@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './CSS/App.css'
-// import './CSS/Phone.css'
+import './assets/CSS/App.css'
+import './assets/CSS/Phone.css'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './State/Store';
 import App from './App';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
